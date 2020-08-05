@@ -1,0 +1,13 @@
+{
+    "name": "rivers-institute/rivers",
+    "description": "Main site for Rivers",
+    "type": "project",
+    "homepage": "http://www.riversinstitute.org/",
+    "require": {
+        "php": ">=7.1.0",
+        "getkirby/cms": "^3.0"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
