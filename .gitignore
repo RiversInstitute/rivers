@@ -41,3 +41,4 @@ Icon
 /site/config/.license
 
 content/
+.sass-cache

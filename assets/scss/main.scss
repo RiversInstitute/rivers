@@ -1,0 +1,49 @@
+@import "reset.scss";
+
+@mixin mobile() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ultrawide() {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
+%grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: var(--margin);
+  grid-row-gap: calc(1 * var(--margin));
+
+  @include mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+:root {
+  --font-size: 3.2rem;
+  --font-size--mobile: 1.6rem;
+  --line-height: 1.22;
+
+  --margin: 4.0rem;
+  --margin--mobile: 1.0rem;
+
+  --font-family: Arial, sans-serif;
+
+  @include mobile {
+    --margin: var(--margin--mobile);
+    --font-size: var(--font-size--mobile);
+  }
+}
+
+// @import "header.scss";
+// @import "layout.scss";
+// @import "index.scss";
+// @import "pages.scss";
+// @import "dynamic-image.scss";
+// @import "kirbytext.scss";
+// @import "slideshow.scss";
+// @import "projects.scss";
