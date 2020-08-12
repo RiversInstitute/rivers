@@ -1,56 +1,89 @@
 /* RESET/GLOBAL */
+@import url(fonts/stylesheet.css);
 *,
 *:after,
 *:before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 html {
   font-size: 62.5%;
   /* Now 10px = 1rem! */
-  -webkit-text-size-adjust: 100%;
-}
+  -webkit-text-size-adjust: 100%; }
 
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: var(--line-height);
-}
+  line-height: var(--line-height); }
 
 ul {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 strong, b {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 img {
   display: block;
   width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 a {
   color: currentColor;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 :root {
-  --font-size: 3.2rem;
+  --font-size: 2.2rem;
   --font-size--mobile: 1.6rem;
   --line-height: 1.22;
-  --margin: 4.0rem;
-  --margin--mobile: 1.0rem;
-  --font-family: Arial, sans-serif;
-}
-@media screen and (max-width: 768px) {
-  :root {
-    --margin: var(--margin--mobile);
-    --font-size: var(--font-size--mobile);
-  }
-}
+  --margin: 3.0rem;
+  --margin--mobile: 1.5rem;
+  --font-family: 'Sabon', serif;
+  --highlight-color: #812991;
+  --main-color: #000; }
+  @media screen and (max-width: 768px) {
+    :root {
+      --margin: var(--margin--mobile);
+      --font-size: var(--font-size--mobile); } }
+
+.navigation__container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .navigation__container nav {
+    padding: var(--margin);
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .navigation__container nav .navigation {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap; }
+      .navigation__container nav .navigation .navigation__item {
+        padding-right: var(--margin);
+        flex-shrink: 0; }
+
+.highlight {
+  color: var(--highlight-color); }
+
+.layout-wrapper {
+  margin: var(--margin);
+  max-width: 1024px; }
+
+body {
+  padding-bottom: calc(2 * var(--margin)); }
+
+.text p, .text figure, .text ul, .text ol {
+  margin-top: 1em; }
+.text hr {
+  display: none; }
+.text blockquote {
+  padding-left: 4em;
+  padding-right: 4em; }
+.text img {
+  display: block;
+  width: 100%; }
+.text *:first-child {
+  margin-top: initial; }
 
 /*# sourceMappingURL=main.css.map */

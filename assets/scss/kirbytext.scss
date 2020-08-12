@@ -1,0 +1,28 @@
+.text {
+  p, figure, ul, ol {
+    margin-top: 1em;
+  }
+
+  // p + p {
+  //   margin-top: initial;
+  //   text-indent: calc(2 * var(--margin));
+  // }
+
+  hr {
+    display: none;
+  }
+
+  blockquote {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  *:first-child {
+    margin-top: initial;
+  }
+}

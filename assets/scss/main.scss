@@ -1,4 +1,5 @@
 @import "reset.scss";
+@import "fonts/stylesheet.css";
 
 @mixin mobile() {
   @media screen and (max-width: 768px) {
@@ -12,26 +13,18 @@
   }
 }
 
-%grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-column-gap: var(--margin);
-  grid-row-gap: calc(1 * var(--margin));
-
-  @include mobile {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 :root {
-  --font-size: 3.2rem;
+  --font-size: 2.2rem;
   --font-size--mobile: 1.6rem;
   --line-height: 1.22;
 
-  --margin: 4.0rem;
-  --margin--mobile: 1.0rem;
+  --margin: 3.0rem;
+  --margin--mobile: 1.5rem;
 
-  --font-family: Arial, sans-serif;
+  --font-family: 'Sabon', serif;
+
+  --highlight-color: #812991; 
+  --main-color: #000;
 
   @include mobile {
     --margin: var(--margin--mobile);
@@ -39,11 +32,10 @@
   }
 }
 
-// @import "header.scss";
+@import "nav.scss";
 @import "layout.scss";
+@import "kirbytext.scss";
 // @import "index.scss";
 // @import "pages.scss";
-// @import "dynamic-image.scss";
-// @import "kirbytext.scss";
-// @import "slideshow.scss";
+
 // @import "projects.scss";

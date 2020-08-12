@@ -1,0 +1,23 @@
+.navigation__container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  nav {
+    padding: var(--margin);
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .navigation {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .navigation__item {
+        padding-right: var(--margin);
+        flex-shrink: 0;
+      }
+    }
+  }
+}
