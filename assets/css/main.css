@@ -63,7 +63,7 @@ a {
         padding-right: var(--margin);
         flex-shrink: 0; }
 
-.highlight {
+.highlight, .text a {
   color: var(--highlight-color); }
 
 .layout-wrapper {

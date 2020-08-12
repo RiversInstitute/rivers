@@ -25,4 +25,8 @@
   *:first-child {
     margin-top: initial;
   }
+
+  a {
+    @extend .highlight;
+  }
 }
