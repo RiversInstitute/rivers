@@ -14,6 +14,7 @@ tabs:
             image: icon
             templates:
               - default
+              - events
       main_2:
         width: 1/2
         sections:
