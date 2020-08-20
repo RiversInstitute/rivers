@@ -40,3 +40,23 @@ a {
 a:hover {
   // text-decoration: none;
 }
+
+input {
+  @extend %form-reset-input;
+}
+
+label {
+  @extend %form-reset-label;
+}
+
+select {
+  @extend %form-reset-select;
+}
+
+button {
+  @extend %form-reset-button;
+}
+
+textarea {
+  @extend %form-reset-textarea;
+}

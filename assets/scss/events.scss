@@ -1,0 +1,34 @@
+.events-exhibitions {
+  columns: 4;
+  column-gap: var(--margin);
+
+  @include mobile {
+    columns: 2;
+  }
+
+  .listing__list {
+    break-inside: avoid-column;
+    margin-bottom: var(--margin);
+
+    .listing__hero {
+      margin-bottom: 1em;
+    }
+    .listing__title {
+      font-weight: bold;
+    }
+
+    .listing__preview {
+      margin-top: 1em;
+    }
+  }
+}
+
+.event-exhibition {
+  .listing__title {
+    font-weight: bold;
+  }
+  
+  .listing__content {
+    margin-top: 1em;
+  }
+}
