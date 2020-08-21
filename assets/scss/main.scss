@@ -1,3 +1,4 @@
+@import "reset-form-helpers.scss";
 @import "reset.scss";
 @import "fonts/stylesheet.css";
 
@@ -26,7 +27,10 @@
   --font-family: 'Sabon', serif;
 
   --highlight-color: #812991;
+  --alert-color: #f00;
   --main-color: #000;
+
+  --ticker-width: -100vw;
 
   @include mobile {
     --margin: var(--margin--mobile);
@@ -39,10 +43,12 @@
   height: 100px;
 }
 
-@import "nav.scss";
 @import "layout.scss";
+@import "nav.scss";
 @import "kirbytext.scss";
-// @import "index.scss";
+@import "home.scss";
+@import "events.scss";
+
 // @import "pages.scss";
 
 // @import "projects.scss";

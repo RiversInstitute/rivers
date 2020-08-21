@@ -1,5 +1,104 @@
-/* RESET/GLOBAL */
+/* ----------------------------------------------------------------------------------------------------
+
+SCSS Form Reset Helpers - Forked from: https://gist.github.com/anthonyshort/552543
+
+Intended usage:
+- MIXINS: for very specific use cases, when you dont want to reset absolutly all the forms, very verbose output.
+- PLACEHOLDER SELECTORS: use as extending classes. Less verbose, more generic overrides.
+
+A couple of things to watch out for:
+
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+
+----------------------------------------------------------------------------------------------------*/
 @import "fonts/stylesheet.css";
+textarea, button, select, label, input {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: auto;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: inherit;
+  background: none;
+  /* Browsers have different default form fonts */
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+select, input[type=reset], input[type=button], input[type=submit], input[type=checkbox], input[type=radio] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input {
+  /* Make webkit render the search input like a normal text field */
+  /* Turn off the recent search for webkit. It adds about 15px padding on the left */
+  /* Fix IE7 display bug */
+  /* These elements are usually rendered a certain way by the browser */
+}
+input:focus {
+  outline: 0;
+}
+input[type=checkbox], input[type=radio] {
+  width: 13px;
+  height: 13px;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+::-webkit-search-decoration {
+  display: none;
+}
+
+input[type=reset], input[type=button], input[type=submit] {
+  overflow: visible;
+}
+select {
+  /* Move the label to the top */
+}
+select[multiple] {
+  vertical-align: top;
+}
+
+button {
+  background: none;
+  border: 0;
+  outline: none;
+  /* IE8 and FF freak out if this rule is within another selector */
+}
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button:hover, button:active, button:focus {
+  outline: 0;
+}
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+}
+
+/* RESET/GLOBAL */
 *,
 *:after,
 *:before {
@@ -48,7 +147,9 @@ a {
   --margin--mobile: 1.5rem;
   --font-family: "Sabon", serif;
   --highlight-color: #812991;
+  --alert-color: #f00;
   --main-color: #000;
+  --ticker-width: -100vw;
 }
 @media screen and (max-width: 768px) {
   :root {
@@ -62,27 +163,6 @@ a {
   height: 100px;
 }
 
-.navigation__container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.navigation__container nav {
-  padding: var(--margin);
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-.navigation__container nav .navigation {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-.navigation__container nav .navigation .navigation__item {
-  padding-right: var(--margin);
-  flex-shrink: 0;
-}
-
 .highlight, .text a {
   color: var(--highlight-color);
 }
@@ -93,6 +173,7 @@ a {
 }
 
 .layout-wrapper--full {
+  margin: var(--margin);
   display: grid;
 }
 
@@ -170,6 +251,39 @@ body {
   visibility: visible;
 }
 
+.navigation__container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.navigation__container nav {
+  padding: var(--margin);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.navigation__container nav .navigation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.navigation__container nav .navigation .navigation__item {
+  padding-right: var(--margin);
+  flex-shrink: 0;
+}
+
+#mc_embed_signup #mc_embed_signup_scroll {
+  display: flex;
+}
+#mc_embed_signup #mc_embed_signup_scroll input[type=email] {
+  border-bottom: 0.1em solid var(--main-color);
+}
+#mc_embed_signup #mc_embed_signup_scroll input[type=submit] {
+  margin-left: calc(0.5 * var(--margin));
+  cursor: pointer;
+  color: var(--highlight-color);
+}
+
 .text p, .text figure, .text ul, .text ol {
   margin-top: 1em;
 }
@@ -186,6 +300,62 @@ body {
 }
 .text *:first-child {
   margin-top: initial;
+}
+.event-ticker {
+  --width: 100vw;
+  color: var(--alert-color);
+  overflow: hidden;
+  width: var(--width);
+}
+.event-ticker .ticker__list {
+  width: fit-content;
+  display: flex;
+  position: relative;
+  transform: translate3d(var(--width), 0, 0);
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translate3d(var(--width), 0, 0);
+  }
+  to {
+    transform: translate3d(var(--ticker-width), 0, 0);
+  }
+}
+.event-ticker .ticker__list .ticker__item {
+  padding-right: var(--margin);
+}
+
+.events-exhibitions {
+  columns: 4;
+  column-gap: var(--margin);
+}
+@media screen and (max-width: 768px) {
+  .events-exhibitions {
+    columns: 2;
+  }
+}
+.events-exhibitions .listing__list {
+  break-inside: avoid-column;
+  margin-bottom: var(--margin);
+}
+.events-exhibitions .listing__list .listing__hero {
+  margin-bottom: 1em;
+}
+.events-exhibitions .listing__list .listing__title {
+  font-weight: bold;
+}
+.events-exhibitions .listing__list .listing__preview {
+  margin-top: 1em;
+}
+
+.event-exhibition .listing__title {
+  font-weight: bold;
+}
+.event-exhibition .listing__content {
+  margin-top: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */
