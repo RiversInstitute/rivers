@@ -1,89 +1,191 @@
 /* RESET/GLOBAL */
-@import url(fonts/stylesheet.css);
+@import "fonts/stylesheet.css";
 *,
 *:after,
 *:before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
   font-size: 62.5%;
   /* Now 10px = 1rem! */
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: var(--line-height); }
+  line-height: var(--line-height);
+}
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 strong, b {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 img {
   display: block;
   width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 a {
   color: currentColor;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 :root {
-  --font-size: 2.2rem;
+  --font-size: 1.8rem;
+  --font-size--secondary: 1.5rem;
   --font-size--mobile: 1.6rem;
   --line-height: 1.22;
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
-  --font-family: 'Sabon', serif;
+  --font-family: "Sabon", serif;
   --highlight-color: #812991;
-  --main-color: #000; }
-  @media screen and (max-width: 768px) {
-    :root {
-      --margin: var(--margin--mobile);
-      --font-size: var(--font-size--mobile); } }
+  --main-color: #000;
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --margin: var(--margin--mobile);
+    --font-size: var(--font-size--mobile);
+  }
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+}
 
 .navigation__container {
   position: fixed;
-  bottom: 0;
   left: 0;
-  right: 0; }
-  .navigation__container nav {
-    padding: var(--margin);
-    overflow-x: auto;
-    overflow-y: hidden; }
-    .navigation__container nav .navigation {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap; }
-      .navigation__container nav .navigation .navigation__item {
-        padding-right: var(--margin);
-        flex-shrink: 0; }
+  right: 0;
+  bottom: 0;
+}
+.navigation__container nav {
+  padding: var(--margin);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.navigation__container nav .navigation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.navigation__container nav .navigation .navigation__item {
+  padding-right: var(--margin);
+  flex-shrink: 0;
+}
 
 .highlight, .text a {
-  color: var(--highlight-color); }
+  color: var(--highlight-color);
+}
 
 .layout-wrapper {
   margin: var(--margin);
-  max-width: 700px; }
+  max-width: 700px;
+}
+
+.layout-wrapper--full {
+  display: grid;
+}
 
 body {
-  padding-bottom: calc(2 * var(--margin)); }
+  padding-bottom: calc(2 * var(--margin));
+}
+
+.main-content {
+  margin: var(--margin);
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+}
+.main-content .main-content__item {
+  color: var(--main-color);
+  font-size: var(--font-size);
+}
+.main-content .main-content__item .text__title {
+  padding-bottom: calc(.5 * var(--margin));
+}
+.main-content .main-content__item .text__title:hover {
+  cursor: pointer;
+}
+.main-content .main-content__item .text__body {
+  visibility: hidden;
+}
+
+.navigation {
+  font-size: var(--font-size--secondary);
+}
+
+.bibliography {
+  grid-column-start: 4;
+  margin-top: var(--margin);
+  grid-row-start: 1;
+  font-size: var(--font-size);
+  border-spacing: 2px;
+}
+.bibliography #Bibliography_title {
+  width: 0px;
+  padding-bottom: calc(.5 * var(--margin));
+  transform: translateX(-50%);
+}
+.bibliography #bibliography_info {
+  font-size: var(--font-size--secondary);
+  margin-top: var(--margin/2);
+  margin-right: var(--margin);
+  width: 0;
+  overflow: scroll;
+  padding-left: 22px;
+  text-indent: -22px;
+}
+.bibliography #bibliography_info__open {
+  visibility: visible;
+}
+.bibliography #bibliography_info__clodes {
+  visibility: hidden;
+}
+.bibliography .closebtn {
+  padding-bottom: calc(.3 * var(--margin));
+  font-size: var(--font-size);
+  right: 0;
+  margin-bottom: var(--margin/2);
+}
+.bibliography #bibliography_info.visible {
+  transform: translate3d(0vw, 0, 0);
+}
+
+#Bibliography_title:hover {
+  cursor: pointer;
+}
+
+.bib-open {
+  width: 250px;
+  visibility: visible;
+}
 
 .text p, .text figure, .text ul, .text ol {
-  margin-top: 1em; }
+  margin-top: 1em;
+}
 .text hr {
-  display: none; }
+  display: none;
+}
 .text blockquote {
   padding-left: 4em;
-  padding-right: 4em; }
+  padding-right: 4em;
+}
 .text img {
   display: block;
-  width: 100%; }
+  width: 100%;
+}
 .text *:first-child {
-  margin-top: initial; }
+  margin-top: initial;
+}
 
 /*# sourceMappingURL=main.css.map */

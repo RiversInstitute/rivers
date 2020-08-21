@@ -1,0 +1,18 @@
+title: Page
+preset: page
+
+fields:
+  main_content_title:
+    label: Season
+    type: textarea
+    size: small
+  main_content_body:
+    label: Body
+    type: textarea
+    size: medium
+  bibliography_item:
+    label: Bibliography Item
+    type: structure
+    fields:
+      citation:
+        type: text

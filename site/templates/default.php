@@ -5,6 +5,9 @@
     <div class="main-content__item text">
       <?= $page->main_content()->kt(); ?>
     </div>
+    <div class="square">
+hey
+    </div>
   </div>
 </div>
 <?php snippet('footer'); ?>
