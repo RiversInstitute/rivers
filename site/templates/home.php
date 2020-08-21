@@ -33,39 +33,58 @@
           <?php endforeach ?>
      </div>
   </div>
+</div>
 
+  <div class="event-ticker">
+    <ul class="ticker__list">
+      <?php
+        $listings = $site->index()->listed()->filterBy('template','event')->filterBy('highlight_on_index', 'true')->filter(function ($item) { return $item->start_date()->toDate() > time(); })->sortBy('start_date','desc');
+      ?>
+      <?php foreach($listings as $listing):?>
+        <li class="ticker__item">
+          <a href="<?= $listing->url(); ?>"><?= $listing->index_copy(); ?></a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
 
 <script>
+  document.addEventListener('DOMContentLoaded', (e) => {
+    initTicker(document.querySelector('.event-ticker .ticker__list'));
+  });
 
-
-function openorcloseBody() {
-
-  if (document.getElementById("body_text").style.visibility == "visible") {
-    document.getElementById("body_text").style.visibility = "hidden";
+  const initTicker = (ticker) => {
+    const tickerW = -1 * ticker.scrollWidth - 100;
+    ticker.style.setProperty('--ticker-width', `${tickerW}px`);
+    ticker.style.setProperty('animation-name', 'marquee');
   }
-  else {
-  document.getElementById("body_text").style.visibility = "visible";
+
+  function openorcloseBody() {
+
+    if (document.getElementById("body_text").style.visibility == "visible") {
+      document.getElementById("body_text").style.visibility = "hidden";
+    }
+    else {
+    document.getElementById("body_text").style.visibility = "visible";
+    }
   }
-}
 
-let openBtn = document.querySelector("#Bibliography_title");
-openBtn.addEventListener("click", () => {
-   showNav();
-});
-let closeBtn = document.querySelector(".closebtn");
-closeBtn.addEventListener("click", () => {
-   hideNav();
-});
-function showNav() {
-   document.querySelector("#bibliography_info").style.width = "300px";
-   document.querySelector("#Bibliography_title").style.marginRight = "300px";
-}
-function hideNav() {
-   document.querySelector("#bibliography_info").style.width = "0";
-   document.querySelector("#Bibliography_title").style.marginRight = "0px";
- }
-
-
+  let openBtn = document.querySelector("#Bibliography_title");
+  openBtn.addEventListener("click", () => {
+     showNav();
+  });
+  let closeBtn = document.querySelector(".closebtn");
+  closeBtn.addEventListener("click", () => {
+     hideNav();
+  });
+  function showNav() {
+     document.querySelector("#bibliography_info").style.width = "300px";
+     document.querySelector("#Bibliography_title").style.marginRight = "300px";
+  }
+  function hideNav() {
+     document.querySelector("#bibliography_info").style.width = "0";
+     document.querySelector("#Bibliography_title").style.marginRight = "0px";
+   }
 </script>
 
 <?php snippet('footer'); ?>
