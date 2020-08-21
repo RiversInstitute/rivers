@@ -1,22 +1,38 @@
 title: Exhibition / Event
 preset: page
 
+num: '{{ page.start_date.toDate("Ymd") }}'
+
 fields:
-  start_datetime:
+  start_date:
     label: Start
     type: date
-    time: true
     required: true
     width: 1/3
-  end_datetime:
+  end_date:
     label: End
     type: date
-    time: true
     width: 1/3
   highlight_on_index:
     label: Highlight on Index
     type: toggle
     width: 1/3
+  start_time:
+    label: Start Time
+    type: time
+    width: 1/3
+  end_time:
+    label: End Time
+    type: time
+    width: 1/3
+  hero_image:
+    label: Hero Image
+    type: files
+    width: 1/3
+    max: 1
+  index_copy:
+    type: text
+    label: Index Text
   preview:
     type: textarea
     size: tiny
