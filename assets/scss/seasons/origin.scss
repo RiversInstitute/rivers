@@ -1,0 +1,7 @@
+.season--origin {
+  .origin__header {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: var(--margin);
+  }
+}
