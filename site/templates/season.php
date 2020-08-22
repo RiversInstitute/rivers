@@ -1,4 +1,5 @@
 <?php snippet('header'); ?>
 <?php snippet('nav'); ?>
-<?php snippet('season', ['season' => $page]); ?>
+<?php $seasonFile = 'seasons/' . $page->slug() . '/index'; ?>
+<?php snippet($seasonFile, ['season' => $page]); ?>
 <?php snippet('footer'); ?>
