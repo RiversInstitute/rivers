@@ -1,9 +1,9 @@
 <?php snippet('header'); ?>
 <?php snippet('nav'); ?>
-<div class="layout-wrapper">
-  <div class="text">
-    <?= $page->main_content()->kt(); ?>
-  </div>
-</div>
-<?php snippet('marquee'); ?>
+<?php if ($page->active_season()->isNotEmpty()): ?>
+  <?php snippet('season', ['season' => $page->active_season()->toPage()]); ?>
+<?php endif; ?>
+<?php if ($page->show_marquee()->toBool()): ?>
+  <?php snippet('marquee'); ?>
+<?php endif; ?>
 <?php snippet('footer'); ?>

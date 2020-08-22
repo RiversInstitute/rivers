@@ -1,0 +1,29 @@
+title: Season
+preset: page
+
+num: '{{ page.start_date.toDate("Ymd") }}'
+
+fields:
+  start_date:
+    label: Start
+    type: date
+    required: true
+    width: 1/2
+  end_date:
+    label: End
+    type: date
+    width: 1/2
+  main_content_title:
+    label: Season
+    type: textarea
+    size: small
+  main_content_body:
+    label: Body
+    type: textarea
+    size: medium
+  bibliography_item:
+    label: Bibliography Item
+    type: structure
+    fields:
+      citation:
+        type: text
