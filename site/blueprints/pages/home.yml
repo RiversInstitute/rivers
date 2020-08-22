@@ -1,0 +1,11 @@
+title: Home
+
+fields:
+  active_season:
+    type: select
+    label: Active Season
+    options: query
+    query: site.children.template("season")
+  show_marquee:
+    type: toggle
+    label: Show Events/Exhibitions Marquee
