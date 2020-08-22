@@ -49,6 +49,9 @@ tabs:
       settings_2:
         width: 1/2
         fields:
+          full_name:
+            label: Full Site Name
+            type: text
           about:
             label: Meta Description
             type: text
