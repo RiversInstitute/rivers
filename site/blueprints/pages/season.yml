@@ -26,4 +26,9 @@ fields:
     type: structure
     fields:
       citation:
+        type: textarea
+        size: tiny
+        label: Citation
+      embed:
         type: text
+        label: HTML Embed Code
