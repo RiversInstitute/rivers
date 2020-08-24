@@ -3,36 +3,37 @@
 
 <div class="layout-wrapper--full">
 
-  <div class="main-content">
+  <div class="season">
 
-    <div class="main-content__item text">
-
-      <div class="main-content__item text__title" onclick="openorcloseBody()">
+      <div class="season__title" onclick="openorcloseBody()">
         <?= $page->main_content_title()->kt(); ?>
       </div>
 
-      <div class="main-content__item text__body" id="body_text">
+      <div class="season__body" id="season_text">
         <?= $page->main_content_body()->kt(); ?>
-      </div>
-
     </div>
+
   </div>
 
   <div class="bibliography">
-      <div id="Bibliography_title" onclick="openNav()"> Bibliography </div>
 
-      <div id="bibliography_info">
+      <div class="bibliography__header">
+        <div id="bibliography_title" onclick="openNav()">Bibliography</div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a>
-          <br><?php foreach ($page->bibliography_item()->toStructure() as $bib): ?>
-              <?= $bib->citation().kt();
-              echo "<br>";
-              echo "<br>";
-              echo "<style>{ padding-left: 22px ;
-            text-indent: -22px;}</style>";
-              ?>
-          <?php endforeach ?>
-     </div>
+      </div>
+
+      <!-- <div id="bibliography_info"> -->
+          <ul class="bibliography__list">
+            <?php foreach ($page->bibliography_item()->toStructure() as $bib): ?>
+                <li class="bibliography__item">
+                  <?= $bib->citation()->kt(); ?>
+                </li>
+            <?php endforeach ?>
+          </ul>
+     <!-- </div> -->
+
   </div>
+
 </div>
 
   <div class="event-ticker">
@@ -57,34 +58,40 @@
     const tickerW = -1 * ticker.scrollWidth - 100;
     ticker.style.setProperty('--ticker-width', `${tickerW}px`);
     ticker.style.setProperty('animation-name', 'marquee');
-  }
+  };
 
   function openorcloseBody() {
 
-    if (document.getElementById("body_text").style.visibility == "visible") {
-      document.getElementById("body_text").style.visibility = "hidden";
+    if (document.getElementById("season_text").style.visibility == "visible") {
+      document.getElementById("season_text").style.visibility = "hidden";
     }
     else {
-    document.getElementById("body_text").style.visibility = "visible";
+    document.getElementById("season_text").style.visibility = "visible";
     }
-  }
+  };
 
-  let openBtn = document.querySelector("#Bibliography_title");
+  let openBtn = document.querySelector("#bibliography_title");
   openBtn.addEventListener("click", () => {
-     showNav();
+    showBib();
+
   });
   let closeBtn = document.querySelector(".closebtn");
   closeBtn.addEventListener("click", () => {
-     hideNav();
+     hideBib();
   });
-  function showNav() {
-     document.querySelector("#bibliography_info").style.width = "300px";
-     document.querySelector("#Bibliography_title").style.marginRight = "300px";
-  }
-  function hideNav() {
-     document.querySelector("#bibliography_info").style.width = "0";
-     document.querySelector("#Bibliography_title").style.marginRight = "0px";
-   }
+
+  function showBib() {
+     document.querySelector(".bibliography__list").style.visibility = "visible";
+     document.querySelector(".closebtn").style.visibility = "visible";
+    document.querySelector(".bibliography__header").style.justifyContent = "space-between";
+  };
+
+  function hideBib() {
+     document.querySelector(".bibliography__list").style.visibility = "hidden";
+     document.querySelector(".closebtn").style.visibility = "hidden";
+     document.querySelector(".bibliography__header").style.justifyContent = "flex-end";
+   };
+
 </script>
 
 <?php snippet('footer'); ?>
