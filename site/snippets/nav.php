@@ -5,6 +5,9 @@ $items = $pages->listed()->notTemplate('season');
 
 ?>
 <div class="navigation__container">
+  <?php if (isset($showMarquee) && $showMarquee): ?>
+    <?php snippet('marquee'); ?>
+  <?php endif; ?>
   <nav>
     <ul class="navigation">
       <?php if ($page->hide_home_nav() && !$page->hide_home_nav()->toBool()): ?>
