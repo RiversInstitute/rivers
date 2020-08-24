@@ -15,8 +15,7 @@ fields:
     width: 1/2
   main_content_title:
     label: Season
-    type: textarea
-    size: small
+    type: text
   main_content_body:
     label: Body
     type: textarea

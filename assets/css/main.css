@@ -162,28 +162,6 @@ body {
         padding-right: var(--margin);
         flex-shrink: 0; }
 
-#mc_embed_signup #mc_embed_signup_scroll {
-  display: flex; }
-  #mc_embed_signup #mc_embed_signup_scroll input[type="email"] {
-    border-bottom: 0.1em solid var(--main-color); }
-  #mc_embed_signup #mc_embed_signup_scroll input[type="submit"] {
-    margin-left: calc(0.5 * var(--margin));
-    cursor: pointer;
-    color: var(--highlight-color); }
-
-.text p, .text figure, .text ul, .text ol {
-  margin-top: 1em; }
-.text hr {
-  display: none; }
-.text blockquote {
-  padding-left: 4em;
-  padding-right: 4em; }
-.text img {
-  display: block;
-  width: 100%; }
-.text *:first-child {
-  margin-top: initial; }
-
 .event-ticker {
   --width: 100vw;
   color: var(--alert-color);
@@ -203,7 +181,21 @@ body {
   to {
     transform: translate3d(var(--ticker-width), 0, 0); } }
     .event-ticker .ticker__list .ticker__item {
-      padding-right: var(--margin); }
+      padding-right: var(--margin);
+      white-space: nowrap; }
+
+.text p, .text figure, .text ul, .text ol {
+  margin-top: 1em; }
+.text hr {
+  display: none; }
+.text blockquote {
+  padding-left: 4em;
+  padding-right: 4em; }
+.text img {
+  display: block;
+  width: 100%; }
+.text *:first-child {
+  margin-top: initial; }
 
 .events-exhibitions {
   columns: 4;
@@ -226,9 +218,25 @@ body {
 .event-exhibition .listing__content {
   margin-top: 1em; }
 
+#mc_embed_signup #mc_embed_signup_scroll {
+  display: flex; }
+  #mc_embed_signup #mc_embed_signup_scroll input[type="email"] {
+    border-bottom: 0.1em solid var(--main-color); }
+  #mc_embed_signup #mc_embed_signup_scroll input[type="submit"] {
+    margin-left: calc(0.5 * var(--margin));
+    cursor: pointer;
+    color: var(--highlight-color); }
+
 .season--origin .origin__header {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-column-gap: var(--margin); }
+  .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
+    display: block; }
+  .season--origin .origin__header .origin__definition-container .origin__title {
+    cursor: pointer; }
+  .season--origin .origin__header .origin__definition-container .origin__definition {
+    display: none;
+    margin-top: 1em; }
 
 /*# sourceMappingURL=main.css.map */

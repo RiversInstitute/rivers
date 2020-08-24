@@ -3,5 +3,23 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-column-gap: var(--margin);
+
+    .origin__definition-container {
+
+      &.expanded {
+        .origin__definition {
+          display: block;
+        }
+      }
+
+      .origin__title {
+        cursor: pointer;
+      }
+
+      .origin__definition {
+        display: none;
+        margin-top: 1em;
+      }
+    }
   }
 }
