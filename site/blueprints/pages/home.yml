@@ -1,18 +1,16 @@
-title: Page
-preset: page
+title: Home
 
 fields:
-  main_content_title:
-    label: Season
-    type: textarea
-    size: small
-  main_content_body:
-    label: Body
-    type: textarea
-    size: medium
-  bibliography_item:
-    label: Bibliography Item
-    type: structure
-    fields:
-      citation:
-        type: text
+  active_season:
+    type: select
+    label: Active Season
+    options: query
+    query: site.children.template("season")
+  show_marquee:
+    type: toggle
+    label: Show Events/Exhibitions Marquee
+    width: 1/2
+  hide_home_nav:
+    type: toggle
+    label: Hide Home Nav Link
+    width: 1/2

@@ -18,6 +18,10 @@ tabs:
       main_2:
         width: 1/2
         sections:
+          seasons:
+            headline: Seasons
+            type: pages
+            template: season
           home:
             headline: Home
             type: pages
@@ -45,6 +49,9 @@ tabs:
       settings_2:
         width: 1/2
         fields:
+          full_title:
+            label: Full Site Title
+            type: text
           about:
             label: Meta Description
             type: text

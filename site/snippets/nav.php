@@ -1,12 +1,18 @@
 <?php
 
 // main menu items
-$items = $pages->listed();
+$items = $pages->listed()->notTemplate('season');
+
 ?>
 <div class="navigation__container">
+  <?php if (isset($showMarquee) && $showMarquee): ?>
+    <?php snippet('marquee'); ?>
+  <?php endif; ?>
   <nav>
     <ul class="navigation">
-      <li class="navigation__item highlight"><a href="<?= $site->url() ?>"><?= $site->title(); ?></a></li>
+      <?php if ($page->hide_home_nav() && !$page->hide_home_nav()->toBool()): ?>
+        <li class="navigation__item highlight"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
+      <?php endif; ?>
       <?php foreach($items as $item): ?>
       <li class="navigation__item"><a<?php e($item->isOpen(), ' class="active"') ?> href="<?= $item->url() ?>"><?= $item->title()->html() ?></a></li>
       <?php endforeach ?>

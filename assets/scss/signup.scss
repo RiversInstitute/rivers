@@ -1,0 +1,15 @@
+#mc_embed_signup {
+  #mc_embed_signup_scroll {
+    display: flex;
+
+    input[type="email"] {
+      border-bottom: .1em solid var(--main-color);
+    }
+
+    input[type="submit"] {
+      margin-left: calc(0.5 * var(--margin));
+      cursor: pointer;
+      color: var(--highlight-color);
+    }
+  }
+}
