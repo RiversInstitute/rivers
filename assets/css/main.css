@@ -140,9 +140,12 @@ a {
 .highlight, .text a {
   color: var(--highlight-color); }
 
-.layout-wrapper--full {
+.layout-wrapper {
   margin: var(--margin);
-  display: grid; }
+  max-width: 700px; }
+
+.layout-wrapper--full {
+  margin: var(--margin); }
 
 body {
   padding-bottom: calc(2 * var(--margin)); }
