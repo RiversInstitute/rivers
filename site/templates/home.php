@@ -8,4 +8,3 @@
   <?php snippet($seasonFile, ['season' => $seasonPage]); ?>
 <?php endif; ?>
 <?php snippet('footer'); ?>
-</div>
