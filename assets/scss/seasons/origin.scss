@@ -104,17 +104,27 @@
     .origin__blocks {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-      grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
 
-      .origin__block {
-        background-color: var(--background-color, #FFF);
-        padding: calc(0.5 * var(--margin));
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        
-        .text {
-          text-align: center;
+      .origin__block__container {
+        padding-top: 100%;
+        position: relative;
+
+        .origin__block {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          background-color: var(--background-color, #FFF);
+          padding: calc(0.5 * var(--margin));
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .text {
+            text-align: center;
+          }
         }
       }
     }

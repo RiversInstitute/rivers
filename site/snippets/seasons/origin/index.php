@@ -33,9 +33,11 @@
   <div class="origin__contents">
     <ul class="origin__blocks">
       <?php foreach($season->entries()->toStructure() as $entry): ?>
-        <li class="origin__block" style="--background-color: <?= $entry->block_color(); ?>">
-          <div class="text">
-            <?= $entry->title()->kt(); ?>
+        <li class="origin__block__container" style="--background-color: <?= $entry->block_color(); ?>">
+          <div class="origin__block">
+            <div class="text">
+              <!-- <?= $entry->title()->kt(); ?> -->
+            </div>
           </div>
         </li>
       <?php endforeach; ?>
