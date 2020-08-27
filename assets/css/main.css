@@ -117,8 +117,10 @@ a {
   text-decoration: none; }
 
 :root {
-  --font-size: 2.2rem;
+  --font-size: 1.8rem;
+  --font-size--secondary: 1.5rem;
   --font-size--mobile: 1.6rem;
+  --font-size--mobile--secondary: 1.2rem;
   --line-height: 1.22;
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
@@ -130,7 +132,8 @@ a {
   @media screen and (max-width: 768px) {
     :root {
       --margin: var(--margin--mobile);
-      --font-size: var(--font-size--mobile); } }
+      --font-size: var(--font-size--mobile);
+      --font-size--secondary: var(--font-size--mobile--secondary); } }
 
 .highlight, .text a {
   color: var(--highlight-color); }
@@ -229,14 +232,81 @@ body {
 
 .season--origin .origin__header {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-column-gap: var(--margin); }
-  .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
-    display: block; }
-  .season--origin .origin__header .origin__definition-container .origin__title {
-    cursor: pointer; }
-  .season--origin .origin__header .origin__definition-container .origin__definition {
-    display: none;
-    margin-top: 1em; }
+  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
+  grid-template-areas: "logo definition bibliography";
+  grid-column-gap: var(--margin);
+  position: relative; }
+  .season--origin .origin__header .origin__site-title {
+    grid-area: logo; }
+  .season--origin .origin__header .origin__definition-container {
+    grid-area: definition; }
+    .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
+      display: block; }
+    .season--origin .origin__header .origin__definition-container .origin__title {
+      cursor: pointer; }
+    .season--origin .origin__header .origin__definition-container .origin__definition {
+      display: none;
+      margin-top: 1em; }
+  .season--origin .origin__header .bibliography {
+    grid-area: bibliography;
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    height: calc(100vh - 2 * var(--margin)); }
+    .season--origin .origin__header .bibliography .bibliography__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
+        cursor: pointer; }
+        .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button#bibliography__close {
+          visibility: hidden;
+          font-size: 1.2em; }
+    .season--origin .origin__header .bibliography .bibliography__list {
+      visibility: hidden;
+      margin-top: 1em; }
+      .season--origin .origin__header .bibliography .bibliography__list .bibliography__item {
+        margin-left: 1em;
+        text-indent: -1em;
+        margin-bottom: 1em;
+        word-wrap: break-word;
+        font-size: var(--font-size--secondary); }
+        .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed {
+          margin-left: 1em; }
+          .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed * {
+            width: 100%;
+            height: auto; }
+    .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
+      visibility: visible; }
+    .season--origin .origin__header .bibliography.expanded .bibliography__list {
+      visibility: visible; }
+  @media screen and (max-width: 768px) {
+    .season--origin .origin__header {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-areas: "definition bibliography"; }
+      .season--origin .origin__header .origin__site-title {
+        display: none; } }
+.season--origin .origin__contents {
+  margin-top: 1em; }
+  .season--origin .origin__contents .origin__blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+    .season--origin .origin__contents .origin__blocks .origin__block__container {
+      padding-top: 100%;
+      position: relative; }
+      .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-color, #FFF);
+        padding: calc(0.5 * var(--margin));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+        .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block .text {
+          text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

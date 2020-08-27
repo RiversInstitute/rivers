@@ -1,11 +1,17 @@
 .season--origin {
   .origin__header {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
+    grid-template-areas: "logo definition bibliography";
     grid-column-gap: var(--margin);
+    position: relative;
+
+    .origin__site-title {
+      grid-area: logo;
+    }
 
     .origin__definition-container {
-
+      grid-area: definition;
       &.expanded {
         .origin__definition {
           display: block;
@@ -19,6 +25,107 @@
       .origin__definition {
         display: none;
         margin-top: 1em;
+      }
+    }
+
+    .bibliography {
+      grid-area: bibliography;
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow: auto;
+      height: calc(100vh - 2 * var(--margin));
+
+      .bibliography__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .bibliography__header__button {
+          cursor: pointer;
+
+          &#bibliography__close {
+            visibility: hidden;
+            font-size: 1.2em;
+          }
+        }
+      }
+
+      .bibliography__list {
+        visibility: hidden;
+        margin-top: 1em;
+
+        .bibliography__item {
+          margin-left: 1em;
+          text-indent: -1em;
+          margin-bottom: 1em;
+          word-wrap: break-word;
+          font-size: var(--font-size--secondary);
+
+          .bibliography__item__embed {
+            margin-left: 1em;
+
+            * {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      &.expanded {
+        .bibliography__header {
+          .bibliography__header__button {
+            &#bibliography__close {
+              visibility: visible;
+            }
+          }
+        }
+        
+        .bibliography__list {
+          visibility: visible;
+        }
+      }
+    }
+
+    @include mobile {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-areas: "definition bibliography";
+
+      .origin__site-title {
+        display: none;
+      }
+    }
+  }
+
+  .origin__contents {
+    margin-top: 1em;
+
+    .origin__blocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+
+      .origin__block__container {
+        padding-top: 100%;
+        position: relative;
+
+        .origin__block {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+
+          background-color: var(--background-color, #FFF);
+          padding: calc(0.5 * var(--margin));
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          .text {
+            text-align: center;
+          }
+        }
       }
     }
   }
