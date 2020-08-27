@@ -120,6 +120,7 @@ a {
   --font-size: 1.8rem;
   --font-size--secondary: 1.5rem;
   --font-size--mobile: 1.6rem;
+  --font-size--mobile--secondary: 1.2rem;
   --line-height: 1.22;
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
@@ -131,11 +132,8 @@ a {
   @media screen and (max-width: 768px) {
     :root {
       --margin: var(--margin--mobile);
-      --font-size: var(--font-size--mobile); } }
-
-.square {
-  width: 100px;
-  height: 100px; }
+      --font-size: var(--font-size--mobile);
+      --font-size--secondary: var(--font-size--mobile--secondary); } }
 
 .highlight, .text a {
   color: var(--highlight-color); }
