@@ -287,5 +287,19 @@ body {
       grid-template-areas: "definition bibliography"; }
       .season--origin .origin__header .origin__site-title {
         display: none; } }
+.season--origin .origin__contents {
+  margin-top: 1em; }
+  .season--origin .origin__contents .origin__blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr)); }
+    .season--origin .origin__contents .origin__blocks .origin__block {
+      background-color: var(--background-color, #FFF);
+      padding: calc(0.5 * var(--margin));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .season--origin .origin__contents .origin__blocks .origin__block .text {
+        text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

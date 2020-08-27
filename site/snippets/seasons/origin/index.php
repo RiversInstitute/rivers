@@ -26,11 +26,20 @@
               <?= $bib->embed(); ?>
             </div>
           </li>
-        <?php endforeach ?>
+        <?php endforeach; ?>
       </ul>
     </div>
   </div>
   <div class="origin__contents">
+    <ul class="origin__blocks">
+      <?php foreach($season->entries()->toStructure() as $entry): ?>
+        <li class="origin__block" style="--background-color: <?= $entry->block_color(); ?>">
+          <div class="text">
+            <?= $entry->title()->kt(); ?>
+          </div>
+        </li>
+      <?php endforeach; ?>
+    </ul>
   </div>
 </div>
 

@@ -1,6 +1,9 @@
 title: Season
 preset: page
 
+pages:
+  template: season_block
+
 num: '{{ page.start_date.toDate("Ymd") }}'
 
 fields:
@@ -25,14 +28,17 @@ fields:
     type: structure
     fields:
       title:
-        type: text
+        type: textarea
+        size: mini
         label: Title
       block_color:
         type: color
         label: Block Color
-      template_slug:
-        type: text
-        label: Template Slug
+      season_block:
+        type: select
+        options: query
+        query: page.children
+        label: Block
   bibliography_item:
     label: Bibliography Item
     type: structure
