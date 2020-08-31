@@ -1,0 +1,13 @@
+title: Sanford Biggers
+preset: page
+num: 0
+
+fields:
+  content:
+    label: Content
+    type: textarea
+    size: large
+  biography:
+    label: Biography
+    type: textarea
+    size: medium
