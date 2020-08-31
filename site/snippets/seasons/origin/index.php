@@ -34,11 +34,13 @@
     <ul class="origin__blocks">
       <?php foreach($season->entries()->toStructure() as $entry): ?>
         <li class="origin__block__container" style="--background-color: <?= $entry->block_color(); ?>">
-          <div class="origin__block">
-            <div class="text">
-              <!-- <?= $entry->title()->kt(); ?> -->
+          <a href="<?=$entry->season_block()->toPage()->url(); ?>">
+            <div class="origin__block">
+              <div class="text">
+                <!-- <?= $entry->title()->kt(); ?> -->
+              </div>
             </div>
-          </div>
+          </a>
         </li>
       <?php endforeach; ?>
     </ul>

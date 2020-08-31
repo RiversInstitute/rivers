@@ -2,7 +2,9 @@ title: Season
 preset: page
 
 pages:
-  template: season_block
+  templates: 
+    - origin__3_harryette_mullen
+    - origin__4_sanford_biggers_codeswitch
 
 num: '{{ page.start_date.toDate("Ymd") }}'
 
