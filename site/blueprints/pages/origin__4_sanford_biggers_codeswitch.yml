@@ -3,7 +3,7 @@ preset: page
 num: 0
 
 fields:
-  content:
+  main_content:
     label: Content
     type: textarea
     size: large
