@@ -1,8 +1,9 @@
 <div class="layout-wrapper--full season--origin">
   <div class="origin__header">
-    <div class="origin__site-title">
-      <a href="<?= $site->url(); ?>"><?= $site->full_title(); ?></a>
-    </div>
+    <a href="<?= $site->url(); ?>" class="origin__site-title">
+      <div class="site-title__text"><?= $site->full_title(); ?></div>
+      <div class="site-title__logo"><?php snippet('rivers_r') ?></div>
+    </a>
     <div class="origin__definition-container expanded" id="origin-container">
       <div class="origin__title" id="origin-title">
         <?= $season->main_content_title(); ?>
