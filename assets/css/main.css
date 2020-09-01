@@ -237,7 +237,17 @@ body {
   grid-column-gap: var(--margin);
   position: relative; }
   .season--origin .origin__header .origin__site-title {
-    grid-area: logo; }
+    grid-area: logo;
+    display: flex;
+    flex-direction: column; }
+    .season--origin .origin__header .origin__site-title .site-title__logo {
+      visibility: hidden; }
+    .season--origin .origin__header .origin__site-title:hover {
+      flex-direction: column-reverse; }
+      .season--origin .origin__header .origin__site-title:hover .site-title__text {
+        visibility: hidden; }
+      .season--origin .origin__header .origin__site-title:hover .site-title__logo {
+        visibility: initial; }
   .season--origin .origin__header .origin__definition-container {
     grid-area: definition; }
     .season--origin .origin__header .origin__definition-container.expanded .origin__definition {

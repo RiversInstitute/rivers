@@ -8,6 +8,23 @@
 
     .origin__site-title {
       grid-area: logo;
+      display: flex;
+      flex-direction: column;
+
+      .site-title__logo {
+        visibility: hidden;
+      }
+
+      &:hover {
+        flex-direction: column-reverse;
+        .site-title__text {
+          visibility: hidden;
+        }
+
+        .site-title__logo {
+          visibility: initial;
+        }
+      }
     }
 
     .origin__definition-container {
