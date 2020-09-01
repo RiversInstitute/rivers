@@ -1,9 +1,7 @@
 .season--origin {
   .origin__header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
-    grid-template-areas: "logo definition bibliography";
-    grid-column-gap: var(--margin);
+    @extend %grid;
+    grid-template-areas: "logo definition definition definition definition bibliography";
     position: relative;
 
     .origin__site-title {
@@ -106,8 +104,7 @@
     }
 
     @include mobile {
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-      grid-template-areas: "definition bibliography";
+      grid-template-areas: "definition definition bibliography";
 
       .origin__site-title {
         display: none;

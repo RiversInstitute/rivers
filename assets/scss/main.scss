@@ -14,6 +14,16 @@
   }
 }
 
+%grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-column-gap: var(--margin);
+
+  @include mobile {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 :root {
   --font-size: 1.8rem;
   --font-size--secondary: 1.5rem;
@@ -44,5 +54,6 @@
 @import "kirbytext.scss";
 @import "home.scss";
 @import "events.scss";
+@import "shop.scss";
 @import "signup.scss";
 @import "seasons/origin.scss";
