@@ -14,6 +14,16 @@
   }
 }
 
+%grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-column-gap: var(--margin);
+
+  @include mobile {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 :root {
   --font-size: 1.8rem;
   --font-size--secondary: 1.5rem;
@@ -28,7 +38,7 @@
 
   --highlight-color: #812991;
   --alert-color: #f00;
-  --main-color: #000;
+  --main-color: #333;
 
   --ticker-width: -100vw;
 
@@ -44,5 +54,6 @@
 @import "kirbytext.scss";
 @import "home.scss";
 @import "events.scss";
+@import "shop.scss";
 @import "signup.scss";
 @import "seasons/origin.scss";

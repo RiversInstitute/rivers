@@ -1,0 +1,40 @@
+title: Item
+preset: page
+
+fields:
+  item_title:
+    label: Full Title
+    type: textarea
+    size: tiny
+    uploads: false
+    buttons:
+      - bold
+      - italic
+      - link
+  price:
+    label: Price
+    type: text
+    width: 1/3
+  purchase_url:
+    label: Purchase URL
+    type: text
+    width: 1/3
+  metadata:
+    label: Metadata
+    type: textarea
+    width: 1/3
+  item_images:
+    label: Images
+    type: files
+  reviews:
+    label: Reviews
+    type: textarea
+    size: medium
+  main_content:
+    label: Content
+    type: textarea
+    size: large
+  credits:
+    label: Credits
+    type: textarea
+    size: medium

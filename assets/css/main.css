@@ -99,7 +99,8 @@ html {
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: var(--line-height); }
+  line-height: var(--line-height);
+  color: var(--main-color); }
 
 ul {
   list-style-type: none; }
@@ -116,6 +117,14 @@ a {
   color: currentColor;
   text-decoration: none; }
 
+.shop__header, .season--origin .origin__header {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-column-gap: var(--margin); }
+  @media screen and (max-width: 768px) {
+    .shop__header, .season--origin .origin__header {
+      grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
 :root {
   --font-size: 1.8rem;
   --font-size--secondary: 1.5rem;
@@ -127,7 +136,7 @@ a {
   --font-family: 'Sabon', serif;
   --highlight-color: #812991;
   --alert-color: #f00;
-  --main-color: #000;
+  --main-color: #333;
   --ticker-width: -100vw; }
   @media screen and (max-width: 768px) {
     :root {
@@ -135,7 +144,7 @@ a {
       --font-size: var(--font-size--mobile);
       --font-size--secondary: var(--font-size--mobile--secondary); } }
 
-.highlight, .text a {
+.highlight, .text a, .shop__header .shop__content, .shop .item .item__reviews {
   color: var(--highlight-color); }
 
 .layout-wrapper {
@@ -221,6 +230,35 @@ body {
 .event-exhibition .listing__content {
   margin-top: 1em; }
 
+.shop__header {
+  grid-template-areas: "title content content content content"; }
+  .shop__header .shop__title {
+    grid-area: title; }
+  .shop__header .shop__content {
+    grid-area: content; }
+  @media screen and (max-width: 768px) {
+    .shop__header {
+      grid-template-areas: "title content content"; } }
+
+.shop {
+  columns: 4;
+  column-gap: var(--margin); }
+  @media screen and (max-width: 768px) {
+    .shop {
+      columns: 1; } }
+  .shop .item {
+    display: contents; }
+    .shop .item div {
+      margin-bottom: 1em; }
+    .shop .item p {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid; }
+    .shop .item .item__credits {
+      font-size: var(--font-size--secondary); }
+    .shop .item .item__metadata {
+      font-size: var(--font-size--secondary); }
+
 .email-signup .embeddable-buttondown-form {
   display: flex; }
   .email-signup .embeddable-buttondown-form input[type="email"] {
@@ -231,10 +269,7 @@ body {
     color: var(--highlight-color); }
 
 .season--origin .origin__header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
-  grid-template-areas: "logo definition bibliography";
-  grid-column-gap: var(--margin);
+  grid-template-areas: "logo definition definition definition bibliography";
   position: relative; }
   .season--origin .origin__header .origin__site-title {
     grid-area: logo;
@@ -266,7 +301,7 @@ body {
     height: calc(100vh - 2 * var(--margin)); }
     .season--origin .origin__header .bibliography .bibliography__header {
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       justify-content: space-between; }
       .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
         cursor: pointer; }
@@ -287,21 +322,23 @@ body {
           .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed * {
             width: 100%;
             height: auto; }
-    .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
-      visibility: visible; }
+    .season--origin .origin__header .bibliography.expanded .bibliography__header {
+      flex-direction: row; }
+      .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
+        visibility: visible; }
     .season--origin .origin__header .bibliography.expanded .bibliography__list {
       visibility: visible; }
   @media screen and (max-width: 768px) {
     .season--origin .origin__header {
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-      grid-template-areas: "definition bibliography"; }
+      grid-template-areas: "definition definition bibliography"; }
       .season--origin .origin__header .origin__site-title {
         display: none; } }
 .season--origin .origin__contents {
   margin-top: 1em; }
   .season--origin .origin__contents .origin__blocks {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr)); }
     .season--origin .origin__contents .origin__blocks .origin__block__container {
       padding-top: 100%;
       position: relative; }

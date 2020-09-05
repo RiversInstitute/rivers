@@ -1,0 +1,52 @@
+.shop__header {
+  @extend %grid;
+  grid-template-areas: "title content content content content";
+
+  .shop__title {
+    grid-area: title;
+  }
+
+  .shop__content {
+    grid-area: content;
+    @extend .highlight;
+  }
+
+  @include mobile {
+    grid-template-areas: "title content content";
+  }
+}
+
+.shop {
+  columns: 4;
+  column-gap: var(--margin);
+
+  @include mobile {
+    columns: 1;
+  }
+
+  .item {
+    display: contents;
+
+    div {
+      margin-bottom: 1em;
+    }
+
+    p {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .item__reviews {
+      @extend .highlight;
+    }
+
+    .item__credits {
+      font-size: var(--font-size--secondary);
+    }
+
+    .item__metadata {
+      font-size: var(--font-size--secondary);
+    }
+  }
+}
