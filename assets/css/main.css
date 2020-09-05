@@ -118,7 +118,7 @@ a {
 
 .shop__header, .season--origin .origin__header {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-column-gap: var(--margin); }
   @media screen and (max-width: 768px) {
     .shop__header, .season--origin .origin__header {
@@ -230,7 +230,7 @@ body {
   margin-top: 1em; }
 
 .shop__header {
-  grid-template-areas: "title content content content content content"; }
+  grid-template-areas: "title content content content content"; }
   .shop__header .shop__title {
     grid-area: title; }
   .shop__header .shop__content {
@@ -268,7 +268,7 @@ body {
     color: var(--highlight-color); }
 
 .season--origin .origin__header {
-  grid-template-areas: "logo definition definition definition definition bibliography";
+  grid-template-areas: "logo definition definition definition bibliography";
   position: relative; }
   .season--origin .origin__header .origin__site-title {
     grid-area: logo;
@@ -300,7 +300,7 @@ body {
     height: calc(100vh - 2 * var(--margin)); }
     .season--origin .origin__header .bibliography .bibliography__header {
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       justify-content: space-between; }
       .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
         cursor: pointer; }
@@ -321,8 +321,10 @@ body {
           .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed * {
             width: 100%;
             height: auto; }
-    .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
-      visibility: visible; }
+    .season--origin .origin__header .bibliography.expanded .bibliography__header {
+      flex-direction: row; }
+      .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
+        visibility: visible; }
     .season--origin .origin__header .bibliography.expanded .bibliography__list {
       visibility: visible; }
   @media screen and (max-width: 768px) {

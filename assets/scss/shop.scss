@@ -1,6 +1,6 @@
 .shop__header {
   @extend %grid;
-  grid-template-areas: "title content content content content content";
+  grid-template-areas: "title content content content content";
 
   .shop__title {
     grid-area: title;
