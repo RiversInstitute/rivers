@@ -61,5 +61,27 @@
     document.getElementById('bibliography__close').addEventListener('click', (e) => {
       document.getElementById('bibliography').classList.remove('expanded');
     });
+
+    const originBlocks = document.querySelectorAll('.origin__block');
+    originBlocks.forEach((el) => {
+      el.addEventListener('mouseenter', (e) => {
+        const bgColor = getComputedStyle(el).backgroundColor;
+        document.body.style.backgroundColor = bgColor;
+        originBlocks.forEach((block) => {
+          if (block !== el) {
+            block.style.visibility = 'hidden';
+          }
+        });
+      });
+
+      el.addEventListener('mouseleave', (e) => {
+        document.body.style.removeProperty('background-color');
+        originBlocks.forEach((block) => {
+          if (block !== el) {
+            block.style.removeProperty('visibility');
+          }
+        });
+      });
+    })
   });
 </script>

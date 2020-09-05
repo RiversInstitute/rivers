@@ -337,7 +337,8 @@ body {
   margin-top: 1em; }
   .season--origin .origin__contents .origin__blocks {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); }
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr)); }
     .season--origin .origin__contents .origin__blocks .origin__block__container {
       padding-top: 100%;
       position: relative; }
