@@ -99,7 +99,8 @@ html {
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  line-height: var(--line-height); }
+  line-height: var(--line-height);
+  color: var(--main-color); }
 
 ul {
   list-style-type: none; }
@@ -135,7 +136,7 @@ a {
   --font-family: 'Sabon', serif;
   --highlight-color: #812991;
   --alert-color: #f00;
-  --main-color: #000;
+  --main-color: #333;
   --ticker-width: -100vw; }
   @media screen and (max-width: 768px) {
     :root {
