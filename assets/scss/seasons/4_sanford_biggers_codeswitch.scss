@@ -20,6 +20,10 @@
     background-color: #fff;
     padding: var(--margin);
 
+    &:first-of-type {
+      display: block;
+    }
+
     .codeswitch__block__upload {
       * {
         width: 100%;

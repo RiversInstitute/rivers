@@ -379,6 +379,8 @@ body {
     top: var(--top);
     background-color: #fff;
     padding: var(--margin); }
+    .codeswitch__content .codeswitch__block:first-of-type {
+      display: block; }
     .codeswitch__content .codeswitch__block .codeswitch__block__upload * {
       width: 100%;
       display: block; }
