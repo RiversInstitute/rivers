@@ -294,6 +294,7 @@ body {
       cursor: pointer; }
     .season--origin .origin__header .origin__definition-container .origin__definition {
       display: none;
+      text-align: justify;
       margin-top: 1em; }
   .season--origin .origin__header .bibliography {
     grid-area: bibliography;
