@@ -31,3 +31,6 @@ fields:
         label: Caption / Text
         type: textarea
         size: medium
+  bio_content:
+    label: Bio
+    type: textarea

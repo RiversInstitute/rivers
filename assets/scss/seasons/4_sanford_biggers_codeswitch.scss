@@ -1,10 +1,12 @@
 .codeswitch {
   background-color: #6aab00;
-  width: 100vw;
-  height: 100vh;
-  cursor: pointer;
+  padding-bottom: initial;
 
   .codeswitch__content {
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+
     .codeswitch__block {
       z-index: 1;
       display: none;
@@ -60,4 +62,6 @@
       }
     }
   }
+
+
 }

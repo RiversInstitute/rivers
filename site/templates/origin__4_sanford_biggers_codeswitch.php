@@ -50,19 +50,38 @@
       </div>
     </li>
   <?php endforeach; ?>
+  <li 
+    class="codeswitch__block codeswitch__bio" 
+    style="
+      --width: <?= rand(20, 30); ?>vw;
+      --left: var(--margin);
+      --top: var(--margin);
+      "
+    >
+    <div class="codeswitch__block__container">
+      <div class="codeswitch__block__text text">
+        <?= $page->bio_content()->kt(); ?>
+      </div>
+    </div>
+  </li>
 </ul>
-
 <script>
   const showBio = () => {
-    console.log('show bio');
+    const bio = document.querySelector('.codeswitch__bio');
+    if (bio.style.display === 'block') {
+      bio.style.display = 'none';
+    } else {
+      bio.style.display = 'block';
+    }
   }
 
   document.addEventListener('DOMContentLoaded', () => {
     const blocks = document.querySelectorAll('.codeswitch__block');
+    const blocksNoBio = document.querySelectorAll('.codeswitch__block:not(.codeswitch__bio)');
     let idx = 1;
-    document.querySelector('.codeswitch').addEventListener('click', () => {
-      if (idx < blocks.length) {
-        blocks[idx].style.display = 'block';
+    document.querySelector('.codeswitch__content').addEventListener('click', () => {
+      if (idx < blocksNoBio.length) {
+        blocksNoBio[idx].style.display = 'block';
         idx++;
       }
     });
