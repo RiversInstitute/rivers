@@ -1,6 +1,6 @@
 .origin {
   padding-bottom: initial;
-  
+
   .season--origin {
     height: 100vh;
     padding: var(--margin);
@@ -50,6 +50,10 @@
           display: none;
           text-align: justify;
           margin-top: 1em;
+          
+          @include mobile {
+            text-align: left;
+          }
         }
       }
 

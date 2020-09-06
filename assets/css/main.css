@@ -304,6 +304,9 @@ body {
           display: none;
           text-align: justify;
           margin-top: 1em; }
+          @media screen and (max-width: 768px) {
+            .origin .season--origin .origin__header .origin__definition-container .origin__definition {
+              text-align: left; } }
       .origin .season--origin .origin__header .bibliography {
         grid-area: bibliography;
         position: absolute;
