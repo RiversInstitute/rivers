@@ -39,4 +39,4 @@
   </script>
 
 </head>
-<body>
+<body class="<?php if (isset($headerClass)) { echo $headerClass; } ?>">
