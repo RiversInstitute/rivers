@@ -120,12 +120,12 @@ a {
 button {
   cursor: pointer; }
 
-.shop__header, .season--origin .origin__header {
+.shop__header, .origin .season--origin .origin__header {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-column-gap: var(--margin); }
   @media screen and (max-width: 768px) {
-    .shop__header, .season--origin .origin__header {
+    .shop__header, .origin .season--origin .origin__header {
       grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 :root {
@@ -271,90 +271,93 @@ body {
     cursor: pointer;
     color: var(--highlight-color); }
 
-.season--origin .origin__header {
-  grid-template-areas: "logo definition definition definition bibliography";
-  position: relative; }
-  .season--origin .origin__header .origin__site-title {
-    grid-area: logo;
+.origin {
+  padding-bottom: initial; }
+  .origin .season--origin {
+    height: 100vh;
+    padding: var(--margin);
+    margin: initial;
     display: flex;
     flex-direction: column; }
-    .season--origin .origin__header .origin__site-title .site-title__logo {
-      visibility: hidden; }
-    .season--origin .origin__header .origin__site-title:hover {
-      flex-direction: column-reverse; }
-      .season--origin .origin__header .origin__site-title:hover .site-title__text {
-        visibility: hidden; }
-      .season--origin .origin__header .origin__site-title:hover .site-title__logo {
-        visibility: initial; }
-  .season--origin .origin__header .origin__definition-container {
-    grid-area: definition; }
-    .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
-      display: block; }
-    .season--origin .origin__header .origin__definition-container .origin__title {
-      cursor: pointer; }
-    .season--origin .origin__header .origin__definition-container .origin__definition {
-      display: none;
-      text-align: justify;
-      margin-top: 1em; }
-  .season--origin .origin__header .bibliography {
-    grid-area: bibliography;
-    position: absolute;
-    left: 0;
-    right: 0;
-    overflow: auto;
-    height: calc(100vh - 2 * var(--margin)); }
-    .season--origin .origin__header .bibliography .bibliography__header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between; }
-      .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
-        cursor: pointer; }
-    .season--origin .origin__header .bibliography .bibliography__list {
-      visibility: hidden;
-      margin-top: 1em; }
-      .season--origin .origin__header .bibliography .bibliography__list .bibliography__item {
-        margin-left: 1em;
-        text-indent: -1em;
-        margin-bottom: 1em;
-        word-wrap: break-word;
-        font-size: var(--font-size--secondary); }
-        .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed {
-          margin-left: 1em; }
-          .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed iframe, .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed div, .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed img {
-            width: 100%;
-            height: auto; }
-          .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed audio {
-            display: block;
-            width: 100%; }
-    .season--origin .origin__header .bibliography.expanded .bibliography__list {
-      visibility: visible; }
-  @media screen and (max-width: 768px) {
-    .season--origin .origin__header {
-      grid-template-areas: "definition definition bibliography"; }
-      .season--origin .origin__header .origin__site-title {
-        display: none; } }
-.season--origin .origin__contents {
-  margin-top: 1em; }
-  .season--origin .origin__contents .origin__blocks {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr)); }
-    .season--origin .origin__contents .origin__blocks .origin__block__container {
-      padding-top: 100%;
+    .origin .season--origin .origin__header {
+      grid-template-areas: "logo definition definition definition bibliography";
       position: relative; }
-      .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--background-color, #FFF);
-        padding: calc(0.5 * var(--margin));
+      .origin .season--origin .origin__header .origin__site-title {
+        grid-area: logo;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around; }
-        .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block .text {
-          text-align: center; }
+        flex-direction: column; }
+        .origin .season--origin .origin__header .origin__site-title .site-title__logo {
+          visibility: hidden; }
+        .origin .season--origin .origin__header .origin__site-title:hover {
+          flex-direction: column-reverse; }
+          .origin .season--origin .origin__header .origin__site-title:hover .site-title__text {
+            visibility: hidden; }
+          .origin .season--origin .origin__header .origin__site-title:hover .site-title__logo {
+            visibility: initial; }
+      .origin .season--origin .origin__header .origin__definition-container {
+        grid-area: definition; }
+        .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
+          display: block; }
+        .origin .season--origin .origin__header .origin__definition-container .origin__title {
+          cursor: pointer; }
+        .origin .season--origin .origin__header .origin__definition-container .origin__definition {
+          display: none;
+          text-align: justify;
+          margin-top: 1em; }
+      .origin .season--origin .origin__header .bibliography {
+        grid-area: bibliography;
+        position: absolute;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        height: calc(100vh - 2 * var(--margin)); }
+        .origin .season--origin .origin__header .bibliography .bibliography__header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; }
+          .origin .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
+            cursor: pointer; }
+        .origin .season--origin .origin__header .bibliography .bibliography__list {
+          visibility: hidden;
+          margin-top: 1em; }
+          .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item {
+            margin-left: 1em;
+            text-indent: -1em;
+            margin-bottom: 1em;
+            word-wrap: break-word;
+            font-size: var(--font-size--secondary); }
+            .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed {
+              margin-left: 1em; }
+              .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed iframe, .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed div, .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed img {
+                width: 100%;
+                height: auto; }
+              .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed audio {
+                display: block;
+                width: 100%; }
+        .origin .season--origin .origin__header .bibliography.expanded .bibliography__list {
+          visibility: visible; }
+      @media screen and (max-width: 768px) {
+        .origin .season--origin .origin__header {
+          grid-template-areas: "definition definition bibliography"; }
+          .origin .season--origin .origin__header .origin__site-title {
+            display: none; } }
+    .origin .season--origin .origin__contents {
+      margin-top: 1em;
+      height: 100%; }
+      .origin .season--origin .origin__contents .origin__blocks {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr)); }
+        .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block {
+          height: 100%;
+          background-color: var(--background-color, #FFF);
+          padding: calc(0.5 * var(--margin));
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around; }
+          .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block .text {
+            text-align: center; }
 
 .codeswitch {
   background-color: #6aab00;
