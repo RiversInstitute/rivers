@@ -117,6 +117,9 @@ a {
   color: currentColor;
   text-decoration: none; }
 
+button {
+  cursor: pointer; }
+
 .shop__header, .season--origin .origin__header {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -319,9 +322,12 @@ body {
         font-size: var(--font-size--secondary); }
         .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed {
           margin-left: 1em; }
-          .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed * {
+          .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed iframe, .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed div, .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed img {
             width: 100%;
             height: auto; }
+          .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed audio {
+            display: block;
+            width: 100%; }
     .season--origin .origin__header .bibliography.expanded .bibliography__header {
       flex-direction: row; }
       .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
@@ -355,5 +361,14 @@ body {
         justify-content: space-around; }
         .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block .text {
           text-align: center; }
+
+.codeswitch__content .codeswitch__block {
+  max-width: 20vw;
+  background-color: #fff;
+  padding: var(--margin); }
+  .codeswitch__content .codeswitch__block .codeswitch__block__text {
+    margin-top: 0.5em; }
+    .codeswitch__content .codeswitch__block .codeswitch__block__text:only-child {
+      margin-top: initial; }
 
 /*# sourceMappingURL=main.css.map */

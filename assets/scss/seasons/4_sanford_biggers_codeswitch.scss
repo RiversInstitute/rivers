@@ -1,0 +1,17 @@
+.codeswitch__content {
+  .codeswitch__block {
+    // display: none;
+    max-width: 20vw;
+    background-color: #fff;
+    padding: var(--margin);
+
+
+    .codeswitch__block__text {
+      margin-top: 0.5em;
+
+      &:only-child {
+        margin-top: initial;
+      }
+    }
+  }
+}

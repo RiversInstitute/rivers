@@ -4,3 +4,4 @@
     <?= $page->main_content()->kt(); ?>
   </div>
 </div>
+<?php snippet('footer'); ?>

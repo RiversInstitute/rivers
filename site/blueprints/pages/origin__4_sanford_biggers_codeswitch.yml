@@ -3,11 +3,31 @@ preset: page
 num: 0
 
 fields:
-  main_content:
-    label: Content
-    type: textarea
-    size: large
-  biography:
-    label: Biography
-    type: textarea
-    size: medium
+  blocks:
+    label: Blocks
+    type: structure
+    fields:
+      block_type:
+        label: Block Type
+        type: select
+        default: upload
+        required: true
+        options:
+          upload: Upload
+          embed: Embed
+          text: Text
+      block_upload:
+        label: Upload
+        type: files
+        max: 1
+        when: 
+          block_type: upload
+      block_embed:
+        label: Embed Code
+        type: text
+        when: 
+          block_type: embed
+      block_text:
+        label: Caption / Text
+        type: textarea
+        size: medium

@@ -80,10 +80,16 @@
           .bibliography__item__embed {
             margin-left: 1em;
 
-            * {
+            iframe, div, img {
               width: 100%;
               height: auto;
             }
+
+            audio {
+              display: block;
+              width: 100%;
+            }
+
           }
         }
       }
@@ -147,3 +153,5 @@
     }
   }
 }
+
+@import "4_sanford_biggers_codeswitch";
