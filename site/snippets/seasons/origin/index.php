@@ -15,7 +15,6 @@
     <div class="bibliography" id="bibliography">
       <div class="bibliography__header">
         <button id="bibliography__title" class="bibliography__header__button">Bibliography</button>
-        <button id="bibliography__close" class="bibliography__header__button bibliography__close">&times;</button>
       </div>
       <ul class="bibliography__list">
         <?php foreach ($season->bibliography_item()->toStructure() as $bib): ?>
@@ -55,11 +54,7 @@
     });
 
     document.getElementById('bibliography__title').addEventListener('click', (e) => {
-      document.getElementById('bibliography').classList.add('expanded');
-    });
-
-    document.getElementById('bibliography__close').addEventListener('click', (e) => {
-      document.getElementById('bibliography').classList.remove('expanded');
+      document.getElementById('bibliography').classList.toggle('expanded');
     });
 
     const originBlocks = document.querySelectorAll('.origin__block');

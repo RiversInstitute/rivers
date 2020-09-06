@@ -58,11 +58,6 @@
 
         .bibliography__header__button {
           cursor: pointer;
-
-          &#bibliography__close {
-            visibility: hidden;
-            font-size: 1.2em;
-          }
         }
       }
 
@@ -97,12 +92,6 @@
       &.expanded {
         .bibliography__header {
           flex-direction: row;
-
-          .bibliography__header__button {
-            &#bibliography__close {
-              visibility: visible;
-            }
-          }
         }
         
         .bibliography__list {

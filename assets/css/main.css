@@ -308,9 +308,6 @@ body {
       justify-content: space-between; }
       .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
         cursor: pointer; }
-        .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button#bibliography__close {
-          visibility: hidden;
-          font-size: 1.2em; }
     .season--origin .origin__header .bibliography .bibliography__list {
       visibility: hidden;
       margin-top: 1em; }
@@ -330,8 +327,6 @@ body {
             width: 100%; }
     .season--origin .origin__header .bibliography.expanded .bibliography__header {
       flex-direction: row; }
-      .season--origin .origin__header .bibliography.expanded .bibliography__header .bibliography__header__button#bibliography__close {
-        visibility: visible; }
     .season--origin .origin__header .bibliography.expanded .bibliography__list {
       visibility: visible; }
   @media screen and (max-width: 768px) {
