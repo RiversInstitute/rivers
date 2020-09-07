@@ -348,6 +348,8 @@ body {
       margin-top: 1em;
       height: 100%; }
       .origin .season--origin .origin__contents .origin__blocks {
+        z-index: 2;
+        position: relative;
         height: 100%;
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -361,6 +363,24 @@ body {
           justify-content: space-around; }
           .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block .text {
             text-align: center; }
+
+.origin__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: var(--margin); }
+  .origin__overlay.active {
+    display: flex; }
+  .origin__overlay .overlay__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%; }
 
 .codeswitch {
   background-color: #6aab00;

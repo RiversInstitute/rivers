@@ -35,7 +35,7 @@
       <?php foreach($season->entries()->toStructure() as $entry): ?>
         <li class="origin__block__container" style="--background-color: <?= $entry->block_color(); ?>">
           <a href="<?=$entry->season_block()->toPage()->url(); ?>">
-            <div class="origin__block">
+            <div class="origin__block" data-hero-src="<?= $entry->hero_image()->toFile()->url(); ?>">
               <div class="text">
                 <!-- <?= $entry->title()->kt(); ?> -->
               </div>
@@ -45,6 +45,9 @@
       <?php endforeach; ?>
     </ul>
   </div>
+</div>
+<div class="origin__overlay">
+  <img src="" class="overlay__image" loading="lazy">
 </div>
 
 <script>
@@ -58,10 +61,16 @@
     });
 
     const originBlocks = document.querySelectorAll('.origin__block');
+    const originOverlay = document.querySelector('.origin__overlay');
+    const originOverlayImage = originOverlay.querySelector('.overlay__image');
+
     originBlocks.forEach((el) => {
       el.addEventListener('mouseenter', (e) => {
         const bgColor = getComputedStyle(el).backgroundColor;
-        document.body.style.backgroundColor = bgColor;
+        originOverlay.style.backgroundColor = bgColor;
+        originOverlay.classList.add('active');
+        originOverlayImage.src = el.dataset.heroSrc;
+        el.style.opacity = 0;
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.visibility = 'hidden';
@@ -70,7 +79,9 @@
       });
 
       el.addEventListener('mouseleave', (e) => {
-        document.body.style.removeProperty('background-color');
+        originOverlay.style.removeProperty('background-color');
+        originOverlay.classList.remove('active');
+        el.style.removeProperty('opacity');
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.removeProperty('visibility');

@@ -33,6 +33,10 @@ fields:
         type: textarea
         size: mini
         label: Title
+      hero_image:
+        label: Preview Image
+        type: files
+        max: 1
       block_color:
         type: color
         label: Block Color
