@@ -124,8 +124,6 @@
       height: 100%;
 
       .origin__blocks {
-        z-index: 2;
-        position: relative;
         height: 100%;
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -133,6 +131,8 @@
 
         .origin__block__container {
           .origin__block {
+            z-index: 2;
+            position: relative;
             height: 100%;
             background-color: var(--background-color, #FFF);
             padding: calc(0.5 * var(--margin));
