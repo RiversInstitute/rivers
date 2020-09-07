@@ -36,6 +36,8 @@
 
       .origin__definition-container {
         grid-area: definition;
+        color: #555;
+        
         &.expanded {
           .origin__definition {
             display: block;

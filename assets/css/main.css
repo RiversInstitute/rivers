@@ -139,7 +139,7 @@ button {
   --font-family: 'Sabon', serif;
   --highlight-color: #812991;
   --alert-color: #f00;
-  --main-color: #333;
+  --main-color: #888;
   --ticker-width: -100vw; }
   @media screen and (max-width: 768px) {
     :root {
@@ -295,7 +295,8 @@ body {
           .origin .season--origin .origin__header .origin__site-title:hover .site-title__logo {
             visibility: initial; }
       .origin .season--origin .origin__header .origin__definition-container {
-        grid-area: definition; }
+        grid-area: definition;
+        color: #555; }
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
