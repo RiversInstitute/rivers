@@ -19,6 +19,7 @@ A couple of things to watch out for:
 
 ----------------------------------------------------------------------------------------------------*/
 @import url(fonts/stylesheet.css);
+@import url(fonts/futura.css);
 input, label, select, button, textarea {
   display: inline-block;
   margin: 0;
@@ -298,7 +299,13 @@ body {
             visibility: initial; }
       .origin .season--origin .origin__header .origin__definition-container {
         grid-area: definition;
-        color: #555; }
+        color: #555;
+        font-family: 'Futura', 'Arial', sans-serif;
+        font-size: 1.5em;
+        font-weight: 500; }
+        @media screen and (max-width: 768px) {
+          .origin .season--origin .origin__header .origin__definition-container {
+            font-size: 1.2em; } }
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
@@ -306,10 +313,13 @@ body {
         .origin .season--origin .origin__header .origin__definition-container .origin__definition {
           display: none;
           text-align: justify;
-          margin-top: 1em; }
+          margin-top: 1em;
+          columns: 3;
+          column-gap: var(--margin);
+          word-break: break-word; }
           @media screen and (max-width: 768px) {
             .origin .season--origin .origin__header .origin__definition-container .origin__definition {
-              text-align: left; } }
+              columns: initial; } }
       .origin .season--origin .origin__header .bibliography {
         grid-area: bibliography;
         position: absolute;

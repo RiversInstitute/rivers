@@ -37,6 +37,15 @@
       .origin__definition-container {
         grid-area: definition;
         color: #555;
+
+
+        font-family: 'Futura', 'Arial', sans-serif;
+        font-size: 1.5em;
+        font-weight: 500;
+
+        @include mobile {
+          font-size: 1.2em;
+        }
         
         &.expanded {
           .origin__definition {
@@ -52,9 +61,12 @@
           display: none;
           text-align: justify;
           margin-top: 1em;
+          columns: 3;
+          column-gap: var(--margin);
+          word-break: break-word;
 
           @include mobile {
-            text-align: left;
+            columns: initial;
           }
         }
       }
