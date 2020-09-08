@@ -1,14 +1,7 @@
 <div class="email-signup">
-  <form
-    action="https://buttondown.email/api/emails/embed-subscribe/rivers"
-    method="post"
-    target="popupwindow"
-    onsubmit="window.open('https://buttondown.email/rivers', 'popupwindow')"
-    class="embeddable-buttondown-form"
-  >
-    <!-- <label for="bd-email">Enter your email</label> -->
-    <input type="email" name="email" id="bd-email" placeholder="Sign up for updates"></input>
-    <input type="hidden" value="1" name="embed"></input>
-    <input type="submit" value="Subscribe"></input>
+  <form class="js-cm-form" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="2BE4EF332AA2E32596E38B640E9056197AE0CB4448721E92B29DD082D9700B89DE6C708756F60293951ECD36038811703A829346DEF94DE1588FDF36927B9432">
+    <input placeholder="Sign up for updates" autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email" id="fieldEmail" maxlength="200" name="cm-yklhdud-yklhdud" required="" type="email">
+    <button type="submit">Subscribe</button>
   </form>
+  <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
 </div>

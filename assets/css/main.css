@@ -266,11 +266,11 @@ body {
     .shop .item .item__metadata {
       font-size: var(--font-size--secondary); }
 
-.email-signup .embeddable-buttondown-form {
+.email-signup .js-cm-form {
   display: flex; }
-  .email-signup .embeddable-buttondown-form input[type="email"] {
+  .email-signup .js-cm-form input[type="email"] {
     border-bottom: 0.1em solid var(--main-color); }
-  .email-signup .embeddable-buttondown-form input[type="submit"] {
+  .email-signup .js-cm-form button[type="submit"] {
     margin-left: calc(0.5 * var(--margin));
     cursor: pointer;
     color: var(--highlight-color); }
