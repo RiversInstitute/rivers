@@ -1,11 +1,14 @@
 <?php snippet('header', ['headerClass' => 'codeswitch']); ?>
-<div class="navigation__container">
-  <nav>
-    <ul class="navigation">
-      <li class="navigation__item highlight"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
-      <li class="navigation__item"><button onclick="showBio()">Sanford Biggers</button></li>
-    </ul>
-  </nav>
+<?php snippet('nav', ['override' => $page->nav_override()->toStructure()]); ?>
+<div class="codeswitch__overlay">
+  <div class="codeswitch__overlay__content">
+    <div class="codeswitch__overlay__title text">
+      <?= $page->overlay_title()->kt(); ?>
+    </div>
+    <div class="codeswitch__overlay__note text">
+      <?= $page->overlay_note()->kt(); ?>
+    </div>
+  </div>
 </div>
 <ul class="codeswitch__content">
   <?php $idx = $page->blocks()->toStructure()->count(); ?>
@@ -13,7 +16,7 @@
     <li 
       class="codeswitch__block"
       style="
-        --width: <?= rand(20, 40); ?>vw;
+        --width: <?= rand(20, 35); ?>vw;
         --order: <?= $idx--; ?>
         "
       >
@@ -48,37 +51,23 @@
       </div>
     </li>
   <?php endforeach; ?>
-  <li 
-    class="codeswitch__block codeswitch__bio" 
-    style="
-      --width: <?= rand(30, 40); ?>vw;
-      --order: -1;
-      "
-    >
-    <div class="codeswitch__block__text text">
-      <?= $page->bio_content()->kt(); ?>
-    </div>
-  </li>
 </ul>
-<script>
-  const showBio = () => {
-    const bio = document.querySelector('.codeswitch__bio');
-    if (bio.style.display === 'block') {
-      bio.style.display = 'none';
-    } else {
-      bio.style.display = 'block';
-    }
-  }
 
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     const blocks = document.querySelectorAll('.codeswitch__block');
-    const blocksNoBio = document.querySelectorAll('.codeswitch__block:not(.codeswitch__bio)');
     let idx = 1;
     document.querySelector('.codeswitch__content').addEventListener('click', () => {
-      if (idx < blocksNoBio.length) {
-        blocksNoBio[idx].style.display = 'block';
+      if (idx < blocks.length) {
+        blocks[idx].style.display = 'block';
         idx++;
       }
+    });
+
+    document.body.style.overflow = 'hidden';
+    document.querySelector('.codeswitch__overlay').addEventListener('click', () => {
+      document.querySelector('.codeswitch__overlay').style.display = 'none';
+      document.body.style.removeProperty('overflow');
     });
   });
 </script>

@@ -3,6 +3,16 @@ preset: page
 num: 0
 
 fields:
+  overlay_title:
+    type: textarea
+    size: small
+    width: 1/2
+    label: Overlay title
+  overlay_note:
+    type: textarea
+    size: small
+    width: 1/2
+    label: Overlay Note
   blocks:
     label: Blocks
     type: structure
@@ -31,6 +41,13 @@ fields:
         label: Caption / Text
         type: textarea
         size: medium
-  bio_content:
-    label: Bio
-    type: textarea
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link

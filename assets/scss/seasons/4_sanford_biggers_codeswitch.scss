@@ -1,8 +1,15 @@
+%codeswitch-primary-fontstack {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
 .codeswitch {
   background-color: #dd6203;
   padding-bottom: initial;
-
+  
   .codeswitch__content {
+    @extend %codeswitch-primary-fontstack;
+
     min-width: 100vw;
     min-height: 100vh;
     margin-bottom: 6em;
@@ -21,6 +28,16 @@
 
       &:first-of-type {
         display: block;
+      }
+
+      &:hover {
+        .codeswitch__block__text:not(:only-child) {
+          visibility: visible;
+        }
+      }
+
+      @include mobile {
+        width: 40vw;
       }
 
       .codeswitch__block__upload {
@@ -52,9 +69,40 @@
         &:only-child {
           margin-top: initial;
         }
+
+        &:not(:only-child) {
+          visibility: hidden;
+
+          @include mobile {
+            visibility: initial;
+          }
+        }
       }
     }
   }
 
+  .codeswitch__overlay {
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(5px);
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
+    &__content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    &__title {
+      @extend %codeswitch-primary-fontstack;
+      font-size: 5em;
+    }
+  }
 }
