@@ -193,10 +193,22 @@
     z-index: 9;
   }
 
+  .overlay__heading {
+    position: fixed;
+    pointer-events: none;
+
+    top: var(--margin);
+    left: var(--margin);
+  }
   .overlay__image {
     object-fit: contain;
     width: 100%;
     height: 100%;
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 }
 @import "4_sanford_biggers_codeswitch";

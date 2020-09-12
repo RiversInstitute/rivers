@@ -56,7 +56,11 @@
             "
           >
           <a href="<?=$entry->season_block()->toPage()->url(); ?>">
-            <div class="origin__block" data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>">
+            <div 
+              class="origin__block" 
+              data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>"
+              data-block-title="<?= $entry->title()->kt(); ?>"
+              >
             </div>
           </a>
         </li>
@@ -65,6 +69,7 @@
   </div>
 </div>
 <div class="origin__overlay">
+  <div class="overlay__heading text"></div>
   <img src="" class="overlay__image" loading="lazy">
 </div>
 
@@ -82,6 +87,7 @@
     const originOverlay = document.querySelector('.origin__overlay');
     const originContents = document.querySelector('.origin__contents');
     const originOverlayImage = originOverlay.querySelector('.overlay__image');
+    const originOverlayHeading = originOverlay.querySelector('.overlay__heading');
 
     originBlocks.forEach((el) => {
       el.addEventListener('mouseenter', (e) => {
@@ -89,7 +95,11 @@
 
         const bgColor = getComputedStyle(el).backgroundColor;
         originOverlay.style.backgroundColor = bgColor;
-        originOverlayImage.src = el.dataset.heroSrc;
+        if (el.dataset.heroSrc.length > 0) {
+          originOverlayImage.src = el.dataset.heroSrc;
+          originOverlayImage.classList.add('active');
+        }
+        originOverlayHeading.innerHTML = el.dataset.blockTitle;
         originOverlay.classList.add('active');
 
         originBlocks.forEach((block) => {
@@ -104,6 +114,7 @@
 
         originOverlay.style.removeProperty('background-color');
         originOverlay.classList.remove('active');
+        originOverlayImage.classList.remove('active');
         
         originBlocks.forEach((block) => {
           if (block !== el) {
