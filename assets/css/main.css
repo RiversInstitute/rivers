@@ -283,12 +283,16 @@ body {
     display: flex;
     flex-direction: column; }
     .origin .season--origin .origin__header {
+      z-index: 5;
       grid-template-areas: "logo definition definition definition bibliography";
-      position: relative; }
+      position: relative;
+      pointer-events: none; }
       .origin .season--origin .origin__header .origin__site-title {
         grid-area: logo;
         display: flex;
         flex-direction: column; }
+        .origin .season--origin .origin__header .origin__site-title .site-title__text {
+          pointer-events: initial; }
         .origin .season--origin .origin__header .origin__site-title .site-title__logo {
           visibility: hidden; }
       .origin .season--origin .origin__header .origin__definition-container {
@@ -303,12 +307,12 @@ body {
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
-          cursor: pointer; }
+          cursor: pointer;
+          pointer-events: initial; }
         .origin .season--origin .origin__header .origin__definition-container .origin__definition {
           display: none;
           text-align: justify;
-          margin-top: 1em;
-          pointer-events: none; }
+          margin-top: 1em; }
       .origin .season--origin .origin__header .bibliography {
         grid-area: bibliography;
         position: absolute;
@@ -319,7 +323,8 @@ body {
         .origin .season--origin .origin__header .bibliography .bibliography__header {
           display: flex;
           flex-direction: row;
-          justify-content: space-between; }
+          justify-content: space-between;
+          pointer-events: initial; }
           .origin .season--origin .origin__header .bibliography .bibliography__header .bibliography__header__button {
             cursor: pointer; }
         .origin .season--origin .origin__header .bibliography .bibliography__list {
@@ -339,8 +344,10 @@ body {
               .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed audio {
                 display: block;
                 width: 100%; }
-        .origin .season--origin .origin__header .bibliography.expanded .bibliography__list {
-          visibility: visible; }
+        .origin .season--origin .origin__header .bibliography.expanded {
+          pointer-events: initial; }
+          .origin .season--origin .origin__header .bibliography.expanded .bibliography__list {
+            visibility: visible; }
       @media screen and (max-width: 768px) {
         .origin .season--origin .origin__header {
           grid-template-areas: "definition definition bibliography"; }
@@ -348,7 +355,7 @@ body {
             display: none; } }
     .origin .season--origin .origin__contents {
       position: fixed;
-      z-index: -1;
+      z-index: 3;
       margin-left: var(--margin);
       margin-right: var(--margin);
       margin-top: 20vh;
@@ -357,6 +364,9 @@ body {
       left: 0;
       bottom: 0;
       right: 0; }
+      .origin .season--origin .origin__contents.active {
+        z-index: 10;
+        opacity: 0; }
       .origin .season--origin .origin__contents .origin__blocks {
         height: 100%;
         display: grid;
@@ -379,13 +389,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   display: none;
   flex-direction: column;
   justify-content: space-around;
   padding: var(--margin); }
   .origin__overlay.active {
-    display: flex; }
+    display: flex;
+    z-index: 9; }
   .origin__overlay .overlay__image {
     object-fit: contain;
     width: 100%;

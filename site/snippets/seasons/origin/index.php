@@ -80,15 +80,18 @@
 
     const originBlocks = document.querySelectorAll('.origin__block');
     const originOverlay = document.querySelector('.origin__overlay');
+    const originContents = document.querySelector('.origin__contents');
     const originOverlayImage = originOverlay.querySelector('.overlay__image');
 
     originBlocks.forEach((el) => {
       el.addEventListener('mouseenter', (e) => {
+        originContents.classList.add('active');
+
         const bgColor = getComputedStyle(el).backgroundColor;
         originOverlay.style.backgroundColor = bgColor;
-        originOverlay.classList.add('active');
         originOverlayImage.src = el.dataset.heroSrc;
-        el.style.opacity = 0;
+        originOverlay.classList.add('active');
+
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.visibility = 'hidden';
@@ -97,9 +100,11 @@
       });
 
       el.addEventListener('mouseleave', (e) => {
+        originContents.classList.remove('active');
+
         originOverlay.style.removeProperty('background-color');
         originOverlay.classList.remove('active');
-        el.style.removeProperty('opacity');
+        
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.removeProperty('visibility');
