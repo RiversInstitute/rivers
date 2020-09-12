@@ -1,7 +1,6 @@
 @import "reset-form-helpers.scss";
 @import "reset.scss";
 @import "fonts/stylesheet.css";
-@import "fonts/futura.css";
 
 @mixin mobile() {
   @media screen and (max-width: 768px) {

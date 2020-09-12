@@ -22,16 +22,16 @@
           visibility: hidden;
         }
 
-        &:hover {
-          flex-direction: column-reverse;
-          .site-title__text {
-            visibility: hidden;
-          }
+        // &:hover {
+        //   flex-direction: column-reverse;
+        //   .site-title__text {
+        //     visibility: hidden;
+        //   }
 
-          .site-title__logo {
-            visibility: initial;
-          }
-        }
+        //   .site-title__logo {
+        //     visibility: initial;
+        //   }
+        // }
       }
 
       .origin__definition-container {
@@ -39,7 +39,7 @@
         color: #555;
 
 
-        font-family: 'Futura', 'Arial', sans-serif;
+        font-family: monospace;
         font-size: 1.5em;
         font-weight: 500;
 
@@ -61,13 +61,6 @@
           display: none;
           text-align: justify;
           margin-top: 1em;
-          columns: 3;
-          column-gap: var(--margin);
-          word-break: break-word;
-
-          @include mobile {
-            columns: initial;
-          }
         }
       }
 

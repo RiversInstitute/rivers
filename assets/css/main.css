@@ -19,7 +19,6 @@ A couple of things to watch out for:
 
 ----------------------------------------------------------------------------------------------------*/
 @import url(fonts/stylesheet.css);
-@import url(fonts/futura.css);
 input, label, select, button, textarea {
   display: inline-block;
   margin: 0;
@@ -167,7 +166,7 @@ body {
   left: 0;
   right: 0;
   background: white;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 40%); }
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 35%); }
   .navigation__container nav {
     padding: var(--margin);
     overflow-x: auto;
@@ -292,16 +291,10 @@ body {
         flex-direction: column; }
         .origin .season--origin .origin__header .origin__site-title .site-title__logo {
           visibility: hidden; }
-        .origin .season--origin .origin__header .origin__site-title:hover {
-          flex-direction: column-reverse; }
-          .origin .season--origin .origin__header .origin__site-title:hover .site-title__text {
-            visibility: hidden; }
-          .origin .season--origin .origin__header .origin__site-title:hover .site-title__logo {
-            visibility: initial; }
       .origin .season--origin .origin__header .origin__definition-container {
         grid-area: definition;
         color: #555;
-        font-family: 'Futura', 'Arial', sans-serif;
+        font-family: monospace;
         font-size: 1.5em;
         font-weight: 500; }
         @media screen and (max-width: 768px) {
@@ -314,13 +307,7 @@ body {
         .origin .season--origin .origin__header .origin__definition-container .origin__definition {
           display: none;
           text-align: justify;
-          margin-top: 1em;
-          columns: 3;
-          column-gap: var(--margin);
-          word-break: break-word; }
-          @media screen and (max-width: 768px) {
-            .origin .season--origin .origin__header .origin__definition-container .origin__definition {
-              columns: initial; } }
+          margin-top: 1em; }
       .origin .season--origin .origin__header .bibliography {
         grid-area: bibliography;
         position: absolute;
