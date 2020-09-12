@@ -37,14 +37,13 @@
       .origin__definition-container {
         grid-area: definition;
         color: #555;
-
-
+      
         font-family: monospace;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 500;
 
         @include mobile {
-          font-size: 1.2em;
+          font-size: 1.1em;
         }
         
         &.expanded {
@@ -61,6 +60,7 @@
           display: none;
           text-align: justify;
           margin-top: 1em;
+          pointer-events: none;
         }
       }
 
@@ -127,8 +127,16 @@
     }
 
     .origin__contents {
-      margin-top: 1em;
-      height: 100%;
+      position: fixed;
+      z-index: -1;
+      margin-left: var(--margin);
+      margin-right: var(--margin);
+      margin-top: 20vh;
+      margin-bottom: calc(4 * var(--margin));
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
 
       .origin__blocks {
         height: 100%;
@@ -137,8 +145,9 @@
         grid-template-rows: repeat(3, minmax(0, 1fr));
 
         .origin__block__container {
+          grid-area: var(--grid-area);
+          
           .origin__block {
-            z-index: 2;
             position: relative;
             height: 100%;
             background-color: var(--background-color, #FFF);
@@ -146,10 +155,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-
-            .text {
-              text-align: center;
-            }
           }
         }
       }

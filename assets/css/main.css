@@ -295,11 +295,11 @@ body {
         grid-area: definition;
         color: #555;
         font-family: monospace;
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-weight: 500; }
         @media screen and (max-width: 768px) {
           .origin .season--origin .origin__header .origin__definition-container {
-            font-size: 1.2em; } }
+            font-size: 1.1em; } }
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
@@ -307,7 +307,8 @@ body {
         .origin .season--origin .origin__header .origin__definition-container .origin__definition {
           display: none;
           text-align: justify;
-          margin-top: 1em; }
+          margin-top: 1em;
+          pointer-events: none; }
       .origin .season--origin .origin__header .bibliography {
         grid-area: bibliography;
         position: absolute;
@@ -346,24 +347,31 @@ body {
           .origin .season--origin .origin__header .origin__site-title {
             display: none; } }
     .origin .season--origin .origin__contents {
-      margin-top: 1em;
-      height: 100%; }
+      position: fixed;
+      z-index: -1;
+      margin-left: var(--margin);
+      margin-right: var(--margin);
+      margin-top: 20vh;
+      margin-bottom: calc(4 * var(--margin));
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; }
       .origin .season--origin .origin__contents .origin__blocks {
         height: 100%;
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
         grid-template-rows: repeat(3, minmax(0, 1fr)); }
-        .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block {
-          z-index: 2;
-          position: relative;
-          height: 100%;
-          background-color: var(--background-color, #FFF);
-          padding: calc(0.5 * var(--margin));
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around; }
-          .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block .text {
-            text-align: center; }
+        .origin .season--origin .origin__contents .origin__blocks .origin__block__container {
+          grid-area: var(--grid-area); }
+          .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block {
+            position: relative;
+            height: 100%;
+            background-color: var(--background-color, #FFF);
+            padding: calc(0.5 * var(--margin));
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around; }
 
 .origin__overlay {
   position: fixed;

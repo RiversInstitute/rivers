@@ -32,13 +32,31 @@
   </div>
   <div class="origin__contents">
     <ul class="origin__blocks">
-      <?php foreach($season->entries()->toStructure() as $entry): ?>
-        <li class="origin__block__container" style="--background-color: <?= $entry->block_color(); ?>">
+      <?php
+        $positions = [];
+        $coords = array_fill(0, 18, 0);
+        foreach($season->entries()->toStructure() as $idx=>$entry) {
+          $x = rand(0, 5);
+          $y = rand(0, 2);
+          while ($coords[$x*$y] != 0) {
+            $x = rand(0,5);
+            $y = rand(0,2);
+          }
+          $coords[$x*$y] = 1;
+          array_push($positions, [$x+1, $y+1]);
+        }
+
+      ?>
+      <?php foreach($season->entries()->toStructure() as $idx=>$entry): ?>
+        <li 
+          class="origin__block__container" 
+          style="
+            --background-color: <?= $entry->block_color(); ?>;
+            --grid-area: <?= $positions[$idx][1]; ?> / <?= $positions[$idx][0]; ?>;
+            "
+          >
           <a href="<?=$entry->season_block()->toPage()->url(); ?>">
-            <div class="origin__block" data-hero-src="<?= $entry->hero_image()->toFile()->url(); ?>">
-              <div class="text">
-                <!-- <?= $entry->title()->kt(); ?> -->
-              </div>
+            <div class="origin__block" data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>">
             </div>
           </a>
         </li>
