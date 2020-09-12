@@ -299,11 +299,11 @@ body {
         grid-area: definition;
         color: #555;
         font-family: monospace;
-        font-size: 1.3em;
+        font-size: 1.2em;
         font-weight: 500; }
         @media screen and (max-width: 768px) {
           .origin .season--origin .origin__header .origin__definition-container {
-            font-size: 1.1em; } }
+            font-size: 1.05em; } }
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
@@ -400,6 +400,7 @@ body {
   .origin__overlay .overlay__heading {
     position: fixed;
     pointer-events: none;
+    color: white;
     top: var(--margin);
     left: var(--margin); }
   .origin__overlay .overlay__image {

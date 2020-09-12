@@ -33,6 +33,7 @@
   <div class="origin__contents">
     <ul class="origin__blocks">
       <?php
+        srand(mktime(0, 0, 0));
         $positions = [];
         $coords = array_fill(0, 18, 0);
         foreach($season->entries()->toStructure() as $idx=>$entry) {
@@ -45,7 +46,7 @@
           $coords[$x*$y] = 1;
           array_push($positions, [$x+1, $y+1]);
         }
-
+        srand();
       ?>
       <?php foreach($season->entries()->toStructure() as $idx=>$entry): ?>
         <li 
