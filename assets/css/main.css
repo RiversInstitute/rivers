@@ -313,6 +313,10 @@ body {
           display: none;
           text-align: justify;
           margin-top: 1em; }
+          @media screen and (max-width: 768px) {
+            .origin .season--origin .origin__header .origin__definition-container .origin__definition {
+              text-align: initial;
+              word-break: break-all; } }
       .origin .season--origin .origin__header .bibliography {
         grid-area: bibliography;
         position: absolute;
@@ -364,6 +368,9 @@ body {
       left: 0;
       bottom: 0;
       right: 0; }
+      @media screen and (max-width: 768px) {
+        .origin .season--origin .origin__contents {
+          margin-top: 55vh; } }
       .origin .season--origin .origin__contents.active {
         z-index: 10;
         opacity: 0; }
@@ -482,5 +489,8 @@ body {
       justify-content: space-around; }
     .codeswitch .codeswitch__overlay__title {
       font-size: 5em; }
+      @media screen and (max-width: 768px) {
+        .codeswitch .codeswitch__overlay__title {
+          font-size: 2em; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -67,6 +67,11 @@
           display: none;
           text-align: justify;
           margin-top: 1em;
+
+          @include mobile {
+            text-align: initial;
+            word-break: break-all;
+          }
         }
       }
 
@@ -146,6 +151,10 @@
       left: 0;
       bottom: 0;
       right: 0;
+
+      @include mobile {
+        margin-top: 55vh;
+      }
 
       &.active {
         z-index: 10;

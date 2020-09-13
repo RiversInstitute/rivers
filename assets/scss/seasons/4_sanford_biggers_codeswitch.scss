@@ -103,6 +103,10 @@
     &__title {
       @extend %codeswitch-primary-fontstack;
       font-size: 5em;
+
+      @include mobile {
+        font-size: 2em;
+      }
     }
   }
 }
