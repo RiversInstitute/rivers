@@ -248,7 +248,8 @@ body {
       .event-exhibition .listing__gallery .listing__gallery__item {
         width: calc(50% - var(--margin)); } }
     .event-exhibition .listing__gallery .listing__gallery__item .listing__gallery__item__caption {
-      margin-top: 1em; }
+      margin-top: 1em;
+      font-size: var(--font-size--secondary); }
 
 .shop__header {
   grid-template-areas: "title content content content content"; }
