@@ -45,3 +45,12 @@ fields:
     label: Content
     type: textarea
     size: large
+  main_gallery:
+    label: Gallery
+    type: files
+    layout: cards
+    info: "{{file.caption}}"
+  main_content_continued:
+    label: Content Continued
+    type: textarea
+    size: large  
