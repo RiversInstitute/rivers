@@ -435,13 +435,15 @@ body {
     .origin__overlay .overlay__image.active {
       display: block; }
 
-.codeswitch .codeswitch__content, .codeswitch .codeswitch__overlay__title {
+.codeswitch .codeswitch__content, .codeswitch .codeswitch__overlay__title, .codeswitch .codeswitch__bio-credits {
   font-family: 'Arial', sans-serif;
   font-weight: bold; }
 
 .codeswitch {
   background-color: #dd6203;
   padding-bottom: initial; }
+  .codeswitch .navigation__container {
+    z-index: 5; }
   .codeswitch .codeswitch__content {
     min-width: 100vw;
     min-height: 100vh;
@@ -486,12 +488,13 @@ body {
             .codeswitch .codeswitch__content .codeswitch__block .codeswitch__block__text:not(:only-child) {
               visibility: initial; } }
   .codeswitch .codeswitch__overlay {
-    position: fixed;
     cursor: pointer;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 10;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     color: black;
@@ -510,6 +513,18 @@ body {
       @media screen and (max-width: 768px) {
         .codeswitch .codeswitch__overlay__title {
           font-size: 2em; } }
+  .codeswitch .codeswitch__bio-credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #dd6203;
+    color: #000;
+    display: none;
+    z-index: 3; }
+    .codeswitch .codeswitch__bio-credits.active {
+      display: block; }
 
 .mullen {
   padding-bottom: initial;
