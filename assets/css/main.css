@@ -365,7 +365,8 @@ body {
                 display: block;
                 width: 100%; }
         .origin .season--origin .origin__header .bibliography.expanded {
-          pointer-events: initial; }
+          pointer-events: initial;
+          background: #fff; }
           .origin .season--origin .origin__header .bibliography.expanded .bibliography__list {
             visibility: visible; }
       @media screen and (max-width: 768px) {
