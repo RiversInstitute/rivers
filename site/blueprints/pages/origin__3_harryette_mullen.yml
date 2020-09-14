@@ -38,6 +38,9 @@ fields:
         type: text
         when:
           block_type: embed
+  additional_content:
+    label: Additional Content
+    type: textarea
   nav_override:
     type: structure
     label: Navigation

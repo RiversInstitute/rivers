@@ -5,24 +5,31 @@
   align-items: center;
   margin-top: var(--margin);
 
+  .mullen__layout-wrapper {
+    display: flex;
+    max-width: 470px;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: auto;
+    color: white;
 
-.mullen__layout-wrapper {
-  display: flex;
-  max-width: 462px;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  margin: auto;
-  color: white;
-
+    @include mobile {
+      margin: var(--margin);
+    }
   }
 
   .poem {
     font-size: var(--font-size);
-    padding-bottom: calc(2 * var(--margin));
+    padding-bottom: calc(5 * var(--margin));
+
+    @include mobile {
+      white-space: nowrap;
+      overflow: auto;
+    }
   }
 
-  .audio{
+  .audio {
     padding-top: calc(1.5 * var(--margin));
     color: white;
     display: flex;
@@ -36,9 +43,9 @@
       z-index: -9;
     }
 
-  .audio__item {
-    padding-bottom: calc(.5 * var(--margin));
-    font-size: var(--font-size--secondary);
+    .audio__item {
+      padding-bottom: calc(.5 * var(--margin));
+      font-size: var(--font-size--secondary);
     }
 
     .audio__caption {
@@ -46,34 +53,20 @@
       padding-bottom: calc(1.5 * var(--margin));
     }
 
-  a {
+    a {
       font-style: italic;
       color: white;
     }
-
   }
 
-  .mullen__bibliography {
+  .mullen__additional {
     padding-top: calc(1.5 * var(--margin));
     padding-bottom: calc(2.5 * var(--margin));
     font-size: var(--font-size--secondary);
-
   }
 
   .poem__citation {
     padding-top: calc(1.5 * var(--margin));
     font-size: var(--font-size--secondary);
-
   }
-
-
-  .mullen__layout-wrapper {
-    width: 470px;
-    }
-
-  @include mobile {
-    max-width: 110px;
-    margin: var(--margin);
-  }
-
-  }
+}
