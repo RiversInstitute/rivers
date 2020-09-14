@@ -56,7 +56,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const blocks = document.querySelectorAll('.codeswitch__block');
-    let idx = 1;
+    let idx = 0;
     document.querySelector('.codeswitch__content').addEventListener('click', () => {
       if (idx < blocks.length) {
         blocks[idx].style.display = 'block';
