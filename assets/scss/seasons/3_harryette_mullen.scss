@@ -1,0 +1,72 @@
+.mullen {
+  padding-bottom: initial;
+  background-color: #224fc7;
+  font-family: 'Times';
+  align-items: center;
+  margin-top: var(--margin);
+
+  .mullen__layout-wrapper {
+    display: flex;
+    max-width: 470px;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: auto;
+    color: white;
+
+    @include mobile {
+      margin: var(--margin);
+    }
+  }
+
+  .poem {
+    font-size: var(--font-size);
+    padding-bottom: calc(5 * var(--margin));
+
+    @include mobile {
+      white-space: nowrap;
+      overflow: auto;
+    }
+  }
+
+  .audio {
+    padding-top: calc(1.5 * var(--margin));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+    .audio__block {
+      text-align: center;
+      margin: 0px;
+      z-index: -9;
+    }
+
+    .audio__item {
+      padding-bottom: calc(.5 * var(--margin));
+      font-size: var(--font-size--secondary);
+    }
+
+    .audio__caption {
+      font-size: var(--font-size--secondary);
+      padding-bottom: calc(1.5 * var(--margin));
+    }
+
+    a {
+      font-style: italic;
+      color: white;
+    }
+  }
+
+  .mullen__additional {
+    padding-top: calc(1.5 * var(--margin));
+    padding-bottom: calc(2.5 * var(--margin));
+    font-size: var(--font-size--secondary);
+  }
+
+  .poem__citation {
+    padding-top: calc(1.5 * var(--margin));
+    font-size: var(--font-size--secondary);
+  }
+}

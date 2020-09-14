@@ -510,4 +510,55 @@ body {
         .codeswitch .codeswitch__overlay__title {
           font-size: 2em; } }
 
+.mullen {
+  padding-bottom: initial;
+  background-color: #224fc7;
+  font-family: 'Times';
+  align-items: center;
+  margin-top: var(--margin); }
+  .mullen .mullen__layout-wrapper {
+    display: flex;
+    max-width: 470px;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: auto;
+    color: white; }
+    @media screen and (max-width: 768px) {
+      .mullen .mullen__layout-wrapper {
+        margin: var(--margin); } }
+  .mullen .poem {
+    font-size: var(--font-size);
+    padding-bottom: calc(5 * var(--margin)); }
+    @media screen and (max-width: 768px) {
+      .mullen .poem {
+        white-space: nowrap;
+        overflow: auto; } }
+  .mullen .audio {
+    padding-top: calc(1.5 * var(--margin));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .mullen .audio .audio__block {
+      text-align: center;
+      margin: 0px;
+      z-index: -9; }
+    .mullen .audio .audio__item {
+      padding-bottom: calc(.5 * var(--margin));
+      font-size: var(--font-size--secondary); }
+    .mullen .audio .audio__caption {
+      font-size: var(--font-size--secondary);
+      padding-bottom: calc(1.5 * var(--margin)); }
+    .mullen .audio a {
+      font-style: italic;
+      color: white; }
+  .mullen .mullen__additional {
+    padding-top: calc(1.5 * var(--margin));
+    padding-bottom: calc(2.5 * var(--margin));
+    font-size: var(--font-size--secondary); }
+  .mullen .poem__citation {
+    padding-top: calc(1.5 * var(--margin));
+    font-size: var(--font-size--secondary); }
+
 /*# sourceMappingURL=main.css.map */

@@ -3,11 +3,51 @@ preset: page
 num: 0
 
 fields:
-  main_content:
-    label: Content
+  poem:
+    label: Poem
     type: textarea
     size: large
-  biography:
-    label: Biography
+  poem_citation:
+    label: Citation
     type: textarea
-    size: medium
+    size: small
+  blocks:
+    label: Files
+    type: structure
+    fields:
+      block_type:
+        label: File Type
+        type: select
+        default: upload
+        required: true
+        options:
+          upload: Upload
+          embed: Embed
+      block_text:
+        label: Caption / Text
+        type: textarea
+        size: small
+      block_upload:
+        label: Upload
+        type: files
+        max: 1
+        when:
+          block_type: upload
+      block_embed:
+        label: Embed Code
+        type: text
+        when:
+          block_type: embed
+  additional_content:
+    label: Additional Content
+    type: textarea
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
