@@ -1,64 +1,52 @@
 <?php snippet('header', ['headerClass' => 'mullen']); ?>
-<div class="navigation__container">
-  <nav>
-    <ul class="navigation">
-      <li class="navigation__item highlight"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
-    </ul>
-  </nav>
-</div>
+<?php snippet('nav', ['override' => $page->nav_override()->toStructure()]); ?>
 
-<div class="layout-wrapper">
+<div class="mullen__layout-wrapper">
 
-
-    <div class="poem">
-    <?= $page->poem()->kt(); ?>
+    <div class="poem text">
+      <?= $page->poem()->kt(); ?>
     </div>
 
 
-    <div class="poem_citation">
-    <?= $page->poem_citation()->kt(); ?>
+    <div class="poem__citation text">
+      <?= $page->poem_citation()->kt(); ?>
     </div>
 
-    <!-- <?php foreach($page->blocks()->toStructure() as $block): ?>
 
-    <div class="audio__caption">
-      <?= $block->block_text()->kt(); ?>
-    </div>
-    <?php endforeach; ?> -->
+  <ul>
+    <div class="audio">
 
-<ul>
-  <div class="audio">
+        <?php foreach($page->blocks()->toStructure() as $block): ?>
 
-      <?php foreach($page->blocks()->toStructure() as $block): ?>
+          <div class="audio__caption text">
+            <?= $block->block_text()->kt(); ?>
+          </div>
 
-        <div class="audio__caption">
-          <?= $block->block_text()->kt(); ?>
+          <?php if ($block->block_type() == 'upload'): ?>
+
+              <?php $blockFile = $block->block_upload()->toFile(); ?>
+
+                <?php if ($blockFile->type() == 'audio'): ?>
+                  <div class="audio__block">
+                  <audio controls>
+                    <source id="myaudio" src="<?= $blockFile->url(); ?>" type="<?= $blockFile->mime(); ?>">
+                  </audio>
+                </div>
+                <?php endif; ?>
+
+          <?php elseif ($block->file_type() == 'embed'): ?>
+              <?= $block->file_embed(); ?>
+
+          <?php endif; ?>
+          <?php endforeach; ?>
         </div>
+    </ul>
 
-        <?php if ($block->block_type() == 'upload'): ?>
+    <div class="mullen__bibliography text">
+        <?= $page->bibliography()->kt(); ?>
+    </div>
 
-            <?php $blockFile = $block->block_upload()->toFile(); ?>
-
-              <?php if ($blockFile->type() == 'audio'): ?>
-                <audio controls>
-                  <source id="myaudio" src="<?= $blockFile->url(); ?>" type="<?= $blockFile->mime(); ?>">
-                </audio>
-              <?php endif; ?>
-
-        <?php elseif ($block->file_type() == 'embed'): ?>
-            <?= $block->file_embed(); ?>
-
-        <?php endif; ?>
-        <?php endforeach; ?>
-      </div>
-  </ul>
-
-  <div class="bib">
-  <?= $page->bibliography()->kt(); ?>
-  </div>
-
-  </div>
-
+</div>
 
 
 <?php snippet('footer'); ?>

@@ -38,7 +38,13 @@ fields:
         type: text
         when:
           block_type: embed
-biography:
-    label: Biography
-    type: textarea
-    size: medium
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
