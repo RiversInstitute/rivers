@@ -1,0 +1,63 @@
+.mullen {
+  padding-bottom: initial;
+  background-color: #224fc7;
+  color: white;
+  font-family: 'Times';
+  align-items: center;
+  margin-top: var(--margin);
+
+
+
+  .layout-wrapper {
+    display: flex;
+    width: 462px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: auto;
+
+
+    @include mobile {
+      width: 415px;
+      margin: auto;
+    }
+  }
+
+
+  .poem {
+    font-size: var(--font-size);
+    padding-bottom: 60px;
+  }
+
+  ul .audio{
+    padding-top: 50px;
+    color: white;
+
+  .audio__item .text {
+    padding-bottom: 10px;
+    font-size: var(--font-size--secondary);
+    }
+
+  a {
+      font-style: italic;
+    }
+  }
+
+  .bib {
+    padding-top: 50px;
+    padding-bottom: 90px;
+    font-size: var(--font-size--secondary);
+  }
+
+  .poem_citation {
+    padding-top: 50px;
+    font-size: var(--font-size--secondary);
+  }
+
+  .audio__caption {
+    font-size: var(--font-size--secondary);
+    padding-bottom: 10px;
+  }
+
+}
