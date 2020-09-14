@@ -505,7 +505,8 @@ body {
       justify-content: space-around; }
     .codeswitch .codeswitch__overlay__title {
       font-size: 5em;
-      font-weight: 900; }
+      font-weight: 900;
+      line-height: 1; }
       @media screen and (max-width: 768px) {
         .codeswitch .codeswitch__overlay__title {
           font-size: 2em; } }

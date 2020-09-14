@@ -101,6 +101,7 @@
       @extend %codeswitch-primary-fontstack;
       font-size: 5em;
       font-weight: 900;
+      line-height: 1;
 
       @include mobile {
         font-size: 2em;
