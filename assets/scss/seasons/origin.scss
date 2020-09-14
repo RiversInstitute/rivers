@@ -43,7 +43,7 @@
       .origin__definition-container {
         grid-area: definition;
         color: #555;
-      
+
         font-family: monospace;
         font-size: 1.2em;
         font-weight: 500;
@@ -51,7 +51,7 @@
         @include mobile {
           font-size: 1.05em;
         }
-        
+
         &.expanded {
           .origin__definition {
             display: block;
@@ -169,7 +169,7 @@
 
         .origin__block__container {
           grid-area: var(--grid-area);
-          
+
           .origin__block {
             position: relative;
             height: 100%;
@@ -222,3 +222,4 @@
   }
 }
 @import "4_sanford_biggers_codeswitch";
+@import "3_harryette_mullen";
