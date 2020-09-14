@@ -100,6 +100,7 @@
     &__title {
       @extend %codeswitch-primary-fontstack;
       font-size: 5em;
+      font-weight: 900;
 
       @include mobile {
         font-size: 2em;
