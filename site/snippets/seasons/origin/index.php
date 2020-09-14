@@ -33,6 +33,7 @@
   <div class="origin__contents">
     <ul class="origin__blocks">
       <?php
+        srand(mktime(0, 0, 0));
         $positions = [];
         $coords = array_fill(0, 18, 0);
         foreach($season->entries()->toStructure() as $idx=>$entry) {
@@ -45,7 +46,7 @@
           $coords[$x*$y] = 1;
           array_push($positions, [$x+1, $y+1]);
         }
-
+        srand();
       ?>
       <?php foreach($season->entries()->toStructure() as $idx=>$entry): ?>
         <li 
@@ -56,7 +57,11 @@
             "
           >
           <a href="<?=$entry->season_block()->toPage()->url(); ?>">
-            <div class="origin__block" data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>">
+            <div 
+              class="origin__block" 
+              data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>"
+              data-block-title="<?= $entry->title()->kt(); ?>"
+              >
             </div>
           </a>
         </li>
@@ -65,6 +70,7 @@
   </div>
 </div>
 <div class="origin__overlay">
+  <div class="overlay__heading text"></div>
   <img src="" class="overlay__image" loading="lazy">
 </div>
 
@@ -80,15 +86,23 @@
 
     const originBlocks = document.querySelectorAll('.origin__block');
     const originOverlay = document.querySelector('.origin__overlay');
+    const originContents = document.querySelector('.origin__contents');
     const originOverlayImage = originOverlay.querySelector('.overlay__image');
+    const originOverlayHeading = originOverlay.querySelector('.overlay__heading');
 
     originBlocks.forEach((el) => {
       el.addEventListener('mouseenter', (e) => {
+        originContents.classList.add('active');
+
         const bgColor = getComputedStyle(el).backgroundColor;
         originOverlay.style.backgroundColor = bgColor;
+        if (el.dataset.heroSrc.length > 0) {
+          originOverlayImage.src = el.dataset.heroSrc;
+          originOverlayImage.classList.add('active');
+        }
+        originOverlayHeading.innerHTML = el.dataset.blockTitle;
         originOverlay.classList.add('active');
-        originOverlayImage.src = el.dataset.heroSrc;
-        el.style.opacity = 0;
+
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.visibility = 'hidden';
@@ -97,9 +111,12 @@
       });
 
       el.addEventListener('mouseleave', (e) => {
+        originContents.classList.remove('active');
+
         originOverlay.style.removeProperty('background-color');
         originOverlay.classList.remove('active');
-        el.style.removeProperty('opacity');
+        originOverlayImage.classList.remove('active');
+        
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.removeProperty('visibility');

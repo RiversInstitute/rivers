@@ -2,6 +2,9 @@
 
 // main menu items
 $items = $pages->listed()->notTemplate('season');
+if (isset($override)) {
+  $items = $override;
+}
 
 ?>
 <div class="navigation__container">
@@ -14,7 +17,7 @@ $items = $pages->listed()->notTemplate('season');
         <li class="navigation__item highlight"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
       <?php endif; ?>
       <?php foreach($items as $item): ?>
-      <li class="navigation__item <?php e($item->isOpen(), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title()->html() ?></a></li>
+      <li class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title()->html() ?></a></li>
       <?php endforeach ?>
     </ul>
   </nav>

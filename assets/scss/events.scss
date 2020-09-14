@@ -31,4 +31,30 @@
   .listing__content {
     margin-top: 1em;
   }
+
+  .listing__gallery {
+    
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: calc(-1 * var(--margin) + 1em);
+    margin-left: calc(-1 * var(--margin));
+    
+    .listing__gallery__item {
+      width: 200px;
+      margin-top: var(--margin);
+      margin-left: var(--margin);
+
+      @include mobile {
+        width: calc(50% - var(--margin));
+      }
+
+      .listing__gallery__item__caption {
+        margin-top: 1em;
+        font-size: var(--font-size--secondary);
+      }
+    }
+  }
 }
