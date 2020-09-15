@@ -251,6 +251,37 @@ body {
       margin-top: 1em;
       font-size: var(--font-size--secondary); }
 
+.partners {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--margin)); }
+  .partners .partners__partner {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    padding-top: var(--margin);
+    padding-bottom: var(--margin);
+    margin-left: var(--margin);
+    width: calc(20% - var(--margin)); }
+    @media screen and (max-width: 768px) {
+      .partners .partners__partner {
+        width: calc(50% - var(--margin)); } }
+    .partners .partners__partner .partner__logo {
+      margin: var(--margin);
+      padding-top: 100%;
+      position: relative; }
+      .partners .partners__partner .partner__logo .partner__logo__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; }
+    .partners .partners__partner .partner__description {
+      color: var(--partner-color); }
+
 .shop__header {
   grid-template-areas: "title content content content content"; }
   .shop__header .shop__title {
