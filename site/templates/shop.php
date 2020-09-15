@@ -15,6 +15,14 @@
         <div class="item__title text">
           <?= $item->item_title()->kt(); ?>
         </div>
+        <?php if ($item->item_images()->toFiles()->isNotEmpty()): ?>
+          <ul class="item__images">
+            <?php $idx = 0; ?>
+            <?php foreach($item->item_images()->toFiles() as $key=>$image): ?>
+              <img class="item__images__image <?php e($idx++ == 0, 'active'); ?>" src="<?= $image->resize(500)->url(); ?>" loading="lazy">
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
         <div class="item__reviews text">
           <?= $item->reviews()->kt(); ?>
         </div>
@@ -34,4 +42,17 @@
     <?php endforeach; ?>
   </ul>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.item__images').forEach((imageContainer) => {
+      imageContainer.addEventListener('click', () => {
+        const images = imageContainer.querySelectorAll('.item__images__image');
+        const activeImage = imageContainer.querySelector('.item__images__image.active');
+        let activeIdx = [].findIndex.call(images, (el) => el === activeImage);
+        images[activeIdx].classList.remove('active');
+        images[(activeIdx + 1) % images.length].classList.add('active');
+      });
+    });
+  });
+</script>
 <?php snippet('footer'); ?>

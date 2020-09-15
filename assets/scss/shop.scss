@@ -34,8 +34,31 @@
       margin-left: initial;
     }
 
-    div {
+    div, ul {
       margin-bottom: 1em;
+    }
+
+    .item__images {
+      position: relative;
+      padding-top: calc(2 / 3 * 100%);
+      cursor: pointer;
+
+      .item__images__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
     }
 
     .item__reviews {
