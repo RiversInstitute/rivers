@@ -364,11 +364,11 @@ body {
         grid-area: definition;
         color: #555;
         font-family: monospace;
-        font-size: 1.2em;
+        font-size: 1.1em;
         font-weight: 500; }
         @media screen and (max-width: 768px) {
           .origin .season--origin .origin__header .origin__definition-container {
-            font-size: 1.05em; } }
+            font-size: 1em; } }
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
