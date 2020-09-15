@@ -16,6 +16,7 @@ tabs:
               - default
               - events
               - shop
+              - partners
       main_2:
         width: 1/2
         sections:
