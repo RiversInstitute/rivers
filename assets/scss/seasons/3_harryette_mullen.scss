@@ -5,6 +5,7 @@
   align-items: center;
   margin-top: var(--margin);
 
+
   .mullen__layout-wrapper {
     display: flex;
     max-width: 470px;
@@ -27,48 +28,38 @@
       white-space: nowrap;
       overflow: auto;
     }
-  }
 
-  .audio {
-    padding-top: calc(1.5 * var(--margin));
-    color: white;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-
-    .audio__block {
-      text-align: center;
-      margin: 0px;
-      z-index: -9;
-    }
-
-    .audio__item {
-      padding-bottom: calc(.5 * var(--margin));
-      font-size: var(--font-size--secondary);
-    }
-
-    .audio__caption {
-      font-size: var(--font-size--secondary);
-      padding-bottom: calc(1.5 * var(--margin));
-    }
-
-    a {
-      font-style: italic;
-      color: white;
-    }
-  }
-
-  .mullen__additional {
-    padding-top: calc(1.5 * var(--margin));
-    padding-bottom: calc(2.5 * var(--margin));
-    font-size: var(--font-size--secondary);
   }
 
   .poem__citation {
-    padding-top: calc(1.5 * var(--margin));
-    font-size: var(--font-size--secondary);
+    padding-bottom: calc(5 * var(--margin));
+
   }
+
+  .audio {
+      z-index: -9;
+
+    .audio__block {
+      margin: 0;
+      text-align: center;
+      display: block;
+
+      }
+
+  }
+
+
+  .audio a {
+    color: white;
+    font-style: italic;
+  }
+
+}
+
+.navigation__container {
+  z-index: 7;
+}
+
 
   .mullen__bio-credits {
 
@@ -77,13 +68,21 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #224fc7;
-    color: #000;
     display: none;
     z-index: 3;
+    color: white;
+    background-color: #224fc7;
+
 
     &.active {
       display: block;
     }
-}
-}
+
+    .bio {
+      padding-bottom: calc(2 * var(--margin));
+    }
+
+    .audio__caption.text {
+      padding-bottom: calc(2 * var(--margin));
+    }
+  }

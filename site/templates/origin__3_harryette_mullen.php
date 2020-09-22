@@ -1,18 +1,11 @@
 <?php snippet('header', ['headerClass' => 'mullen']); ?>
 <?php snippet('nav', ['override' => $page->nav_override()->toStructure()]); ?>
 
-<div class="mullen__layout-wrapper">
-  <div class="poem text">
-    <?= $page->poem()->kt(); ?>
-  </div>
-
-  <div class="poem__citation text">
-    <?= $page->poem_citation()->kt(); ?>
-  </div>
-</div>
-
 <div class="mullen__bio-credits">
-  <div class="layout-wrapper text">
+
+<div class="layout-wrapper">
+
+  <div class="bio">
     <?= $page->bio_credits()->kt(); ?>
   </div>
 
@@ -39,6 +32,20 @@
   </ul>
 
 </div>
+
+</div>
+
+
+<div class="mullen__layout-wrapper">
+  <div class="poem text">
+    <?= $page->poem()->kt(); ?>
+  </div>
+
+  <div class="poem__citation text">
+    <?= $page->poem_citation()->kt(); ?>
+  </div>
+</div>
+
 
 <script>
   document.querySelector('#nav-credits').addEventListener('click', () => {

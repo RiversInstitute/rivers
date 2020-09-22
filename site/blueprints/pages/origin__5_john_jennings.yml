@@ -14,6 +14,11 @@ fields:
       embed:
         type: text
         label: HTML Embed Code
+
+  bio_credits:
+     label: Bio/Credits
+     type: textarea
+
   nav_override:
     type: structure
     label: Navigation

@@ -163,7 +163,7 @@ button {
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
   --font-family: "Sabon", serif;
-  --highlight-color: #812991;
+  --highlight-color: black;
   --alert-color: #f00;
   --main-color: #888;
   --ticker-width: -100vw;
@@ -667,6 +667,20 @@ body {
   position: relative;
   pointer-events: auto;
 }
+.jennings .jennings__bio-credits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 3;
+  color: white;
+  background-color: #6aab00;
+}
+.jennings .jennings__bio-credits.active {
+  display: block;
+}
 
 .codeswitch .codeswitch__bio-credits, .codeswitch .codeswitch__overlay__title, .codeswitch .codeswitch__content {
   font-family: "Arial", sans-serif;
@@ -814,52 +828,45 @@ body {
     overflow: auto;
   }
 }
-.mullen .audio {
-  padding-top: calc(1.5 * var(--margin));
-  color: white;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.mullen .poem__citation {
+  padding-bottom: calc(5 * var(--margin));
 }
-.mullen .audio .audio__block {
-  text-align: center;
-  margin: 0px;
+.mullen .audio {
   z-index: -9;
 }
-.mullen .audio .audio__item {
-  padding-bottom: calc(.5 * var(--margin));
-  font-size: var(--font-size--secondary);
-}
-.mullen .audio .audio__caption {
-  font-size: var(--font-size--secondary);
-  padding-bottom: calc(1.5 * var(--margin));
+.mullen .audio .audio__block {
+  margin: 0;
+  text-align: center;
+  display: block;
 }
 .mullen .audio a {
-  font-style: italic;
   color: white;
+  font-style: italic;
 }
-.mullen .mullen__additional {
-  padding-top: calc(1.5 * var(--margin));
-  padding-bottom: calc(2.5 * var(--margin));
-  font-size: var(--font-size--secondary);
+
+.navigation__container {
+  z-index: 7;
 }
-.mullen .poem__citation {
-  padding-top: calc(1.5 * var(--margin));
-  font-size: var(--font-size--secondary);
-}
-.mullen .mullen__bio-credits {
+
+.mullen__bio-credits {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #224fc7;
-  color: #000;
   display: none;
   z-index: 3;
+  color: white;
+  background-color: #224fc7;
 }
-.mullen .mullen__bio-credits.active {
+.mullen__bio-credits.active {
   display: block;
+}
+.mullen__bio-credits .bio {
+  padding-bottom: calc(2 * var(--margin));
+}
+.mullen__bio-credits .audio__caption.text {
+  padding-bottom: calc(2 * var(--margin));
 }
 
 /*# sourceMappingURL=main.css.map */
