@@ -14,8 +14,8 @@
             <img class="partner__logo__image" loading="lazy" src="<?= $partner->logo()->toFile()->resize(500)->url(); ?>">
           </div>
         </a>
-        <div class="partner__description">
-          <?= $partner->description(); ?>
+        <div class="partner__description text">
+          <?= $partner->description()->kt(); ?>
         </div>
       </li>
     <?php endforeach; ?>
