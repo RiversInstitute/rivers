@@ -69,4 +69,21 @@
     padding-top: calc(1.5 * var(--margin));
     font-size: var(--font-size--secondary);
   }
+
+  .mullen__bio-credits {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #224fc7;
+    color: #000;
+    display: none;
+    z-index: 3;
+
+    &.active {
+      display: block;
+    }
+}
 }

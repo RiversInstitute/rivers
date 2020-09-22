@@ -5,9 +5,17 @@
   <div class="poem text">
     <?= $page->poem()->kt(); ?>
   </div>
+
   <div class="poem__citation text">
     <?= $page->poem_citation()->kt(); ?>
   </div>
+</div>
+
+<div class="mullen__bio-credits">
+  <div class="layout-wrapper text">
+    <?= $page->bio_credits()->kt(); ?>
+  </div>
+
   <ul>
     <?php foreach($page->blocks()->toStructure() as $block): ?>
       <li class="audio">
@@ -29,10 +37,14 @@
       </li>
     <?php endforeach; ?>
   </ul>
-  <div class="mullen__additional text">
-      <?= $page->additional_content()->kt(); ?>
-  </div>
+
 </div>
+
+<script>
+  document.querySelector('#nav-credits').addEventListener('click', () => {
+      document.querySelector('.mullen__bio-credits').classList.toggle('active');
+    });
+</script>
 
 
 <?php snippet('footer'); ?>

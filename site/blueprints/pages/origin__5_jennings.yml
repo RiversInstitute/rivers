@@ -1,0 +1,26 @@
+title: John Jennings
+preset: page
+num: 0
+
+fields:
+  video_item:
+    label: Video
+    type: structure
+    fields:
+      citation:
+        type: textarea
+        size: tiny
+        label: Citation
+      embed:
+        type: text
+        label: HTML Embed Code
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
