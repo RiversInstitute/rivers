@@ -17,7 +17,7 @@ if (isset($override)) {
         <li class="navigation__item highlight"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
       <?php endif; ?>
       <?php foreach($items as $item): ?>
-      <li class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title()->html() ?></a></li>
+      <li id="nav-<?= $item->title()->slug(); ?>" class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title(); ?></a></li>
       <?php endforeach ?>
     </ul>
   </nav>

@@ -15,3 +15,4 @@
   <?php endforeach; ?>
 </ul>
 </div>
+<?php snippet('footer'); ?>

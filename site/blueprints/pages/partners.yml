@@ -1,0 +1,25 @@
+title: Partners
+preset: page
+
+fields:
+  main_content:
+    label: Content
+    type: textarea
+    size: large
+  partners:
+    label: Partners
+    type: structure
+    fields:
+      logo:
+        type: files
+        label: Logo
+        max: 1
+      description:
+        type: textarea
+        label: Description
+      color:
+        type: color
+        label: Color
+      url:
+        type: text
+        label: URL

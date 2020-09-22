@@ -31,6 +31,14 @@
 }
 
 @font-face {
+    font-family: 'Arial';
+    src: url('Arial-Black.woff2') format('woff2'),
+        url('Arial-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'Times';
   src: url('Times-Roman.woff2') format('woff2'),
        url('Times-Roman.woff') format('woff');

@@ -10,6 +10,11 @@
     </div>
   </div>
 </div>
+<div class="codeswitch__bio-credits">
+  <div class="layout-wrapper text">
+    <?= $page->bio_credits()->kt(); ?>
+  </div>
+</div>
 <ul class="codeswitch__content">
   <?php $idx = $page->blocks()->toStructure()->count(); ?>
   <?php foreach($page->blocks()->toStructure() as $block): ?>
@@ -56,11 +61,13 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const blocks = document.querySelectorAll('.codeswitch__block');
-    let idx = 1;
+    let idx = 0;
     document.querySelector('.codeswitch__content').addEventListener('click', () => {
       if (idx < blocks.length) {
         blocks[idx].style.display = 'block';
         idx++;
+      } else {
+        document.querySelector('.codeswitch__bio-credits').classList.add('active');
       }
     });
 
@@ -68,6 +75,10 @@
     document.querySelector('.codeswitch__overlay').addEventListener('click', () => {
       document.querySelector('.codeswitch__overlay').style.display = 'none';
       document.body.style.removeProperty('overflow');
+    });
+
+    document.querySelector('#nav-credits').addEventListener('click', () => {
+      document.querySelector('.codeswitch__bio-credits').classList.toggle('active');
     });
   });
 </script>

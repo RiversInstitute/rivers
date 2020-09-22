@@ -41,6 +41,9 @@ fields:
         label: Caption / Text
         type: textarea
         size: medium
+  bio_credits:
+    type: textarea
+    label: Bio / Credits
   nav_override:
     type: structure
     label: Navigation

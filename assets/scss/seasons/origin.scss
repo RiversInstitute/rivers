@@ -45,11 +45,11 @@
         color: #555;
 
         font-family: monospace;
-        font-size: 1.2em;
+        font-size: 1.1em;
         font-weight: 500;
 
         @include mobile {
-          font-size: 1.05em;
+          font-size: 1em;
         }
 
         &.expanded {
@@ -124,6 +124,7 @@
 
         &.expanded {
           pointer-events: initial;
+          background: #fff;
 
           .bibliography__list {
             visibility: visible;
@@ -221,6 +222,7 @@
     }
   }
 }
+
+@import "5_john_jennings";
 @import "4_sanford_biggers_codeswitch";
 @import "3_harryette_mullen";
-@import "5_jennings";
