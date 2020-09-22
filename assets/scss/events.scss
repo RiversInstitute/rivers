@@ -1,14 +1,24 @@
 .events-exhibitions {
-  columns: 4;
-  column-gap: var(--margin);
-
-  @include mobile {
-    columns: 2;
-  }
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
 
   .listing__list {
-    break-inside: avoid-column;
-    margin-bottom: var(--margin);
+    width: 20%;
+    flex-shrink: 0;
+    margin-left: var(--margin);
+
+    @include mobile {
+      width: 50%;
+    }
+    
+    &:first-of-type {
+      margin-left: initial;
+    }
+
+    div, ul {
+      margin-bottom: 1em;
+    }
 
     .listing__hero {
       margin-bottom: 1em;

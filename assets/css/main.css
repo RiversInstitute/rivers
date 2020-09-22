@@ -221,14 +221,20 @@ body {
   color: var(--link-color); }
 
 .events-exhibitions {
-  columns: 4;
-  column-gap: var(--margin); }
-  @media screen and (max-width: 768px) {
-    .events-exhibitions {
-      columns: 2; } }
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; }
   .events-exhibitions .listing__list {
-    break-inside: avoid-column;
-    margin-bottom: var(--margin); }
+    width: 20%;
+    flex-shrink: 0;
+    margin-left: var(--margin); }
+    @media screen and (max-width: 768px) {
+      .events-exhibitions .listing__list {
+        width: 50%; } }
+    .events-exhibitions .listing__list:first-of-type {
+      margin-left: initial; }
+    .events-exhibitions .listing__list div, .events-exhibitions .listing__list ul {
+      margin-bottom: 1em; }
     .events-exhibitions .listing__list .listing__hero {
       margin-bottom: 1em; }
     .events-exhibitions .listing__list .listing__title {
