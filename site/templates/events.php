@@ -1,7 +1,7 @@
 <?php snippet('header'); ?>
 <?php snippet('nav'); ?>
 <div class="layout-wrapper">
-  <div class="text">
+  <div class="text highlight">
     <?= $page->main_content()->kt(); ?>
   </div>
 </div>

@@ -1,10 +1,7 @@
 <?php snippet('header'); ?>
 <?php snippet('nav'); ?>
-<div class="layout-wrapper--full shop__header">
-  <div class="shop__title">
-    <?= $page->title(); ?>
-  </div>
-  <div class="shop__content text">
+<div class="layout-wrapper">
+  <div class="text highlight">
     <?= $page->main_content()->kt(); ?>
   </div>
 </div>

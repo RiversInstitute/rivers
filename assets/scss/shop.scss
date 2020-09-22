@@ -1,21 +1,3 @@
-.shop__header {
-  @extend %grid;
-  grid-template-areas: "title content content content content";
-
-  .shop__title {
-    grid-area: title;
-  }
-
-  .shop__content {
-    grid-area: content;
-    @extend .highlight;
-  }
-
-  @include mobile {
-    grid-template-areas: "title content content";
-  }
-}
-
 .shop {
   display: flex;
   flex-direction: row;

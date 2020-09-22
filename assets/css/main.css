@@ -120,12 +120,12 @@ a {
 button {
   cursor: pointer; }
 
-.shop__header, .origin .season--origin .origin__header {
+.origin .season--origin .origin__header {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-column-gap: var(--margin); }
   @media screen and (max-width: 768px) {
-    .shop__header, .origin .season--origin .origin__header {
+    .origin .season--origin .origin__header {
       grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 :root {
@@ -148,7 +148,7 @@ button {
       --font-size: var(--font-size--mobile);
       --font-size--secondary: var(--font-size--mobile--secondary); } }
 
-.highlight, .shop__header .shop__content, .shop .item .item__reviews {
+.highlight, .shop .item .item__reviews {
   color: var(--highlight-color); }
 
 .layout-wrapper {
@@ -287,16 +287,6 @@ body {
         object-fit: contain; }
     .partners .partners__partner .partner__description {
       color: var(--partner-color); }
-
-.shop__header {
-  grid-template-areas: "title content content content content"; }
-  .shop__header .shop__title {
-    grid-area: title; }
-  .shop__header .shop__content {
-    grid-area: content; }
-  @media screen and (max-width: 768px) {
-    .shop__header {
-      grid-template-areas: "title content content"; } }
 
 .shop {
   display: flex;
