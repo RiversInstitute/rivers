@@ -140,6 +140,7 @@ button {
   --highlight-color: #812991;
   --alert-color: #f00;
   --main-color: #888;
+  --link-color: #000;
   --ticker-width: -100vw; }
   @media screen and (max-width: 768px) {
     :root {
@@ -147,7 +148,7 @@ button {
       --font-size: var(--font-size--mobile);
       --font-size--secondary: var(--font-size--mobile--secondary); } }
 
-.highlight, .text a, .shop__header .shop__content, .shop .item .item__reviews {
+.highlight, .shop__header .shop__content, .shop .item .item__reviews {
   color: var(--highlight-color); }
 
 .layout-wrapper {
@@ -179,6 +180,8 @@ body {
       .navigation__container nav .navigation .navigation__item {
         padding-right: var(--margin);
         flex-shrink: 0; }
+        .navigation__container nav .navigation .navigation__item.home {
+          color: var(--link-color); }
 
 .event-ticker {
   --width: 100vw;
@@ -214,6 +217,8 @@ body {
   width: 100%; }
 .text *:first-child {
   margin-top: initial; }
+.text a {
+  color: var(--link-color); }
 
 .events-exhibitions {
   columns: 4;
@@ -337,7 +342,7 @@ body {
   .email-signup .js-cm-form button[type="submit"] {
     margin-left: calc(0.5 * var(--margin));
     cursor: pointer;
-    color: var(--highlight-color); }
+    color: var(--link-color); }
 
 .origin {
   padding-bottom: initial; }
