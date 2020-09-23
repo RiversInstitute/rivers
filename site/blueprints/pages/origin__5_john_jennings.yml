@@ -3,9 +3,22 @@ preset: page
 num: 0
 
 fields:
-  video_embed:
-    label: Video Embed
-    type: text
+  video_item:
+    label: Video
+    type: structure
+    fields:
+      citation:
+        type: textarea
+        size: tiny
+        label: Citation
+      embed:
+        type: text
+        label: HTML Embed Code
+
+  bio_credits:
+     label: Bio/Credits
+     type: textarea
+
   nav_override:
     type: structure
     label: Navigation

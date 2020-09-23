@@ -49,16 +49,16 @@
         srand();
       ?>
       <?php foreach($season->entries()->toStructure() as $idx=>$entry): ?>
-        <li 
-          class="origin__block__container" 
+        <li
+          class="origin__block__container"
           style="
             --background-color: <?= $entry->block_color(); ?>;
             --grid-area: <?= $positions[$idx][1]; ?> / <?= $positions[$idx][0]; ?>;
             "
           >
           <a href="<?=$entry->season_block()->toPage()->url(); ?>">
-            <div 
-              class="origin__block" 
+            <div
+              class="origin__block"
               data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>"
               data-block-title="<?= $entry->title()->kt(); ?>"
               >
@@ -116,7 +116,7 @@
         originOverlay.style.removeProperty('background-color');
         originOverlay.classList.remove('active');
         originOverlayImage.classList.remove('active');
-        
+
         originBlocks.forEach((block) => {
           if (block !== el) {
             block.style.removeProperty('visibility');

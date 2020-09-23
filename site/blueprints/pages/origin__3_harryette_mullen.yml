@@ -38,8 +38,8 @@ fields:
         type: text
         when:
           block_type: embed
-  additional_content:
-    label: Additional Content
+  bio_credits:
+    label: Bio/Credits
     type: textarea
   nav_override:
     type: structure

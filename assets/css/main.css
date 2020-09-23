@@ -137,10 +137,9 @@ button {
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
   --font-family: 'Sabon', serif;
-  --highlight-color: #812991;
+  --highlight-color: #000;
   --alert-color: #f00;
   --main-color: #888;
-  --link-color: #000;
   --ticker-width: -100vw; }
   @media screen and (max-width: 768px) {
     :root {
@@ -181,7 +180,7 @@ body {
         padding-right: var(--margin);
         flex-shrink: 0; }
         .navigation__container nav .navigation .navigation__item.home {
-          color: var(--link-color); }
+          color: var(--highlight-color); }
 
 .event-ticker {
   --width: 100vw;
@@ -218,7 +217,7 @@ body {
 .text *:first-child {
   margin-top: initial; }
 .text a {
-  color: var(--link-color); }
+  color: var(--highlight-color); }
 
 .events-exhibitions {
   display: flex;
@@ -338,7 +337,7 @@ body {
   .email-signup .js-cm-form button[type="submit"] {
     margin-left: calc(0.5 * var(--margin));
     cursor: pointer;
-    color: var(--link-color); }
+    color: var(--highlight-color); }
 
 .origin {
   padding-bottom: initial; }
@@ -485,6 +484,65 @@ body {
     .origin__overlay .overlay__image.active {
       display: block; }
 
+.jennings {
+  padding-bottom: initial;
+  background-color: #6aab00;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; }
+  .jennings .jennings_wrapper__horizontal {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 85%;
+    align-content: center;
+    justify-content: center;
+    margin: auto; }
+    @media screen and (max-width: 768px) {
+      .jennings .jennings_wrapper__horizontal {
+        width: 100%; } }
+  .jennings .jennings_wrapper__vertical {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    align-content: center;
+    justify-content: center;
+    margin: auto; }
+    @media screen and (max-width: 768px) {
+      .jennings .jennings_wrapper__vertical {
+        width: 100%; } }
+    .jennings .jennings_wrapper__vertical .video__item__embed {
+      padding-top: 56.25%;
+      position: relative; }
+      .jennings .jennings_wrapper__vertical .video__item__embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -9;
+        object-fit: contain;
+        pointer-events: auto; }
+  .jennings .navigation__container {
+    z-index: 9;
+    pointer-events: auto; }
+  .jennings .jennings__bio-credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 3;
+    color: white;
+    background-color: #6aab00; }
+    .jennings .jennings__bio-credits.active {
+      display: block; }
+
 .codeswitch .codeswitch__content, .codeswitch .codeswitch__overlay__title, .codeswitch .codeswitch__bio-credits {
   font-family: 'Arial', sans-serif;
   font-weight: bold; }
@@ -600,31 +658,34 @@ body {
       .mullen .poem {
         white-space: nowrap;
         overflow: auto; } }
-  .mullen .audio {
-    padding-top: calc(1.5 * var(--margin));
-    color: white;
-    display: flex;
-    flex-direction: column;
-    width: 100%; }
-    .mullen .audio .audio__block {
-      text-align: center;
-      margin: 0px;
-      z-index: -9; }
-    .mullen .audio .audio__item {
-      padding-bottom: calc(.5 * var(--margin));
-      font-size: var(--font-size--secondary); }
-    .mullen .audio .audio__caption {
-      font-size: var(--font-size--secondary);
-      padding-bottom: calc(1.5 * var(--margin)); }
-    .mullen .audio a {
-      font-style: italic;
-      color: white; }
-  .mullen .mullen__additional {
-    padding-top: calc(1.5 * var(--margin));
-    padding-bottom: calc(2.5 * var(--margin));
-    font-size: var(--font-size--secondary); }
   .mullen .poem__citation {
-    padding-top: calc(1.5 * var(--margin));
-    font-size: var(--font-size--secondary); }
+    padding-bottom: calc(5 * var(--margin)); }
+  .mullen .audio {
+    z-index: -9; }
+    .mullen .audio .audio__block {
+      margin: 0;
+      text-align: center;
+      display: block; }
+  .mullen .audio a {
+    color: white;
+    font-style: italic; }
+  .mullen .navigation__container {
+    z-index: 7; }
+  .mullen .mullen__bio-credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 3;
+    color: white;
+    background-color: #224fc7; }
+    .mullen .mullen__bio-credits.active {
+      display: block; }
+    .mullen .mullen__bio-credits .bio {
+      padding-bottom: calc(2 * var(--margin)); }
+    .mullen .mullen__bio-credits .audio__caption.text {
+      padding-bottom: calc(2 * var(--margin)); }
 
 /*# sourceMappingURL=main.css.map */
