@@ -143,6 +143,7 @@ button {
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .origin .season--origin .origin__header, .shop__header {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -153,6 +154,15 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+=======
+.origin .season--origin .origin__header {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-column-gap: var(--margin); }
+  @media screen and (max-width: 768px) {
+    .origin .season--origin .origin__header {
+      grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+>>>>>>> origin/master
 
 :root {
   --font-size: 1.8rem;
@@ -166,6 +176,7 @@ button {
   --highlight-color: black;
   --alert-color: #f00;
   --main-color: #888;
+<<<<<<< HEAD
   --ticker-width: -100vw;
 }
 @media screen and (max-width: 768px) {
@@ -179,6 +190,18 @@ button {
 .highlight, .shop .item .item__reviews, .shop__header .shop__content, .text a {
   color: var(--highlight-color);
 }
+=======
+  --link-color: #000;
+  --ticker-width: -100vw; }
+  @media screen and (max-width: 768px) {
+    :root {
+      --margin: var(--margin--mobile);
+      --font-size: var(--font-size--mobile);
+      --font-size--secondary: var(--font-size--mobile--secondary); } }
+
+.highlight, .shop .item .item__reviews {
+  color: var(--highlight-color); }
+>>>>>>> origin/master
 
 .layout-wrapper {
   margin: var(--margin);
@@ -200,6 +223,7 @@ body {
   left: 0;
   right: 0;
   background: white;
+<<<<<<< HEAD
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 35%);
 }
 .navigation__container nav {
@@ -216,6 +240,22 @@ body {
   padding-right: var(--margin);
   flex-shrink: 0;
 }
+=======
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 35%); }
+  .navigation__container nav {
+    padding: var(--margin);
+    overflow-x: auto;
+    overflow-y: hidden; }
+    .navigation__container nav .navigation {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap; }
+      .navigation__container nav .navigation .navigation__item {
+        padding-right: var(--margin);
+        flex-shrink: 0; }
+        .navigation__container nav .navigation .navigation__item.home {
+          color: var(--link-color); }
+>>>>>>> origin/master
 
 .event-ticker {
   --width: 100vw;
@@ -260,6 +300,7 @@ body {
   width: 100%;
 }
 .text *:first-child {
+<<<<<<< HEAD
   margin-top: initial;
 }
 .events-exhibitions {
@@ -284,6 +325,33 @@ body {
 .events-exhibitions .listing__list .listing__preview {
   margin-top: 1em;
 }
+=======
+  margin-top: initial; }
+.text a {
+  color: var(--link-color); }
+
+.events-exhibitions {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; }
+  .events-exhibitions .listing__list {
+    width: 20%;
+    flex-shrink: 0;
+    margin-left: var(--margin); }
+    @media screen and (max-width: 768px) {
+      .events-exhibitions .listing__list {
+        width: 50%; } }
+    .events-exhibitions .listing__list:first-of-type {
+      margin-left: initial; }
+    .events-exhibitions .listing__list div, .events-exhibitions .listing__list ul {
+      margin-bottom: 1em; }
+    .events-exhibitions .listing__list .listing__hero {
+      margin-bottom: 1em; }
+    .events-exhibitions .listing__list .listing__title {
+      font-weight: bold; }
+    .events-exhibitions .listing__list .listing__preview {
+      margin-top: 1em; }
+>>>>>>> origin/master
 
 .event-exhibition .listing__title {
   font-weight: bold;
@@ -351,6 +419,7 @@ body {
   color: var(--partner-color);
 }
 
+<<<<<<< HEAD
 .shop__header {
   grid-template-areas: "title content content content content";
 }
@@ -366,6 +435,8 @@ body {
   }
 }
 
+=======
+>>>>>>> origin/master
 .shop {
   display: flex;
   flex-direction: row;
@@ -415,6 +486,7 @@ body {
 }
 
 .email-signup .js-cm-form {
+<<<<<<< HEAD
   display: flex;
 }
 .email-signup .js-cm-form input[type=email] {
@@ -425,6 +497,15 @@ body {
   cursor: pointer;
   color: var(--highlight-color);
 }
+=======
+  display: flex; }
+  .email-signup .js-cm-form input[type="email"] {
+    border-bottom: 0.1em solid var(--main-color); }
+  .email-signup .js-cm-form button[type="submit"] {
+    margin-left: calc(0.5 * var(--margin));
+    cursor: pointer;
+    color: var(--link-color); }
+>>>>>>> origin/master
 
 .origin {
   padding-bottom: initial;

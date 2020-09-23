@@ -27,6 +27,6 @@
   }
 
   a {
-    @extend .highlight;
+    color: var(--link-color);
   }
 }

@@ -14,7 +14,7 @@ if (isset($override)) {
   <nav>
     <ul class="navigation">
       <?php if ($page->hide_home_nav() && !$page->hide_home_nav()->toBool()): ?>
-        <li class="navigation__item highlight"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
+        <li class="navigation__item home"><a href="<?= $site->url(); ?>"><?= $site->title(); ?></a></li>
       <?php endif; ?>
       <?php foreach($items as $item): ?>
       <li id="nav-<?= $item->title()->slug(); ?>" class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title(); ?></a></li>
