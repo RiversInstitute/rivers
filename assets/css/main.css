@@ -137,10 +137,9 @@ button {
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
   --font-family: 'Sabon', serif;
-  --highlight-color: black;
+  --highlight-color: #000;
   --alert-color: #f00;
   --main-color: #888;
-  --link-color: #000;
   --ticker-width: -100vw; }
   @media screen and (max-width: 768px) {
     :root {
@@ -181,7 +180,7 @@ body {
         padding-right: var(--margin);
         flex-shrink: 0; }
         .navigation__container nav .navigation .navigation__item.home {
-          color: var(--link-color); }
+          color: var(--highlight-color); }
 
 .event-ticker {
   --width: 100vw;
@@ -218,7 +217,7 @@ body {
 .text *:first-child {
   margin-top: initial; }
 .text a {
-  color: var(--link-color); }
+  color: var(--highlight-color); }
 
 .events-exhibitions {
   display: flex;
@@ -338,7 +337,7 @@ body {
   .email-signup .js-cm-form button[type="submit"] {
     margin-left: calc(0.5 * var(--margin));
     cursor: pointer;
-    color: var(--link-color); }
+    color: var(--highlight-color); }
 
 .origin {
   padding-bottom: initial; }
