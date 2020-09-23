@@ -1,8 +1,25 @@
+.partners__container {
+  @extend .layout-wrapper--full;
+  flex-shrink: 1;
+  height: 40%;
+
+  @include mobile {
+    flex-shrink: initial;
+    height: initial;
+    padding-bottom: calc(2 * var(--margin));
+  }
+}
+
 .partners {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
   margin-left: calc(-1 * var(--margin));
+
+  @include mobile {
+    height: initial;
+  }
 
   .partners__partner {
     border-top: 1px solid var(--main-color);
@@ -11,9 +28,13 @@
     padding-bottom: var(--margin);
     margin-left: var(--margin);
     width: calc(20% - var(--margin));
+    height: 100%;
+    overflow: auto;
 
     @include mobile {
       width: calc(50% - var(--margin));
+      height: initial;
+      overflow: initial;
     }
 
     .partner__logo {

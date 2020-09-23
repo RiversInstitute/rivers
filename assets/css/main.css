@@ -154,11 +154,28 @@ button {
   margin: var(--margin);
   max-width: 700px; }
 
-.layout-wrapper--full {
+.layout-wrapper--full, .partners__container {
   margin: var(--margin); }
 
 body {
   padding-bottom: calc(2 * var(--margin)); }
+  body.no-pad {
+    padding-bottom: initial; }
+
+.height-constrained {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; }
+  @media screen and (max-width: 768px) {
+    .height-constrained {
+      height: initial;
+      overflow: initial;
+      display: initial;
+      flex-direction: initial; } }
+
+.height-100 {
+  height: 100%; }
 
 .navigation__container {
   position: fixed;
@@ -262,21 +279,38 @@ body {
       margin-top: 1em;
       font-size: var(--font-size--secondary); }
 
+.partners__container {
+  flex-shrink: 1;
+  height: 40%; }
+  @media screen and (max-width: 768px) {
+    .partners__container {
+      flex-shrink: initial;
+      height: initial;
+      padding-bottom: calc(2 * var(--margin)); } }
+
 .partners {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
   margin-left: calc(-1 * var(--margin)); }
+  @media screen and (max-width: 768px) {
+    .partners {
+      height: initial; } }
   .partners .partners__partner {
     border-top: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
     padding-top: var(--margin);
     padding-bottom: var(--margin);
     margin-left: var(--margin);
-    width: calc(20% - var(--margin)); }
+    width: calc(20% - var(--margin));
+    height: 100%;
+    overflow: auto; }
     @media screen and (max-width: 768px) {
       .partners .partners__partner {
-        width: calc(50% - var(--margin)); } }
+        width: calc(50% - var(--margin));
+        height: initial;
+        overflow: initial; } }
     .partners .partners__partner .partner__logo {
       margin: var(--margin);
       padding-top: 100%;
@@ -296,14 +330,25 @@ body {
 .shop {
   display: flex;
   flex-direction: row;
-  overflow-x: auto; }
+  overflow-x: auto;
+  height: 100%; }
+  @media screen and (max-width: 768px) {
+    .shop {
+      height: initial;
+      padding-bottom: calc(2 * var(--margin)); } }
   .shop .item {
     width: 20%;
     flex-shrink: 0;
-    margin-left: var(--margin); }
+    margin-left: var(--margin);
+    height: 100%;
+    overflow: auto;
+    padding-bottom: calc(6 * var(--margin)); }
     @media screen and (max-width: 768px) {
       .shop .item {
-        width: 50%; } }
+        width: 50%;
+        height: initial;
+        overflow: initial;
+        padding-bottom: initial; } }
     .shop .item:first-of-type {
       margin-left: initial; }
     .shop .item div, .shop .item ul {
