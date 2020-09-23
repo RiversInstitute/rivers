@@ -3,6 +3,10 @@ preset: page
 num: 0
 
 fields:
+  viewer_images:
+    type: files
+    max: 1
+    label: Viewer Images
   # overlay_title:
   #   type: textarea
   #   size: small

@@ -9,7 +9,7 @@
       showNavigationControl: false,
       tileSources: {
         type: 'image',
-        url:  '<?= $page->image()->url(); ?>'
+        url:  '<?= $page->viewer_images()->toFile()->url(); ?>'
       }
   });
 </script>
