@@ -527,9 +527,8 @@ body {
         z-index: -9;
         object-fit: contain;
         pointer-events: auto; }
-  .jennings nav {
+  .jennings .navigation__container {
     z-index: 9;
-    position: relative;
     pointer-events: auto; }
   .jennings .jennings__bio-credits {
     position: fixed;
