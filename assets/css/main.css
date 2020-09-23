@@ -670,25 +670,23 @@ body {
   .mullen .audio a {
     color: white;
     font-style: italic; }
-
-.navigation__container {
-  z-index: 7; }
-
-.mullen__bio-credits {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  z-index: 3;
-  color: white;
-  background-color: #224fc7; }
-  .mullen__bio-credits.active {
-    display: block; }
-  .mullen__bio-credits .bio {
-    padding-bottom: calc(2 * var(--margin)); }
-  .mullen__bio-credits .audio__caption.text {
-    padding-bottom: calc(2 * var(--margin)); }
+  .mullen .navigation__container {
+    z-index: 7; }
+  .mullen .mullen__bio-credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 3;
+    color: white;
+    background-color: #224fc7; }
+    .mullen .mullen__bio-credits.active {
+      display: block; }
+    .mullen .mullen__bio-credits .bio {
+      padding-bottom: calc(2 * var(--margin)); }
+    .mullen .mullen__bio-credits .audio__caption.text {
+      padding-bottom: calc(2 * var(--margin)); }
 
 /*# sourceMappingURL=main.css.map */

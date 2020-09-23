@@ -54,15 +54,11 @@
     font-style: italic;
   }
 
-}
-
-.navigation__container {
-  z-index: 7;
-}
-
+  .navigation__container {
+    z-index: 7;
+  }
 
   .mullen__bio-credits {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -86,3 +82,4 @@
       padding-bottom: calc(2 * var(--margin));
     }
   }
+}
