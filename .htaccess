@@ -56,6 +56,6 @@ AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
-php_value upload_max_filesize 20M
+php_value upload_max_filesize 30M
 php_value post_max_size 60M
 php_value memory_limit  256M
