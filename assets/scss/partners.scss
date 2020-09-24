@@ -30,6 +30,7 @@
     width: calc(20% - var(--margin));
     height: 100%;
     overflow: auto;
+    padding-right: var(--scrollbar-width); 
 
     @include mobile {
       width: calc(50% - var(--margin));
@@ -39,7 +40,7 @@
 
     .partner__logo {
       margin: var(--margin);
-      padding-top: 100%;
+      padding-top: 66.66%;
       position: relative;
 
       .partner__logo__image {

@@ -136,6 +136,7 @@ button {
   --line-height: 1.22;
   --margin: 3.0rem;
   --margin--mobile: 1.5rem;
+  --scrollbar-width: 1.5rem;
   --font-family: 'Sabon', serif;
   --highlight-color: #000;
   --alert-color: #f00;
@@ -305,7 +306,8 @@ body {
     margin-left: var(--margin);
     width: calc(20% - var(--margin));
     height: 100%;
-    overflow: auto; }
+    overflow: auto;
+    padding-right: var(--scrollbar-width); }
     @media screen and (max-width: 768px) {
       .partners .partners__partner {
         width: calc(50% - var(--margin));
@@ -313,7 +315,7 @@ body {
         overflow: initial; } }
     .partners .partners__partner .partner__logo {
       margin: var(--margin);
-      padding-top: 100%;
+      padding-top: 66.66%;
       position: relative; }
       .partners .partners__partner .partner__logo .partner__logo__image {
         position: absolute;
@@ -342,7 +344,9 @@ body {
     margin-left: var(--margin);
     height: 100%;
     overflow: auto;
-    padding-bottom: calc(6 * var(--margin)); }
+    padding-bottom: calc(6 * var(--margin));
+    padding-right: var(--scrollbar-width);
+    margin-right: calc(-1 * var(--scrollbar-width)); }
     @media screen and (max-width: 768px) {
       .shop .item {
         width: 50%;
