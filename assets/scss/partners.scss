@@ -1,7 +1,7 @@
 .partners__container {
   @extend .layout-wrapper--full;
   flex-shrink: 1;
-  height: 40%;
+  height: 50%;
 
   @include mobile {
     flex-shrink: initial;
