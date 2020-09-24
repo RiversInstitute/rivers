@@ -421,7 +421,8 @@ body {
         line-height: 1.46; }
         @media screen and (max-width: 768px) {
           .origin .season--origin .origin__header .origin__definition-container {
-            font-size: 1em; } }
+            font-size: 1em;
+            line-height: 1.22; } }
         .origin .season--origin .origin__header .origin__definition-container.expanded .origin__definition {
           display: block; }
         .origin .season--origin .origin__header .origin__definition-container .origin__title {
