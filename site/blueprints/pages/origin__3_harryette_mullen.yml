@@ -3,6 +3,10 @@ preset: page
 num: 0
 
 fields:
+  poem_title:
+    label: Poem Title
+    type: textarea
+    size: small
   poem:
     label: Poem
     type: textarea
