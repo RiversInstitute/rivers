@@ -31,7 +31,7 @@
             <?= $item->credits()->kt(); ?>
           </div>
           <div class="item__price">
-            <?= $item->price(); ?>
+              <?= $item->price(); ?> <?php if ($item->purchase_url()->isNotEmpty()): ?><a class="highlight" href="<?= $item->purchase_url(); ?>">Purchase &#8599;</a><?php endif; ?>
           </div>
           <div class="item__metadata text">
             <?= $item->metadata()->kt(); ?>

@@ -1,8 +1,8 @@
 <?php snippet('header', ['headerClass' => 'no-pad']); ?>
 <?php snippet('nav'); ?>
 <div class="height-constrained">
-  <div class="layout-wrapper">
-    <div class="text">
+  <div class="layout-wrapper--full">
+    <div class="text col-2">
       <?= $page->main_content()->kt(); ?>
     </div>
   </div>

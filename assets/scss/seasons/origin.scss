@@ -47,9 +47,11 @@
         font-family: monospace;
         font-size: 1.1em;
         font-weight: 500;
+        line-height: 1.46;
 
         @include mobile {
           font-size: 1em;
+          line-height: 1.22;
         }
 
         &.expanded {
@@ -65,7 +67,6 @@
 
         .origin__definition {
           display: none;
-          text-align: justify;
           margin-top: 1em;
 
           @include mobile {
