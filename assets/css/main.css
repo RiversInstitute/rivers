@@ -667,7 +667,8 @@ body {
         white-space: nowrap;
         overflow: auto; } }
   .mullen .poem__title {
-    padding-bottom: calc(3 * var(--margin)); }
+    padding-bottom: calc(3 * var(--margin));
+    cursor: pointer; }
   .mullen .poem__citation {
     padding-bottom: calc(2.5 * var(--margin));
     font-size: var(--font-size--secondary); }
