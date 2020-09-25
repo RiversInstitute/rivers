@@ -89,6 +89,8 @@
     bottom: 0;
     display: none;
     z-index: 3;
+    overflow: auto;
+    padding-bottom: calc(3 * var(--margin));
     color: white;
     background-color: #224fc7;
 

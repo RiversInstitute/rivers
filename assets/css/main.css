@@ -589,6 +589,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
+    padding-bottom: calc(3 * var(--margin));
     display: none;
     z-index: 3;
     color: white;
@@ -627,6 +629,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: auto;
+    padding-bottom: calc(3 * var(--margin));
     background-color: #dd6203;
     color: #000;
     display: none;
@@ -691,6 +695,8 @@ body {
   bottom: 0;
   display: none;
   z-index: 3;
+  overflow: auto;
+  padding-bottom: calc(3 * var(--margin));
   color: white;
   background-color: #224fc7; }
   .mullen__bio-credits.active {
