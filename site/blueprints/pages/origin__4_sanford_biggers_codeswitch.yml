@@ -5,8 +5,11 @@ num: 0
 fields:
   viewer_images:
     type: files
-    max: 1
     label: Viewer Images
+  codeswitch_audio:
+    type: files
+    label: Audio
+    max: 1
   # overlay_title:
   #   type: textarea
   #   size: small
