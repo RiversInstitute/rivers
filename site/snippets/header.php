@@ -39,4 +39,4 @@
   </script>
 
 </head>
-<body class="<?php if (isset($headerClass)) { echo $headerClass; } ?>">
+<body class="<?php if (isset($headerClass)) { echo $headerClass; } ?>" onunload="">
