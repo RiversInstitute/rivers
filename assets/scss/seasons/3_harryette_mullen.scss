@@ -20,6 +20,14 @@
     }
   }
 
+  .hidden {
+    display: none;
+
+    &.expanded {
+      display: block;
+    }
+  }
+
   .poem {
     font-size: var(--font-size);
     padding-bottom: calc(5 * var(--margin));
@@ -27,27 +35,42 @@
     @include mobile {
       white-space: nowrap;
       overflow: auto;
-    }
 
+    }
+  }
+  .poem__title {
+    padding-bottom: calc(3 * var(--margin));
   }
 
   .poem__citation {
-    padding-bottom: calc(5 * var(--margin));
 
+    padding-bottom: calc(2.5 * var(--margin));
+    font-size: var(--font-size--secondary);
   }
 
+
+
   .audio {
-      z-index: -9;
+
+      padding-bottom: calc(3 * var(--margin));
+      font-size: var(--font-size--secondary);
+
 
     .audio__block {
       margin: 0;
-      text-align: center;
-      display: block;
+      text-align: left;
+      z-index: -9;
+      padding-bottom: calc(.5 * var(--margin));
+      // display: block;
 
       }
 
-  }
+      .audio__caption.text {
+        // padding-bottom: calc(5 * var(--margin));
+      }
+    }
 
+  }
 
   .audio a {
     color: white;
@@ -70,6 +93,7 @@
     background-color: #224fc7;
 
 
+
     &.active {
       display: block;
     }
@@ -78,8 +102,4 @@
       padding-bottom: calc(2 * var(--margin));
     }
 
-    .audio__caption.text {
-      padding-bottom: calc(2 * var(--margin));
-    }
-  }
 }

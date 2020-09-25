@@ -619,6 +619,10 @@ body {
     @media screen and (max-width: 768px) {
       .mullen .mullen__layout-wrapper {
         margin: var(--margin); } }
+  .mullen .hidden {
+    display: none; }
+    .mullen .hidden.expanded {
+      display: block; }
   .mullen .poem {
     font-size: var(--font-size);
     padding-bottom: calc(5 * var(--margin)); }
@@ -626,34 +630,40 @@ body {
       .mullen .poem {
         white-space: nowrap;
         overflow: auto; } }
+  .mullen .poem__title {
+    padding-bottom: calc(3 * var(--margin)); }
   .mullen .poem__citation {
-    padding-bottom: calc(5 * var(--margin)); }
+    padding-bottom: calc(2.5 * var(--margin));
+    font-size: var(--font-size--secondary); }
   .mullen .audio {
-    z-index: -9; }
+    padding-bottom: calc(3 * var(--margin));
+    font-size: var(--font-size--secondary); }
     .mullen .audio .audio__block {
       margin: 0;
-      text-align: center;
-      display: block; }
-  .mullen .audio a {
-    color: white;
-    font-style: italic; }
-  .mullen .navigation__container {
-    z-index: 7; }
-  .mullen .mullen__bio-credits {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-    z-index: 3;
-    color: white;
-    background-color: #224fc7; }
-    .mullen .mullen__bio-credits.active {
-      display: block; }
-    .mullen .mullen__bio-credits .bio {
-      padding-bottom: calc(2 * var(--margin)); }
-    .mullen .mullen__bio-credits .audio__caption.text {
-      padding-bottom: calc(2 * var(--margin)); }
+      text-align: left;
+      z-index: -9;
+      padding-bottom: calc(.5 * var(--margin)); }
+
+.audio a {
+  color: white;
+  font-style: italic; }
+
+.navigation__container {
+  z-index: 7; }
+
+.mullen__bio-credits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 3;
+  color: white;
+  background-color: #224fc7; }
+  .mullen__bio-credits.active {
+    display: block; }
+  .mullen__bio-credits .bio {
+    padding-bottom: calc(2 * var(--margin)); }
 
 /*# sourceMappingURL=main.css.map */
