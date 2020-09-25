@@ -632,7 +632,7 @@ body {
     overflow: auto;
     padding-bottom: calc(3 * var(--margin));
     background-color: #dd6203;
-    color: #000;
+    color: #fff;
     display: none;
     z-index: 3; }
     .codeswitch .codeswitch__bio-credits.active {
