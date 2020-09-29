@@ -47,10 +47,12 @@
 
   document.querySelector('#nav-credits').addEventListener('click', () => {
     document.querySelector('.codeswitch__bio-credits').classList.toggle('active');
+    document.querySelector('.codeswitch__tutorial').classList.remove('active');
   });
 
   document.querySelector('#nav-how-to').addEventListener('click', () => {
     document.querySelector('.codeswitch__tutorial').classList.toggle('active');
+    document.querySelector('.codeswitch__bio-credits').classList.remove('active');
   });
 
   document.querySelector('#nav-play').addEventListener('click', () => {
