@@ -458,6 +458,9 @@ body {
             margin-bottom: 1em;
             word-wrap: break-word;
             font-size: var(--font-size--secondary); }
+            .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item:first-of-type {
+              text-indent: initial;
+              margin-left: initial; }
             .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed {
               margin-left: 1em; }
               .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed iframe, .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed div, .origin .season--origin .origin__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed img {
