@@ -22,7 +22,7 @@
 </div>
 
 <script>
-  document.querySelector('#nav-credits').addEventListener('click', () => {
+  document.querySelector('#nav-about').addEventListener('click', () => {
       document.querySelector('.jennings__bio-credits').classList.toggle('active');
     });
 </script>

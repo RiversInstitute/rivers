@@ -55,7 +55,7 @@
 
 
 <script>
-  document.querySelector('#nav-credits').addEventListener('click', () => {
+  document.querySelector('#nav-about').addEventListener('click', () => {
       document.querySelector('.mullen__bio-credits').classList.toggle('active');
     });
 

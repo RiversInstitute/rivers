@@ -51,9 +51,9 @@ fields:
   bio_credits:
     type: textarea
     label: Bio / Credits
-  how_to:
-    type: textarea
-    label: How To
+  # how_to:
+  #   type: textarea
+  #   label: How To
   nav_override:
     type: structure
     label: Navigation

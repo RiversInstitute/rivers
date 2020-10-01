@@ -5,11 +5,6 @@
     <?= $page->bio_credits()->kt(); ?>
   </div>
 </div>
-<div class="codeswitch__tutorial">
-  <div class="layout-wrapper text">
-    <?= $page->how_to()->kt(); ?>
-  </div>
-</div>
 <div class="codeswitch__audio">
   <audio id="codeswitchAudio">
     <?php $audio = $page->codeswitch_audio()->toFile(); ?>
@@ -45,14 +40,8 @@
     });
   });
 
-  document.querySelector('#nav-credits').addEventListener('click', () => {
+  document.querySelector('#nav-about').addEventListener('click', () => {
     document.querySelector('.codeswitch__bio-credits').classList.toggle('active');
-    document.querySelector('.codeswitch__tutorial').classList.remove('active');
-  });
-
-  document.querySelector('#nav-how-to').addEventListener('click', () => {
-    document.querySelector('.codeswitch__tutorial').classList.toggle('active');
-    document.querySelector('.codeswitch__bio-credits').classList.remove('active');
   });
 
   document.querySelector('#nav-play').addEventListener('click', () => {
