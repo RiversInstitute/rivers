@@ -81,7 +81,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        overflow: auto;
+        overflow: hidden;
         height: calc(100vh - 2 * var(--margin));
 
         .bibliography__header {
@@ -131,6 +131,7 @@
         &.expanded {
           pointer-events: initial;
           background: #fff;
+          overflow: auto;
 
           .bibliography__list {
             visibility: visible;

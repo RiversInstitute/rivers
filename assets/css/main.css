@@ -440,7 +440,7 @@ body {
         position: absolute;
         left: 0;
         right: 0;
-        overflow: auto;
+        overflow: hidden;
         height: calc(100vh - 2 * var(--margin)); }
         .origin .season--origin .origin__header .bibliography .bibliography__header {
           display: flex;
@@ -471,7 +471,8 @@ body {
                 width: 100%; }
         .origin .season--origin .origin__header .bibliography.expanded {
           pointer-events: initial;
-          background: #fff; }
+          background: #fff;
+          overflow: auto; }
           .origin .season--origin .origin__header .bibliography.expanded .bibliography__list {
             visibility: visible; }
       @media screen and (max-width: 768px) {
