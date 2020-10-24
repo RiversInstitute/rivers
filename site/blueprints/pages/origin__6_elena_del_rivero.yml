@@ -15,10 +15,10 @@ fields:
         type: textarea
         size: tiny
         label: Caption
-      slug:
+      id:
         type: text
-        label: Slug
-        help: Cards can be linked to this image using the slug.
+        label: ID
+        help: Cards can be linked to this image using the ID. Should always be prefixed with image-
   text_items:
     label: Text Cards
     type: structure
@@ -27,6 +27,8 @@ fields:
         type: textarea
         size: big
         label: Text
+        help:
+          To link to an image with ID "image-rivero", create a link prefixed by a hashtag such as "#image-rivero".
 
   bio_credits:
      label: Bio/Credits
