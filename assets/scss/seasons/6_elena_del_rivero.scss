@@ -1,0 +1,206 @@
+.rivero {
+  // overflow: hidden;
+  padding-bottom: initial;
+
+  --rivero-margin: 1.5rem;
+  --font-size-caption: 1.6rem;
+  --font-size-primary: 1.8rem;
+  --font-size-secondary: 1.8rem;
+  --highlight-color: #888;
+
+  @include mobile {
+    --rivero-margin: 1.0rem;
+    --font-size-caption: 1.4rem;
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.6rem;
+  }
+
+  .navigation__container {
+    background-color: white;
+  }
+
+  .rivero__wrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    width: 100vw;
+    height: calc(100vh - 8rem);
+
+    @include mobile {
+      height: calc(100vh - 5rem);
+    }
+
+    .numbers__image {
+      color: black;
+      position: absolute;
+      z-index: 5;
+      top: var(--rivero-margin);
+      left: var(--rivero-margin);
+
+      .numers__image__list {
+        display: flex;
+
+        .numbers__image__item {
+          margin-left: 0.5em;
+          font-size: var(--font-size-secondary);
+
+          &.active {
+            color: white;
+          }
+
+          &:first-of-type {
+            margin-left: initial;
+          }
+        }
+      }
+    }
+
+    .image__list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -5;
+
+      .image__item {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &.active {
+          display: block;
+        }
+
+        .image__item__image {
+          height:100%;
+          width:100%;
+          object-fit: cover;
+        }
+
+        .image__item__caption {
+          bottom: 0;
+          left: 0;
+          margin: var(--rivero-margin);
+          position: absolute;
+          font-size: var(--font-size-caption);
+          color: white;
+          width: 50%;
+
+          @include mobile {
+            width: 75%;
+          }
+        }
+      }
+    }
+
+    .text__container {
+      background: white;
+      display: flex;
+      flex-direction: column;
+      z-index: 0;
+      margin: auto;
+      padding: var(--rivero-margin);
+      width: 100vw;
+      max-width: 600px;
+      height: 400px;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      @include mobile {
+        height: 50vh;
+        margin: var(--margin);
+      }
+
+      .text__container__numbers {
+        color: black;
+        z-index: 5;
+        top: var(--rivero-margin);
+        left: var(--rivero-margin);
+        margin-bottom: calc(1 * var(--rivero-margin));
+        display: flex;
+
+        .text__container__number__item {
+          margin-left: 0.5em;
+          font-size: var(--font-size-secondary);
+          color: #888;
+
+          &.active {
+            color: black;
+          }
+
+          &:first-child {
+            margin-left: initial;
+          }
+        }
+      }
+
+      .text__container__text {
+        min-height: 0;
+
+        .text__item {
+          font-size: var(--font-size-primary);
+          color: black;
+          display: none;
+          overflow: scroll;
+          height: 100%;
+
+          &.active {
+            display: block;
+          }
+        }
+
+        .text {
+          sup {
+            font-size: .5em;
+            margin-left: .5em;
+          }
+
+          blockquote {
+            padding-left: 3em;
+            padding-right: 3em;
+          }
+        }
+      }
+    }
+
+    .text__container__toggle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: var(--rivero-margin);
+
+      .text__container__toggle__button {
+        font-size: var(--font-size-secondary);
+        color: #888;
+        &.active {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .rivero__bio-credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-bottom: calc(3 * var(--rivero-margin));
+    display: none;
+    z-index: 3;
+    color: white;
+    background-color: #6aab00;
+
+    &.active {
+      display: block;
+    }
+  }
+}

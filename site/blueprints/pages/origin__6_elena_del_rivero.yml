@@ -1,0 +1,46 @@
+title: Elena del Rivero
+preset: page
+num: 0
+
+fields:
+  image_items:
+    label: Images
+    type: structure
+    fields:
+      image_file:
+        type: files
+        label: Image
+        max: 1
+      caption:
+        type: textarea
+        size: tiny
+        label: Caption
+      id:
+        type: text
+        label: ID
+        help: Cards can be linked to this image using the ID. Should always be prefixed with image-
+  text_items:
+    label: Text Cards
+    type: structure
+    fields:
+      text:
+        type: textarea
+        size: big
+        label: Text
+        help:
+          To link to an image with ID "image-rivero", create a link prefixed by a hashtag such as "#image-rivero".
+
+  bio_credits:
+     label: Bio/Credits
+     type: textarea
+
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
