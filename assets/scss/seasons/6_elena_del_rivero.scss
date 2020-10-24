@@ -142,6 +142,8 @@
 
       .text__container__text {
         min-height: 0;
+        display: flex;
+        flex-direction: column;
 
         .text__item {
           font-size: var(--font-size-primary);
