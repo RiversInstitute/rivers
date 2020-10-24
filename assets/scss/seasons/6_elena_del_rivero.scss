@@ -99,7 +99,6 @@
 
     .text__container {
       background: white;
-      display: flex;
       flex-direction: column;
       z-index: 0;
       margin: auto;
@@ -110,7 +109,7 @@
       display: none;
 
       &.active {
-        display: block;
+        display: flex;
       }
 
       @include mobile {
