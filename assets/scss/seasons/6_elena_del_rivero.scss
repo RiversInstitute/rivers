@@ -119,6 +119,7 @@
 
       .text__container__numbers {
         color: black;
+        flex-shrink: 0;
         z-index: 5;
         top: var(--rivero-margin);
         left: var(--rivero-margin);
@@ -143,6 +144,7 @@
       .text__container__text {
         min-height: 0;
         display: flex;
+        flex-grow: 1;
         flex-direction: column;
 
         .text__item {

@@ -629,6 +629,7 @@ body {
           margin: var(--margin); } }
       .rivero .rivero__wrapper .text__container .text__container__numbers {
         color: black;
+        flex-shrink: 0;
         z-index: 5;
         top: var(--rivero-margin);
         left: var(--rivero-margin);
@@ -645,6 +646,7 @@ body {
       .rivero .rivero__wrapper .text__container .text__container__text {
         min-height: 0;
         display: flex;
+        flex-grow: 1;
         flex-direction: column; }
         .rivero .rivero__wrapper .text__container .text__container__text .text__item {
           font-size: var(--font-size-primary);
