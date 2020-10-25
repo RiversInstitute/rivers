@@ -559,15 +559,18 @@ body {
     z-index: 100; }
   .rivero .rivero__wrapper {
     display: flex;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8rem;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    width: 100vw;
-    height: calc(100vh - 8rem); }
+    width: 100vw; }
     @media screen and (max-width: 768px) {
       .rivero .rivero__wrapper {
-        height: calc(100vh - 5rem); } }
+        bottom: 5rem; } }
     .rivero .rivero__wrapper .numbers__image {
       color: black;
       position: absolute;

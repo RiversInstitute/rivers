@@ -22,15 +22,18 @@
 
   .rivero__wrapper {
     display: flex;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8rem;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
     width: 100vw;
-    height: calc(100vh - 8rem);
 
     @include mobile {
-      height: calc(100vh - 5rem);
+      bottom: 5rem;
     }
 
     .numbers__image {
@@ -234,7 +237,7 @@
       @include mobile {
         --col-count: 2;
       }
-      
+
       .installation__image__item {
         margin-left: var(--ii-margin);
         margin-top: var(--ii-margin);
