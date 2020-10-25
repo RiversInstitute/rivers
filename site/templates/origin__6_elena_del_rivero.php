@@ -9,8 +9,25 @@
   </div>
 </div>
 
-<div class="rivero__wrapper">
+<div class="rivero__installation">
+  <ul class="installation__images">
+    <?php $images = $page->installation_images()->toStructure(); ?>
+    <?php foreach($images as $image): ?>
+      <li class="installation__image__item">
+        <img
+          src="<?= $image->installation_image()->toFile()->resize(2000)->url(); ?>"
+          loading="lazy"
+          class="installation__image__item__image"
+          >
+        <div class="installation__image__item__location text">
+          <?= $image->location()->kt() ?>
+        </div>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+</div>
 
+<div class="rivero__wrapper">
   <div class="numbers__image">
     <ul class="numers__image__list">
       <?php $number = $page->image_items()->toStructure()->count(); ?>
@@ -108,6 +125,10 @@
 
   document.querySelector('#nav-about').addEventListener('click', () => {
     document.querySelector('.rivero__bio-credits').classList.toggle('active');
+  });
+
+  document.querySelector('#nav-installation').addEventListener('click', () => {
+    document.querySelector('.rivero__installation').classList.toggle('active');
   });
 </script>
 <?php snippet('footer'); ?>

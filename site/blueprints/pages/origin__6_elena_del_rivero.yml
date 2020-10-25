@@ -29,7 +29,18 @@ fields:
         label: Text
         help:
           To link to an image with ID "image-rivero", create a link prefixed by a hashtag such as "#image-rivero".
-
+  installation_images:
+    label: Installation Images
+    type: structure
+    fields:
+      installation_image:
+        type: files
+        label: Image
+        max: 1
+      location:
+        type: textarea
+        size: tiny
+        label: Location
   bio_credits:
      label: Bio/Credits
      type: textarea
