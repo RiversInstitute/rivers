@@ -45,17 +45,18 @@
 
       .numers__image__list {
         display: flex;
+        flex-wrap: wrap;
 
         .numbers__image__item {
-          margin-left: 0.5em;
+          margin-right: 0.5em;
           font-size: var(--font-size-secondary);
 
           &.active {
             color: white;
           }
 
-          &:first-of-type {
-            margin-left: initial;
+          &:last-of-type {
+            margin-right: initial;
           }
         }
       }
@@ -129,9 +130,10 @@
         left: var(--rivero-margin);
         margin-bottom: calc(1 * var(--rivero-margin));
         display: flex;
+        flex-wrap: wrap;
 
         .text__container__number__item {
-          margin-left: 0.5em;
+          margin-right: 0.5em;
           font-size: var(--font-size-secondary);
           color: #888;
 
@@ -139,8 +141,8 @@
             color: black;
           }
 
-          &:first-child {
-            margin-left: initial;
+          &:last-of-type {
+            margin-right: initial;
           }
         }
       }
