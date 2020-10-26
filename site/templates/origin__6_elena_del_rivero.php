@@ -138,10 +138,12 @@
 
   document.querySelector('#nav-about').addEventListener('click', () => {
     document.querySelector('.rivero__bio-credits').classList.toggle('active');
+    document.querySelector('.rivero__installation').classList.remove('active');
   });
 
   document.querySelector('#nav-installation').addEventListener('click', () => {
     document.querySelector('.rivero__installation').classList.toggle('active');
+    document.querySelector('.rivero__bio-credits').classList.remove('active');
   });
 </script>
 <?php snippet('footer'); ?>
