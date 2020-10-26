@@ -81,7 +81,7 @@
   </div>
 
   <div class="text__container__toggle">
-    <button class="text__container__toggle__button active" onClick="toggleText()">Close Notes</button>
+    <button class="text__container__toggle__button active" onClick="toggleText()">Close notes</button>
   </div>
 </div>
 
