@@ -79,17 +79,24 @@
         <?php endforeach; ?>
     </ul>
   </div>
-  
+
   <div class="text__container__toggle">
-    <button class="text__container__toggle__button active" onClick="toggleText()">T</button>
+    <button class="text__container__toggle__button active" onClick="toggleText()">Close Notes</button>
   </div>
 </div>
 
 <script>
   function toggleText() {
     document.querySelector('.text__container').classList.toggle('active');
-    document.querySelector('.text__container__toggle__button').classList.toggle('active');
+      var togButton = document.querySelector('.text__container__toggle__button');
+      togButton.classList.toggle('active');
+      if(togButton.innerHTML === "Close Notes") {
+	       togButton.innerHTML = "Open Notes";
+      } else {
+	  	  togButton.innerHTML = "Close Notes";
+      }
   }
+
 
   function setActiveImage(idx) {
     const images = document.querySelectorAll('.image__item');
@@ -118,7 +125,7 @@
   document.querySelectorAll('a[href*="image"]').forEach((link) => {
     link.addEventListener('click', () => {
       const imageId = link.getAttribute('href');
-      const image = document.querySelector(imageId); 
+      const image = document.querySelector(imageId);
       setActiveImage(getIndexOfImage(image));
     });
   });

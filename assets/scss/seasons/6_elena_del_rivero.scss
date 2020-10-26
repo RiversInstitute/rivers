@@ -7,6 +7,7 @@
   --font-size-primary: 1.8rem;
   --font-size-secondary: 1.8rem;
   --highlight-color: #888;
+  --highlight-color-text: #fe019a;
 
   @include mobile {
     --rivero-margin: 1.0rem;
@@ -163,6 +164,10 @@
           &.active {
             display: block;
           }
+
+          a {
+            color: var(--highlight-color-text);
+          }
         }
 
         .text {
@@ -206,7 +211,7 @@
     display: none;
     z-index: 50;
     color: white;
-    background-color: #50b0dd;
+    background-color: #fe019a;
 
     &.active {
       display: block;
