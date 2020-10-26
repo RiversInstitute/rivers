@@ -64,7 +64,13 @@
       <?php for ($i = 0; $i < $number; $i++): ?>
         <li class="text__container__number__item <?php e($i == 0, 'active'); ?>">
           <button onclick="setActiveCard(<?= $i ?>)">
-            <?= $i+1 . "." ?>
+            <?php 
+              $idx = $i . ".";
+              if ($idx == $number - 1) {
+                $idx = "*";
+              }
+            ?>
+            <?= $idx; ?>
           </button>
         </li>
       <?php endfor; ?>
