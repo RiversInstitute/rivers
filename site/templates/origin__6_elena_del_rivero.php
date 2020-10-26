@@ -90,10 +90,10 @@
     document.querySelector('.text__container').classList.toggle('active');
     const toggleButton = document.querySelector('.text__container__toggle__button');
         toggleButton.classList.toggle('active');
-        if(toggleButton.innerHTML === "Close Notes") {
-  	       toggleButton.innerHTML = "Open Notes";
+        if(toggleButton.innerHTML === "Close notes") {
+  	       toggleButton.innerHTML = "Open notes";
         } else {
-  	  	  toggleButton.innerHTML = "Close Notes";
+  	  	  toggleButton.innerHTML = "Close notes";
         }
   }
 
