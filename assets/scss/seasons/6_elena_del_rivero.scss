@@ -165,15 +165,17 @@
             display: block;
           }
 
-          a {
-            color: var(--highlight-color-text);
-          }
+
         }
 
         .text {
           sup {
             font-size: .5em;
             margin-left: .5em;
+          }
+
+          a {
+            color: var(--highlight-color-text);
           }
 
           blockquote {

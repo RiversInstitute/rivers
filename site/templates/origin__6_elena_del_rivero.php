@@ -88,13 +88,13 @@
 <script>
   function toggleText() {
     document.querySelector('.text__container').classList.toggle('active');
-      var togButton = document.querySelector('.text__container__toggle__button');
-      togButton.classList.toggle('active');
-      if(togButton.innerHTML === "Close Notes") {
-	       togButton.innerHTML = "Open Notes";
-      } else {
-	  	  togButton.innerHTML = "Close Notes";
-      }
+    const toggleButton = document.querySelector('.text__container__toggle__button');
+        toggleButton.classList.toggle('active');
+        if(toggleButton.innerHTML === "Close Notes") {
+  	       toggleButton.innerHTML = "Open Notes";
+        } else {
+  	  	  toggleButton.innerHTML = "Close Notes";
+        }
   }
 
 
