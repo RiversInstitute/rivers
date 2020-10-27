@@ -53,6 +53,10 @@
     let looper = null;
 
     const startLooper = () => {
+      if (looper) {
+        return;
+      }
+      
       looper = setInterval(() => {
         images[activeIdx]?.classList.remove('active');
         activeIdx = (activeIdx + 1) % images.length;
