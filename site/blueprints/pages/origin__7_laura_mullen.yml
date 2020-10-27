@@ -1,0 +1,29 @@
+title: Laura Mullen
+preset: page
+num: 0
+
+fields:
+  laura_mullen_audio:
+    type: files
+    label: Audio
+    max: 1
+  archival_images:
+    type: files
+    label: Archival Images
+  notes:
+    type: textarea
+    size: medium
+    label: Notes
+  bio_credits:
+   label: Bio/Credits
+   type: textarea
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
