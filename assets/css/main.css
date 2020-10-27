@@ -681,6 +681,129 @@ body.no-pad {
   display: block;
 }
 
+.laura-mullen .laura-mullen-image__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8rem;
+}
+@media screen and (max-width: 768px) {
+  .laura-mullen .laura-mullen-image__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical {
+    bottom: 5rem;
+  }
+}
+
+.laura-mullen {
+  padding-bottom: initial;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  --transition-duration: 5s;
+}
+.laura-mullen .navigation__container {
+  --highlight-color: white;
+  background: black;
+}
+.laura-mullen .laura-mullen-audio__wrapper__vertical {
+  display: flex;
+  margin: auto;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition: all var(--transition-duration) linear;
+}
+.laura-mullen .laura-mullen-audio__wrapper__vertical.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.laura-mullen .laura-mullen-audio__wrapper__vertical .laura-mullen-audio__wrapper__horizontal {
+  display: flex;
+  margin: auto;
+}
+.laura-mullen .laura-mullen-audio__wrapper__vertical .laura-mullen-audio__wrapper__horizontal .laura-mullen-audio__audio {
+  pointer-events: none;
+  margin: auto;
+  filter: contrast(100%) invert(100%);
+}
+.laura-mullen .laura-mullen-image__wrapper {
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-duration) linear;
+  transition-delay: var(--transition-duration);
+  cursor: pointer;
+}
+.laura-mullen .laura-mullen-image__wrapper.visible {
+  visibility: visible;
+  opacity: 1;
+}
+.laura-mullen .laura-mullen-image__wrapper .laura-mullen__images {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+}
+.laura-mullen .laura-mullen-image__wrapper .laura-mullen__images .laura-mullen__images__image {
+  position: absolute;
+  margin: var(--margin);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+.laura-mullen .laura-mullen-image__wrapper .laura-mullen__images .laura-mullen__images__image.active {
+  visibility: visible;
+  opacity: 1;
+}
+.laura-mullen .laura-mullen-image__wrapper .laura-mullen__images .laura-mullen__images__image .laura-mullen__images__image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.laura-mullen .laura-mullen__bio-credits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: calc(3 * var(--margin));
+  display: none;
+  z-index: 3;
+  color: white;
+  background-color: black;
+}
+.laura-mullen .laura-mullen__bio-credits.active {
+  display: block;
+}
+.laura-mullen .laura-mullen__notes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: calc(3 * var(--margin));
+  z-index: 3;
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  transition: all 250ms linear;
+}
+.laura-mullen .laura-mullen__notes.active {
+  visibility: visible;
+  opacity: 1;
+  backdrop-filter: blur(50px);
+}
+.laura-mullen .laura-mullen__notes .laura-mullen__notes__note {
+  margin: auto;
+  max-width: 600px;
+}
+
 .rivero {
   padding-bottom: initial;
   --rivero-margin: 1.5rem;
@@ -833,12 +956,12 @@ body.no-pad {
 .rivero .rivero__wrapper .text__container .text__container__text .text__item.active {
   display: block;
 }
-.rivero .rivero__wrapper .text__container .text__container__text .text__item a {
-  color: var(--highlight-color-text);
-}
 .rivero .rivero__wrapper .text__container .text__container__text .text sup {
   font-size: 0.5em;
   margin-left: 0.5em;
+}
+.rivero .rivero__wrapper .text__container .text__container__text .text a {
+  color: var(--highlight-color-text);
 }
 .rivero .rivero__wrapper .text__container .text__container__text .text blockquote {
   padding-left: 3em;

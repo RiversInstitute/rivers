@@ -7,6 +7,7 @@ pages:
     - origin__4_sanford_biggers_codeswitch
     - origin__5_john_jennings
     - origin__6_elena_del_rivero
+    - origin__7_laura_mullen
 
 num: '{{ page.start_date.toDate("Ymd") }}'
 
