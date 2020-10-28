@@ -639,6 +639,7 @@ body {
     .laura-mullen .laura-mullen__notes.active {
       visibility: visible;
       opacity: 1;
+      -webkit-backdrop-filter: blur(50px);
       backdrop-filter: blur(50px); }
     .laura-mullen .laura-mullen__notes .laura-mullen__notes__note {
       margin: auto;
