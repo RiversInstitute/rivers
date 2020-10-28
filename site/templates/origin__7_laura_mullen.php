@@ -56,11 +56,12 @@
       if (looper) {
         return;
       }
-      
+
       looper = setInterval(() => {
-        images[activeIdx]?.classList.remove('active');
+        if (activeIdx >= 0)
+          images[activeIdx].classList.remove('active');
         activeIdx = (activeIdx + 1) % images.length;
-        images[activeIdx]?.classList.add('active');
+        images[activeIdx].classList.add('active');
       }, 1000);
     };
 
@@ -75,15 +76,17 @@
       startLooper();
     });
 
-    imageContainer.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        startLooper();
-      } else {
-        audio.pause();
-        pauseLooper();
-      }
-    })
+    audioContainer.addEventListener('transitionend', () => {
+      imageContainer.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          startLooper();
+        } else {
+          audio.pause();
+          pauseLooper();
+        }
+      });
+    });
 
     document.querySelector('#nav-about').addEventListener('click', () => {
       document.querySelector('.laura-mullen__bio-credits').classList.toggle('active');
