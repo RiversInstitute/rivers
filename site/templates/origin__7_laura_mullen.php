@@ -67,16 +67,10 @@
 
     const pauseLooper = () => {
       clearInterval(looper);
+      looper = null;
     }
 
-    audioContainer.addEventListener('click', () => {
-      audio.play();
-      audioContainer.classList.add('hidden');
-      imageContainer.classList.add('visible');
-      startLooper();
-    });
-
-    audioContainer.addEventListener('transitionend', () => {
+    const addImageContainerInteraction = () => {
       imageContainer.addEventListener('click', () => {
         if (audio.paused) {
           audio.play();
@@ -86,6 +80,14 @@
           pauseLooper();
         }
       });
+    }
+
+    audioContainer.addEventListener('click', () => {
+      audio.play();
+      audioContainer.classList.add('hidden');
+      imageContainer.classList.add('visible');
+      startLooper();
+      setTimeout(addImageContainerInteraction, 5000);
     });
 
     document.querySelector('#nav-about').addEventListener('click', () => {
