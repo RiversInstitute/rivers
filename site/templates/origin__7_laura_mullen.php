@@ -60,7 +60,7 @@
       looper = setInterval(() => {
         if (images[activeIdx] === keyImage) {
           loopCount++;
-          if (loopCount > numLoops) {
+          if (loopCount >= numLoops) {
             clearInterval(looper);
             looper = null;
             return;
