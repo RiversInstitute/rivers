@@ -99,6 +99,8 @@
       document.querySelector('.laura-mullen__notes').classList.toggle('active');
       document.querySelector('.laura-mullen__bio-credits').classList.remove('active');
     });
+
+    document.querySelector('#nav-score a').target= '_blank';
   });
 </script>
 <?php snippet('footer'); ?>
