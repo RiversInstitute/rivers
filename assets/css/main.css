@@ -645,6 +645,8 @@ body {
     .laura-mullen .laura-mullen__notes .laura-mullen__notes__note {
       margin: auto;
       max-width: 600px; }
+      .laura-mullen .laura-mullen__notes .laura-mullen__notes__note a {
+        color: #888; }
 
 .rivero {
   padding-bottom: initial;
