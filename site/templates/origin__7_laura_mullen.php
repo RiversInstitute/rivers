@@ -16,9 +16,8 @@
     <?php foreach($page->archival_images()->toStructure() as $archival): ?>
       <li class="laura-mullen__images__image <?php e($archival->key_image()->toBool(), 'active'); ?>" <?php e($archival->key_image()->toBool(), 'data-key-image'); ?> data-idx="<?= $page->archival_images()->toStructure()->indexOf($archival) ?>">
         <img
-          src="<?= $archival->archival_image()->toFile()->resize(2000)->url(); ?>"
+          srcset="<?= $archival->archival_image()->toFile()->srcset([800, 1024, 1333, 2000]); ?>"
           class="laura-mullen__images__image__img"
-          _loading="lazy"
         >
       </li>
     <?php endforeach; ?>
@@ -101,7 +100,7 @@
       document.querySelector('.laura-mullen__bio-credits').classList.remove('active');
     });
 
-    document.querySelector('#nav-score a').target= '_blank';
+    document.querySelector('#nav-poem a').target= '_blank';
   });
 </script>
 <?php snippet('footer'); ?>
