@@ -600,7 +600,8 @@ body {
         bottom: 0;
         visibility: hidden;
         opacity: 0;
-        transition: all 250ms ease-in-out; }
+        transition: all 250ms ease-in-out;
+        transform: transale3d(0, 0, 0); }
         .laura-mullen .laura-mullen-image__wrapper .laura-mullen__images .laura-mullen__images__image.active {
           visibility: visible;
           opacity: 1; }
