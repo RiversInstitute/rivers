@@ -3,6 +3,61 @@
 <head>
   <!-- Site designed and built by Nazlı Ercan and Eric Li -->
   <!-- +_º -->
+  <!--
+
+                                                                                                      
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                      :++++++++++++++++++++++++///::-.`                                             
+                      +yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyss+:.                                         
+                      +yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo-                                       
+                      +yyyyyyysssssssssssssssssssyyyyyyyyyyyyo.                                     
+                      +yyyyyyy-```````````````````.:+syyyyyyyyy-                                    
+                      +yyyyyyy-                      `:syyyyyyyy.                                   
+                      +yyyyyyy-                        .yyyyyyyy+                                   
+                      +yyyyyyy-                         :yyyyyyys                                   
+                      +yyyyyyy-                         .yyyyyyys                                   
+                      +yyyyyyy-                         :yyyyyyyo                                   
+                      +yyyyyyy-                        `syyyyyyy-                                   
+                      +yyyyyyy-                       .syyyyyyy/                                    
+                      +yyyyyyy-                   ``-+yyyyyyyy/                                     
+                      +yyyyyyy/---------------::/+oyyyyyyyyyo.                                      
+                      +yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyys/.                                        
+                      +yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyys:`                                         
+                      +yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy+`                                       
+                      +yyyyyyy:```````````````..-/oyyyyyyyyys`                                      
+                      +yyyyyyy-                    .oyyyyyyyyo                                      
+                      +yyyyyyy-                      +yyyyyyyy-                                     
+                      +yyyyyyy-                       syyyyyyy+                                     
+                      +yyyyyyy-                       /yyyyyyys                                     
+                      +yyyyyyy-                       -yyyyyyyy                                     
+                      +yyyyyyy-                       `yyyyyyyy`                                    
+                      +yyyyyyy-                        yyyyyyyy-                                    
+                      +yyyyyyy-                        syyyyyyy+                                    
+                      +yyyyyyy-                        +yyyyyyyy::-.                                
+                      +yyyyyyy-                        -yyyyyyyyyyyys+-                             
+                      /ooooooo.                         oossyyyyyyyyyyyo`                           
+                       ```````                           ````-+syyyyyyyys`                          
+                                                               `+yyyyyyyyo                          
+                                                                 +yyyyyyyy.                         
+                                                                 `yyyyyyyy:                         
+                                                                  +yyyyyyy+                         
+                                                                  :yyyyyyyo                         
+                                                                  -yyyyyyyy                         
+                                                                  .yyyyyyyy.                        
+                                                                  `yyyyyyyy:                        
+                                                                   syyyyyyys`                       
+                                                                   /yyyyyyyy+                       
+                                                                   `+++++++++.                      
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+  -->
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="icon" href="/assets/rivers.png" >
