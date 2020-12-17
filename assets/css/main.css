@@ -681,6 +681,57 @@ body.no-pad {
   display: block;
 }
 
+.carucci {
+  overflow: hidden;
+  padding-bottom: initial;
+  --carucci-margin: 1.5rem;
+  --font-size-caption: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .carucci {
+    --carucci-margin: 1.0rem;
+    --font-size-caption: 1.3rem;
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.6rem;
+  }
+}
+.carucci .navigation__container {
+  background-color: white;
+  z-index: 100;
+}
+.carucci .carucci__wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+}
+@media screen and (max-width: 768px) {
+  .carucci .carucci__wrapper {
+    bottom: 5rem;
+  }
+}
+.carucci .carucci__wrapper .scroll1 {
+  white-space: nowrap;
+  justify-content: center;
+  height: 400px;
+}
+.carucci .carucci__wrapper .image__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+.carucci .carucci__wrapper img {
+  height: 400px;
+  width: auto;
+}
+.carucci .carucci__wrapper .text {
+  padding-top: 0.5em;
+  font-size: var(--font-size-caption);
+  color: black;
+}
+
 .laura-mullen .laura-mullen-image__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical {
   position: fixed;
   top: 0;

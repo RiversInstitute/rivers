@@ -1,0 +1,32 @@
+title: Elinor Carucci
+preset: page
+num: 0
+
+fields:
+  image_items:
+    label: Images
+    type: structure
+    fields:
+      image_file:
+        type: files
+        label: Image
+        max: 1
+      caption:
+        type: textarea
+        size: tiny
+        label: Caption
+
+  bio_credits:
+     label: Bio/Credits
+     type: textarea
+
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link

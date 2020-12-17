@@ -1,0 +1,75 @@
+.carucci {
+  overflow: hidden;
+  padding-bottom: initial;
+
+  --carucci-margin: 1.5rem;
+  --font-size-caption: 1.3rem;
+
+  @include mobile {
+    --carucci-margin: 1.0rem;
+    --font-size-caption: 1.3rem;
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.6rem;
+  }
+
+  .navigation__container {
+    background-color: white;
+    z-index: 100;
+  }
+
+  .carucci__wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+
+    @include mobile {
+      bottom: 5rem;
+    }
+
+    .scroll1 {
+      white-space: nowrap;
+      justify-content: center;
+      height: 400px;
+    }
+
+    .image__item {
+      display: inline-block;
+      vertical-align: middle;
+    }
+      img {
+          height: 400px;
+        width: auto;
+
+      }
+
+      .text {
+        padding-top: 0.5em;
+        font-size: var(--font-size-caption);
+        color: black;
+      }
+
+  }
+
+  // .scroll2 {
+  //   display: flex;
+  //   white-space: nowrap;
+  //   justify-content: center;
+  //   margin: auto;
+  // }
+  //
+  // .image__item {
+  //     display: inline-block;
+  //     vertical-align: middle;
+  //
+  // }
+  //   img {
+  //
+  //     margin: auto;
+  //     object-fit: cover;
+  //   }
+
+}

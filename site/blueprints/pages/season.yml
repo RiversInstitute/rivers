@@ -8,6 +8,7 @@ pages:
     - origin__5_john_jennings
     - origin__6_elena_del_rivero
     - origin__7_laura_mullen
+    - origin__8_elinor_carucci
 
 num: '{{ page.start_date.toDate("Ymd") }}'
 
