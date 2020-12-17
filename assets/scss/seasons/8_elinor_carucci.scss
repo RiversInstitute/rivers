@@ -18,58 +18,50 @@
   }
 
   .carucci__wrapper {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 8rem);
     overflow-x: scroll;
     overflow-y: hidden;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    padding: 10px;
 
     @include mobile {
-      bottom: 5rem;
+      height: calc(100vh - 5rem);
     }
 
-    .scroll1 {
-      white-space: nowrap;
-      justify-content: center;
-      height: 400px;
-    }
+    .image__list {
+      cursor: pointer;
+      display: flex;
+      height: 30vh;
+      // transition: height 250ms;
 
-    .image__item {
-      display: inline-block;
-      vertical-align: middle;
-    }
-      img {
-          height: 400px;
-        width: auto;
+      &.expanded {
+        height: 100%;
 
+        .image__item {
+          &__caption {
+            display: none;
+          }
+        }
       }
 
-      .text {
-        padding-top: 0.5em;
-        font-size: var(--font-size-caption);
-        color: black;
-      }
+      .image__item {
+        height: 100%;
 
+        &__image {
+          height: 100%;
+          width: auto;
+        }
+
+        &__caption {
+          padding-top: 0.5em;
+          font-size: var(--font-size-caption);
+          color: black;
+        }
+      }
+    }
   }
 
-  // .scroll2 {
-  //   display: flex;
-  //   white-space: nowrap;
-  //   justify-content: center;
-  //   margin: auto;
-  // }
-  //
-  // .image__item {
-  //     display: inline-block;
-  //     vertical-align: middle;
-  //
-  // }
-  //   img {
-  //
-  //     margin: auto;
-  //     object-fit: cover;
-  //   }
-
+  .carucci__bio-credits {
+    display: none;
+  }
 }
