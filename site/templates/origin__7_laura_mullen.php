@@ -83,10 +83,12 @@
 
     document.querySelector('#nav-about').addEventListener('click', () => {
       document.querySelector('.laura-mullen__bio-credits').classList.toggle('active');
+      document.querySelector('.laura-mullen__notes').classList.remove('active');
     });
 
     document.querySelector('#nav-notes').addEventListener('click', () => {
       document.querySelector('.laura-mullen__notes').classList.toggle('active');
+      document.querySelector('.laura-mullen__bio-credits').classList.remove('active');
     });
   });
 </script>

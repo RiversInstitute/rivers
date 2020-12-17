@@ -64,7 +64,13 @@
       <?php for ($i = 0; $i < $number; $i++): ?>
         <li class="text__container__number__item <?php e($i == 0, 'active'); ?>">
           <button onclick="setActiveCard(<?= $i ?>)">
-            <?= $i+1 . "." ?>
+            <?php 
+              $idx = $i . ".";
+              if ($idx == $number - 1) {
+                $idx = "*";
+              }
+            ?>
+            <?= $idx; ?>
           </button>
         </li>
       <?php endfor; ?>
@@ -81,7 +87,7 @@
   </div>
 
   <div class="text__container__toggle">
-    <button class="text__container__toggle__button active" onClick="toggleText()">Close Notes</button>
+    <button class="text__container__toggle__button active" onClick="toggleText()">Close notes</button>
   </div>
 </div>
 
@@ -90,10 +96,10 @@
     document.querySelector('.text__container').classList.toggle('active');
     const toggleButton = document.querySelector('.text__container__toggle__button');
         toggleButton.classList.toggle('active');
-        if(toggleButton.innerHTML === "Close Notes") {
-  	       toggleButton.innerHTML = "Open Notes";
+        if(toggleButton.innerHTML === "Close notes") {
+  	       toggleButton.innerHTML = "Open notes";
         } else {
-  	  	  toggleButton.innerHTML = "Close Notes";
+  	  	  toggleButton.innerHTML = "Close notes";
         }
   }
 
@@ -132,10 +138,12 @@
 
   document.querySelector('#nav-about').addEventListener('click', () => {
     document.querySelector('.rivero__bio-credits').classList.toggle('active');
+    document.querySelector('.rivero__installation').classList.remove('active');
   });
 
   document.querySelector('#nav-installation').addEventListener('click', () => {
     document.querySelector('.rivero__installation').classList.toggle('active');
+    document.querySelector('.rivero__bio-credits').classList.remove('active');
   });
 </script>
 <?php snippet('footer'); ?>
