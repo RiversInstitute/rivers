@@ -1,0 +1,70 @@
+.carucci {
+  overflow: hidden;
+  padding-bottom: initial;
+
+  --carucci-margin: 1.5rem;
+  --font-size-caption: 1.3rem;
+
+  @include mobile {
+    --carucci-margin: 1.0rem;
+    --font-size-caption: 1.3rem;
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.6rem;
+  }
+
+  .navigation__container {
+    background-color: white;
+    z-index: 100;
+  }
+
+  .carucci__wrapper {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 8rem);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-left: -5px;
+
+    @include mobile {
+      height: calc(100vh - 5rem);
+    }
+
+    .image__list {
+      cursor: pointer;
+      display: flex;
+      height: 30vh;
+      // transition: height 250ms;
+
+      &.expanded {
+        height: 100%;
+
+        .image__item {
+          &__caption {
+            display: none;
+          }
+        }
+      }
+
+      .image__item {
+        height: 100%;
+        margin-left: 5px;
+
+        &__image {
+          height: 100%;
+          width: auto;
+        }
+
+        &__caption {
+          padding-top: 0.5em;
+          font-size: var(--font-size-caption);
+          color: black;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  .carucci__bio-credits {
+    display: none;
+  }
+}

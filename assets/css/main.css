@@ -541,6 +541,52 @@ body {
     .origin__overlay .overlay__image.active {
       display: block; }
 
+.carucci {
+  overflow: hidden;
+  padding-bottom: initial;
+  --carucci-margin: 1.5rem;
+  --font-size-caption: 1.3rem; }
+  @media screen and (max-width: 768px) {
+    .carucci {
+      --carucci-margin: 1.0rem;
+      --font-size-caption: 1.3rem;
+      --font-size-primary: 1.6rem;
+      --font-size-secondary: 1.6rem; } }
+  .carucci .navigation__container {
+    background-color: white;
+    z-index: 100; }
+  .carucci .carucci__wrapper {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 8rem);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-left: -5px; }
+    @media screen and (max-width: 768px) {
+      .carucci .carucci__wrapper {
+        height: calc(100vh - 5rem); } }
+    .carucci .carucci__wrapper .image__list {
+      cursor: pointer;
+      display: flex;
+      height: 30vh; }
+      .carucci .carucci__wrapper .image__list.expanded {
+        height: 100%; }
+        .carucci .carucci__wrapper .image__list.expanded .image__item__caption {
+          display: none; }
+      .carucci .carucci__wrapper .image__list .image__item {
+        height: 100%;
+        margin-left: 5px; }
+        .carucci .carucci__wrapper .image__list .image__item__image {
+          height: 100%;
+          width: auto; }
+        .carucci .carucci__wrapper .image__list .image__item__caption {
+          padding-top: 0.5em;
+          font-size: var(--font-size-caption);
+          color: black;
+          flex-wrap: wrap; }
+  .carucci .carucci__bio-credits {
+    display: none; }
+
 .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
   position: fixed;
   top: 0;
