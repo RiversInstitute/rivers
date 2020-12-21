@@ -8,8 +8,28 @@ fields:
     label: Audio
     max: 1
   archival_images:
-    type: files
+    type: structure
     label: Archival Images
+    fields:
+      archival_image:
+        type: files
+        max: 1
+        label: Image
+      key_image:
+        type: toggle
+        label: Key Image?
+        help: Toggle on to make final key image. Only toggle one image.
+  num_loops:
+    type: number
+    min: 1
+    label: Number of loops
+    width: 1/2
+  slide_length:
+    type: number
+    min: 0
+    label: Slide length (sec)
+    width: 1/2
+    step: 0.01
   notes:
     type: textarea
     size: medium

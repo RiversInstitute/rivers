@@ -13,12 +13,12 @@
 
 <div class="laura-mullen-image__wrapper" id="image-container">
   <ul class="laura-mullen__images">
-    <?php foreach($page->archival_images()->toFiles() as $image): ?>
-      <li class="laura-mullen__images__image">
+    <?php foreach($page->archival_images()->toStructure() as $archival): ?>
+      <li class="laura-mullen__images__image <?php e($archival->key_image()->toBool(), 'active'); ?>" <?php e($archival->key_image()->toBool(), 'data-key-image'); ?> data-idx="<?= $page->archival_images()->toStructure()->indexOf($archival) ?>">
         <img
-          src="<?= $image->resize(2000)->url(); ?>"
+          rel="preload"
+          srcset="<?= $archival->archival_image()->toFile()->srcset([800, 1024, 1333, 2000]); ?>"
           class="laura-mullen__images__image__img"
-          _loading="lazy"
         >
       </li>
     <?php endforeach; ?>
@@ -47,21 +47,40 @@
     const audioContainer = document.querySelector('#audio-container');
     const imageContainer = document.querySelector('#image-container');
     const images = imageContainer.querySelectorAll('.laura-mullen__images__image');
+    const keyImage = document.querySelector('[data-key-image]');
     const audio = document.querySelector('#audio');
 
-    let activeIdx = -1;
+    const numLoops = <?= $page->num_loops(); ?>;
+    const intervalLength = <?= $page->slide_length(); ?> * 1000;
+    let activeIdx = parseInt(keyImage.dataset.idx);
     let looper = null;
+    let loopCount = -1;
 
     const startLooper = () => {
       looper = setInterval(() => {
-        images[activeIdx]?.classList.remove('active');
+        if (images[activeIdx] === keyImage) {
+          loopCount++;
+          if (loopCount >= numLoops) {
+            clearInterval(looper);
+            looper = null;
+            return;
+          }
+        }
+
+        images[activeIdx].classList.remove('active');
         activeIdx = (activeIdx + 1) % images.length;
-        images[activeIdx]?.classList.add('active');
-      }, 1000);
+        images[activeIdx].classList.add('active');
+      }, intervalLength);
     };
 
-    const pauseLooper = () => {
-      clearInterval(looper);
+    const addImageContainerInteraction = () => {
+      imageContainer.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
     }
 
     audioContainer.addEventListener('click', () => {
@@ -69,17 +88,8 @@
       audioContainer.classList.add('hidden');
       imageContainer.classList.add('visible');
       startLooper();
+      setTimeout(addImageContainerInteraction, 5000);
     });
-
-    imageContainer.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        startLooper();
-      } else {
-        audio.pause();
-        pauseLooper();
-      }
-    })
 
     document.querySelector('#nav-about').addEventListener('click', () => {
       document.querySelector('.laura-mullen__bio-credits').classList.toggle('active');
@@ -90,6 +100,8 @@
       document.querySelector('.laura-mullen__notes').classList.toggle('active');
       document.querySelector('.laura-mullen__bio-credits').classList.remove('active');
     });
+
+    document.querySelector('#nav-poem a').target= '_blank';
   });
 </script>
 <?php snippet('footer'); ?>
