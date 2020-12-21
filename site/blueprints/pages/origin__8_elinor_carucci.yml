@@ -16,6 +16,11 @@ fields:
         size: tiny
         label: Caption
 
+  carucci_audio:
+    type: files
+    label: Audio
+    max: 1
+
   bio_credits:
      label: Bio/Credits
      type: textarea
