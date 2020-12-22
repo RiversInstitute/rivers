@@ -28,11 +28,33 @@
   </ul>
 </div>
 
+<div class="carucci__overlay">
+  <div class="carucci__overlay__content">
+    <div class="carucci__overlay__title text">
+      <?= $page->overlay_title()->kt(); ?>
+    </div>
+    <div class="carucci__overlay__note text">
+      <?= $page->overlay_note()->kt(); ?>
+    </div>
+  </div>
+</div>
+
 <div class="carucci__audio">
   <audio id="carucciAudio">
     <?php $audio = $page->carucci_audio()->toFile(); ?>
     <source src="<?= $audio->url(); ?>" type="<?= $audio->mime(); ?>">
   </audio>
+</div>
+
+<div class="carucci__essay">
+  <div class="layout-wrapper--full">
+    <div class="carucci__essay__title text">
+      <?= $page->essay_title()->kt(); ?>
+    </div>
+    <div class="carucci__essay__content text">
+      <?= $page->essay()->kt(); ?>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -66,6 +88,23 @@
       document.querySelector('#nav-listen a').innerText = 'Listen';
     }
   });
+
+  document.querySelector('#nav-about').addEventListener('click', () => {
+    document.querySelector('.carucci__bio-credits').classList.toggle('active');
+    document.querySelector('.carucci__essay').classList.remove('active');
+  });
+
+  document.querySelector('#nav-essay').addEventListener('click', () => {
+    document.querySelector('.carucci__essay').classList.toggle('active');
+    document.querySelector('.carucci__bio-credits').classList.remove('active');
+  });
+
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.carucci__overlay').addEventListener('click', () => {
+    document.querySelector('.carucci__overlay').style.display = 'none';
+    document.body.style.removeProperty('overflow');
+  });
+
 
 </script>
 <?php snippet('footer'); ?>
