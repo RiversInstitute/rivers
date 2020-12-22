@@ -15,16 +15,29 @@ fields:
         type: textarea
         size: tiny
         label: Caption
-
+  overlay_title:
+    type: textarea
+    size: small
+    label: Overlay Title
+  overlay_note:
+    type: textarea
+    size: medium
+    label: Overlay Note
   carucci_audio:
     type: files
     label: Audio
     max: 1
-
+  essay_title:
+    type: textarea
+    size: small
+    label: Essay Title
+  essay:
+    type: textarea
+    size: medium
+    label: Essay
   bio_credits:
      label: Bio/Credits
      type: textarea
-
   nav_override:
     type: structure
     label: Navigation
