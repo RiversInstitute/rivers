@@ -29,4 +29,19 @@
   a {
     color: var(--highlight-color);
   }
+
+  sup {
+    font-size: .6em;
+  }
+
+  .footnotes {
+    ol {
+      li {
+        font-size: .75em;
+        .footnote-backref {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
 }

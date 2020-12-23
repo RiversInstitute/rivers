@@ -239,6 +239,12 @@ body {
   margin-top: initial; }
 .text a {
   color: var(--highlight-color); }
+.text sup {
+  font-size: .6em; }
+.text .footnotes ol li {
+  font-size: .75em; }
+  .text .footnotes ol li .footnote-backref {
+    font-size: 0.6em; }
 
 .events-exhibitions {
   display: flex;
@@ -623,6 +629,8 @@ body {
     .carucci .carucci__essay .carucci__essay__content {
       margin: auto;
       max-width: 600px; }
+      .carucci .carucci__essay .carucci__essay__content p + p {
+        text-indent: calc(1 * var(--margin)); }
       .carucci .carucci__essay .carucci__essay__content a {
         color: #888; }
   .carucci .carucci__bio-credits {

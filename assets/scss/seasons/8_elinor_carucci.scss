@@ -114,6 +114,10 @@
       margin: auto;
       max-width: 600px;
 
+      p + p {
+        text-indent: calc(1 * var(--margin));
+      }
+      
       a {
         color: #888;
       }
