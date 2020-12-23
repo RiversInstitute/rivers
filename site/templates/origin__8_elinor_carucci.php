@@ -66,17 +66,16 @@
     const wrapper = imageList.parentElement;
     const windowWidth = innerWidth/2;
 
-    imageList.addEventListener('click', () => {
+    imageList.addEventListener('click', (e) => {
       const beforeWidth = wrapper.scrollWidth;
-      const beforeScrollPos = wrapper.scrollLeft + windowWidth;
-
-
+      const beforeScrollPos = (wrapper.scrollLeft + e.clientX) - windowWidth;
+      
       imageList.classList.toggle('expanded');
 
       const afterWidth = wrapper.scrollWidth;
       const ratio = (afterWidth) / (beforeWidth);
 
-      wrapper.scrollTo(beforeScrollPos * ratio + 400 - windowWidth, 0);
+      wrapper.scrollTo(beforeScrollPos * ratio, 0);
 
     });
   });
