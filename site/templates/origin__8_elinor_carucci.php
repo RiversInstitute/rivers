@@ -69,7 +69,7 @@
     imageList.addEventListener('click', (e) => {
       const beforeWidth = wrapper.scrollWidth;
       const beforeScrollPos = (wrapper.scrollLeft + e.clientX) - windowWidth;
-      
+
       imageList.classList.toggle('expanded');
 
       const afterWidth = wrapper.scrollWidth;
@@ -80,14 +80,14 @@
     });
   });
 
-  document.querySelector('#nav-listen').addEventListener('click', () => {
+  document.querySelector('#nav-play').addEventListener('click', () => {
     const csAudio = document.querySelector('#carucciAudio');
     if (csAudio.paused) {
       csAudio.play();
-      document.querySelector('#nav-listen a').innerText = 'Pause';
+      document.querySelector('#nav-play a').innerText = 'Pause';
     } else {
       csAudio.pause();
-      document.querySelector('#nav-listen a').innerText = 'Listen';
+      document.querySelector('#nav-play a').innerText = 'Play';
     }
   });
 
@@ -107,6 +107,7 @@
     document.body.style.removeProperty('overflow');
     const csAudio = document.querySelector('#carucciAudio');
     csAudio.play();
+    document.querySelector('#nav-play a').innerText = 'Pause';
   });
 
 
