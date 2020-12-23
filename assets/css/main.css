@@ -804,7 +804,6 @@ body.no-pad {
   display: block;
 }
 .carucci .carucci__overlay {
-  cursor: pointer;
   position: fixed;
   top: 0;
   left: 0;
@@ -828,6 +827,11 @@ body.no-pad {
 .carucci .carucci__overlay__title {
   font-weight: bold;
   padding-bottom: 10px;
+}
+.carucci .carucci__overlay__enter_button button {
+  margin-top: var(--margin);
+  font-weight: bold;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .carucci .carucci__overlay {

@@ -36,6 +36,9 @@
     <div class="carucci__overlay__note text">
       <?= $page->overlay_note()->kt(); ?>
     </div>
+    <div class="carucci__overlay__enter_button">
+      <button type="button">Enter</button>
+    </div>
   </div>
 </div>
 
@@ -102,6 +105,8 @@
   document.querySelector('.carucci__overlay').addEventListener('click', () => {
     document.querySelector('.carucci__overlay').style.display = 'none';
     document.body.style.removeProperty('overflow');
+    const csAudio = document.querySelector('#carucciAudio');
+    csAudio.play();
   });
 
 
