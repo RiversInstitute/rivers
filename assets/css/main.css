@@ -835,7 +835,9 @@ body.no-pad {
 }
 @media screen and (max-width: 768px) {
   .carucci .carucci__overlay {
-    font-size: 2em;
+    font-size: var(--font-size-secondary);
+    overflow: auto;
+    padding-bottom: calc(2 * var(--margin));
   }
 }
 

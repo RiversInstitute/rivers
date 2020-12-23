@@ -166,6 +166,7 @@
     &__title {
       font-weight: bold;
       padding-bottom: 10px;
+
     }
 
     &__enter_button button {
@@ -174,9 +175,12 @@
       cursor: pointer;
     }
 
-      @include mobile {
-        font-size: 2em;
-      }
+    @include mobile {
+      font-size: var(--font-size-secondary);
+      overflow: auto;
+      padding-bottom: calc(2 * var(--margin));
+    }
+
 
   }
 
