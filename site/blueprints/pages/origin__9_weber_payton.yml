@@ -33,22 +33,36 @@ fields:
       subtitle:
         type: text
         label: Subtitle
-      content:
-        type: structure
-        label: Content
-        fields:
-          main_file:
-            type: files
-            max: 1
-            label: Image/Audio/PDF Thumbnail
-          secondary_file:
-            type: files
-            max: 1
-            label: PDF File
-          caption:
-            type: textarea
-            size: small
-            label: Caption
+      main_image:
+        type: files
+        max: 1
+        label: Main Image
+      main_image_caption:
+        type: textarea
+        size: small
+        label: Main Image Caption
+      audio_file:
+        type: files
+        max: 1
+        label: Audio File
+      audio_caption:
+        type: textarea
+        size: small
+        label: Audio Caption
+      pdf_image:
+        width: 1/2
+        type: files
+        max: 1
+        label: PDF Thumbnail
+      pdf_file:
+        width: 1/2
+        type: files
+        max: 1
+        label: PDF File
+      pdf_caption:
+        type: textarea
+        size: small
+        label: PDF Caption
 
   bio_credits:
      label: Bio/Credits

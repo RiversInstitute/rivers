@@ -61,3 +61,36 @@
   font-weight: bold;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'Courier New';
+    src: url('CourierNewPS-BoldMT.woff2') format('woff2'),
+        url('CourierNewPS-BoldMT.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Courier New';
+    src: url('CourierNewPS-ItalicMT.woff2') format('woff2'),
+        url('CourierNewPS-ItalicMT.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Courier New';
+    src: url('CourierNewPS-BoldItalicMT.woff2') format('woff2'),
+        url('CourierNewPS-BoldItalicMT.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Courier New';
+    src: url('CourierNewPSMT.woff2') format('woff2'),
+        url('CourierNewPSMT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

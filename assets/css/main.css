@@ -547,14 +547,110 @@ body {
     .origin__overlay .overlay__image.active {
       display: block; }
 
-.laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
+.weber-payton__bio-credits, .weber-payton__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--bottom);
+  --bottom: 8rem; }
+  @media screen and (max-width: 768px) {
+    .weber-payton__bio-credits, .weber-payton__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
+      --bottom: 5rem; } }
+
+.weber-payton {
+  --primary-color: #fff100;
+  --wp-margin: 2.4rem;
+  --wp-font--secondary: 'Courier New', monospace;
+  --font-size-caption: 1.3rem;
+  --font-size-primary: 1.8rem;
+  font-size: var(--font-size-primary); }
+  @media screen and (max-width: 768px) {
+    .weber-payton {
+      --wp-margin: 1.2rem;
+      --font-size-caption: 1.2rem;
+      --font-size-primary: 1.4rem; } }
+  .weber-payton .navigation__container {
+    background-color: white;
+    z-index: 100; }
+  .weber-payton__bio-credits {
+    display: none;
+    overflow: auto;
+    z-index: 3;
+    color: black;
+    background-color: var(--primary-color); }
+    .weber-payton__bio-credits.active {
+      display: block; }
+  .weber-payton__wrapper {
+    background-color: var(--primary-color);
+    color: black;
+    height: calc(100% - var(--bottom));
+    padding: var(--wp-margin);
+    display: grid;
+    grid-gap: var(--wp-margin);
+    grid-template-areas: "intro intro" "main histories";
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .weber-payton__intro {
+    grid-area: intro;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-column-gap: var(--wp-margin); }
+    @media screen and (max-width: 768px) {
+      .weber-payton__intro {
+        grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .weber-payton__intro__content {
+      max-height: 20vh;
+      overflow: scroll;
+      padding-right: var(--scrollbar-width);
+      grid-column: span 4; }
+      @media screen and (max-width: 768px) {
+        .weber-payton__intro__content {
+          grid-column: span 3; } }
+  .weber-payton__main {
+    grid-area: main;
+    overflow: scroll;
+    padding-right: var(--scrollbar-width);
+    font-family: var(--wp-font--secondary); }
+    .weber-payton__main__content {
+      margin-top: 1em; }
+  .weber-payton__histories {
+    grid-area: histories;
+    overflow: scroll;
+    padding-right: var(--scrollbar-width);
+    font-family: var(--wp-font--secondary); }
+    .weber-payton__histories__list {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      grid-gap: var(--wp-margin); }
+      .weber-payton__histories__list__item__content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: var(--wp-margin);
+        grid-template-areas: "main audio" "main transcript"; }
+        @media screen and (max-width: 768px) {
+          .weber-payton__histories__list__item__content {
+            grid-template-areas: "main main" "audio audio" "transcript transcript"; } }
+        .weber-payton__histories__list__item__content__item {
+          grid-area: audio; }
+          .weber-payton__histories__list__item__content__item:first-of-type {
+            grid-area: main; }
+          .weber-payton__histories__list__item__content__item:last-of-type {
+            grid-area: transcript; }
+          .weber-payton__histories__list__item__content__item audio {
+            width: 100%; }
+          .weber-payton__histories__list__item__content__item .text {
+            font-size: var(--font-size-caption); }
+
+.weber-payton__bio-credits, .weber-payton__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 8rem; }
   @media screen and (max-width: 768px) {
-    .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
+    .weber-payton__bio-credits, .weber-payton__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
       bottom: 5rem; } }
 
 .carucci {
@@ -682,14 +778,14 @@ body {
         overflow: auto;
         padding-bottom: calc(2 * var(--margin)); } }
 
-.laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
+.weber-payton__bio-credits, .weber-payton__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 8rem; }
   @media screen and (max-width: 768px) {
-    .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
+    .weber-payton__bio-credits, .weber-payton__wrapper, .laura-mullen .laura-mullen-audio__wrapper__vertical, .laura-mullen .laura-mullen-image__wrapper {
       bottom: 5rem; } }
 
 .laura-mullen {

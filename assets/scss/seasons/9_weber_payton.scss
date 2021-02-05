@@ -1,3 +1,147 @@
-.weber-payton {
+%full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--bottom);
+  --bottom: 8rem;
 
+  @include mobile {
+    --bottom: 5rem;
+  }
+}
+
+.weber-payton {
+  --primary-color: #fff100;
+  --wp-margin: 2.4rem;
+  --wp-font--secondary: 'Courier New', monospace;
+  --font-size-caption: 1.3rem;
+  --font-size-primary: 1.8rem;
+
+  @include mobile {
+    --wp-margin: 1.2rem;
+    --font-size-caption: 1.2rem;
+    --font-size-primary: 1.4rem;
+  }
+
+  font-size: var(--font-size-primary);
+
+  .navigation__container {
+    background-color: white;
+    z-index: 100;
+  }
+
+  &__bio-credits {
+    @extend %full;
+    display: none;
+    overflow: auto;
+    z-index: 3;
+    color: black;
+    background-color: var(--primary-color);
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    @extend %full;
+
+    background-color: var(--primary-color);
+    color: black;
+    height: calc(100% - var(--bottom));
+    padding: var(--wp-margin);
+    display: grid;
+    grid-gap: var(--wp-margin);
+    grid-template-areas:
+      "intro intro"
+      "main histories";
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));;
+  }
+
+  &__intro {
+    grid-area: intro;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-column-gap: var(--wp-margin);
+
+    @include mobile {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    &__content {
+      max-height: 20vh;
+      overflow: scroll;
+      padding-right: var(--scrollbar-width); 
+      grid-column: span 4;
+
+      @include mobile {
+        grid-column: span 3;  
+      }
+    }
+  }
+
+  &__main {
+    grid-area: main;
+    overflow: scroll;
+    padding-right: var(--scrollbar-width); 
+    font-family: var(--wp-font--secondary);
+
+    &__content {
+      margin-top: 1em;
+    }
+  }
+
+  &__histories {
+    grid-area: histories;
+    overflow: scroll;
+    padding-right: var(--scrollbar-width); 
+    font-family: var(--wp-font--secondary);
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      grid-gap: var(--wp-margin);
+
+      &__item {
+        &__content {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-gap: var(--wp-margin);
+          grid-template-areas:
+            "main audio"
+            "main transcript";
+
+          @include mobile {
+            grid-template-areas:
+            "main main"
+            "audio audio"
+            "transcript transcript";
+          }
+
+          &__item {
+            grid-area: audio;
+
+            &:first-of-type {
+              grid-area: main;
+            }
+
+            &:last-of-type {
+              grid-area: transcript;
+            }
+
+            audio {
+              width: 100%;
+            }
+
+            .text {
+              font-size: var(--font-size-caption);
+            }
+          }
+        }
+      }
+    }
+  }
 }
