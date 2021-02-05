@@ -9,6 +9,7 @@ pages:
     - origin__6_elena_del_rivero
     - origin__7_laura_mullen
     - origin__8_elinor_carucci
+    - origin__9_weber_payton
 
 num: '{{ page.start_date.toDate("Ymd") }}'
 

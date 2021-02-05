@@ -1,0 +1,79 @@
+title: Weber / Payton
+preset: page
+num: 0
+
+fields:
+  introduction_title:
+    type: textarea
+    size: small
+    label: Introduction Title
+    width: 1/4
+  introduction:
+    type: textarea
+    size: medium
+    label: Introduction
+    width: 3/4
+  main_title:
+    type: textarea
+    size: small
+    label: Main Title
+    width: 1/4
+  main_content:
+    type: textarea
+    size: medium
+    label: Main Content
+    width: 3/4
+  oral_histories:
+    type: structure
+    label: Oral Histories
+    fields:
+      title:
+        type: text
+        label: Title
+      subtitle:
+        type: text
+        label: Subtitle
+      main_image:
+        type: files
+        max: 1
+        label: Main Image
+      main_image_caption:
+        type: textarea
+        size: small
+        label: Main Image Caption
+      audio_file:
+        type: files
+        max: 1
+        label: Audio File
+      audio_caption:
+        type: textarea
+        size: small
+        label: Audio Caption
+      pdf_image:
+        width: 1/2
+        type: files
+        max: 1
+        label: PDF Thumbnail
+      pdf_file:
+        width: 1/2
+        type: files
+        max: 1
+        label: PDF File
+      pdf_caption:
+        type: textarea
+        size: small
+        label: PDF Caption
+
+  bio_credits:
+     label: Bio/Credits
+     type: textarea
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
