@@ -513,6 +513,7 @@ body {
           .origin .season--origin .origin__contents .origin__blocks .origin__block__container .origin__block {
             position: relative;
             height: 100%;
+            color: var(--text-color, #FFF);
             background-color: var(--background-color, #FFF);
             padding: calc(0.5 * var(--margin));
             display: flex;
@@ -536,7 +537,6 @@ body {
   .origin__overlay .overlay__heading {
     position: fixed;
     pointer-events: none;
-    color: white;
     top: var(--margin);
     left: var(--margin); }
   .origin__overlay .overlay__image {

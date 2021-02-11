@@ -181,6 +181,7 @@
           .origin__block {
             position: relative;
             height: 100%;
+            color: var(--text-color, #FFF);
             background-color: var(--background-color, #FFF);
             padding: calc(0.5 * var(--margin));
             display: flex;
@@ -213,7 +214,6 @@
   .overlay__heading {
     position: fixed;
     pointer-events: none;
-    color: white;
 
     top: var(--margin);
     left: var(--margin);

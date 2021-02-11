@@ -52,6 +52,7 @@
         <li
           class="origin__block__container"
           style="
+            --text-color: <?= $entry->hover_color(); ?>;
             --background-color: <?= $entry->block_color(); ?>;
             --grid-area: <?= $positions[$idx][1]; ?> / <?= $positions[$idx][0]; ?>;
             "
@@ -96,6 +97,10 @@
 
         const bgColor = getComputedStyle(el).backgroundColor;
         originOverlay.style.backgroundColor = bgColor;
+
+        const textColor = getComputedStyle(el).color;
+        originOverlay.style.color = textColor;
+
         if (el.dataset.heroSrc.length > 0) {
           originOverlayImage.src = el.dataset.heroSrc;
           originOverlayImage.classList.add('active');
@@ -114,6 +119,7 @@
         originContents.classList.remove('active');
 
         originOverlay.style.removeProperty('background-color');
+        originOverlay.style.removeProperty('color');
         originOverlay.classList.remove('active');
         originOverlayImage.classList.remove('active');
 

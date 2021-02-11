@@ -45,6 +45,9 @@ fields:
       block_color:
         type: color
         label: Block Color
+      hover_color:
+        type: color
+        label: Text Hover Color
       season_block:
         type: select
         options: query
