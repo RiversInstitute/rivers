@@ -1,11 +1,11 @@
-<?php snippet('header', ['headerClass' => 'event']); ?>
+<?php snippet('header', ['headerClass' => 'exhibition']); ?>
 <?php snippet('nav'); ?>
 <div class="layout-wrapper">
   <div class="listing__title">
     <?= $page->title(); ?>
   </div>
   <div class="listing__date-time">
-    <?php snippet('date-time', ['event' => $page]); ?>
+    <?php snippet('date-time', ['exhibition' => $page]); ?>
   </div>
   <div class="listing__content text">
     <?= $page->main_content()->kt(); ?>

@@ -13,7 +13,7 @@ tabs:
             type: pages
             image: icon
             templates:
-              - default
+              - exhibitions
               - events
               - shop
               - partners

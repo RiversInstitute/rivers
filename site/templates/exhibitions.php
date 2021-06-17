@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="layout-wrapper--full">
-  <ul class="events">
+  <ul class="exhibitions">
     <?php foreach ($page->children()->listed()->sortBy('start_date','desc') as $listing): ?>
       <li class="listing__list">
         <a href="<?= $listing->url(); ?>">
