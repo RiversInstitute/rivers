@@ -17,6 +17,7 @@ tabs:
               - events
               - shop
               - partners
+              - about
       main_2:
         width: 1/2
         sections:

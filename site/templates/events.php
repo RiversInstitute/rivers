@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="layout-wrapper--full">
-  <ul class="events">
+  <ul class="happenings">
     <?php foreach ($page->children()->listed()->sortBy('start_date','desc') as $listing): ?>
       <li class="listing__list">
         <a href="<?= $listing->url(); ?>">
@@ -17,7 +17,7 @@
             <?= $listing->title(); ?>
           </div>
           <div class="listing__date-time">
-            <?php snippet('date-time', ['event' => $listing]); ?>
+            <?php snippet('date-time', ['happening' => $listing]); ?>
           </div>
           <div class="listing__preview text">
             <?= $listing->preview()->kt(); ?>

@@ -1,15 +1,15 @@
 <?php
-  echo $event->start_date()->toDate('F d, Y');
-  if ($event->start_date()->isNotEmpty() && $event->start_time()->isNotEmpty()) {
+  echo $happening->start_date()->toDate('F d, Y');
+  if ($happening->start_date()->isNotEmpty() && $happening->start_time()->isNotEmpty()) {
     echo ' ';
   }
-  echo $event->start_time()->toDate('g:i a');
-  if ($event->end_date()->isNotEmpty() || $event->end_time()->isNotEmpty()) {
+  echo $happening->start_time()->toDate('g:i a');
+  if ($happening->end_date()->isNotEmpty() || $happening->end_time()->isNotEmpty()) {
     echo '–';
   }
-  echo $event->end_date()->toDate('F d, Y');
-  if ($event->end_date()->isNotEmpty() && $event->end_time()->isNotEmpty()) {
+  echo $happening->end_date()->toDate('F d, Y');
+  if ($happening->end_date()->isNotEmpty() && $happening->end_time()->isNotEmpty()) {
     echo ' ';
   }
-  echo $event->end_time()->toDate('g:i a');
+  echo $happening->end_time()->toDate('g:i a');
 ?>

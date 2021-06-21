@@ -1,0 +1,19 @@
+title: About
+preset: page
+
+pages:
+  template: default
+
+fields:
+  main_content:
+    label: About
+    type: textarea
+    size: large
+  subscribe:
+    label: Subscribe
+    type: textarea
+    size: small
+  colophon:
+    label: Colophon
+    type: textarea
+    size: medium

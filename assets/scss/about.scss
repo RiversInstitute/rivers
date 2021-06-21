@@ -1,0 +1,26 @@
+.layout-wrapper__about {
+  max-width: 980px;
+  margin: var(--margin);
+
+  .about_page {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-column-gap: calc(2 * var(--margin));
+
+  .side_text {
+    .subscribe {
+      padding-bottom: calc(4 * var(--margin));
+
+      @media screen and (max-width: 768px) {
+        padding-top: calc(1 * var(--margin));
+      }
+    }
+  }
+    @include mobile {
+      display: inline;
+      width: calc(50% - var(--margin));
+      height: initial;
+      overflow: initial;
+    }
+  }
+}

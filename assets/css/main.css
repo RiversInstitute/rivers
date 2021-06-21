@@ -305,120 +305,61 @@ body.no-pad {
   font-size: 0.6em;
 }
 
-.events {
+.happenings {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
 }
-.events .listing__list {
+.happenings .listing__list {
   width: 20%;
   flex-shrink: 0;
   margin-left: var(--margin);
 }
 @media screen and (max-width: 768px) {
-  .events .listing__list {
+  .happenings .listing__list {
     width: 50%;
   }
 }
-.events .listing__list:first-of-type {
+.happenings .listing__list:first-of-type {
   margin-left: initial;
 }
-.events .listing__list div, .events .listing__list ul {
+.happenings .listing__list div, .happenings .listing__list ul {
   margin-bottom: 1em;
 }
-.events .listing__list .listing__hero {
+.happenings .listing__list .listing__hero {
   margin-bottom: 1em;
 }
-.events .listing__list .listing__title {
+.happenings .listing__list .listing__title {
   font-weight: bold;
 }
-.events .listing__list .listing__preview {
+.happenings .listing__list .listing__preview {
   margin-top: 1em;
 }
 
-.event .listing__title {
+.happening .listing__title {
   font-weight: bold;
 }
-.event .listing__content {
+.happening .listing__content {
   margin-top: 1em;
 }
-.event .listing__gallery {
+.happening .listing__gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--margin) + 1em);
   margin-left: calc(-1 * var(--margin));
 }
-.event .listing__gallery .listing__gallery__item {
+.happening .listing__gallery .listing__gallery__item {
   width: 200px;
   margin-top: var(--margin);
   margin-left: var(--margin);
 }
 @media screen and (max-width: 768px) {
-  .event .listing__gallery .listing__gallery__item {
+  .happening .listing__gallery .listing__gallery__item {
     width: calc(50% - var(--margin));
   }
 }
-.event .listing__gallery .listing__gallery__item .listing__gallery__item__caption {
-  margin-top: 1em;
-  font-size: var(--font-size--secondary);
-}
-
-.exhibitions {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-}
-.exhibitions .listing__list {
-  width: 20%;
-  flex-shrink: 0;
-  margin-left: var(--margin);
-}
-@media screen and (max-width: 768px) {
-  .exhibitions .listing__list {
-    width: 50%;
-  }
-}
-.exhibitions .listing__list:first-of-type {
-  margin-left: initial;
-}
-.exhibitions .listing__list div, .exhibitions .listing__list ul {
-  margin-bottom: 1em;
-}
-.exhibitions .listing__list .listing__hero {
-  margin-bottom: 1em;
-}
-.exhibitions .listing__list .listing__title {
-  font-weight: bold;
-}
-.exhibitions .listing__list .listing__preview {
-  margin-top: 1em;
-}
-
-.exhibition .listing__title {
-  font-weight: bold;
-}
-.exhibition .listing__content {
-  margin-top: 1em;
-}
-.exhibition .listing__gallery {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: calc(-1 * var(--margin) + 1em);
-  margin-left: calc(-1 * var(--margin));
-}
-.exhibition .listing__gallery .listing__gallery__item {
-  width: 200px;
-  margin-top: var(--margin);
-  margin-left: var(--margin);
-}
-@media screen and (max-width: 768px) {
-  .exhibition .listing__gallery .listing__gallery__item {
-    width: calc(50% - var(--margin));
-  }
-}
-.exhibition .listing__gallery .listing__gallery__item .listing__gallery__item__caption {
+.happening .listing__gallery .listing__gallery__item .listing__gallery__item__caption {
   margin-top: 1em;
   font-size: var(--font-size--secondary);
 }
@@ -545,6 +486,32 @@ body.no-pad {
 }
 .shop .item .item__metadata {
   font-size: var(--font-size--secondary);
+}
+
+.layout-wrapper__about {
+  max-width: 980px;
+  margin: var(--margin);
+}
+.layout-wrapper__about .about_page {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-column-gap: calc(2 * var(--margin));
+}
+.layout-wrapper__about .about_page .side_text .subscribe {
+  padding-bottom: calc(4 * var(--margin));
+}
+@media screen and (max-width: 768px) {
+  .layout-wrapper__about .about_page .side_text .subscribe {
+    padding-top: calc(1 * var(--margin));
+  }
+}
+@media screen and (max-width: 768px) {
+  .layout-wrapper__about .about_page {
+    display: inline;
+    width: calc(50% - var(--margin));
+    height: initial;
+    overflow: initial;
+  }
 }
 
 .email-signup .js-cm-form {
