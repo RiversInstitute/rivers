@@ -1,6 +1,6 @@
 .text {
   p, figure, ul, ol {
-    margin-top: 1em;
+    margin-top: calc(1em * var(--line-height));
   }
 
   // p + p {

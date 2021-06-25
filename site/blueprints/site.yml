@@ -13,10 +13,12 @@ tabs:
             type: pages
             image: icon
             templates:
-              - default
+              - exhibitions
               - events
               - shop
               - partners
+              - about
+              - default
       main_2:
         width: 1/2
         sections:

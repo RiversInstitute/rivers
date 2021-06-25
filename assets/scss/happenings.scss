@@ -1,4 +1,4 @@
-.events-exhibitions {
+.happenings {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -11,7 +11,7 @@
     @include mobile {
       width: 50%;
     }
-    
+
     &:first-of-type {
       margin-left: initial;
     }
@@ -33,25 +33,23 @@
   }
 }
 
-.event-exhibition {
+.happening {
   .listing__title {
     font-weight: bold;
   }
-  
+
   .listing__content {
     margin-top: 1em;
   }
 
   .listing__gallery {
-    
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
     margin-top: calc(-1 * var(--margin) + 1em);
     margin-left: calc(-1 * var(--margin));
-    
+
     .listing__gallery__item {
       width: 200px;
       margin-top: var(--margin);

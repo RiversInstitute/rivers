@@ -10,7 +10,3 @@ fields:
     type: toggle
     label: Show Events/Exhibitions Marquee
     width: 1/2
-  hide_home_nav:
-    type: toggle
-    label: Hide Home Nav Link
-    width: 1/2

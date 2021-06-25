@@ -21,10 +21,6 @@
       .navigation__item {
         padding-right: var(--margin);
         flex-shrink: 0;
-
-        &.home {
-          color: var(--highlight-color);
-        }
       }
     }
   }
