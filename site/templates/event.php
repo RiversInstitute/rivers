@@ -1,10 +1,10 @@
 <?php snippet('header', ['headerClass' => 'happening']); ?>
 <?php snippet('nav'); ?>
 <div class="layout-wrapper">
-  <div class="listing__title">
+  <div class="listing__title highlight">
     <?= $page->title(); ?>
   </div>
-  <div class="listing__date-time">
+  <div class="listing__date-time highlight">
     <?php snippet('date-time', ['happening' => $page]); ?>
   </div>
   <div class="listing__content text">
@@ -12,20 +12,7 @@
   </div>
 </div>
 <div class="layout-wrapper--full">
-  <ul class="listing__gallery" id="gallery">
-    <?php foreach($page->main_gallery()->toFiles() as $file): ?>
-      <li class="listing__gallery__item">
-        <a href="<?= $file->resize(2000)->url() ?>">
-          <div class="listing__gallery__item__image">
-            <img src="<?= $file->resize(500)->url() ?>" loading="lazy">
-          </div>
-          <div class="listing__gallery__item__caption text">
-            <?= $file->caption()->kt(); ?>
-          </div>
-        </a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
+  <?php snippet('listing-gallery', ["files" => $page->main_gallery()->toFiles()]); ?>
 </div>
 <div class="layout-wrapper">
   <div class="listing__content text">

@@ -1,4 +1,4 @@
-title: Exhibition
+title: Exhibitions
 
 columns:
   main_1:
@@ -16,7 +16,7 @@ columns:
       fields:
         fields:
           main_content:
-            label: Content
+            label: Header
             type: textarea
             size: large
       files:

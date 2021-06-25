@@ -5,6 +5,10 @@ pages:
   template: default
   
 fields:
+  header:
+    label: Header
+    type: textarea
+    size: small
   main_content:
     label: Content
     type: textarea

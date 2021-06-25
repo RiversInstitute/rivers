@@ -243,9 +243,6 @@ body.no-pad {
   padding-right: var(--margin);
   flex-shrink: 0;
 }
-.navigation__container nav .navigation .navigation__item.home {
-  color: var(--highlight-color);
-}
 
 .event-ticker {
   --width: 100vw;
