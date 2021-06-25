@@ -1,4 +1,6 @@
 .email-signup {
+  height: calc(1em * var(--line-height));
+  
   .js-cm-form {
     display: flex;
 

@@ -186,7 +186,7 @@ button {
   max-width: 700px;
 }
 
-.layout-wrapper--full, .partners__container {
+.layout-wrapper--full, .about__container, .partners__container {
   margin: var(--margin);
 }
 
@@ -273,7 +273,7 @@ body.no-pad {
 }
 
 .text p, .text figure, .text ul, .text ol {
-  margin-top: 1em;
+  margin-top: calc(1em * var(--line-height));
 }
 .text hr {
   display: none;
@@ -485,32 +485,29 @@ body.no-pad {
   font-size: var(--font-size--secondary);
 }
 
-.layout-wrapper__about {
-  max-width: 980px;
-  margin: var(--margin);
-}
-.layout-wrapper__about .about_page {
+.about__container {
   display: grid;
-  grid-template-columns: 4fr 2fr;
-  grid-column-gap: calc(2 * var(--margin));
+  grid-template-columns: fit-content(700px) fit-content(200px);
+  grid-column-gap: var(--margin);
 }
-.layout-wrapper__about .about_page .side_text .subscribe {
-  padding-bottom: calc(4 * var(--margin));
+.about__container .about__rail__secondary {
+  margin-top: calc(5em * var(--line-height));
 }
 @media screen and (max-width: 768px) {
-  .layout-wrapper__about .about_page .side_text .subscribe {
-    padding-top: calc(1 * var(--margin));
+  .about__container .about__rail__secondary {
+    margin-top: calc(1em * var(--line-height));
   }
 }
 @media screen and (max-width: 768px) {
-  .layout-wrapper__about .about_page {
-    display: inline;
-    width: calc(50% - var(--margin));
-    height: initial;
-    overflow: initial;
+  .about__container {
+    grid-row-gap: calc(1em * var(--line-height));
+    grid-template-columns: 1fr;
   }
 }
 
+.email-signup {
+  height: calc(1em * var(--line-height));
+}
 .email-signup .js-cm-form {
   display: flex;
 }
