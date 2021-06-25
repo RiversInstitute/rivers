@@ -22,14 +22,14 @@ tabs:
       main_2:
         width: 1/2
         sections:
-          seasons:
-            headline: Seasons
-            type: pages
-            template: season
           home:
             headline: Home
             type: pages
             template: home
+          seasons:
+            headline: Seasons
+            type: pages
+            template: season
           error:
             headline: Error
             type: pages

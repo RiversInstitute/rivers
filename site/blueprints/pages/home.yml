@@ -1,12 +1,60 @@
 title: Home
 
 fields:
-  active_season:
-    type: select
-    label: Active Season
-    options: query
-    query: site.children.template("season")
-  show_marquee:
-    type: toggle
-    label: Show Events/Exhibitions Marquee
-    width: 1/2
+  ticker_content:
+    label: Ticker
+    type: textarea
+    size: small
+  entries:
+    label: Entries
+    type: structure
+    max: 18
+    fields:
+      title:
+        type: textarea
+        size: mini
+        label: Title
+      hero_image:
+        label: Preview Image
+        type: files
+        max: 1
+      block_color:
+        required: true
+        type: color
+        label: Block Color
+        width: 1/2
+      hover_color:
+        required: true
+        type: color
+        label: Text Hover Color
+        width: 1/2
+      links_to:
+        type: radio
+        label: Links to
+        default: page
+        options:
+          page: Page
+          url: URL
+      page_link:
+        type: select
+        options: query
+        query: site.pages
+        label: Page
+        when:
+          links_to: page
+      url_link:
+        type: url
+        label: URL
+        when:
+          links_to: url
+  bibliography_item:
+    label: Bibliography Item
+    type: structure
+    fields:
+      citation:
+        type: textarea
+        size: tiny
+        label: Citation
+      embed:
+        type: text
+        label: HTML Embed Code

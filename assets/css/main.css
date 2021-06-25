@@ -143,13 +143,13 @@ button {
   cursor: pointer;
 }
 
-.origin .season--origin .origin__header {
+.origin .season--origin .origin__header, .home .home__header {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-column-gap: var(--margin);
 }
 @media screen and (max-width: 768px) {
-  .origin .season--origin .origin__header {
+  .origin .season--origin .origin__header, .home .home__header {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -300,6 +300,175 @@ body.no-pad {
 }
 .text .footnotes ol li .footnote-backref {
   font-size: 0.6em;
+}
+
+.homepage {
+  padding-bottom: initial;
+}
+
+.home {
+  height: 100vh;
+  padding: var(--margin);
+  margin: initial;
+  display: flex;
+  flex-direction: column;
+}
+.home .home__header {
+  z-index: 5;
+  grid-template-areas: "logo ticker ticker ticker bibliography";
+  position: relative;
+  pointer-events: none;
+}
+.home .home__header .home__site-title {
+  grid-area: logo;
+  display: flex;
+  flex-direction: column;
+}
+.home .home__header .home__site-title .site-title__text {
+  pointer-events: initial;
+}
+.home .home__header .home__ticker-container {
+  grid-area: ticker;
+  color: black;
+}
+@media screen and (max-width: 768px) {
+  .home .home__header .home__ticker-container .home__ticker {
+    text-align: initial;
+    word-break: break-all;
+  }
+}
+.home .home__header .bibliography {
+  grid-area: bibliography;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding-left: 1em;
+  margin-left: -1em;
+  height: calc(100vh - 2 * var(--margin));
+}
+.home .home__header .bibliography .bibliography__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  pointer-events: initial;
+}
+.home .home__header .bibliography .bibliography__header .bibliography__header__button {
+  cursor: pointer;
+}
+.home .home__header .bibliography .bibliography__list {
+  visibility: hidden;
+  margin-top: 1em;
+}
+.home .home__header .bibliography .bibliography__list .bibliography__item {
+  margin-left: 1em;
+  text-indent: -1em;
+  margin-bottom: 1em;
+  word-wrap: break-word;
+  font-size: var(--font-size--secondary);
+}
+.home .home__header .bibliography .bibliography__list .bibliography__item:first-of-type {
+  text-indent: initial;
+  margin-left: initial;
+}
+.home .home__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed {
+  margin-left: 1em;
+}
+.home .home__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed iframe, .home .home__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed div, .home .home__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed img {
+  width: 100%;
+  height: auto;
+}
+.home .home__header .bibliography .bibliography__list .bibliography__item .bibliography__item__embed audio {
+  display: block;
+  width: 100%;
+}
+.home .home__header .bibliography.expanded {
+  pointer-events: initial;
+  background: #fff;
+  overflow: auto;
+}
+.home .home__header .bibliography.expanded .bibliography__list {
+  visibility: visible;
+}
+@media screen and (max-width: 768px) {
+  .home .home__header {
+    grid-template-areas: "ticker ticker bibliography";
+  }
+  .home .home__header .home__site-title {
+    display: none;
+  }
+}
+.home .home__contents {
+  position: fixed;
+  z-index: 3;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+  margin-top: 20vh;
+  margin-bottom: calc(4 * var(--margin));
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@media screen and (max-width: 768px) {
+  .home .home__contents {
+    margin-top: 55vh;
+  }
+}
+.home .home__contents.active {
+  z-index: 10;
+  opacity: 0;
+}
+.home .home__contents .home__blocks {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+.home .home__contents .home__blocks .home__block__container {
+  grid-area: var(--grid-area);
+}
+.home .home__contents .home__blocks .home__block__container .home__block {
+  position: relative;
+  height: 100%;
+  color: var(--text-color, #FFF);
+  background-color: var(--background-color, #FFF);
+  padding: calc(0.5 * var(--margin));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.home__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: var(--margin);
+}
+.home__overlay.active {
+  display: flex;
+  z-index: 9;
+}
+.home__overlay .overlay__heading {
+  position: fixed;
+  pointer-events: none;
+  top: var(--margin);
+  left: var(--margin);
+}
+.home__overlay .overlay__image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.home__overlay .overlay__image.active {
+  display: block;
 }
 
 .happenings {
