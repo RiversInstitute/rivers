@@ -1,4 +1,4 @@
-.shop {
+.publications {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -9,7 +9,7 @@
     padding-bottom: calc(2 * var(--margin));
   }
   
-  .item {
+  .publication {
     width: 20%;
     flex-shrink: 0;
     margin-left: var(--margin);
@@ -34,12 +34,12 @@
       margin-bottom: 1em;
     }
 
-    .item__images {
+    .publication__images {
       position: relative;
       padding-top: calc(2 / 3 * 100%);
       cursor: pointer;
 
-      .item__images__image {
+      .publication__images__image {
         position: absolute;
         top: 0;
         left: 0;
@@ -57,15 +57,15 @@
       }
     }
 
-    .item__reviews {
+    .publication__reviews {
       @extend .highlight;
     }
 
-    .item__credits {
+    .publication__credits {
       font-size: var(--font-size--secondary);
     }
 
-    .item__metadata {
+    .publication__metadata {
       font-size: var(--font-size--secondary);
     }
   }

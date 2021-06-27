@@ -177,7 +177,7 @@ button {
   }
 }
 
-.highlight, .shop .item .item__reviews {
+.highlight, .publications .publication .publication__reviews {
   color: var(--highlight-color);
 }
 
@@ -195,6 +195,10 @@ body {
 }
 body.no-pad {
   padding-bottom: initial;
+}
+body.invert {
+  background-color: var(--main-color);
+  color: white;
 }
 
 .height-constrained {
@@ -220,6 +224,17 @@ body.no-pad {
   columns: 2;
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: var(--margin);
+}
+@media screen and (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .navigation__container {
   position: fixed;
   z-index: 1;
@@ -228,6 +243,10 @@ body.no-pad {
   right: 0;
   background: white;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 35%);
+}
+.invert .navigation__container {
+  background: #888888;
+  background: linear-gradient(180deg, rgba(136, 136, 136, 0) 0%, #888888 35%);
 }
 .navigation__container nav {
   padding: var(--margin);
@@ -300,10 +319,6 @@ body.no-pad {
 }
 .text .footnotes ol li .footnote-backref {
   font-size: 0.6em;
-}
-
-.homepage {
-  padding-bottom: initial;
 }
 
 .home {
@@ -591,19 +606,19 @@ body.no-pad {
   color: var(--partner-color);
 }
 
-.shop {
+.publications {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   height: 100%;
 }
 @media screen and (max-width: 768px) {
-  .shop {
+  .publications {
     height: initial;
     padding-bottom: calc(2 * var(--margin));
   }
 }
-.shop .item {
+.publications .publication {
   width: 20%;
   flex-shrink: 0;
   margin-left: var(--margin);
@@ -614,25 +629,25 @@ body.no-pad {
   margin-right: calc(-1 * var(--scrollbar-width));
 }
 @media screen and (max-width: 768px) {
-  .shop .item {
+  .publications .publication {
     width: 50%;
     height: initial;
     overflow: initial;
     padding-bottom: initial;
   }
 }
-.shop .item:first-of-type {
+.publications .publication:first-of-type {
   margin-left: initial;
 }
-.shop .item div, .shop .item ul {
+.publications .publication div, .publications .publication ul {
   margin-bottom: 1em;
 }
-.shop .item .item__images {
+.publications .publication .publication__images {
   position: relative;
   padding-top: calc(2 / 3 * 100%);
   cursor: pointer;
 }
-.shop .item .item__images .item__images__image {
+.publications .publication .publication__images .publication__images__image {
   position: absolute;
   top: 0;
   left: 0;
@@ -644,13 +659,13 @@ body.no-pad {
   object-position: left;
   display: none;
 }
-.shop .item .item__images .item__images__image.active {
+.publications .publication .publication__images .publication__images__image.active {
   display: block;
 }
-.shop .item .item__credits {
+.publications .publication .publication__credits {
   font-size: var(--font-size--secondary);
 }
-.shop .item .item__metadata {
+.publications .publication .publication__metadata {
   font-size: var(--font-size--secondary);
 }
 

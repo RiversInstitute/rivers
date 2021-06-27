@@ -15,7 +15,7 @@ tabs:
             templates:
               - exhibitions
               - events
-              - shop
+              - publications
               - partners
               - about
               - default
@@ -26,10 +26,6 @@ tabs:
             headline: Home
             type: pages
             template: home
-          seasons:
-            headline: Seasons
-            type: pages
-            template: season
           error:
             headline: Error
             type: pages

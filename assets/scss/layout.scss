@@ -17,6 +17,11 @@ body {
   &.no-pad {
     padding-bottom: initial;
   }
+
+  &.invert {
+    background-color: var(--main-color);
+    color: white;
+  }
 }
 
 .height-constrained {
@@ -39,4 +44,14 @@ body {
 
 .col-2 {
   columns: 2;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: var(--margin);
+
+  @include mobile {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
