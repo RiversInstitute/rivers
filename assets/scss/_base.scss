@@ -1,0 +1,47 @@
+@mixin mobile() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ultrawide() {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
+%grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-column-gap: var(--margin);
+
+  @include mobile {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+:root {
+  --font-size: 1.8rem;
+  --font-size--secondary: 1.5rem;
+  --font-size--mobile: 1.6rem;
+  --font-size--mobile--secondary: 1.2rem;
+  --line-height: 1.22;
+
+  --margin: 3.0rem;
+  --margin--mobile: 1.5rem;
+  --scrollbar-width: 1.5rem;
+
+  --font-family: 'Sabon', serif;
+
+  --highlight-color: #000;
+  --alert-color: #f00;
+  --main-color: #888;
+
+  --ticker-width: -100vw;
+
+  @include mobile {
+    --margin: var(--margin--mobile);
+    --font-size: var(--font-size--mobile);
+    --font-size--secondary: var(--font-size--mobile--secondary);
+  }
+}

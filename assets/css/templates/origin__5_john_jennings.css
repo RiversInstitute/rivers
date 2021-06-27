@@ -1,0 +1,95 @@
+:root {
+  --font-size: 1.8rem;
+  --font-size--secondary: 1.5rem;
+  --font-size--mobile: 1.6rem;
+  --font-size--mobile--secondary: 1.2rem;
+  --line-height: 1.22;
+  --margin: 3.0rem;
+  --margin--mobile: 1.5rem;
+  --scrollbar-width: 1.5rem;
+  --font-family: "Sabon", serif;
+  --highlight-color: #000;
+  --alert-color: #f00;
+  --main-color: #888;
+  --ticker-width: -100vw;
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --margin: var(--margin--mobile);
+    --font-size: var(--font-size--mobile);
+    --font-size--secondary: var(--font-size--mobile--secondary);
+  }
+}
+
+.jennings {
+  padding-bottom: initial;
+  background-color: #6aab00;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.jennings .jennings_wrapper__horizontal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 85%;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .jennings .jennings_wrapper__horizontal {
+    width: 100%;
+  }
+}
+.jennings .jennings_wrapper__vertical {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 85%;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .jennings .jennings_wrapper__vertical {
+    width: 100%;
+  }
+}
+.jennings .jennings_wrapper__vertical .video__item__embed {
+  padding-top: 56.25%;
+  position: relative;
+}
+.jennings .jennings_wrapper__vertical .video__item__embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9;
+  object-fit: contain;
+  pointer-events: auto;
+}
+.jennings .navigation__container {
+  z-index: 9;
+  pointer-events: auto;
+}
+.jennings .jennings__bio-credits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: calc(3 * var(--margin));
+  display: none;
+  z-index: 3;
+  color: white;
+  background-color: #6aab00;
+}
+.jennings .jennings__bio-credits.active {
+  display: block;
+}
