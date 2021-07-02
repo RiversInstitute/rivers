@@ -1,0 +1,39 @@
+title: Publications
+
+columns:
+  main_1:
+    width: 2/3
+    sections:
+      fields:
+        fields:
+          main_content:
+            label: Header
+            type: textarea
+            size: tiny
+      main_items:
+        headline: Publications
+        info: "{{page.price}}"
+        type: pages
+        image: icon
+        templates:
+          - publication
+  main_2:
+    width: 1/3
+    sections:
+      publications_subpages:
+        headline: Publications (Subpages)
+        type: pages
+        templates:
+          - publications--additional
+      digital_publications:
+        headline: Digital Publications
+        type: pages
+        templates:
+          - origin__3_harryette_mullen
+          - origin__4_sanford_biggers_codeswitch
+          - origin__5_john_jennings
+          - origin__6_elena_del_rivero
+          - origin__7_laura_mullen
+          - origin__8_elinor_carucci
+          - origin__9_weber_payton
+      files:

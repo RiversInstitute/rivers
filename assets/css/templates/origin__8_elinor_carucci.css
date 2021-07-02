@@ -1,0 +1,177 @@
+:root {
+  --font-size: 1.8rem;
+  --font-size--secondary: 1.5rem;
+  --font-size--mobile: 1.6rem;
+  --font-size--mobile--secondary: 1.2rem;
+  --line-height: 1.22;
+  --margin: 3.0rem;
+  --margin--mobile: 1.5rem;
+  --scrollbar-width: 1.5rem;
+  --font-family: "Sabon", serif;
+  --highlight-color: #000;
+  --alert-color: #f00;
+  --main-color: #888;
+  --ticker-width: -100vw;
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --margin: var(--margin--mobile);
+    --font-size: var(--font-size--mobile);
+    --font-size--secondary: var(--font-size--mobile--secondary);
+  }
+}
+
+.carucci {
+  overflow: hidden;
+  padding-bottom: initial;
+  --carucci-margin: 1.5rem;
+  --font-size-caption: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .carucci {
+    --carucci-margin: 1.0rem;
+    --font-size-caption: 1.3rem;
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.6rem;
+  }
+}
+.carucci .navigation__container {
+  background-color: white;
+  z-index: 100;
+}
+.carucci .carucci__wrapper {
+  align-items: center;
+  display: flex;
+  height: calc(100vh - 8rem);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-left: -5px;
+}
+@media screen and (max-width: 768px) {
+  .carucci .carucci__wrapper {
+    height: calc(100vh - 5rem);
+  }
+}
+.carucci .carucci__wrapper .image__list {
+  cursor: pointer;
+  display: flex;
+  height: 30vh;
+}
+.carucci .carucci__wrapper .image__list.expanded {
+  height: 100%;
+}
+.carucci .carucci__wrapper .image__list.expanded .image__item__caption {
+  display: none;
+}
+.carucci .carucci__wrapper .image__list .image__item {
+  height: 100%;
+  margin-left: 5px;
+}
+.carucci .carucci__wrapper .image__list .image__item__image {
+  height: 100%;
+  width: auto;
+}
+.carucci .carucci__wrapper .image__list .image__item__caption {
+  padding-top: 0.5em;
+  font-size: var(--font-size-caption);
+  color: black;
+  flex-wrap: wrap;
+}
+.carucci .carucci__essay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: calc(3 * var(--margin));
+  z-index: 3;
+  color: black;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  transition: all 250ms linear;
+}
+.carucci .carucci__essay.active {
+  visibility: visible;
+  opacity: 1;
+  background-color: white;
+}
+.carucci .carucci__essay .carucci__essay__title {
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+  max-width: 600px;
+}
+.carucci .carucci__essay .carucci__essay__title a {
+  color: #888;
+}
+.carucci .carucci__essay .carucci__essay__content {
+  margin: auto;
+  max-width: 600px;
+}
+.carucci .carucci__essay .carucci__essay__content p + p {
+  text-indent: calc(1 * var(--margin));
+}
+.carucci .carucci__essay .carucci__essay__content a {
+  color: #888;
+}
+.carucci .carucci__bio-credits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: calc(3 * var(--margin));
+  display: none;
+  z-index: 3;
+  color: white;
+  background-color: #dc4aa2;
+}
+.carucci .carucci__bio-credits.active {
+  display: block;
+}
+.carucci .carucci__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8rem;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: black;
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(220, 74, 162, 0.8);
+}
+@media screen and (max-width: 768px) {
+  .carucci .carucci__overlay {
+    bottom: 5rem;
+  }
+}
+.carucci .carucci__overlay__content {
+  color: white;
+  margin: var(--margin);
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+.carucci .carucci__overlay__title {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.carucci .carucci__overlay__enter_button button {
+  margin-top: var(--margin);
+  margin-bottom: var(--margin);
+  font-weight: bold;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .carucci .carucci__overlay {
+    font-size: var(--font-size-secondary);
+    overflow: auto;
+    padding-bottom: calc(2 * var(--margin));
+  }
+}

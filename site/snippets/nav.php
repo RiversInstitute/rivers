@@ -1,7 +1,7 @@
 <?php
 
 // main menu items
-$items = $pages->listed()->notTemplate('season');
+$items = $site->pages()->listed();
 if (isset($override)) {
   $items = $override;
 }
