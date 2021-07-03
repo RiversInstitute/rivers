@@ -648,7 +648,7 @@ body.invert {
 .publications .publication .publication__images {
   position: relative;
   padding-top: calc(2 / 3 * 100%);
-  cursor: pointer;
+  cursor: e-resize;
 }
 .publications .publication .publication__images .publication__images__image {
   position: absolute;

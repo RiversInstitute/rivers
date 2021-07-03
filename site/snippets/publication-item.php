@@ -1,6 +1,14 @@
 <li class="publication">
   <div class="publication__title text">
-    <a class="no-highlight" href="<?= $publication->url(); ?>"><?= $publication->publication_title()->kt(); ?></a>
+    <a class="no-highlight" href="
+      <?php if ($publication->publication_type() == "physical"): ?>
+        <?= $publication->url(); ?>
+      <?php else: ?>
+        <?= $publication->digital_publication_page()->url(); ?>
+      <?php endif; ?>
+      ">
+      <?= $publication->publication_title()->kt(); ?>
+    </a>
   </div>
   <?php if ($publication->publication_images()->toFiles()->isNotEmpty()): ?>
     <ul class="publication__images">
