@@ -323,6 +323,9 @@ body.invert {
 
 .home {
   height: 100vh;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
   padding: var(--margin);
   margin: initial;
   display: flex;
