@@ -36,10 +36,11 @@ fields:
           page: Page
           url: URL
       page_link:
-        type: select
+        type: multiselect
         options: query
-        query: site.pages
+        query: site.index
         label: Page
+        max: 1
         when:
           links_to: page
       url_link:
