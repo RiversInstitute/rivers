@@ -8,6 +8,12 @@
     height: initial;
     padding-bottom: calc(2 * var(--margin));
   }
+
+  &.single {
+    .publication {
+      width: 100%;
+    }
+  }
   
   .publication {
     width: 20%;

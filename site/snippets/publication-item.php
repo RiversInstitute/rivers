@@ -1,6 +1,6 @@
 <li class="publication">
   <div class="publication__title text">
-    <?= $publication->publication_title()->kt(); ?>
+    <a class="no-highlight" href="<?= $publication->url(); ?>"><?= $publication->publication_title()->kt(); ?></a>
   </div>
   <?php if ($publication->publication_images()->toFiles()->isNotEmpty()): ?>
     <ul class="publication__images">
@@ -12,11 +12,11 @@
   <?php endif; ?>
   <?php if ($publication->publication_type() == "physical"): ?>
     <div class="publication__price">
-      <?= $publication->price(); ?> <?php if ($publication->purchase_url()->isNotEmpty()): ?><a class="highlight" href="<?= $publication->purchase_url(); ?>">Purchase &#8599;</a><?php endif; ?>
+      <?= $publication->price(); ?> <?php if ($publication->purchase_url()->isNotEmpty()): ?><a class="highlight" href="<?= $publication->purchase_url(); ?>">Purchase&nbsp;&#8599;&#xFE0E;</a><?php endif; ?>
     </div>
   <?php else: ?>
     <div class="publication__link">
-      <a class="highlight" href="<?= $publication->digital_publication_page()->url(); ?>">Digital publication &#8599;</a>
+      <a class="highlight" href="<?= $publication->digital_publication_page()->url(); ?>">Digital publication&nbsp;&#8599;&#xFE0E;</a>
     </div>
   <?php endif; ?>
   <div class="publication__reviews text">

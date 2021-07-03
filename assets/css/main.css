@@ -308,7 +308,7 @@ body.invert {
 .text *:first-child {
   margin-top: initial;
 }
-.text a {
+.text a:not(.no-highlight) {
   color: var(--highlight-color);
 }
 .text sup {
@@ -617,6 +617,9 @@ body.invert {
     height: initial;
     padding-bottom: calc(2 * var(--margin));
   }
+}
+.publications.single .publication {
+  width: 100%;
 }
 .publications .publication {
   width: 20%;

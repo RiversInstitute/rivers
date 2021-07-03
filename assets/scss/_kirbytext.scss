@@ -26,7 +26,7 @@
     margin-top: initial;
   }
 
-  a {
+  a:not(.no-highlight) {
     color: var(--highlight-color);
   }
 
