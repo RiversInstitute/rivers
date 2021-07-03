@@ -1,4 +1,4 @@
-title: Event
+title: Exhibition
 
 num: '{{ page.start_date.toDate("Ymd") }}'
 

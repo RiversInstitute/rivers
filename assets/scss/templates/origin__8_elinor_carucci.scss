@@ -1,0 +1,197 @@
+@import "../base.scss";
+
+%full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8rem;
+
+  @include mobile {
+    bottom: 5rem;
+  }
+}
+
+.carucci {
+  overflow: hidden;
+  padding-bottom: initial;
+
+  --carucci-margin: 1.5rem;
+  --font-size-caption: 1.3rem;
+
+  @include mobile {
+    --carucci-margin: 1.0rem;
+    --font-size-caption: 1.3rem;
+    --font-size-primary: 1.6rem;
+    --font-size-secondary: 1.6rem;
+  }
+
+  .navigation__container {
+    background-color: white;
+    z-index: 100;
+  }
+
+  .carucci__wrapper {
+    align-items: center;
+    display: flex;
+    height: calc(100vh - 8rem);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-left: -5px;
+
+    @include mobile {
+      height: calc(100vh - 5rem);
+    }
+
+    .image__list {
+      cursor: pointer;
+      display: flex;
+      height: 30vh;
+      // transition: height 250ms;
+
+      &.expanded {
+        height: 100%;
+
+        .image__item {
+          &__caption {
+            display: none;
+          }
+        }
+      }
+
+      .image__item {
+        height: 100%;
+        margin-left: 5px;
+
+        &__image {
+          height: 100%;
+          width: auto;
+        }
+
+        &__caption {
+          padding-top: 0.5em;
+          font-size: var(--font-size-caption);
+          color: black;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  .carucci__essay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-bottom: calc(3 * var(--margin));
+    z-index: 3;
+    color: black;
+
+    visibility: hidden;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    transition: all 250ms linear;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      background-color: white;
+    }
+
+    .carucci__essay__title {
+      font-weight: bold;
+      text-align: center;
+      margin: auto;
+      padding-bottom: 20px;
+      max-width: 600px;
+
+      a {
+        color: #888;
+      }
+    }
+
+    .carucci__essay__content {
+      margin: auto;
+      max-width: 600px;
+
+      p + p {
+        text-indent: calc(1 * var(--margin));
+      }
+      
+      a {
+        color: #888;
+      }
+    }
+  }
+
+  .carucci__bio-credits {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-bottom: calc(3 * var(--margin));
+    display: none;
+    z-index: 3;
+    color: white;
+    background-color: #dc4aa2;
+
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .carucci__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8rem;
+    z-index: 10;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    color: black;
+    display: flex;
+    flex-direction: row;
+    // justify-content: left;
+    background-color: rgba(220, 74, 162, 0.8);
+
+
+    @include mobile {
+      bottom: 5rem;
+    }
+
+    &__content {
+      color: white;
+      margin: var(--margin);
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+
+    &__title {
+      font-weight: bold;
+      padding-bottom: 10px;
+
+    }
+
+    &__enter_button button {
+      margin-top: var(--margin);
+      margin-bottom: var(--margin);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @include mobile {
+      font-size: var(--font-size-secondary);
+      overflow: auto;
+      padding-bottom: calc(2 * var(--margin));
+    }
+
+
+  }
+
+}

@@ -1,0 +1,57 @@
+.highlight {
+  color: var(--highlight-color);
+}
+
+.layout-wrapper {
+  margin: var(--margin);
+  max-width: 700px;
+}
+
+.layout-wrapper--full {
+  margin: var(--margin);
+}
+
+body {
+  padding-bottom: calc(2 * var(--margin));
+
+  &.no-pad {
+    padding-bottom: initial;
+  }
+
+  &.invert {
+    background-color: var(--main-color);
+    color: white;
+  }
+}
+
+.height-constrained {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    height: initial;
+    overflow: initial;
+    display: initial;
+    flex-direction: initial;
+  }
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.col-2 {
+  columns: 2;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-gap: var(--margin);
+
+  @include mobile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

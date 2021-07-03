@@ -1,0 +1,47 @@
+.text {
+  p, figure, ul, ol {
+    margin-top: calc(1em * var(--line-height));
+  }
+
+  // p + p {
+  //   margin-top: initial;
+  //   text-indent: calc(2 * var(--margin));
+  // }
+
+  hr {
+    display: none;
+  }
+
+  blockquote {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  *:first-child {
+    margin-top: initial;
+  }
+
+  a {
+    color: var(--highlight-color);
+  }
+
+  sup {
+    font-size: .6em;
+  }
+
+  .footnotes {
+    ol {
+      li {
+        font-size: .75em;
+        .footnote-backref {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+}

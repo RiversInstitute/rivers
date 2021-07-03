@@ -1,0 +1,20 @@
+.about__container {
+  @extend .layout-wrapper--full;
+  
+  display: grid;
+  grid-template-columns: fit-content(700px) fit-content(200px);
+  grid-column-gap: var(--margin);
+
+  .about__rail__secondary {
+    margin-top: calc(5em * var(--line-height));
+
+    @include mobile {
+      margin-top: calc(1em * var(--line-height));;
+    }
+  }
+  
+  @include mobile {
+    grid-row-gap: calc(1em * var(--line-height));
+    grid-template-columns: 1fr;
+  }
+}

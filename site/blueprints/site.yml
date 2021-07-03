@@ -13,17 +13,15 @@ tabs:
             type: pages
             image: icon
             templates:
-              - default
+              - exhibitions
               - events
-              - shop
+              - publications
               - partners
+              - about
+              - default
       main_2:
         width: 1/2
         sections:
-          seasons:
-            headline: Seasons
-            type: pages
-            template: season
           home:
             headline: Home
             type: pages

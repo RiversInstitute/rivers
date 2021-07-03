@@ -1,0 +1,23 @@
+title: Publications (Subpage)
+
+columns:
+  main_1:
+    width: 2/3
+    sections:
+      fields:
+        fields:
+          main_content:
+            label: Header
+            type: textarea
+            size: tiny
+      pages:
+        headline: Publications
+        info: "{{page.price}}"
+        type: pages
+        image: icon
+        templates:
+          - publication
+  main_2:
+    width: 1/3
+    sections:
+      files:

@@ -1,0 +1,60 @@
+title: Publication
+preset: page
+
+fields:
+  publication_title:
+    label: Full title
+    type: textarea
+    size: tiny
+    uploads: false
+    buttons:
+      - bold
+      - italic
+      - link
+  publication_type:
+    label: Type of publication
+    type: radio
+    default: physical
+    options:
+      physical: Physical
+      digital: Digital
+  digital_publication_page:
+    label: Link to digital publication
+    type: select
+    options: query
+    query: site.pages.template('publications').children.notTemplate('publication').notTemplate('publications--additional')
+    when:
+      publication_type: digital
+  price:
+    label: Price
+    type: text
+    width: 1/3
+    when:
+      publication_type: physical
+  purchase_url:
+    label: Purchase URL
+    type: text
+    width: 1/3
+    when:
+      publication_type: physical
+  metadata:
+    label: Metadata
+    type: textarea
+    width: 1/3
+    when:
+      publication_type: physical
+  publication_images:
+    label: Images
+    type: files
+  reviews:
+    label: Reviews
+    type: textarea
+    size: medium
+  main_content:
+    label: Content
+    type: textarea
+    size: large
+  credits:
+    label: Credits
+    type: textarea
+    size: medium

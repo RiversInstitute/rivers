@@ -1,0 +1,17 @@
+.email-signup {
+  height: calc(1em * var(--line-height));
+  
+  .js-cm-form {
+    display: flex;
+
+    input[type="email"] {
+      border-bottom: .1em solid var(--main-color);
+    }
+
+    button[type="submit"] {
+      margin-left: calc(0.5 * var(--margin));
+      cursor: pointer;
+      color: var(--highlight-color);
+    }
+  }
+}

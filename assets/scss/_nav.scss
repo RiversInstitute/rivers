@@ -1,0 +1,65 @@
+.navigation__container {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%);
+
+  .invert & {
+    background: rgb(136, 136, 136);
+    background: linear-gradient(180deg, rgba(136, 136, 136,0) 0%, rgba(136, 136, 136,1) 35%);
+  }
+  
+  nav {
+    padding: var(--margin);
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .navigation {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .navigation__item {
+        padding-right: var(--margin);
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+
+.event-ticker {
+  --width: 100vw;
+
+  color: var(--highlight-color);
+  overflow: hidden;
+  width: var(--width);
+
+  .ticker__list {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--width), 0, 0);
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes marquee {
+      from {
+        transform: translate3d(var(--width), 0, 0);
+      }
+
+      to {
+        transform: translate3d(var(--ticker-width), 0, 0);
+      }
+    }
+
+    .ticker__item {
+      padding-right: var(--margin);
+      white-space: nowrap;
+    }
+  }
+}

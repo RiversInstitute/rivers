@@ -1,0 +1,192 @@
+.home {
+  height: 100vh;
+  padding: var(--margin);
+  margin: initial;
+  display: flex;
+  flex-direction: column;
+
+  .home__header {
+    @extend %grid;
+    z-index: 5;
+    grid-template-areas: "logo ticker ticker ticker bibliography";
+    position: relative;
+    pointer-events: none;
+
+    .home__site-title {
+      grid-area: logo;
+      display: flex;
+      flex-direction: column;
+
+      .site-title__text {
+        pointer-events: initial;
+      }
+    }
+
+    .home__ticker-container {
+      grid-area: ticker;
+      // color: #555;
+      color: black;
+
+      .home__ticker {
+        @include mobile {
+          text-align: initial;
+          word-break: break-all;
+        }
+      }
+    }
+
+    .bibliography {
+      grid-area: bibliography;
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      padding-left: 1em;
+      margin-left: -1em;
+      height: calc(100vh - 2 * var(--margin));
+
+      .bibliography__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        pointer-events: initial;
+
+        .bibliography__header__button {
+          cursor: pointer;
+        }
+      }
+
+      .bibliography__list {
+        visibility: hidden;
+        margin-top: 1em;
+
+        .bibliography__item {
+          margin-left: 1em;
+          text-indent: -1em;
+          margin-bottom: 1em;
+          word-wrap: break-word;
+          font-size: var(--font-size--secondary);
+
+          &:first-of-type {
+            text-indent: initial;
+            margin-left: initial;
+          }
+
+          .bibliography__item__embed {
+            margin-left: 1em;
+
+            iframe, div, img {
+              width: 100%;
+              height: auto;
+            }
+
+            audio {
+              display: block;
+              width: 100%;
+            }
+
+          }
+        }
+      }
+
+      &.expanded {
+        pointer-events: initial;
+        background: #fff;
+        overflow: auto;
+
+        .bibliography__list {
+          visibility: visible;
+        }
+      }
+    }
+
+    @include mobile {
+      grid-template-areas: "ticker ticker bibliography";
+
+      .home__site-title {
+        display: none;
+      }
+    }
+  }
+
+  .home__contents {
+    position: fixed;
+    z-index: 3;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    margin-top: 20vh;
+    margin-bottom: calc(4 * var(--margin));
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @include mobile {
+      margin-top: 55vh;
+    }
+
+    &.active {
+      z-index: 10;
+      opacity: 0;
+    }
+
+    .home__blocks {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+
+      .home__block__container {
+        grid-area: var(--grid-area);
+
+        .home__block {
+          position: relative;
+          height: 100%;
+          color: var(--text-color, #FFF);
+          background-color: var(--background-color, #FFF);
+          padding: calc(0.5 * var(--margin));
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
+
+
+.home__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: var(--margin);
+
+  &.active {
+    display: flex;
+    z-index: 9;
+  }
+
+  .overlay__heading {
+    position: fixed;
+    pointer-events: none;
+
+    top: var(--margin);
+    left: var(--margin);
+  }
+  .overlay__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

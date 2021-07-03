@@ -1,15 +1,15 @@
-title: Events
+title: Exhibitions
 
 columns:
   main_1:
     width: 2/3
     sections:
       pages:
-        headline: Events
+        headline: Exhibitions
         type: pages
         image: icon
         templates:
-          - event
+          - exhibition
   main_2:
     width: 1/3
     sections:
