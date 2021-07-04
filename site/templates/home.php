@@ -1,4 +1,4 @@
-<?php snippet('header', ["headerClass" => "no-pad"]); ?>
+<?php snippet('header', ["headerClass" => "no-pad home__container"]); ?>
 <?php snippet('nav', ['showMarquee' => false]); ?>
 <div class="layout-wrapper--full home">
   <div class="home__header">

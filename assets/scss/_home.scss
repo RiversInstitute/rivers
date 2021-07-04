@@ -1,8 +1,13 @@
+.home__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .home {
-  height: 100vh;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: 100%;
   padding: var(--margin);
   margin: initial;
   display: flex;
@@ -10,7 +15,7 @@
 
   .home__header {
     @extend %grid;
-    z-index: 5;
+    z-index: 2;
     grid-template-areas: "logo ticker ticker ticker bibliography";
     position: relative;
     pointer-events: none;
@@ -114,7 +119,7 @@
 
   .home__contents {
     position: fixed;
-    z-index: 3;
+    z-index: 1;
     margin-left: var(--margin);
     margin-right: var(--margin);
     margin-top: 20vh;

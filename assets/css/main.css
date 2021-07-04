@@ -237,7 +237,7 @@ body.invert {
 
 .navigation__container {
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   bottom: 0;
   left: 0;
   right: 0;
@@ -321,18 +321,23 @@ body.invert {
   font-size: 0.6em;
 }
 
+.home__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .home {
-  height: 100vh;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: 100%;
   padding: var(--margin);
   margin: initial;
   display: flex;
   flex-direction: column;
 }
 .home .home__header {
-  z-index: 5;
+  z-index: 2;
   grid-template-areas: "logo ticker ticker ticker bibliography";
   position: relative;
   pointer-events: none;
@@ -418,7 +423,7 @@ body.invert {
 }
 .home .home__contents {
   position: fixed;
-  z-index: 3;
+  z-index: 1;
   margin-left: var(--margin);
   margin-right: var(--margin);
   margin-top: 20vh;
