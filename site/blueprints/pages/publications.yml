@@ -20,11 +20,11 @@ columns:
   main_2:
     width: 1/3
     sections:
-      publications_subpages:
-        headline: Publications (Subpages)
-        type: pages
-        templates:
-          - publications--additional
+      # publications_subpages:
+      #   headline: Publications (Subpages)
+      #   type: pages
+      #   templates:
+      #     - publications--additional
       digital_publications:
         headline: Digital Publications
         type: pages
