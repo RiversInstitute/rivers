@@ -252,6 +252,8 @@ body.invert {
   padding: var(--margin);
   overflow-x: auto;
   overflow-y: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 .navigation__container nav .navigation {
   display: flex;

@@ -16,6 +16,8 @@
     padding: var(--margin);
     overflow-x: auto;
     overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
 
     .navigation {
       display: flex;
