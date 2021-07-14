@@ -294,6 +294,10 @@ body.invert {
 .text p, .text figure, .text ul, .text ol {
   margin-top: calc(1em * var(--line-height));
 }
+.text figcaption {
+  margin-top: calc(0.25em * var(--line-height));
+  font-size: 0.6em;
+}
 .text hr {
   display: none;
 }
