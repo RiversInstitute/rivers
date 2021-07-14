@@ -686,16 +686,8 @@ body.invert {
 
 .about__container {
   display: grid;
-  grid-template-columns: fit-content(700px) fit-content(200px);
+  grid-template-columns: fit-content(700px) fit-content(300px);
   grid-column-gap: var(--margin);
-}
-.about__container .about__rail__secondary {
-  margin-top: calc(5em * var(--line-height));
-}
-@media screen and (max-width: 768px) {
-  .about__container .about__rail__secondary {
-    margin-top: calc(1em * var(--line-height));
-  }
 }
 @media screen and (max-width: 768px) {
   .about__container {

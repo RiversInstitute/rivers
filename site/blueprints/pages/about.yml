@@ -9,11 +9,11 @@ fields:
     label: About
     type: textarea
     size: large
-  right_rail_1:
+  # right_rail_1:
+  #   label: Right rail
+  #   type: textarea
+  #   size: small
+  right_rail:
     label: Right rail
-    type: textarea
-    size: small
-  right_rail_2:
-    label: Right rail continued
     type: textarea
     size: medium
