@@ -18,5 +18,6 @@ if (isset($override)) {
       <li id="nav-<?= $item->title()->slug(); ?>" class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title(); ?></a></li>
       <?php endforeach ?>
     </ul>
+    <?php snippet('email-signup'); ?>
   </nav>
 </div>
