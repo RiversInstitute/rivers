@@ -500,61 +500,88 @@ body.invert {
   display: block;
 }
 
-.happenings {
+.listings__header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+
+.listings__body {
+  max-height: 100vh;
+  height: 100vh;
+}
+
+.listings {
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
-}
-.happenings .listing__list {
-  width: 20%;
-  flex-shrink: 0;
-  margin-left: var(--margin);
+  height: 100%;
+  width: max-content;
 }
 @media screen and (max-width: 768px) {
-  .happenings .listing__list {
-    width: 50%;
+  .listings {
+    height: initial;
+    padding-bottom: calc(2 * var(--margin));
   }
 }
-.happenings .listing__list:first-of-type {
+.listings .listings__item {
+  width: var(--nonmobile--width, 200px);
+  flex-shrink: 0;
+  margin-left: var(--margin);
+  height: 100%;
+  overflow: auto;
+  padding-bottom: calc(6 * var(--margin));
+  padding-right: var(--scrollbar-width);
+  margin-right: calc(-1 * var(--scrollbar-width));
+}
+@media screen and (max-width: 768px) {
+  .listings .listings__item {
+    width: var(--mobile--width, 50vw);
+    height: initial;
+    overflow: initial;
+    padding-bottom: initial;
+  }
+}
+.listings .listings__item:first-of-type {
   margin-left: initial;
 }
-.happenings .listing__list div, .happenings .listing__list ul {
+.listings .listings__item div, .listings .listings__item ul {
   margin-bottom: 1em;
 }
-.happenings .listing__list .listing__hero {
+.listings .listings__item .listing__hero {
   margin-bottom: 1em;
 }
-.happenings .listing__list .listing__title {
+.listings .listings__item .listing__title {
   font-weight: bold;
 }
-.happenings .listing__list .listing__preview {
+.listings .listings__item .listing__preview {
   margin-top: 1em;
 }
 
-.happening .listing__title {
+.listing .listing__title {
   font-weight: bold;
 }
-.happening .listing__content {
+.listing .listing__content {
   margin-top: 1em;
 }
-.happening .listing__gallery {
+.listing .listing__gallery {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--margin) + 1em);
   margin-left: calc(-1 * var(--margin));
 }
-.happening .listing__gallery .listing__gallery__item {
+.listing .listing__gallery .listing__gallery__item {
   width: 200px;
   margin-top: var(--margin);
   margin-left: var(--margin);
 }
 @media screen and (max-width: 768px) {
-  .happening .listing__gallery .listing__gallery__item {
+  .listing .listing__gallery .listing__gallery__item {
     width: calc(50% - var(--margin));
   }
 }
-.happening .listing__gallery .listing__gallery__item .listing__gallery__item__caption {
+.listing .listing__gallery .listing__gallery__item .listing__gallery__item__caption {
   margin-top: 1em;
   font-size: var(--font-size--secondary);
 }
