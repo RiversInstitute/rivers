@@ -81,7 +81,7 @@
   <?php endif; ?>
 
   <?= css(['assets/css/main.css', '@auto']);?>
-  <!-- <?= js(['assets/js/main.js', '@auto']); ?> -->
+  <?= js(['assets/js/main.js', '@auto']); ?>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script>
