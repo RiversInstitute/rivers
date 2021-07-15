@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="partners__container">
-    <ul class="partners">
+    <ul class="partners" style="--partner--count: <?= $page->partners()->toStructure()->count(); ?>;">
       <?php foreach ($page->partners()->toStructure() as $partner): ?>
         <li class="partners__partner" style="--partner-color: <?= $partner->color(); ?>;">
           <a href="<?= $partner->url(); ?>">

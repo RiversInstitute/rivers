@@ -27,7 +27,7 @@
     padding-top: var(--margin);
     padding-bottom: var(--margin);
     margin-left: var(--margin);
-    width: calc(20% - var(--margin));
+    width: calc((100% / var(--partner--count, 5)) - var(--margin));
     height: 100%;
     overflow: auto;
     padding-right: var(--scrollbar-width); 
