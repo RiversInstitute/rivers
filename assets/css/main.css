@@ -525,7 +525,7 @@ body.invert {
   }
 }
 .listings .listings__item {
-  width: var(--nonmobile--width, 200px);
+  width: var(--nonmobile--width, 300px);
   flex-shrink: 0;
   margin-left: var(--margin);
   height: 100%;

@@ -4,7 +4,6 @@
   <div class="listing__title highlight">
     <?= $page->title(); ?>
   </div>
-  <br>
   <div class="listing__content text">
     <?= $page->main_content()->kt(); ?>
   </div>
