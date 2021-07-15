@@ -1,25 +1,18 @@
-<?php snippet('header', ['headerClass' => 'no-pad']); ?>
+<?php snippet('header', ['headerClass' => 'height-limited']); ?>
 <?php snippet('nav'); ?>
-<div class="height-constrained">
-  <div class="layout-wrapper--full grid-2">
-    <div class="text highlight">
-      <?= $page->main_content()->kt(); ?>
+<div class="listings__wrapper">
+  <div class="listings__header">
+    <div class="layout-wrapper--full">
+      <div class="text highlight">
+        <?= $page->main_content()->kt(); ?>
+      </div>
     </div>
-    <nav>
-      <ul class="navigation">
-        <?php foreach($page->children()->template('publications--additional')->listed() as $item): ?>
-        <li id="nav-<?= $item->title()->slug(); ?>" class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title(); ?></a></li>
-        <?php endforeach ?>
-      </ul>
-    </nav>
   </div>
-  <div class="layout-wrapper--full height-100">
-    <ul class="publications">
-      <?php foreach ($page->children()->template('publication')->listed() as $publication): ?>
-        <?php snippet('publication-item', ["publication" => $publication]); ?>
-      <?php endforeach; ?>
-    </ul>
-  </div>
+  <ul class="listings" style="--nonmobile--width: 300px; --mobile--width: 45vw;">
+    <?php foreach ($page->children()->template('publication')->listed() as $publication): ?>
+      <li class="listings__item"><?php snippet('publication-item', ["publication" => $publication]); ?></li>
+    <?php endforeach; ?>
+  </ul>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {

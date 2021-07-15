@@ -1,12 +1,14 @@
-<?php snippet('header'); ?>
+<?php snippet('header', ['headerClass' => 'height-limited']); ?>
 <?php snippet('nav'); ?>
-<div class="layout-wrapper">
-  <div class="text highlight">
-    <?= $page->main_content()->kt(); ?>
+<div class="listings__wrapper">
+  <div class="listings__header">
+    <div class="layout-wrapper--full">
+      <div class="text highlight">
+        <?= $page->main_content()->kt(); ?>
+      </div>
+    </div>
   </div>
-</div>
-<div class="layout-wrapper--full">
-  <ul class="listings">
+  <ul class="listings" style="--nonmobile--width: 400px; --mobile--width: 45vw;">
     <?php foreach ($page->children()->listed() as $listing): ?>
       <li class="listings__item">
         <a href="<?= $listing->url(); ?>">

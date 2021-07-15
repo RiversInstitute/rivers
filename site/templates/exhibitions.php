@@ -1,11 +1,13 @@
-<?php snippet('header'); ?>
+<?php snippet('header', ['headerClass' => 'height-limited']); ?>
 <?php snippet('nav'); ?>
-<div class="layout-wrapper">
-  <div class="text highlight">
-    <?= $page->main_content()->kt(); ?>
+<div class="listings__wrapper">
+  <div class="listings__header">
+    <div class="layout-wrapper--full">
+      <div class="text highlight">
+        <?= $page->main_content()->kt(); ?>
+      </div>
+    </div>
   </div>
-</div>
-<div class="layout-wrapper--full">
-  <?php snippet('listings-grid', ["listings" => $page->children()->listed()->sortBy('start_date', 'desc')]); ?>
+  <?php snippet('listings-grid', ["nonmobile_width" => "400px", "mobile_width" => "45vw", "listings" => $page->children()->listed()->sortBy('start_date', 'desc')]); ?>
 </div>
 <?php snippet('footer'); ?>

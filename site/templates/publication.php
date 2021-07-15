@@ -1,9 +1,7 @@
 <?php snippet('header'); ?>
 <?php snippet('nav'); ?>
 <div class="layout-wrapper">
-  <ul class="publications single">
-    <?php snippet('publication-item', ["publication" => $page]); ?>
-  </ul>
+  <?php snippet('publication-item', ["publication" => $page]); ?>
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {

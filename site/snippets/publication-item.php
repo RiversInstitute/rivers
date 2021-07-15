@@ -1,4 +1,4 @@
-<li class="listings__item">
+<div class="publication">
   <div class="publication__title text">
     <a class="no-highlight" href="
       <?php if ($publication->publication_type() == "physical"): ?>
@@ -41,4 +41,4 @@
       <?= $publication->metadata()->kt(); ?>
     </div>
   <?php endif; ?>
-</li>
+  </div>

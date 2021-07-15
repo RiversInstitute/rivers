@@ -1,4 +1,4 @@
-<ul class="listings">
+<ul class="listings" style="--nonmobile--width: <?= $nonmobile_width; ?>; --mobile--width: <?= $mobile_width; ?>;">
   <?php foreach ($listings as $listing): ?>
     <li class="listings__item">
       <a href="<?= $listing->url(); ?>">
