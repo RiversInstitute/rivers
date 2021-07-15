@@ -18,6 +18,7 @@ tabs:
               - events
               - publications
               - partners
+              - residency
               - about
       main_2:
         width: 1/2

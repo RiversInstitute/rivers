@@ -1,0 +1,24 @@
+title: Resident
+preset: page
+
+pages:
+  template: default
+  
+fields:
+  hero_image:
+    label: Hero image
+    type: files
+    max: 1
+  preview_content:
+    label: Preview Content
+    type: textarea
+    size: medium
+  main_content:
+    label: Content
+    type: textarea
+    size: large
+  main_gallery:
+    label: Gallery
+    type: files
+    layout: cards
+    info: "{{file.caption}}"

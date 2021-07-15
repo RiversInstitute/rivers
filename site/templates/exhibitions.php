@@ -6,6 +6,6 @@
   </div>
 </div>
 <div class="layout-wrapper--full">
-  <?php snippet('happenings-grid', ["listings" => $page->children()->listed()->sortBy('start_date', 'desc')]); ?>
+  <?php snippet('listings-grid', ["listings" => $page->children()->listed()->sortBy('start_date', 'desc')]); ?>
 </div>
 <?php snippet('footer'); ?>

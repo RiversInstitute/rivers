@@ -1,6 +1,6 @@
-<ul class="happenings">
+<ul class="listings">
   <?php foreach ($listings as $listing): ?>
-    <li class="listing__list">
+    <li class="listings__item">
       <a href="<?= $listing->url(); ?>">
         <?php if($listing->hero_image()->isNotEmpty()): ?>
           <img class="listing__hero" loading="lazy" src="<?= $listing->hero_image()->toFile()->resize(500)->url(); ?>">

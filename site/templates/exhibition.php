@@ -1,4 +1,4 @@
-<?php snippet('header', ['headerClass' => 'happening']); ?>
+<?php snippet('header', ['headerClass' => 'listing']); ?>
 <?php snippet('nav'); ?>
 <div class="layout-wrapper">
   <div class="listing__title highlight">

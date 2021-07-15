@@ -1,4 +1,4 @@
-<li class="publication">
+<li class="listings__item">
   <div class="publication__title text">
     <a class="no-highlight" href="
       <?php if ($publication->publication_type() == "physical"): ?>
