@@ -1,78 +1,34 @@
-.publications {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  height: 100%;
+.publication__images {
+  position: relative;
+  padding-top: calc(2 / 3 * 100%);
+  cursor: e-resize;
 
-  @include mobile {
-    height: initial;
-    padding-bottom: calc(2 * var(--margin));
-  }
-
-  &.single {
-    .publication {
-      width: 100%;
-    }
-  }
-  
-  .publication {
-    width: 20%;
-    flex-shrink: 0;
-    margin-left: var(--margin);
+  .publication__images__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
     height: 100%;
-    overflow: auto;
-    padding-bottom: calc(6 * var(--margin));
-    padding-right: var(--scrollbar-width); 
-    margin-right: calc(-1 * var(--scrollbar-width));
+    object-fit: contain;
+    object-position: left;
+    display: none;
 
-    @include mobile {
-      width: 50%;
-      height: initial;
-      overflow: initial;
-      padding-bottom: initial;
-    }
-    
-    &:first-of-type {
-      margin-left: initial;
-    }
-
-    div, ul {
-      margin-bottom: 1em;
-    }
-
-    .publication__images {
-      position: relative;
-      padding-top: calc(2 / 3 * 100%);
-      cursor: e-resize;
-
-      .publication__images__image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: left;
-        display: none;
-
-        &.active {
-          display: block;
-        }
-      }
-    }
-
-    .publication__reviews {
-      @extend .highlight;
-    }
-
-    .publication__credits {
-      font-size: var(--font-size--secondary);
-    }
-
-    .publication__metadata {
-      font-size: var(--font-size--secondary);
+    &.active {
+      display: block;
     }
   }
+}
+
+.publication__reviews {
+  @extend .highlight;
+}
+
+.publication__credits {
+  font-size: var(--font-size--secondary);
+}
+
+.publication__metadata {
+  font-size: var(--font-size--secondary);
 }

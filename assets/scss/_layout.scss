@@ -22,6 +22,11 @@ body {
     background-color: var(--main-color);
     color: white;
   }
+
+  &.height-limited {
+    height: 100vh;
+    max-height: 100vh;
+  }
 }
 
 .height-constrained {

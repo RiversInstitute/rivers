@@ -1,42 +1,46 @@
-
-.listings__header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  display: inline-block;
+.listings__wrapper {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
-.listings__body {
-  max-height: 100vh;
-  height: 100vh;
+.listings__header {
+  display: inline-block;
+  left: 0;
+  position: sticky;
+  top: 0;
 }
 
 .listings {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  flex-grow: 1;
+  height: 0px;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
   width: max-content;
 
   @include mobile {
-    height: initial;
-    padding-bottom: calc(2 * var(--margin));
+    // height: initial;
+    // padding-bottom: calc(2 * var(--margin));
   }
 
   .listings__item {
-    width: var(--nonmobile--width, 300px);
     flex-shrink: 0;
-    margin-left: var(--margin);
     height: 100%;
+    margin-left: var(--margin);
+    margin-right: calc(-1 * var(--scrollbar-width));
     overflow: auto;
     padding-bottom: calc(6 * var(--margin));
     padding-right: var(--scrollbar-width); 
-    margin-right: calc(-1 * var(--scrollbar-width));
+    width: var(--nonmobile--width, 300px);
 
     @include mobile {
+      // height: initial;
+      // overflow: initial;
+      // padding-bottom: initial;
       width: var(--mobile--width, 50vw);
-      height: initial;
-      overflow: initial;
-      padding-bottom: initial;
     }
 
     &:first-of-type {

@@ -78,9 +78,9 @@
   <img src="" class="overlay__image" loading="lazy">
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="/assets/js/typed.js"></script>
 <script>
-  window.addEventListener('load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     var typed = new Typed('#typed-output', {
       loop: true,
       typeSpeed: 40,
