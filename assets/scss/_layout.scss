@@ -23,8 +23,9 @@ body {
   }
 
   &.invert {
-    background-color: var(--main-color);
-    color: white;
+    background-color: #888;
+    --main-color: white;
+    color: var(--main-color);
   }
 
   &.height-limited {

@@ -201,8 +201,9 @@ body.no-pad {
   padding-bottom: initial;
 }
 body.invert {
-  background-color: var(--main-color);
-  color: white;
+  background-color: #888;
+  --main-color: white;
+  color: var(--main-color);
 }
 body.height-limited {
   height: 100vh;
@@ -244,6 +245,7 @@ body.height-limited {
 }
 
 .navigation__container {
+  pointer-events: none;
   position: fixed;
   z-index: 3;
   bottom: 0;
@@ -269,8 +271,12 @@ body.height-limited {
   flex-wrap: nowrap;
 }
 .navigation__container nav .navigation .navigation__item {
-  padding-right: var(--margin);
   flex-shrink: 0;
+  padding-right: var(--margin);
+  pointer-events: auto;
+}
+.navigation__container nav .email-signup {
+  pointer-events: auto;
 }
 
 .event-ticker {

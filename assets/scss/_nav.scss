@@ -1,4 +1,5 @@
 .navigation__container {
+  pointer-events: none;
   position: fixed;
   z-index: 3;
   bottom: 0;
@@ -25,9 +26,14 @@
       flex-wrap: nowrap;
 
       .navigation__item {
-        padding-right: var(--margin);
         flex-shrink: 0;
+        padding-right: var(--margin);
+        pointer-events: auto;
       }
+    }
+
+    .email-signup {
+      pointer-events: auto;
     }
   }
 }

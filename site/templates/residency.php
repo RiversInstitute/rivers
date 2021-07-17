@@ -9,6 +9,11 @@
     </div>
   </div>
   <ul class="listings" style="--nonmobile--width: 400px; --mobile--width: 45vw;">
+    <li class="listings__item">
+      <div class="text">
+        <?= $page->main_description()->kt(); ?>
+      </div>
+    </li>
     <?php foreach ($page->children()->listed() as $listing): ?>
       <li class="listings__item">
         <a href="<?= $listing->url(); ?>">
@@ -24,11 +29,6 @@
         </a>
       </li>
     <?php endforeach; ?>
-    <li class="listings__item">
-      <div class="text">
-        <?= $page->main_description()->kt(); ?>
-      </div>
-    </li>
   </ul>
 </div>
 <?php snippet('footer'); ?>
