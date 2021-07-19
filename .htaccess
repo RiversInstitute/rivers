@@ -40,6 +40,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*) index.php [L]
 
+# origin to pubs
+RedirectMatch 301 ^/origin/(.*)$ /publications/$1
+
 </IfModule>
 
 # pass the Authorization header to PHP
