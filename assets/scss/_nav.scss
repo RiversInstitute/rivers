@@ -13,12 +13,19 @@
     background: linear-gradient(180deg, rgba(136, 136, 136,0) 0%, rgba(136, 136, 136,1) 35%);
   }
   
+  .navigation__wrapper {
+    // padding: var(--margin);
+  }
+
   nav {
     padding: var(--margin);
+    padding-top: initial;
+    margin-top: var(--margin);
+    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    display: flex;
     justify-content: space-between;
+    pointer-events: auto;
 
     .navigation {
       display: flex;
@@ -28,12 +35,8 @@
       .navigation__item {
         flex-shrink: 0;
         padding-right: var(--margin);
-        pointer-events: auto;
+        
       }
-    }
-
-    .email-signup {
-      pointer-events: auto;
     }
   }
 }

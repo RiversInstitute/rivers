@@ -260,10 +260,13 @@ body.height-limited {
 }
 .navigation__container nav {
   padding: var(--margin);
+  padding-top: initial;
+  margin-top: var(--margin);
+  display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  display: flex;
   justify-content: space-between;
+  pointer-events: auto;
 }
 .navigation__container nav .navigation {
   display: flex;
@@ -273,10 +276,6 @@ body.height-limited {
 .navigation__container nav .navigation .navigation__item {
   flex-shrink: 0;
   padding-right: var(--margin);
-  pointer-events: auto;
-}
-.navigation__container nav .email-signup {
-  pointer-events: auto;
 }
 
 .event-ticker {
