@@ -5,6 +5,12 @@ fields:
     label: Ticker
     type: textarea
     size: small
+    width: 3/4
+  ticker_url:
+    label: Ticker URL
+    type: text
+    width: 1/4
+    help: Leave empty for no url
   entries:
     label: Entries
     type: structure

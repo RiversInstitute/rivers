@@ -369,6 +369,11 @@ body.height-limited {
 .home .home__header .home__site-title .site-title__text {
   pointer-events: initial;
 }
+.home .home__header .home__ticker__url {
+  pointer-events: initial;
+  display: block;
+  grid-area: ticker;
+}
 .home .home__header .home__ticker-container {
   grid-area: ticker;
   color: black;

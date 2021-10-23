@@ -5,12 +5,18 @@
     <a href="<?= $site->url(); ?>/about" class="home__site-title">
       <div class="site-title__text"><?= $site->full_title(); ?></div>
     </a>
-    <div class="home__ticker-container">
-      <div class="home__ticker text" id="typed-content">
-        <?= $page->ticker_content()->kt(); ?>
+    <?php if ($page->ticker_url()->isNotEmpty()): ?>
+        <a href="<?= $page->ticker_url(); ?>" class="home__ticker__url">
+      <?php endif; ?>
+      <div class="home__ticker-container">
+        <div class="home__ticker text" id="typed-content">
+          <?= $page->ticker_content()->kt(); ?>
+        </div>
+        <span id="typed-output"></span>
       </div>
-      <span id="typed-output"></span>
-    </div>
+    <?php if ($page->ticker_url()->isNotEmpty()): ?>
+      </a>
+    <?php endif; ?>
     <div class="bibliography" id="bibliography">
       <div class="bibliography__header">
         <button id="bibliography__title" class="bibliography__header__button">Bibliography</button>

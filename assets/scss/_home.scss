@@ -30,9 +30,14 @@
       }
     }
 
+    .home__ticker__url {
+      pointer-events: initial;
+      display: block;
+      grid-area: ticker;
+    }
+
     .home__ticker-container {
       grid-area: ticker;
-      // color: #555;
       color: black;
 
       .home__ticker {
