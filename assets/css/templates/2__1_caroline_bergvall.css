@@ -1,0 +1,112 @@
+:root {
+  --font-size: 1.8rem;
+  --font-size--secondary: 1.5rem;
+  --font-size--mobile: 1.6rem;
+  --font-size--mobile--secondary: 1.2rem;
+  --line-height: 1.22;
+  --margin: 3.0rem;
+  --margin--mobile: 1.5rem;
+  --scrollbar-width: 1.5rem;
+  --font-family: "Sabon", serif;
+  --highlight-color: #000;
+  --alert-color: #f00;
+  --main-color: #888;
+  --ticker-width: -100vw;
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --margin: var(--margin--mobile);
+    --font-size: var(--font-size--mobile);
+    --font-size--secondary: var(--font-size--mobile--secondary);
+  }
+}
+
+.bergvall {
+  padding-bottom: initial;
+  position: relative;
+}
+.bergvall .work {
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100.0);
+}
+.bergvall .work .work__embed {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+.bergvall .content {
+  margin-top: calc(2 * var(--margin));
+  margin-bottom: calc(2 * var(--margin));
+  display: grid;
+  grid-gap: calc(3 * var(--margin));
+  width: calc(100% - 2 * var(--margin));
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bergvall .content .tombstone {
+  transition: 1s opacity;
+  opacity: 0;
+  background-color: white;
+  border: 2pt solid;
+  display: grid;
+  gap: var(--margin);
+  grid-template-columns: 25% minmax(0, 1fr);
+  padding: var(--margin);
+  --offset: calc(-2.5 * var(--margin) * (1 - 7 * var(--scrollRatio, 0)));
+  --lim: min(var(--offset), 0px);
+  transform: translateY(var(--lim)) translateZ(0px);
+}
+.bergvall .content .tombstone.active {
+  opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .bergvall .content .tombstone {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.bergvall .content .video__container {
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+}
+.bergvall .content .video__container iframe {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.bergvall .content .video__container .video__message {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--message-color, #000);
+  color: white;
+  padding: var(--margin);
+}
+.bergvall .content .video__container .video__message .video__message__countdown {
+  position: absolute;
+  bottom: var(--margin);
+  right: var(--margin);
+}
+.bergvall .content .video__container.active iframe {
+  display: initial;
+}
+.bergvall .content .video__container.active .video__message {
+  display: none;
+}
+.bergvall .content .bio-credits .bio {
+  columns: 2;
+}
+.bergvall .navigation__container {
+  position: initial;
+}

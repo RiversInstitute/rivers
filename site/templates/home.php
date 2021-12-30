@@ -83,6 +83,25 @@
   <div class="overlay__heading text"></div>
   <img src="" class="overlay__image" loading="lazy">
 </div>
+<?php if($page->takeover()->toBool()): ?>
+  <div class="home__takeover">
+    <iframe 
+      class="home__takeover__iframe"
+      src="<?= $page->takeover_iframe_url(); ?>"
+    >
+    </iframe>
+    <button onclick="closeTakeover()" class="home__takeover__close">Close</button>
+  </div>
+  <script>
+    const closeTakeover = () => {
+      document.querySelector('.home__takeover').classList.add('hidden');
+    }
+
+    setTimeout(() => {
+      document.querySelector('.home__takeover__close').classList.add('active');
+    }, 5000);
+  </script>
+<?php endif; ?>
 
 <script src="/assets/js/typed.js"></script>
 <script>

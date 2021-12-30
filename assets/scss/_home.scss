@@ -203,3 +203,44 @@
     }
   }
 }
+
+.home__takeover {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+
+  opacity: 1;
+  visibility: visible;
+  transition: 1s all;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  &__iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
+  }
+
+  &__close {
+    position: absolute;
+    top: var(--margin);
+    right: var(--margin);
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 1s all;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
