@@ -518,6 +518,41 @@ body.height-limited {
   display: block;
 }
 
+.home__takeover {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 1;
+  visibility: visible;
+  transition: 1s all;
+}
+.home__takeover.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.home__takeover__iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+.home__takeover__close {
+  position: absolute;
+  top: var(--margin);
+  right: var(--margin);
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s all;
+}
+.home__takeover__close.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .listings__wrapper {
   height: 100%;
   display: flex;

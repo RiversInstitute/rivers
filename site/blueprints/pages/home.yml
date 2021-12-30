@@ -11,6 +11,14 @@ fields:
     type: text
     width: 1/4
     help: Leave empty for no url
+  takeover:
+    label: Takeover
+    type: toggle
+    width: 1/4
+  takeover_iframe_url:
+    label: Takeover IFrame URL
+    type: text
+    width: 3/4
   entries:
     label: Entries
     type: structure

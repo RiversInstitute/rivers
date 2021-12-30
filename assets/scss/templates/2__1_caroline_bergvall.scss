@@ -1,0 +1,110 @@
+@import "../base.scss";
+
+.bergvall {
+  padding-bottom: initial;
+  position: relative;
+
+  .work {
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100.0);
+
+    .work__embed {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      pointer-events: none;
+    }
+  }
+
+  .content {
+    margin-top: calc(2 * var(--margin));
+    margin-bottom: calc(2 * var(--margin)); 
+
+    display: grid;
+    grid-gap: calc(3 * var(--margin));
+    width: calc(100% - 2 * var(--margin));
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .tombstone {
+      transition: 1s opacity;
+      opacity: 0;
+      background-color: white;
+      border: 2pt solid;
+      display: grid;
+      gap: var(--margin);
+      grid-template-columns: 25% minmax(0, 1fr);
+      
+      padding: var(--margin);
+  
+      --offset: calc(-2.5 * var(--margin) * (1 - 7 * var(--scrollRatio, 0)));
+      --lim: min(var(--offset), 0px);
+      transform: translateY(var(--lim)) translateZ(0px);
+
+      &.active {
+        opacity: 1;
+      }
+  
+      @include mobile {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  
+    .video__container {
+      width: 100%;
+      padding-top: 56.25%;
+      position: relative;
+
+      iframe {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+
+      .video__message {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: var(--message-color, #000);
+        color: white;
+        padding: var(--margin);
+
+        .video__message__countdown {
+          position: absolute;
+          bottom: var(--margin);
+          right: var(--margin);
+        }
+      }
+
+      &.active {
+        iframe {
+          display: initial;
+        }
+        .video__message {
+          display: none;
+        }
+      }
+    }
+
+    .bio-credits {
+      .bio {
+        columns: 2;
+      }
+    }
+  }
+
+  .navigation__container {
+    position: initial;
+  }
+
+}
