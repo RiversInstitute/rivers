@@ -1,6 +1,9 @@
 title: Partners
 preset: page
 
+pages:
+  template: default
+
 fields:
   main_content:
     label: Content

@@ -1,4 +1,8 @@
 title: Exhibition
+preset: page
+
+pages:
+  template: default
 
 num: '{{ page.start_date.toDate("Ymd") }}'
 
@@ -42,6 +46,34 @@ fields:
     type: files
     layout: cards
     info: "{{file.caption}}"
+  associated_content:
+    label: Associated content
+    type: structure
+    fields:
+      title:
+        type: textarea
+        size: mini
+        label: Title
+      links_to:
+        type: radio
+        label: Links to
+        default: page
+        options:
+          page: Page
+          url: URL
+      page_link:
+        type: multiselect
+        options: query
+        query: site.index
+        label: Page
+        max: 1
+        when:
+          links_to: page
+      url_link:
+        type: url
+        label: URL
+        when:
+          links_to: url
   main_content_continued:
     label: Content Continued
     type: textarea

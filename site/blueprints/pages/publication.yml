@@ -1,6 +1,9 @@
 title: Publication
 preset: page
 
+pages:
+  template: default
+
 fields:
   publication_title:
     label: Full title
