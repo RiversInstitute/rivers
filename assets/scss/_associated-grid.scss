@@ -4,12 +4,21 @@
   grid-template-columns: repeat(var(--width--count, 6), minmax(0, 1fr));
   grid-template-rows: repeat(var(--height--count, 1), minmax(0, 1fr));
 
+  @include mobile {
+    grid-template-columns: repeat(var(--width--count--mobile, 2), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--height--count--mobile, 2), minmax(0, 1fr));
+  }
+
   &__item {
     --transition--time: 200ms;
     background-color: var(--main-color);
     grid-area: var(--grid-area);
     opacity: .47;
     transition: var(--transition--time) linear opacity;
+
+    @include mobile {
+      grid-area: var(--grid-area--mobile);
+    }
 
     &:before {
       padding-bottom: 75%; /* Minimum aspect ratio */

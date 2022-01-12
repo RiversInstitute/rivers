@@ -44,6 +44,7 @@ a:hover {
 
 input {
   @extend %form-reset-input;
+  border-radius: 0;
 }
 
 label {
