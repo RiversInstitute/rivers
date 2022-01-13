@@ -59,7 +59,7 @@
       <?php endif; ?>
         <div class="associated__grid__item__title">
           <p class="text">
-            <?= $content->title(); ?>
+            <?= $content->title()->kt(); ?>
           </p>
         </div>
       </a>

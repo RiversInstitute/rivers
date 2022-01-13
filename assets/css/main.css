@@ -243,6 +243,10 @@ button {
   color: var(--highlight-color);
 }
 
+.center {
+  text-align: center;
+}
+
 .layout-wrapper {
   margin: var(--margin);
   max-width: 700px;
@@ -680,7 +684,7 @@ body.height-limited {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--margin) + 1em);
+  margin-top: calc(-1 * var(--margin));
   margin-left: calc(-1 * var(--margin));
 }
 .listing .listing__gallery .listing__gallery__item {

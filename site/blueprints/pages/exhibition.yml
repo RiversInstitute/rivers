@@ -41,11 +41,17 @@ fields:
     label: Content
     type: textarea
     size: large
+  gallery_heading:
+    label: Gallery Heading
+    type: text
   main_gallery:
     label: Gallery
     type: files
     layout: cards
     info: "{{file.caption}}"
+  associated_content_heading:
+    label: Associated content heading
+    type: text
   associated_content:
     label: Associated content
     type: structure

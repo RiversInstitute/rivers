@@ -80,7 +80,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    margin-top: calc(-1 * var(--margin) + 1em);
+    margin-top: calc(-1 * var(--margin));
     margin-left: calc(-1 * var(--margin));
 
     .listing__gallery__item {
