@@ -48,6 +48,7 @@
     <li 
       class="associated__grid__item"
       style="
+        --opacity: <?= $idx * (.2 / size($contents)) + .5 ?>;
         --grid-area: <?= $positions[$idx][1]; ?> / <?= $positions[$idx][0]; ?>;
         --grid-area--mobile: <?= $positionsMobile[$idx][1]; ?> / <?= $positionsMobile[$idx][0]; ?>;
       "

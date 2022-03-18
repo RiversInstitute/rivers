@@ -13,7 +13,7 @@
     --transition--time: 200ms;
     background-color: var(--main-color);
     grid-area: var(--grid-area);
-    opacity: .6;
+    opacity: var(--opacity, 0.6);
     transition: var(--transition--time) linear opacity;
 
     @include mobile {
