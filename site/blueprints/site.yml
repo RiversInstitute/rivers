@@ -56,3 +56,32 @@ tabs:
           about:
             label: Meta Description
             type: text
+  static_assets:
+      label: Static Assets
+      icon: image
+      columns:
+        static_assets_1:
+          width: 2/3
+          fields:
+            static_assets:
+              label: Static Assets
+              type: structure
+              fields:
+                title:
+                  type: text
+                  label: Title
+                asset:
+                  type: files
+                  max: 1
+                  label: Asset
+                description:
+                  type: textarea
+                  label: Description
+        static_assets_2:
+          width: 1/3
+          fields:
+            static_assets_description:
+              label: Info
+              type: info
+              text: |
+                For emails, and other static locations.
