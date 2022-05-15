@@ -1,0 +1,101 @@
+@import "../base.scss";
+
+.edwards {
+  .email-signup {
+    display: none;
+  }
+
+  &__layout-wrapper {
+    padding: var(--margin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: calc(100vh - 8rem);
+    overflow: scroll;
+
+    @include mobile {
+      height: calc(100vh - 5rem);
+    }
+  }
+
+  &__numbers {
+    visibility: hidden;
+    position: fixed;
+    padding: var(--margin);
+    left: 0;
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+  &__number {
+    color: black;
+    &:hover,
+    &.active {
+      color: var(--color--gray);
+    }
+  }
+
+  &__title {
+    .edwards__number {
+      color: black;
+      display: inline;
+
+      &:hover {
+        color: var(--color--gray);
+      }
+    }
+  }
+
+  .slide {
+    display: none;
+    gap: var(--margin);
+    grid-template-columns: repeat(var(--count, 1), minmax(0, 1fr));
+    justify-content: center;
+    align-items: start;
+    
+    &__image {
+      width: 28vw;
+      align-self: var(--self-align, start);
+      // max-width: 400px;
+
+      @include mobile {
+        width: 66vw;
+      }
+    }
+
+    &__audio {
+      visibility: hidden;
+    }
+
+    &.active {
+      display: block;
+    }
+    &.active.works {
+      display: grid;
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.edwards__bio-credits {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 3;
+  overflow: auto;
+  margin-bottom: calc(3 * var(--margin));
+  background-color: white;
+
+  &.active {
+    display: block;
+  }
+}

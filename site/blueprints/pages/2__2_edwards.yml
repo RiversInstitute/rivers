@@ -1,0 +1,54 @@
+title: Brent Edwards
+preset: page
+num: 0
+
+fields:
+  work_title:
+    label: Title
+    type: textarea
+    size: mini
+  works:
+    label: Works
+    type: structure
+    fields:
+      works_contents:
+        type: structure
+        label: Works/Contents
+        fields:
+          work_content:
+            type: files
+            max: 1
+            label: Work content 
+          work_content_type:
+            label: Type
+            type: radio
+            default: collage
+            options:
+              collage: Collage
+              poem: Poem
+          work_content_align:
+            label: Align
+            type: radio
+            default: start
+            options:
+              start: Start
+              center: Center
+              end: End
+      audio:
+        type: files
+        max: 1
+        label: Audio file
+  bio_credits:
+     label: Bio/Credits
+     type: textarea
+
+  nav_override:
+    type: structure
+    label: Navigation
+    fields:
+      title:
+        type: text
+        label: Title
+      url:
+        type: text
+        label: Link
