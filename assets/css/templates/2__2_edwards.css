@@ -67,7 +67,7 @@
   align-items: start;
 }
 .edwards .slide__image {
-  width: 28vw;
+  width: var(--slide-width, 28vw);
   align-self: var(--self-align, start);
 }
 @media screen and (max-width: 768px) {

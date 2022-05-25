@@ -56,7 +56,7 @@
     align-items: start;
     
     &__image {
-      width: 28vw;
+      width: var(--slide-width, 28vw);
       align-self: var(--self-align, start);
       // max-width: 400px;
 

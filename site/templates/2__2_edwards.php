@@ -33,7 +33,12 @@
             src="<?= $workContent->work_content()->toFile()->resize(2000)->url(); ?>"
             loading="lazy"
             class="slide__image"
-            style="--self-align: <?= $workContent->work_content_align(); ?>"
+            style="
+              --self-align: <?= $workContent->work_content_align(); ?>;
+              <?php if($workContent->work_content_size()->isNotEmpty()): ?>
+                --slide-width: <?= $workContent->work_content_size(); ?>vw;
+              <?php endif; ?>
+            "
             alt="<?= $workContent->work_content()->toFile()->caption(); ?>"
           >
         <?php endforeach; ?>
@@ -116,6 +121,7 @@
     let audio = slides[idx].querySelector('audio');
     if (audio) {
       activeAudio = audio;
+      activeAudio.currentTime = 0;
       activeAudio.play();
     }
     
