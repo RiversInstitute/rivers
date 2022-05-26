@@ -51,7 +51,7 @@
   .slide {
     display: none;
     gap: var(--margin);
-    grid-template-columns: repeat(var(--count, 1), minmax(0, 1fr));
+    // grid-template-columns: repeat(var(--count, 1), minmax(0, 1fr));
     justify-content: center;
     align-items: start;
     
@@ -73,7 +73,7 @@
       display: block;
     }
     &.active.works {
-      display: grid;
+      display: flex;
 
       @include mobile {
         display: flex;

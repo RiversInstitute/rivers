@@ -62,7 +62,6 @@
 .edwards .slide {
   display: none;
   gap: var(--margin);
-  grid-template-columns: repeat(var(--count, 1), minmax(0, 1fr));
   justify-content: center;
   align-items: start;
 }
@@ -82,7 +81,7 @@
   display: block;
 }
 .edwards .slide.active.works {
-  display: grid;
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   .edwards .slide.active.works {
