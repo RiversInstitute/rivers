@@ -24,7 +24,7 @@
     </div>
   <?php else: ?>
     <div class="publication__link">
-      <a class="highlight" href="<?= $publication->digital_publication_page()->url(); ?>">Digital publication&nbsp;&#8599;&#xFE0E;</a>
+      <a class="highlight" href="/<?= $publication->digital_publication_page()->url(); ?>">Digital publication&nbsp;&#8599;&#xFE0E;</a>
     </div>
   <?php endif; ?>
   <div class="publication__reviews text">
