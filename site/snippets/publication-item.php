@@ -4,7 +4,7 @@
       <?php if ($publication->publication_type() == "physical"): ?>
         <?= $publication->url(); ?>
       <?php else: ?>
-        <?= $publication->digital_publication_page()->url(); ?>
+        /<?= $publication->digital_publication_page()->url(); ?>
       <?php endif; ?>
       ">
       <?= $publication->publication_title()->kt(); ?>
