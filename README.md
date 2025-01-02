@@ -26,7 +26,7 @@ Automated deployments are done via [GitHub Actions](https://github.com/rivers-in
 Production is deployed automatically from the `master` branch. Once a PR is merged into `master`, the site is deployed to the main domain.
 
 ## Running the site locally
-Kirby 4.0 works with PHP 8.3.
+Kirby 4.0 works with PHP 8.3. Make sure to run PHP 8.3 locally.
 
 ```
 php -S localhost:8000 kirby/router.php
