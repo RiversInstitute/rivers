@@ -21,10 +21,10 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.DEPLOY_KEY }}
         script: |
-          if [[ ${{ github.ref }} == 'refs/heads/staging' ]]; then
+          if [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
             cd /var/www/staging.riversinstitute.org
             git pull origin staging
-          elif [[ ${{ github.ref }} == 'refs/heads/master' ]]; then
-            # cd /var/www/riversinstitute.org
-            # git pull origin master
+          elif [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+            cd /var/www/riversinstitute.org
+            git pull origin master
           fi 
