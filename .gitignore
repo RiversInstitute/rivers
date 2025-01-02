@@ -27,7 +27,7 @@ media
 /site/cache/*
 !/site/cache/index.html
 
-# Accounts
+# Accounts 
 # ---------------
 
 /site/accounts/*
