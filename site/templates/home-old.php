@@ -5,6 +5,18 @@
     <a href="<?= $site->url(); ?>/about" class="home__site-title">
       <div class="site-title__text"><?= $site->full_title(); ?></div>
     </a>
+    <?php if ($page->ticker_url()->isNotEmpty()): ?>
+        <a href="<?= $page->ticker_url(); ?>" class="home__ticker__url">
+      <?php endif; ?>
+      <div class="home__ticker-container">
+        <div class="home__ticker text" id="typed-content">
+          <?= $page->ticker_content()->kt(); ?>
+        </div>
+        <span id="typed-output"></span>
+      </div>
+    <?php if ($page->ticker_url()->isNotEmpty()): ?>
+      </a>
+    <?php endif; ?>
     <div class="bibliography" id="bibliography">
       <div class="bibliography__header">
         <button id="bibliography__title" class="bibliography__header__button">Bibliography</button>
@@ -23,33 +35,7 @@
       </ul>
     </div>
   </div>
-
-  <div class="home__ticker">
-      <svg width="1244" height="483" viewBox="0 0 1244 483" xmlns="http://www.w3.org/2000/svg">
-          <path id="path" d="M0.5 0.5H1205H1229.5C1237.23 0.5 1243.5 6.76801 1243.5 14.5V143C1243.5 150.732 1237.23 157 1229.5 157H14.5C6.76801 157 0.5 163.268 0.5 171V286C0.5 293.732 6.76801 300 14.5 300H1229.5C1237.23 300 1243.5 306.268 1243.5 314V468C1243.5 475.732 1237.23 482 1229.5 482H0.5" fill="none" stroke="black"/>
-          <text>
-              <textPath href="#path" id="marquee1" startOffset="0%">
-                  Rivers Institute for Contemporary Art & Thought (Rivers) is a non-profit institute for research and publishing, exhibitions and convenings on art of the global diaspora.
-              </textPath>
-              <textPath href="#path" id="marquee2" startOffset="100%">
-                  Rivers Institute for Contemporary Art & Thought (Rivers) is a non-profit institute for research and publishing, exhibitions and convenings on art of the global diaspora.
-              </textPath>
-          </text>
-      </svg>
-  </div> 
-
   <div class="home__contents">
-    <?php if ($page->ticker_url()->isNotEmpty()): ?>
-        <a href="<?= $page->ticker_url(); ?>" class="home__ticker__url">
-      <?php endif; ?>  
-
-      <div class="home__ticker__url__text">
-        <?= $page->ticker_url_text(); ?>
-      </div>
-    <?php if ($page->ticker_url()->isNotEmpty()): ?>
-      </a>
-    <?php endif; ?>
-
     <ul class="home__blocks">
       <?php
         srand(mktime(0, 0, 0));
@@ -85,7 +71,6 @@
               class="home__block"
               data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>"
               data-block-title="<?= $entry->title()->kt(); ?>"
-              data-block-title-clean="<?= $entry->title(); ?>"
               >
             </div>
           </a>
@@ -139,8 +124,6 @@
     const homeContents = document.querySelector('.home__contents');
     const homeOverlayImage = homeOverlay.querySelector('.overlay__image');
     const homeOverlayHeading = homeOverlay.querySelector('.overlay__heading');
-    const defaultTickerText = document.querySelector('#marquee1').innerHTML;
-    const homeTickerTexts = document.querySelectorAll('#marquee1, #marquee2');
 
     homeBlocks.forEach((el) => {
       el.addEventListener('mouseenter', (e) => {
@@ -158,14 +141,6 @@
         }
         homeOverlayHeading.innerHTML = el.dataset.blockTitle;
         homeOverlay.classList.add('active');
-
-        // Set the ticker text to the block title
-        homeTickerTexts.forEach((text) => {
-          text.textContent = el.dataset.blockTitleClean + ' – What I want to do is code-switch. To have there be layers of history and politics, but also this heady, arty stuff—inside jokes...';
-          text.style.fill = 'white';
-        });
-        
-        console.log(el.dataset.blockTitleClean);
 
         homeBlocks.forEach((block) => {
           if (block !== el) {
@@ -187,51 +162,8 @@
             block.style.removeProperty('visibility');
           }
         });
-
-        // Reset the ticker text to the previous text
-        homeTickerTexts.forEach((text) => {
-          text.innerHTML = defaultTickerText;
-          text.style.fill = 'black';
-        });
-
       });
     })
   });
 </script>
-
-
-<script>
-        // JavaScript to animate the startOffset for perfect looping
-        const marquee1 = document.getElementById("marquee1");
-        const marquee2 = document.getElementById("marquee2");
-        let offset = 0;
-
-        // Make font size larger as the screen gets smaller
-        function updateFontSize() {
-            const text = document.querySelector('text');
-            const screenWidth = window.innerWidth;
-            if (screenWidth <= 1244) {
-                text.style.fontSize = `${(1244 / screenWidth) * 30}px`;
-            } else {
-                text.style.fontSize = '30px';
-            }
-        }
-
-        window.addEventListener('resize', updateFontSize);
-        updateFontSize(); // Initial call
-
-        function animateMarquee() {
-            offset += 0.01; // Adjust speed here
-            if (offset > 100) offset = 0; // Reset when the first text completes a cycle
-
-            marquee1.setAttribute("startOffset", `${offset}%`);
-            marquee2.setAttribute("startOffset", `${offset - 100}%`); // Second text follows the first
-
-            requestAnimationFrame(animateMarquee);
-        }
-
-        animateMarquee();
-</script>
-
-
 <?php snippet('footer'); ?>
