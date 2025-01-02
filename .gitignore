@@ -1,14 +1,24 @@
 # System files
 # ------------
 
-kirby-3
+# Old Kirby 3 install
+/kirby-3
 
+# Local file system
 Icon
 .DS_Store
 
-# Temporary files
+# Content files
 # ---------------
+/content
+/content/*
 
+# Sass cache
+# ---------------
+/.sass-cache
+
+# Media files
+# ---------------
 media
 /media/*
 !/media/index.html
@@ -42,6 +52,3 @@ media
 # License
 # ---------------
 /site/config/.license
-
-content/
-.sass-cache
