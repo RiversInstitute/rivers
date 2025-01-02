@@ -56,6 +56,7 @@ tabs:
           about:
             label: Meta Description
             type: text
+            
   static_assets:
       label: Static Assets
       icon: image

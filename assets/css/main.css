@@ -108,8 +108,7 @@ textarea {
 }
 
 html {
-  font-size: 62.5%;
-  /* Now 10px = 1rem! */
+  font-size: 62.5%; /* Now 10px = 1rem! */
   -webkit-text-size-adjust: 100%;
 }
 
@@ -206,8 +205,7 @@ button {
   }
 }
 .associated__grid__item:before {
-  padding-bottom: 75%;
-  /* Minimum aspect ratio */
+  padding-bottom: 75%; /* Minimum aspect ratio */
   content: "";
   float: left;
 }
@@ -317,12 +315,12 @@ body.height-limited {
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 35%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 35%);
 }
 .invert .navigation__container {
-  background: #888888;
-  background: linear-gradient(180deg, rgba(136, 136, 136, 0) 0%, #888888 35%);
+  background: rgb(136, 136, 136);
+  background: linear-gradient(180deg, rgba(136, 136, 136, 0) 0%, rgb(136, 136, 136) 35%);
 }
 .navigation__container nav {
   padding: var(--margin);
@@ -449,21 +447,6 @@ body.height-limited {
 .home .home__header .home__site-title .site-title__text {
   pointer-events: initial;
 }
-.home .home__header .home__ticker__url {
-  pointer-events: initial;
-  display: block;
-  grid-area: ticker;
-}
-.home .home__header .home__ticker-container {
-  grid-area: ticker;
-  color: black;
-}
-@media screen and (max-width: 768px) {
-  .home .home__header .home__ticker-container .home__ticker {
-    text-align: initial;
-    word-break: break-all;
-  }
-}
 .home .home__header .bibliography {
   grid-area: bibliography;
   position: absolute;
@@ -546,6 +529,11 @@ body.height-limited {
   z-index: 10;
   opacity: 0;
 }
+.home .home__contents .home__ticker__url {
+  pointer-events: initial;
+  display: block;
+  grid-area: ticker;
+}
 .home .home__contents .home__blocks {
   height: 100%;
   display: grid;
@@ -564,6 +552,33 @@ body.height-limited {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.home__ticker {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  grid-area: ticker;
+  color: black;
+  width: 100%;
+  z-index: 10000;
+  pointer-events: none;
+}
+.home__ticker svg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+  padding: 20px;
+  margin-left: -10px;
+}
+.home__ticker text {
+  font-size: 30px;
+  fill: black;
+}
+.home__ticker path {
+  stroke: transparent;
 }
 
 .home__overlay {
@@ -833,3 +848,5 @@ body.height-limited {
   cursor: pointer;
   color: var(--highlight-color);
 }
+
+/*# sourceMappingURL=main.css.map */
