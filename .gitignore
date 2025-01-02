@@ -9,6 +9,7 @@ Icon
 # Temporary files
 # ---------------
 
+media
 /media/*
 !/media/index.html
 
