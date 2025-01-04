@@ -5,23 +5,6 @@
     <a href="<?= $site->url(); ?>/about" class="home__site-title">
       <div class="site-title__text"><?= $site->full_title(); ?></div>
     </a>
-    <div class="bibliography" id="bibliography">
-      <div class="bibliography__header">
-        <button id="bibliography__title" class="bibliography__header__button">Bibliography</button>
-      </div>
-      <ul class="bibliography__list">
-        <?php foreach ($page->bibliography_item()->toStructure() as $bib): ?>
-          <li class="bibliography__item">
-            <div class="text">
-              <?= $bib->citation()->kt(); ?>
-            </div>
-            <div class="bibliography__item__embed">
-              <?= $bib->embed(); ?>
-            </div>
-          </li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
   </div>
 
   <div class="home__ticker">
@@ -96,6 +79,10 @@
 </div>
 <div class="home__overlay">
   <div class="overlay__heading text"></div>
+  <div id="home__blocks__overlay__container">
+      <ul class="home__blocks__overlay" style="pointer-events: auto;">
+      </ul>
+  </div>
   <img src="" class="overlay__image" loading="lazy">
 </div>
 <?php if($page->takeover()->toBool()): ?>
@@ -130,20 +117,23 @@
     });
   });
   document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('bibliography__title').addEventListener('click', (e) => {
-      document.getElementById('bibliography').classList.toggle('expanded');
-    });
-
     const homeBlocks = document.querySelectorAll('.home__block');
     const homeOverlay = document.querySelector('.home__overlay');
     const homeContents = document.querySelector('.home__contents');
     const homeOverlayImage = homeOverlay.querySelector('.overlay__image');
     const homeOverlayHeading = homeOverlay.querySelector('.overlay__heading');
+    const homeOverlayBlocks = homeOverlay.querySelector('.home__blocks__overlay');
     const defaultTickerText = document.querySelector('#marquee1').innerHTML;
     const homeTickerTexts = document.querySelectorAll('#marquee1, #marquee2');
 
     homeBlocks.forEach((el) => {
       el.addEventListener('mouseenter', (e) => {
+        // Copy the parent li element to the overlay
+        const liElement = el.closest('.home__block__container');
+        const liClone = liElement.cloneNode(true);
+        liClone.querySelector('.home__block').style.backgroundColor = 'var(--text-color)';
+        homeOverlayBlocks.appendChild(liClone);
+
         homeContents.classList.add('active');
 
         const bgColor = getComputedStyle(el).backgroundColor;
@@ -175,6 +165,11 @@
       });
 
       el.addEventListener('mouseleave', (e) => {
+        // Remove all li elements from overlay
+        while (homeOverlayBlocks.firstChild) {
+          homeOverlayBlocks.removeChild(homeOverlayBlocks.firstChild);
+        }
+
         homeContents.classList.remove('active');
 
         homeOverlay.style.removeProperty('background-color');

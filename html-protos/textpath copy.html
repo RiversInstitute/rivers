@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas TextPath Test</title>
+    <style>
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script>
+        class TextPathAnimator {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.offset = 0;
+                
+                // Create SVG path for calculations with scaled down dimensions
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                const pathElement = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                // Scaled down path by approximately 50%
+                pathElement.setAttribute('d', 'M0.25 0.25H602.5H614.75C618.615 0.25 621.75 3.384 621.75 7.25V71.5C621.75 75.366 618.615 78.5 614.75 78.5H7.25C3.384 78.5 0.25 81.634 0.25 85.5V143C0.25 146.866 3.384 150 7.25 150H614.75C618.615 150 621.75 153.134 621.75 157V234C621.75 237.866 618.615 241 614.75 241H0.25');
+                svg.appendChild(pathElement);
+                document.body.appendChild(svg);
+                this.svgPath = pathElement;
+                svg.style.display = 'none';
+
+                // Text content
+                this.text = 'Rivers Institute for Contemporary Art & Thought (Rivers) is a non-profit institute for research and publishing, exhibitions and convenings on art of the global diaspora.';
+                
+                // Increase canvas resolution
+                this.pixelRatio = window.devicePixelRatio || 1;
+                
+                this.setupCanvas();
+                this.animate();
+            }
+
+            setupCanvas() {
+                // Scaled down canvas dimensions
+                this.canvas.width = 622 * this.pixelRatio;  // Half of 1244
+                this.canvas.height = 242 * this.pixelRatio; // Half of 483
+                
+                // Set display size
+                this.canvas.style.width = '622px';
+                this.canvas.style.height = '242px';
+                
+                this.handleResize();
+                window.addEventListener('resize', () => this.handleResize());
+            }
+
+            handleResize() {
+                const container = this.canvas.parentElement;
+                const scale = Math.min(container.clientWidth / 622, container.clientHeight / 242);
+                this.canvas.style.transform = `scale(${scale})`;
+            }
+
+            drawTextAlongPath() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                // Scale context for high-res
+                this.ctx.scale(this.pixelRatio, this.pixelRatio);
+                
+                // Reduced font size
+                this.ctx.font = '16px Arial';
+                this.ctx.fillStyle = 'black';
+                
+                const pathLength = this.svgPath.getTotalLength();
+                const textWidth = this.ctx.measureText(this.text).width;
+                
+                // Ensure text stays within canvas bounds
+                for (let i = -2; i < 3; i++) {
+                    let currentOffset = this.offset + (i * textWidth);
+                    
+                    for (let j = 0; j < this.text.length; j++) {
+                        const charWidth = this.ctx.measureText(this.text[j]).width;
+                        const point = this.svgPath.getPointAtLength((currentOffset + charWidth/2) % pathLength);
+                        
+                        // Skip characters outside canvas bounds
+                        if (point.x < 0 || point.x > 622 || point.y < 0 || point.y > 242) {
+                            currentOffset += charWidth;
+                            continue;
+                        }
+                        
+                        const nextPoint = this.svgPath.getPointAtLength((currentOffset + charWidth/2 + 1) % pathLength);
+                        const angle = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x);
+                        
+                        this.ctx.save();
+                        this.ctx.translate(point.x, point.y);
+                        this.ctx.rotate(angle);
+                        this.ctx.fillText(this.text[j], 0, 0);
+                        this.ctx.restore();
+                        
+                        currentOffset += charWidth;
+                    }
+                }
+                
+                // Reset scale
+                this.ctx.setTransform(1, 0, 0, 1, 0, 0);
+            }
+
+            animate() {
+                // Change direction by making offset positive
+                this.offset += 2; // Now moves in opposite direction
+                if (Math.abs(this.offset) > this.svgPath.getTotalLength()) {
+                    this.offset = 0;
+                }
+                
+                this.drawTextAlongPath();
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize the animator
+        const canvas = document.getElementById('canvas');
+        new TextPathAnimator(canvas);
+    </script>
+</body>
+</html> 
