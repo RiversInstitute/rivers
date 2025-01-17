@@ -19,3 +19,11 @@
       </div>
     </div>
 </div>
+
+<script>
+  // Check if URL hash is #hide-back
+  if (window.location.hash === '#hide-back') {
+    // Find and hide the back container
+    document.querySelector('.subsection__back__container').style.display = 'none';
+  }
+</script>
