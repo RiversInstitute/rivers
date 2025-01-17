@@ -28,6 +28,12 @@ Production is deployed automatically from the `master` branch. Once a PR is merg
 ## Running the site locally
 Kirby 4.0 works with PHP 8.3. Make sure to run PHP 8.3 locally.
 
+## Pulling /content to your local env
+
+```
+rsync -avz --delete ubuntu@137.184.155.65:/var/www/riversinstitute.org/content/ ./content --dry-run'
+```
+
 ```
 php -S localhost:8000 kirby/router.php
 ```
@@ -38,5 +44,3 @@ CSS is compiled with Sass.
 ```
 sass --watch assets/scss/main.scss:assets/css/main.css
 ```
-
-test

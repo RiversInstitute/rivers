@@ -1,15 +1,15 @@
-title: Events
+title: Comings
 
 columns:
   main_1:
     width: 2/3
     sections:
       pages:
-        headline: Events
+        headline: Subpages
         type: pages
         image: icon
         templates:
-          - event
+          - default
   main_2:
     width: 1/3
     sections:
@@ -19,8 +19,4 @@ columns:
             label: Header
             type: textarea
             size: large
-          color:
-            label: Color
-            type: color
-            default: "#000"
       files:

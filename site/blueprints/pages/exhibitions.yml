@@ -19,4 +19,8 @@ columns:
             label: Header
             type: textarea
             size: large
+          color:
+            label: Color
+            type: color
+            default: "#000"
       files:

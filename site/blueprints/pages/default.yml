@@ -13,3 +13,7 @@ fields:
     label: Content
     type: textarea
     size: large
+  color:
+    label: Color
+    type: color
+    default: "#000"

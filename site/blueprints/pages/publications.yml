@@ -38,4 +38,11 @@ columns:
           - origin__9_weber_payton
           - 2__1_caroline_bergvall
           - 2__2_edwards
+      color_fields:
+        type: fields
+        fields:
+          color:
+            label: Color
+            type: color
+            default: "#000"
       files:
