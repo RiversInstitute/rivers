@@ -1,11 +1,11 @@
 <?php snippet('header', ["headerClass" => "no-pad home__container"]); ?>
 <?php snippet('nav', ['showMarquee' => false]); ?>
 <div class="layout-wrapper--full home">
-  <div class="home__header">
+  <!-- <div class="home__header">
     <a href="<?= $site->url(); ?>/about" class="home__site-title">
       <div class="site-title__text"><?= $site->full_title(); ?></div>
     </a>
-  </div>
+  </div> -->
 
   <div class="home__ticker">
       <svg width="1244" height="483" viewBox="0 0 1244 483" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@
               </textPath>
           </text>
       </svg>
-  </div> 
+  </div>
 
   <div class="home__contents">
     <?php if ($page->ticker_url()->isNotEmpty()): ?>
@@ -37,15 +37,39 @@
       <?php
         srand(mktime(0, 0, 0));
         $positions = [];
-        $coords = array_fill(0, 18, 0);
-        foreach($page->entries()->toStructure() as $idx=>$entry) {
-          $x = rand(0, 5);
-          $y = rand(0, 2);
-          while ($coords[$x*$y] != 0) {
-            $x = rand(0,5);
-            $y = rand(0,2);
-          }
-          $coords[$x*$y] = 1;
+        $coords = array_fill(0, 6, 0);  // 3x2 grid = 6 positions
+        
+        // Get total number of entries
+        $entries = $page->entries()->toStructure();
+        $numEntries = $entries->count();
+        
+        // Safety check - limit entries to available grid spaces
+        $numEntries = min($numEntries, 6);
+        
+        foreach($entries->limit($numEntries) as $idx=>$entry) {
+          $attempts = 0;
+          do {
+            $x = rand(0, 2);  // 3 columns (0,1,2)
+            $y = rand(0, 1);  // 2 rows (0,1)
+            $index = $y * 3 + $x;  // Convert to linear index
+            $attempts++;
+            
+            // Prevent infinite loops
+            if ($attempts > 100) {
+              // Find first empty position
+              for ($i = 0; $i < 6; $i++) {
+                if ($coords[$i] == 0) {
+                  $index = $i;
+                  $x = $i % 3;
+                  $y = floor($i / 3);
+                  break;
+                }
+              }
+              break;
+            }
+          } while ($coords[$index] != 0);
+          
+          $coords[$index] = 1;
           array_push($positions, [$x+1, $y+1]);
         }
         srand();
@@ -77,6 +101,8 @@
     </ul>
   </div>
 </div>
+
+<!-- Home overlay -->
 <div class="home__overlay">
   <div class="overlay__heading text"></div>
   <div id="home__blocks__overlay__container">
@@ -165,6 +191,10 @@
       });
 
       el.addEventListener('mouseleave', (e) => {
+        
+        // Pause on hover for debugging
+        // debugger;
+
         // Remove all li elements from overlay
         while (homeOverlayBlocks.firstChild) {
           homeOverlayBlocks.removeChild(homeOverlayBlocks.firstChild);
@@ -206,9 +236,9 @@
             const text = document.querySelector('text');
             const screenWidth = window.innerWidth;
             if (screenWidth <= 1244) {
-                text.style.fontSize = `${(1244 / screenWidth) * 30}px`;
+                text.style.fontSize = `${(1244 / screenWidth) * 26}px`;
             } else {
-                text.style.fontSize = '30px';
+                text.style.fontSize = '26px';
             }
         }
 

@@ -109,12 +109,15 @@
     z-index: 1;
     margin-left: var(--margin);
     margin-right: var(--margin);
-    margin-top: 20vh;
+    margin-top: var(--margin);
     margin-bottom: calc(4 * var(--margin));
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include mobile {
       margin-top: 55vh;
@@ -134,8 +137,11 @@
     .home__blocks {
       height: 100%;
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      grid-template-rows: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      max-width: 800px;
+      max-height: 600px;
+      width: 100%;
 
       .home__block__container {
         grid-area: var(--grid-area);
@@ -177,7 +183,7 @@
   }
 
   text {
-    font-size: 30px;
+    font-size: 26px;
     fill: black;
   }
 
@@ -216,18 +222,24 @@
     z-index: 1;
     margin-left: var(--margin);
     margin-right: var(--margin);
-    margin-top: 20vh;
+    margin-top: var(--margin);
     margin-bottom: calc(4* var(--margin));
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .home__blocks__overlay {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+    max-height: 600px;
+    width: 100%;
 
     .home__block__container {
       grid-area: var(--grid-area);
