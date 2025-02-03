@@ -35,7 +35,18 @@
 
     <ul class="home__blocks">
       <?php
-        srand(mktime(0, 0, 0));
+        // Get date from URL parameter or use current date
+        $dateParam = get('date');
+        if ($dateParam) {
+          $timestamp = strtotime($dateParam);
+          if ($timestamp === false) {
+            $timestamp = mktime(0, 0, 0); // Fallback to current date if invalid
+          }
+        } else {
+          $timestamp = mktime(0, 0, 0);
+        }
+        
+        srand($timestamp);  // Use timestamp for seeding instead of directly using mktime
         $positions = [];
         $coords = array_fill(0, 6, 0);  // 3x2 grid = 6 positions
         
