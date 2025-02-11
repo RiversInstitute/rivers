@@ -242,6 +242,9 @@
     const marquee2 = document.getElementById("marquee2");
     const speed = 0.01;
     let offset = 0;
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function updateFontSize() {
         const text = document.querySelector('text');
@@ -270,13 +273,16 @@
     updateFontSize(); // Initial call
 
     function animateMarquee() {
-        offset += speed; // Adjust speed here
-        if (offset > 100) offset -= 100; // Wrap around without resetting to 0
+        // Only animate if user hasn't requested reduced motion
+        if (!prefersReducedMotion) {
+            offset += speed;
+            if (offset > 100) offset -= 100;
 
-        marquee1.setAttribute("startOffset", `${offset}%`);
-        marquee2.setAttribute("startOffset", `${offset - 100}%`);
+            marquee1.setAttribute("startOffset", `${offset}%`);
+            marquee2.setAttribute("startOffset", `${offset - 100}%`);
 
-        requestAnimationFrame(animateMarquee);
+            requestAnimationFrame(animateMarquee);
+        }
     }
 
     animateMarquee();
