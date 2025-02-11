@@ -143,17 +143,10 @@
   </script>
 <?php endif; ?>
 
-<script src="/assets/js/typed.js"></script>
+<!-- <script src="/assets/js/typed.js"></script> -->
+
+<!-- Home blocks overlay -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    var typed = new Typed('#typed-output', {
-      loop: true,
-      typeSpeed: 40,
-      fadeOut: true,
-      showCursor: false,
-      stringsElement: '#typed-content'
-    });
-  });
   document.addEventListener('DOMContentLoaded', () => {
     const homeBlocks = document.querySelectorAll('.home__block');
     const homeOverlay = document.querySelector('.home__overlay');
@@ -236,7 +229,7 @@
   });
 </script>
 
-
+<!-- Ticker marquee -->
 <script>
     const marquee1 = document.getElementById("marquee1");
     const marquee2 = document.getElementById("marquee2");
