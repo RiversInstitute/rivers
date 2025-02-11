@@ -119,10 +119,6 @@
     justify-content: center;
     align-items: center;
 
-    @include mobile {
-      margin-top: 55vh;
-    }
-
     &.active {
       z-index: 10;
       opacity: 0;
@@ -143,6 +139,10 @@
       max-height: 600px;
       width: 100%;
 
+      @include mobile {
+        max-height: 25vh;
+      }
+
       .home__block__container {
         grid-area: var(--grid-area);
 
@@ -161,18 +161,22 @@
   }
 }
 
-
 .home__ticker {
   position: absolute;
   top: 55%;
-  left: 0;
+  left: 4px;
   right: 0;
+  padding: 27px;
   transform: translateY(-50%);
   grid-area: ticker;
   color: black;
   width: 100%;
   z-index: 10000;
   pointer-events: none;
+
+  @include mobile {
+    top: 45%;
+  }
 
   svg {
     width: 100%;
@@ -190,15 +194,7 @@
   path {
     stroke: transparent;
   }
-
-  // .home__ticker {
-  //   @include mobile {
-  //     text-align: initial;
-  //     word-break: break-all;
-  //   }
-  // }
 }
-
 
 .home__overlay {
   position: fixed;
@@ -240,6 +236,10 @@
     max-width: 800px;
     max-height: 600px;
     width: 100%;
+
+    @include mobile {
+      max-height: 25vh;
+    }
 
     .home__block__container {
       grid-area: var(--grid-area);
