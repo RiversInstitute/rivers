@@ -266,16 +266,18 @@
     updateFontSize(); // Initial call
 
     function animateMarquee() {
-        // Only animate if user hasn't requested reduced motion
-        if (!prefersReducedMotion) {
-            offset += speed;
-            if (offset > 100) offset -= 100;
-
-            marquee1.setAttribute("startOffset", `${offset}%`);
-            marquee2.setAttribute("startOffset", `${offset - 100}%`);
-
-            requestAnimationFrame(animateMarquee);
+        // Only stop animation if user has requested reduced motion
+        if (prefersReducedMotion) {
+            return; // Exit early if reduced motion is preferred
         }
+        
+        offset += speed;
+        if (offset > 100) offset -= 100;
+
+        marquee1.setAttribute("startOffset", `${offset}%`);
+        marquee2.setAttribute("startOffset", `${offset - 100}%`);
+
+        requestAnimationFrame(animateMarquee);
     }
 
     animateMarquee();
