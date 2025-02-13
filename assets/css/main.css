@@ -237,7 +237,7 @@ button {
   visibility: hidden;
 }
 
-.layout-wrapper--full, .about__container, .partners__container {
+.layout-wrapper--full.goings, .goings.about__container, .goings.partners__container, .layout-wrapper--full.comings, .comings.about__container, .comings.partners__container {
   margin: 0 !important;
 }
 
