@@ -59,7 +59,10 @@
       <?php foreach($positions as $position): ?>
         <li
           class="subsection__block__container"
-          style="--grid-area: <?= $position['y']; ?> / <?= $position['x']; ?>;"
+          style="
+            --grid-area: <?= $position['y']; ?> / <?= $position['x']; ?>;
+            --background-color: <?= $position['entry']->color(); ?>;
+          "
         >
             <a href="<?= $position['entry']->url(); ?>" class="subsection__block">
                 <?= $position['entry']->title(); ?>
