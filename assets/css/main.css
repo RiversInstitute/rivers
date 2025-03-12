@@ -866,8 +866,13 @@ body.height-limited {
   border-color: #ff6253;
   z-index: 1;
 }
+.listing .listing__content .projects .listing__block {
+  justify-content: center;
+  align-items: center;
+}
 .listing .listing__content .epherma .listing__block {
   align-items: flex-end;
+  font-size: var(--font-size--secondary);
 }
 .listing .image__viewer {
   display: flex;
@@ -878,7 +883,7 @@ body.height-limited {
 }
 .listing .image__viewer figure.image__viewer__item {
   display: grid;
-  grid-template-columns: 1fr 0.3fr;
+  grid-template-columns: 3fr 1fr;
   gap: 20px;
 }
 .listing .image__viewer figure.image__viewer__item img {
@@ -920,6 +925,7 @@ body.height-limited {
   align-self: flex-start;
   max-height: 100vh;
   overflow-y: auto;
+  max-width: 250px;
 }
 .listing aside.listing__sidebar .works__list {
   display: flex;
@@ -934,10 +940,10 @@ body.height-limited {
   border: 1px solid transparent;
 }
 .listing aside.listing__sidebar .works__list figure.works__list__item:hover {
-  border: 1px solid #ff6253;
+  border: 1px solid #000;
 }
 .listing aside.listing__sidebar .works__list figure.works__list__item.active {
-  border: 1px solid #ff6253;
+  border: 1px solid #000;
 }
 .listing aside.listing__sidebar .works__list figure.works__list__item img {
   width: 100%;

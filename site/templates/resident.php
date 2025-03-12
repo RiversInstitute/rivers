@@ -34,6 +34,29 @@
     <br><br>
 
     <!-- Epherma -->
+    <h3 class="listing__header">Exhibitions & Projects</h3>
+
+    <div class="listing__blocks projects">
+    <a href="" class="listing__block">
+          Title of Project
+        </a>
+        <a href="" class="listing__block">
+          Title of Project
+        </a>
+        <a href="" class="listing__block">
+          Title of Project
+        </a>
+        <a href="" class="listing__block">
+          Title of Project
+        </a>
+        <a href="" class="listing__block">
+          Title of Project
+        </a>
+    </div>
+
+    <br><br>
+
+    <!-- Epherma -->
     <h3 class="listing__header">Epherma</h3>
 
     <div class="listing__blocks epherma">
@@ -62,11 +85,11 @@
     <br><br>
 
     <!-- Part of -->
-    <h3 class="listing__header">Part of</h3>
+    <h3 class="listing__header">Filter by</h3>
 
     <div class="part-of">
       <a href="">
-        <span class="part-of-symbol" style="background-color: #83B000;"></span>
+        <span class="part-of-symbol" style="background-color: #9dd300;"></span>
         Public Programs
       </a>
       <a href="">

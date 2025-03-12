@@ -103,9 +103,20 @@
         z-index: 1;
       }
     }
+
+    // Projects
+    .projects {
+      .listing__block {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    // Epherma
     .epherma {
       .listing__block {
         align-items: flex-end;
+        font-size: var(--font-size--secondary);
       }
     }
   }
@@ -119,7 +130,7 @@
 
     figure.image__viewer__item {
       display: grid;
-      grid-template-columns: 1fr .3fr;
+      grid-template-columns: 3fr 1fr;
       gap: 20px;
 
       img {
@@ -169,6 +180,7 @@
     align-self: flex-start;
     max-height: 100vh;
     overflow-y: auto;
+    max-width: 250px;
 
     // Works
     .works__list {
@@ -184,11 +196,11 @@
         border: 1px solid transparent;
 
         &:hover {
-          border: 1px solid #ff6253;
+          border: 1px solid #000;
         }
         
         &.active {
-          border: 1px solid #ff6253;
+          border: 1px solid #000;
         }
 
         img {
