@@ -84,7 +84,7 @@
 
     <!-- Part of -->
     <?php if ($page->part_of()->toPages()->count() > 0) : ?>
-    <h3 class="listing__header">Filter by</h3>
+    <h3 class="listing__header">Part of</h3>
 
     <div class="part-of">
       <?php 
