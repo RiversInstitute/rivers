@@ -34,6 +34,13 @@ tabs:
           fields:
             type: fields
             fields:
+              part_of:
+                  type: pages
+                  label: Part of
+                  query: site.index
+                  text: "{{ page.title }}"
+                  empty: No related posts found
+                  sortBy: date desc
               works:
                 type: files
                 label: Works
