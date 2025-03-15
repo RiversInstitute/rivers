@@ -35,12 +35,12 @@ tabs:
             type: fields
             fields:
               part_of:
-                  type: pages
-                  label: Part of
-                  query: site.index
-                  text: "{{ page.title }}"
-                  empty: No related posts found
-                  sortBy: date desc
+                type: pages
+                label: Part of
+                query: site.index
+                text: "{{ page.title }}"
+                empty: No related posts found
+                sortBy: date desc
               works:
                 type: files
                 label: Works
@@ -59,6 +59,10 @@ tabs:
                     label: Footnote
                     type: textarea
                     size: medium
+              color:
+                label: Color
+                type: color
+                default: "#ff6253"
                     
                     
 

@@ -36,4 +36,8 @@ columns:
             label: Description
             type: textarea
             size: large
+          color:
+            label: Color
+            type: color
+            default: "#ff6253"
       files:
