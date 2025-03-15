@@ -19,7 +19,7 @@
     <div class="subsection" id="<?= $subpage->slug() ?>">
 
         <?php $sub_shelf = $subpage->shelf()->toPages() ?>
-        <?php snippet('subsection-grid-six', ['grid_items' => $sub_shelf, 'nav' => false, 'images' => true]); ?>
+        <?php snippet('subsection-grid-six', ['grid_items' => $sub_shelf, 'nav' => false, 'images' => true, 'color' => $subpage->color()]); ?>
 
         <div class="subsection-index-container">
             <h2 class="subsection-index-title">All <?= $subpage->title() ?></h2>

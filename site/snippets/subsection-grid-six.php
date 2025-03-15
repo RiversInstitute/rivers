@@ -11,6 +11,8 @@
         } else {
           $timestamp = mktime(0, 0, 0);
         }
+
+        $color = isset($color) ? $color : '#f0f0f0';
         
         // Seed the random number generator with the timestamp
         srand($timestamp);
@@ -84,7 +86,7 @@
           class="grid-block-container <?= $showImages ? 'grid-block-container-image' : ''; ?> <?= isset($position['is_placeholder']) ? 'grid-block-placeholder' : ''; ?>"
           style="
             --grid-area: <?= $position['y']; ?> / <?= $position['x']; ?>;
-            --background-color: <?= isset($position['is_placeholder']) ? $placeholderColor : $position['entry']->color(); ?>;
+            --section-color: <?= isset($position['is_placeholder']) ? $placeholderColor : $position['entry']->color(); ?>;
           "
         >
             <?php if(isset($position['is_placeholder'])): ?>
@@ -105,8 +107,11 @@
               ?>
 
               <?php if($showImages && $image): ?>
-                <a href="<?= $showNav ? '#' . $position['entry']->slug() : $position['entry']->url(); ?>" class="grid-block-image">
-                  <img src="<?= $image->url(); ?>" alt="<?= $position['entry']->title(); ?>">
+                <a href="<?= $showNav ? '#' . $position['entry']->slug() : $position['entry']->url(); ?>" class="grid-block-image" style="background-color: <?= $color; ?>">
+                  <div class="grid-block-text">
+                    <?= $position['entry']->title(); ?>
+                  </div>
+                  <img src="<?= $image->url(); ?>" alt="<?= $position['entry']->title(); ?>" loading="lazy">
                 </a>
               <?php else: ?>
                 <a href="<?= $showNav ? '#' . $position['entry']->slug() : $position['entry']->url(); ?>" class="grid-block">
