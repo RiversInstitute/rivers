@@ -10,6 +10,19 @@ columns:
         image: icon
         templates:
           - exhibition
+      main_fields:
+        type: fields
+        fields:
+          shelf:
+            label: Shelf
+            type: pages
+            query: page.children
+            text: "{{ page.title }}"
+            empty: No related posts found
+            sortBy: date desc
+            layout: cards
+            size: small
+            info: "{{ page.date }}"
   main_2:
     width: 1/3
     sections:
@@ -24,3 +37,6 @@ columns:
             type: color
             default: "#000"
       files:
+        headline: Files
+        type: files
+        template: image

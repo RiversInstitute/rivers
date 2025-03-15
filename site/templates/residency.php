@@ -1,34 +1,50 @@
 <?php snippet('header', ['headerClass' => 'height-limited']); ?>
 <?php snippet('nav'); ?>
-<div class="listings__wrapper">
-  <div class="listings__header">
-    <div class="layout-wrapper--full">
-      <div class="text highlight">
-        <?= $page->main_content()->kt(); ?>
-      </div>
+<div class="subsection-nav-wrapper">
+    <div class="subsection-nav" style="height: 80dvh;">
+        <?php snippet('subsection-grid-six', ['grid_items' => $page->shelf()->toPages(), 'nav' => false, 'images' => true]); ?>
     </div>
-  </div>
-  <ul class="listings" style="--nonmobile--width: 400px; --mobile--width: 45vw;">
-    <li class="listings__item">
-      <div class="text">
-        <?= $page->main_description()->kt(); ?>
-      </div>
-    </li>
-    <?php foreach ($page->children()->listed() as $listing): ?>
-      <li class="listings__item">
-        <a href="<?= $listing->url(); ?>">
-          <?php if($listing->hero_image()->isNotEmpty()): ?>
-            <img class="listing__hero" loading="lazy" src="<?= $listing->hero_image()->toFile()->resize(500)->url(); ?>">
-          <?php endif; ?>
-          <div class="listing__title highlight">
-            <?= $listing->title(); ?>
-          </div>
-          <div class="listing__preview text">
-            <?= $listing->preview_content()->kt(); ?>
-          </div>
-        </a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
+
+    <div class="subsection-index-container">
+        <h2 class="subsection-index-title">All artists</h2>
+        
+        <div class="subsection-index">
+            <?php foreach($page->children()->listed()->sortBy() as $item): ?>
+                <div class="subsection-index-item">
+                    <div class="tiny-square" style="--tiny-square-color: <?= $item->color() ?>;"></div>
+                    <div class="subsection-index-item-content">
+                        <a href="<?= $item->url() ?>">
+                            <?php
+                            // First try to get cover image
+                            $image = null;
+                            if($coverImage = $item->hero_image()->toFile()) {
+                                $image = $coverImage;
+                            } 
+                            // If no cover image, try to get first image
+                            elseif($item->hasImages() && $firstImage = $item->images()->first()) {
+                                $image = $firstImage;
+                            }
+                            
+                            if($image): ?>
+                                <figure>
+                                    <img src="<?= $image->url() ?>" alt="<?= $item->title() ?>">
+                                </figure>
+                            <?php endif; ?>
+                            <?= $item->title() ?>
+                        </a>
+                        <div class="subsection-index-item-preview">
+                            <?php if($item->preview()->isNotEmpty()): ?>
+                                <?= $item->preview()->kt()->excerpt(300) ?>
+                            <?php elseif($item->main_content()->isNotEmpty()): ?>
+                                <?= $item->main_content()->kt()->excerpt(300) ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
 </div>
 <?php snippet('footer'); ?>

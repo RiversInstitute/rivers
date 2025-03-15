@@ -10,6 +10,16 @@ columns:
             label: Header
             type: textarea
             size: tiny
+          shelf:
+            label: Shelf
+            type: pages
+            query: page.children
+            text: "{{ page.title }}"
+            empty: No related posts found
+            sortBy: date desc
+            layout: cards
+            size: small
+            info: "{{ page.date }}"
       main_items:
         headline: Publications
         info: "{{page.price}}"

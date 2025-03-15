@@ -1,5 +1,5 @@
-<div class="subsection__contents__wrapper">
-    <ul class="subsection__blocks">
+<div class="grid-ten-container">
+    <ul class="grid-blocks">
       <?php
         // Get date from URL parameter or use current date
         $dateParam = get('date');
@@ -16,29 +16,35 @@
         srand($timestamp);
         
         // Get entries and limit to 6
-        $entries = $page->children()->limit(6);
+        if (isset($subpages)) {
+            $entries = $subpages;
+        } elseif (isset($shelf)) {
+            $entries = $shelf;
+        } else {
+            $entries = new Kirby\Cms\Pages([]); // Empty collection as fallback
+        }
         $totalEntries = $entries->count();
         
         // Initialize grid positions
         $positions = [];
-        $coords = array_fill(0, 6, 0);  // 3x2 grid = 6 positions
+        $coords = array_fill(0, 10, 0);  // 5x2 grid = 10 positions
         
         foreach ($entries as $index => $entry) {
           $attempts = 0;
           do {
-            $x = rand(0, 2);  // 3 columns (0,1,2)
+            $x = rand(0, 4);  // 5 columns (0,1,2,3,4)
             $y = rand(0, 1);  // 2 rows (0,1)
-            $gridIndex = $y * 3 + $x;  // Convert to linear index
+            $gridIndex = $y * 5 + $x;  // Convert to linear index
             $attempts++;
             
             // Prevent infinite loops
             if ($attempts > 100) {
               // Find first empty position
-              for ($i = 0; $i < 6; $i++) {
+              for ($i = 0; $i < 10; $i++) {
                 if ($coords[$i] == 0) {
                   $gridIndex = $i;
-                  $x = $i % 3;
-                  $y = floor($i / 3);
+                  $x = $i % 5;
+                  $y = floor($i / 5);
                   break;
                 }
               }
@@ -58,31 +64,34 @@
       ?>
       <?php foreach($positions as $position): ?>
         <li
-          class="subsection__block__container"
+          class="grid-block-container"
           style="
             --grid-area: <?= $position['y']; ?> / <?= $position['x']; ?>;
             --background-color: <?= $position['entry']->color(); ?>;
           "
         >
-            <a href="<?= $position['entry']->url(); ?>" class="subsection__block">
+            <?php
+            // First try to get cover image
+            $image = null;
+            if($coverImage = $position['entry']->cover()->toFile()) {
+                $image = $coverImage;
+            } 
+            // If no cover image, try to get first image
+            elseif($position['entry']->hasImages() && $firstImage = $position['entry']->images()->first()) {
+                $image = $firstImage;
+            }
+            ?>
+
+            <?php if($image): ?>
+              <a href="<?= $position['entry']->url(); ?>" class="grid-block-image">
+                <img src="<?= $image->url(); ?>" alt="<?= $position['entry']->title(); ?>">
+              </a>
+            <?php else: ?>
+              <a href="<?= $position['entry']->url(); ?>" class="grid-block">
                 <?= $position['entry']->title(); ?>
-            </a>
+              </a>
+            <?php endif; ?>
         </li>
       <?php endforeach; ?>
     </ul>
 </div>
-
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Check if URL hash is #hide-back
-    if (window.location.hash === '#hide-back') {
-      // Find and hide the back container
-      const backContainer = document.querySelector('.subsection__back__container');
-      if (backContainer) {
-        backContainer.style.display = 'none';
-      }
-    }
-  });
-</script>
