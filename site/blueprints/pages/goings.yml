@@ -11,7 +11,8 @@ columns:
         templates:
           - exhibitions
           - events
-          - publications
+          - print-publications
+          - digital-publications
           - radio
   main_2:
     width: 1/3

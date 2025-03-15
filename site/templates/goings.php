@@ -5,7 +5,7 @@
 
 <div class="subsection-nav-wrapper">
     <div class="subsection-nav">
-        <?php $shelf = $page->children()->listed()->sortBy() ?>
+        <?php $shelf = $page->children()->listed() ?>
         <?php snippet('subsection-grid-six', ['grid_items' => $shelf, 'nav' => true, 'images' => false]); ?>
     </div>
 
@@ -15,7 +15,7 @@
         </a>
     </div>
 
-    <?php foreach($page->children()->listed()->sortBy() as $subpage): ?>
+    <?php foreach($page->children()->listed() as $subpage): ?>
     <div class="subsection" id="<?= $subpage->slug() ?>">
 
         <?php $sub_shelf = $subpage->shelf()->toPages() ?>
