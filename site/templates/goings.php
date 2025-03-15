@@ -27,7 +27,7 @@
             <div class="subsection-index">
                 <?php foreach($subpage->children()->listed()->sortBy() as $item): ?>
                     <div class="subsection-index-item">
-                        <div class="tiny-square" style="--tiny-square-color: <?= $item->color() ?>;"></div>
+                        <div class="tiny-square" style="--section-color: <?= $subpage->color() ?>;"></div>
                         <div class="subsection-index-item-content">
                             <a href="<?= $item->url() ?>">
                                 <?php

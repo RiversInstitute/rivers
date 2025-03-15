@@ -378,11 +378,11 @@ button {
   display: block;
   width: 10px;
   height: 10px;
-  border: 1px solid var(--tiny-square-color);
+  border: 1px solid var(--main-color);
   transition: border-color 0.2s ease;
 }
 .subsection-index-container .subsection-index .subsection-index-item:hover .tiny-square {
-  border-color: #ff6253;
+  border-color: var(--section-color);
 }
 .subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content {
   display: grid;
