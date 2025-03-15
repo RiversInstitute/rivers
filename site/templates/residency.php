@@ -1,7 +1,7 @@
 <?php snippet('header', ['headerClass' => 'height-limited']); ?>
 <?php snippet('nav'); ?>
 <div class="subsection-nav-wrapper">
-    <div class="subsection-nav" style="height: 80dvh;">//
+    <div class="subsection-nav" style="height: 80dvh;">
         <?php snippet('subsection-grid-six', ['grid_items' => $page->shelf()->toPages(), 'nav' => false, 'images' => true, 'color' => $page->color()]); ?>
     </div>
 
