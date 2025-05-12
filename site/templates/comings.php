@@ -1,14 +1,14 @@
-<?php snippet('header'); ?>
+<?php snippet('header', ['headerClass' => 'height-limited']); ?>
 <?php snippet('nav'); ?>
 
-<div class="layout-wrapper--full comings">
-    <!-- <div class="home__header">
-        <a href="<?= $site->url(); ?>/about" class="home__site-title">
-            <div class="site-title__text"><?= $site->full_title(); ?></div>
-        </a>
-    </div> -->
+<div class="subsection-nav-wrapper">
+    <div class="subsection-nav" style="height: 80dvh;">
+        <?php snippet('subsection-grid-six', ['grid_items' => $page->children()->listed(), 'nav' => false, 'images' => false, 'color' => $page->color()]); ?>
+    </div>
 
-    <?php snippet('subsection-grid', ['subpages' => $page->children()->listed()->sortBy()]); ?>
-</div>  
+    <div class="subsection-blurb">
+        <?= $page->blurb()->kt() ?>
+    </div>
+</div>
 
 <?php snippet('footer'); ?>
