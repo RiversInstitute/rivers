@@ -28,10 +28,14 @@ columns:
     sections:
       fields:
         fields:
-          main_content:
-            label: Header
+          # main_content:
+          #   label: Header
+          #   type: textarea
+          #   size: tiny
+          blurb:
+            label: Blurb
             type: textarea
-            size: tiny
+            size: small
           main_description:
             label: Description
             type: textarea

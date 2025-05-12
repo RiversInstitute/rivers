@@ -20,15 +20,6 @@
 <div class="layout-wrapper--full">
   <?php snippet('listing-gallery', ["files" => $page->main_gallery()->toFiles()]); ?>
 </div>
-<?php if ($page->associated_content_heading()->isNotEmpty()): ?>
-  <div class="layout-wrapper--full highlight center">
-    <br>
-    <?= $page->associated_content_heading(); ?>
-  </div>
-<?php endif; ?>
-<div class="layout-wrapper--full">
-  <?php snippet('associated-grid', ["contents" => $page->associated_content()->toStructure()]); ?>
-</div>
 <div class="layout-wrapper">
   <div class="listing__content text">
     <?= $page->main_content_continued()->kt(); ?>

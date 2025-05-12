@@ -14,18 +14,18 @@ fields:
       - bold
       - italic
       - link
-  publication_type:
-    label: Type of publication
-    type: radio
-    default: physical
-    options:
-      physical: Physical
-      digital: Digital
+  # publication_type:
+  #   label: Type of publication
+  #   type: radio
+  #   default: physical
+  #   options:
+  #     physical: Physical
+  #     digital: Digital
   digital_publication_page:
     label: Link to digital publication
     type: select
     options: query
-    query: site.pages.template('publications').children.notTemplate('publication').notTemplate('publications--additional')
+    query: page.children
     when:
       publication_type: digital
   price:

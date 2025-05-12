@@ -97,7 +97,7 @@
               <?php
               // First try to get cover image
               $image = null;
-              if($coverImage = $position['entry']->cover()->toFile()) {
+              if($coverImage = $position['entry']->hero_image()->toFile()) {
                   $image = $coverImage;
               } 
               // If no cover image, try to get first image

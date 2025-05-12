@@ -5,6 +5,10 @@
         <?php snippet('subsection-grid-six', ['grid_items' => $page->shelf()->toPages(), 'nav' => false, 'images' => true, 'color' => $page->color()]); ?>
     </div>
 
+    <div class="subsection-blurb">
+        <?= $page->blurb()->kt() ?>
+    </div>
+
     <div class="subsection-index-container">
         <h2 class="subsection-index-title">All artists</h2>
         

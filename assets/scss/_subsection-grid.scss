@@ -157,6 +157,18 @@
     }
 }
 
+.subsection-blurb {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  width: 100%;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+}
+
 .back-to-top {
   position: fixed;
   top: 20px;

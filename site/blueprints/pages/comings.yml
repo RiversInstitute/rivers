@@ -16,10 +16,14 @@ columns:
       sidebar:
         type: fields
         fields:
-          main_content:
-            label: Header
+          # main_content:
+          #   label: Header
+          #   type: textarea
+          #   size: large
+          blurb:
+            label: Blurb
             type: textarea
-            size: large
+            size: small
           color:
             label: Color
             type: color

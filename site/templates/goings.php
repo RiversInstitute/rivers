@@ -15,6 +15,10 @@
         </a>
     </div>
 
+    <div class="subsection-blurb">
+        <?= $page->blurb()->kt() ?>
+    </div>
+
     <?php foreach($page->children()->listed() as $subpage): ?>
     <div class="subsection" id="<?= $subpage->slug() ?>">
 
@@ -25,7 +29,7 @@
             <h2 class="subsection-index-title">All <?= $subpage->title() ?></h2>
             
             <div class="subsection-index">
-                <?php foreach($subpage->children()->listed()->sortBy() as $item): ?>
+                <?php foreach($subpage->children()->listed()->sortBy('start_date', 'desc') as $item): ?>
                     <div class="subsection-index-item">
                         <div class="tiny-square" style="--section-color: <?= $subpage->color() ?>;"></div>
                         <div class="subsection-index-item-content">
@@ -33,7 +37,7 @@
                                 <?php
                                 // First try to get cover image
                                 $image = null;
-                                if($coverImage = $item->cover()->toFile()) {
+                                if($coverImage = $item->hero_image()->toFile()) {
                                     $image = $coverImage;
                                 } 
                                 // If no cover image, try to get first image
@@ -43,16 +47,16 @@
                                 
                                 if($image): ?>
                                     <figure>
-                                        <img src="<?= $image->url() ?>" alt="<?= $item->title() ?>" loading="lazy">
+                                        <img src="<?= $image->url() ?>" alt="<?= $item->title() ?>">
                                     </figure>
                                 <?php endif; ?>
                                 <h3 class="subsection-index-item-title"><?= $item->title() ?></h3>
                             </a>
                             <div class="subsection-index-item-preview">
                                 <?php if($item->preview()->isNotEmpty()): ?>
-                                  <?= $item->preview()->kt()->excerpt(200) ?>
+                                <?= $item->preview()->kt()->excerpt(200) ?>
                                 <?php elseif($item->main_content()->isNotEmpty()): ?>
-                                  <?= $item->main_content()->kt()->excerpt(200) ?>
+                                <?= $item->main_content()->kt()->excerpt(200) ?>
                                 <?php endif; ?>
                             </div>
                         </div>
