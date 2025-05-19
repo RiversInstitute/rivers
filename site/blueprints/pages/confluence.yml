@@ -57,7 +57,7 @@ tabs:
                 label: Cover Image
                 type: files
                 max: 1
-              links:
+              navigation:
                 type: structure
                 label: Navigation Links
                 fields:

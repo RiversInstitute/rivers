@@ -40,13 +40,15 @@ tabs:
                     label: Bio
                     type: textarea
                     size: small
-                  link_to_page:
-                    text: "{{ page.title }}"
-                    empty: No related posts found
-                    sortBy: date desc
-                    layout: cards
-                    size: small
-                    info: "{{ page.date }}"
+                  page_link:
+                    label: Link to page
+                    type: multiselect
+                    options: query
+                    query: site.index
+                    label: Page
+                    max: 1
+                    when:
+                    links_to: page
               images_heading:
                 label: Images Section Heading
                 type: text
@@ -88,7 +90,7 @@ tabs:
                 label: Cover Image
                 type: files
                 max: 1
-              links:
+              navigation:
                 type: structure
                 label: Navigation Links
                 fields:
