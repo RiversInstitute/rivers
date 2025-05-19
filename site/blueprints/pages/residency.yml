@@ -1,0 +1,84 @@
+title: Residency
+
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    columns:
+      # main content
+      - width: 2/3
+        sections:
+          pages:
+            headline: Residents
+            type: pages
+            image: icon
+            templates:
+              - resident
+          content:
+            type: fields
+            fields:
+              intro_content:
+                label: Intro Content
+                type: textarea
+                size: large
+              images_heading:
+                label: Images Section Heading
+                type: text
+              main_gallery:
+                label: Gallery
+                type: files
+                layout: cards
+                info: "{{file.caption}}"
+              materials_heading:
+                label: Materials Heading
+                type: text
+                default: Place
+              materials:
+                label: Materials
+                type: files
+              sources_heading:
+                label: Sources Heading
+                type: text
+                default: Sources
+              sources:
+                label: Sources
+                type: structure
+                fields:
+                  citation:
+                    type: textarea
+                    size: tiny
+                    label: Citation
+      # sidebar
+      - width: 1/3
+        sections:
+          fields:
+            type: fields
+            fields:
+              color:
+                label: Color
+                type: color
+                default: "#cccccc"
+              cover_image:
+                label: Cover Image
+                type: files
+                max: 1
+              links:
+                type: structure
+                label: Navigation Links
+                fields:
+                  title:
+                    type: text
+                    label: Title
+                  url:
+                    type: text
+                    label: Link
+
+  files:
+    label: Files
+    icon: image
+    sections:
+      files:
+        type: files
+        layout: cards
+        info: "{{ file.caption }}"

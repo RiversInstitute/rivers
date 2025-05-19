@@ -1,0 +1,103 @@
+title: Homing
+
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    columns:
+      # main content
+      - width: 2/3
+        sections:
+          content:
+            type: fields
+            fields:
+              hero_image:
+                label: Hero Image
+                type: files
+                max: 1
+              subpage_title:
+                label: Subpage/Subpage Title
+                type: text
+              intro_content:
+                label: Intro Content
+                type: blocks
+                fieldsets:
+                  - heading
+                  - text
+                  - image
+                  - quote
+              main_content:
+                label: Main Bio/Description
+                type: blocks
+                fieldsets:
+                  - heading
+                  - text
+                  - image
+                  - quote
+                  - markdown
+              images_heading:
+                label: Images Section Heading
+                type: text
+                default: Images
+              images:
+                label: Artwork Gallery
+                type: blocks
+                fieldsets:
+                  - image
+                  - gallery
+              materials_heading:
+                label: Other Materials Heading
+                type: text
+                default: Other materials
+              materials:
+                label: Additional Materials
+                type: files
+              sources_heading:
+                label: Sources Heading
+                type: text
+                default: Sources
+              sources:
+                label: Sources/References
+                type: blocks
+                fieldsets:
+                  - text
+                  - list
+                  - markdown
+
+      # sidebar
+      - width: 1/3
+        sections:
+          fields:
+            type: fields
+            fields:
+              color:
+                label: Theme Color
+                type: color
+                default: "#cccccc"
+              artist_name:
+                label: Artist Name
+                type: text
+              artist_image:
+                label: Artist Image
+                type: files
+                max: 1
+              links:
+                type: structure
+                label: Navigation Links
+                fields:
+                  title:
+                    type: text
+                    label: Title
+                  url:
+                    type: text
+                    label: Link
+
+  files:
+    label: Files
+    icon: image
+    sections:
+      files:
+        type: files
+        layout: cards
+        info: "{{ file.caption }}"
