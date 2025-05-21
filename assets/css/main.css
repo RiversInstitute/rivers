@@ -287,7 +287,7 @@ button {
 .grid-six-container .grid-blocks .grid-block-container, .grid-ten-container .grid-blocks .grid-block-container {
   grid-area: var(--grid-area);
   aspect-ratio: 1/1; /* Force square aspect ratio */
-  margin: -1px;
+  margin: 0 -1px -1px 0;
 }
 .grid-six-container .grid-blocks .grid-block-container .grid-block, .grid-ten-container .grid-blocks .grid-block-container .grid-block {
   display: flex;
