@@ -16,13 +16,15 @@
 
     <!-- Intro -->
     <?php if($page->intro_content()->isNotEmpty()): ?>
-    <div class="content">
-        <?= $page->intro_content()->kt() ?>
-    </div>
+    <section class="narrow-section">
+        <div class="content">
+            <?= $page->intro_content()->kt() ?>
+        </div>
+    </section>
     <?php endif ?>
 
     <!-- Residency Artists -->
-    <div class="subsection-index-container">
+    <div class="wide-section subsection-index-container">
         <h2 class="subsection-index-title">Residencies</h2>
         
         <div class="subsection-index">

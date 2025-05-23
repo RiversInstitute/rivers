@@ -12,8 +12,8 @@ tabs:
           content:
             type: fields
             fields:
-              preview_content:
-                label: Preview Content
+              preview:
+                label: Preview
                 type: textarea
                 size: small
               intro_content:

@@ -16,19 +16,55 @@
 
     <!-- Intro -->
     <?php if($page->intro_content()->isNotEmpty()): ?>
-    <div class="content">
-        <?= $page->intro_content()->kt() ?>
-    </div>
+    <section class="narrow-section">
+        <div class="content">
+            <?= $page->intro_content()->kt() ?>
+        </div>
+    </section>
+    <?php endif ?>
+
+    <!-- Participants -->
+    <?php if($page->participants()->isNotEmpty()): ?>
+    <section class="narrow-section">
+        <h2><?= $page->participants_heading() ?></h2>
+
+        <div class="participants">
+            <?php foreach($page->participants()->toStructure() as $participant): ?>
+                <div class="participant">
+                    <div class="participant-header">
+                        <div class="tiny-square" style="--tiny-square-color: <?= $participant->color() ?>;"></div>
+                        <div class="participant-name">
+                            <?php if($participant->page_link()->isNotEmpty()): ?>
+                                <a href="<?= $participant->page_link()->first()->toPage()->url() ?>"><?= $participant->name() ?></a>
+                            <?php else: ?>
+                                <?= $participant->name() ?>
+                            <?php endif ?>
+                        </div>
+                    </div>
+                    <div class="participant-bio">
+                        <?= $participant->bio()->kt() ?>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </section>
     <?php endif ?>
 
     <!-- Images -->
-    <h2><?= $page->images_heading() ?></h2>
-
-    <div class="gallery">
-        <?php foreach($page->main_gallery()->toFiles() as $image): ?>
-            <img src="<?= $image->url() ?>" alt="<?= $image->title() ?>">
-        <?php endforeach ?>
+    <?php if($page->main_gallery()->isNotEmpty()): ?>
+    <section class="wide-section">
+        <h2><?= $page->images_heading() ?></h2>
+    
+        <div class="gallery">
+            <?php foreach($page->main_gallery()->toFiles() as $image): ?>
+                <figure>
+                    <img src="<?= $image->url() ?>" alt="<?= $image->title() ?>">
+                    <figcaption><?= $image->caption() ?></figcaption>
+                </figure>
+            <?php endforeach ?>
+        </div>
     </div>
+    <?php endif ?>
 
     <!-- Materials -->
     <?php if($page->materials()->isNotEmpty()): ?>

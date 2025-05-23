@@ -16,8 +16,10 @@
 
     <!-- Intro -->
     <?php if($page->intro_content()->isNotEmpty()): ?>
-    <div class="content">
-        <?= $page->intro_content()->kt() ?>
+    <div class="narrow-section">
+        <div class="content">
+            <?= $page->intro_content()->kt() ?>
+        </div>
     </div>
     <?php endif ?>
 

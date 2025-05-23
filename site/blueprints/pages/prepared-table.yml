@@ -23,19 +23,10 @@ tabs:
                   name:
                     type: text
                     label: Name
-                  image:
-                    type: files
-                    label: Image
-                    max: 1
-                    layout: cards
-                    info: "{{file.caption}}"
                   color:
                     label: Color
                     type: color
                     default: "#cccccc"
-                  name:
-                    type: text
-                    label: Name
                   bio:
                     label: Bio
                     type: textarea
@@ -47,8 +38,6 @@ tabs:
                     query: site.index
                     label: Page
                     max: 1
-                    when:
-                    links_to: page
               images_heading:
                 label: Images Section Heading
                 type: text
