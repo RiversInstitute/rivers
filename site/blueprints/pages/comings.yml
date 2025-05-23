@@ -9,10 +9,7 @@ columns:
         type: pages
         image: icon
         templates:
-          - homing
-          - confluence
-          - prepared-table
-          - residency
+          - coming
   main_2:
     width: 1/3
     sections:

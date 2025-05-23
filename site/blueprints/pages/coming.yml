@@ -1,5 +1,5 @@
-title: Artist Page
-preset: page
+title: Coming
+
 
 tabs:
   content:
@@ -12,95 +12,90 @@ tabs:
           content:
             type: fields
             fields:
-              hero_image:
-                label: Hero Image
-                type: files
-                max: 1
-              subpage_title:
-                label: Subpage/Subpage Title
-                type: text
               intro_content:
                 label: Intro Content
-                type: blocks
-                fieldsets:
-                  - heading
-                  - text
-                  - image
-                  - quote
-                min: 1
-                pretty: true
-              main_content:
-                label: Main Bio/Description
-                type: blocks
-                fieldsets:
-                  - heading
-                  - text
-                  - image
-                  - quote
-                  - markdown
-                min: 1
-                pretty: true
+                type: textarea
+                size: large
+              participants:
+                label: Participants
+                type: structure
+                fields:
+                  name:
+                    type: text
+                    label: Name
+                  color:
+                    label: Color
+                    type: color
+                    default: "#cccccc"
+                  bio:
+                    label: Bio
+                    type: textarea
+                    size: small
+                  page_link:
+                    label: Link to page
+                    type: multiselect
+                    options: query
+                    query: site.index
+                    label: Page
+                    max: 1
               images_heading:
                 label: Images Section Heading
                 type: text
                 default: Images
-              images:
-                label: Artwork Gallery
-                type: blocks
-                fieldsets:
-                  - image
-                  - gallery
-                min: 0
-                pretty: true
+              main_gallery:
+                label: Gallery
+                type: files
+                layout: cards
+                info: "{{file.caption}}"
               materials_heading:
-                label: Other Materials Heading
+                label: Materials Heading
                 type: text
-                default: Other materials
+                default: Place
               materials:
-                label: Additional Materials
+                label: Materials
                 type: files
               sources_heading:
                 label: Sources Heading
                 type: text
                 default: Sources
               sources:
-                label: Sources/References
-                type: blocks
-                fieldsets:
-                  - text
-                  - list
-                  - markdown
-                min: 0
-                pretty: true
-
+                label: Sources
+                type: structure
+                fields:
+                  citation:
+                    type: textarea
+                    size: tiny
+                    label: Citation
       # sidebar
       - width: 1/3
         sections:
-          fields:
+          fields_1:
             type: fields
             fields:
+              subpages_heading:
+                label: Subpages Heading
+                type: text
+                default: Subpages
+          pages:
+            label: Subpages
+            type: pages
+            image: icon
+            templates:
+              - coming-subpage
+          fields_2:
+            type: fields
+            fields:
+              line:
+                type: line
               color:
-                label: Theme Color
+                label: Color
                 type: color
                 default: "#cccccc"
-              artist_name:
-                label: Artist Name
-                type: text
-              related_artist:
-                label: Related Artist
-                type: pages
-                query: site.find("1_artists").children
-                text: "{{ page.title }}"
-                empty: No related artists found
-                sortBy: title asc
-                layout: cards
-                size: small
-                info: "{{ page.title }}"
-              artist_image:
-                label: Artist Image
+              cover_image:
+                label: Cover Image
                 type: files
                 max: 1
-              links:
+              navigation:
                 type: structure
                 label: Navigation Links
                 fields:
@@ -118,4 +113,4 @@ tabs:
       files:
         type: files
         layout: cards
-        info: "{{ file.caption }}" 
+        info: "{{ file.caption }}"
