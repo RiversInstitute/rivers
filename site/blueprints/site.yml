@@ -11,7 +11,10 @@ tabs:
           pages:
             headline: Pages
             type: pages
-            image: icon
+            image:
+              query: false
+              icon: " "
+              back: "{{ page.color.toColor().html }}"
             templates:
               - default
               - exhibitions
