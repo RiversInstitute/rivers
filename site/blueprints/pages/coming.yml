@@ -37,7 +37,7 @@ tabs:
                     size: small
                   page_link:
                     label: Link to page
-                    type: multiselect
+                    type: pages
                     options: query
                     query: site.index
                     label: Page

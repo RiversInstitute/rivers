@@ -20,6 +20,10 @@ tabs:
                 label: Intro Content
                 type: textarea
                 size: large
+              participants_heading:
+                label: Participants Heading
+                type: text
+                default: Participants
               participants:
                 label: Participants
                 type: structure
