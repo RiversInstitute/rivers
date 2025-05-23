@@ -83,7 +83,7 @@ tabs:
           pages:
             label: Subpages
             type: pages
-            image: icon
+            image: page.cover_image.toFile
             templates:
               - coming-subpage
           fields_2:
