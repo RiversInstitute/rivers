@@ -53,7 +53,7 @@
     <!-- Subpages -->
     <?php if($page->children()->listed()->count() > 0): ?>
     <div class="wide-section subsection-index-container" id="<?= $page->subpages_heading()->slug() ?>">
-        <h2 class="subsection-index-title">Subpages</h2>
+        <h2 class="subsection-index-title"><?= $page->subpages_heading() ?></h2>
         
         <div class="subsection-index">
             <?php foreach($page->children()->listed()->sortBy() as $item): ?>
