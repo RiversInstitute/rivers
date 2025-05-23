@@ -26,7 +26,7 @@
     <!-- Participants -->
     <?php if($page->participants()->isNotEmpty()): ?>
     <section class="narrow-section" id="<?= $page->participants_heading()->slug() ?>">
-        <h2><?= $page->participants_heading() ?></h2>
+        <h2 class="section-heading"><?= $page->participants_heading() ?></h2>
 
         <div class="participants">
             <?php foreach($page->participants()->toStructure() as $participant): ?>
