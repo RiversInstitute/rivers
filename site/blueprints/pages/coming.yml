@@ -109,6 +109,11 @@ tabs:
                   url:
                     type: text
                     label: Link
+                  help:
+                    label: Link helper
+                    type: info
+                    theme: none
+                    text: 'The link field should be used to create a link to the corresponding section of the page. For example if a section header is, "Archival Materials" the link should be <code>#archival-materials</code>.'
 
   files:
     label: Files

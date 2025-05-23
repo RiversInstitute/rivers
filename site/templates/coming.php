@@ -16,7 +16,7 @@
 
     <!-- Intro -->
     <?php if($page->intro_content()->isNotEmpty()): ?>
-    <section class="narrow-section">
+    <section class="narrow-section" id="introduction">
         <div class="content">
             <?= $page->intro_content()->kt() ?>
         </div>
@@ -25,7 +25,7 @@
 
     <!-- Participants -->
     <?php if($page->participants()->isNotEmpty()): ?>
-    <section class="narrow-section">
+    <section class="narrow-section" id="<?= $page->participants_heading()->slug() ?>">
         <h2><?= $page->participants_heading() ?></h2>
 
         <div class="participants">
@@ -52,7 +52,7 @@
 
     <!-- Subpages -->
     <?php if($page->children()->listed()->count() > 0): ?>
-    <div class="wide-section subsection-index-container">
+    <div class="wide-section subsection-index-container" id="<?= $page->subpages_heading()->slug() ?>">
         <h2 class="subsection-index-title">Subpages</h2>
         
         <div class="subsection-index">
@@ -95,7 +95,7 @@
 
     <!-- Images -->
     <?php if($page->main_gallery()->isNotEmpty()): ?>
-    <section class="wide-section">
+    <section class="wide-section" id="<?= $page->images_heading()->slug() ?>">
         <h2 class="section-heading"><?= $page->images_heading() ?></h2>
     
         <div class="gallery">
@@ -111,7 +111,7 @@
 
     <!-- Materials -->
     <?php if($page->materials()->isNotEmpty()): ?>
-    <section class="narrow-section">
+    <section class="narrow-section" id="<?= $page->materials_heading()->slug() ?>">
         <h2 class="section-heading"><?= $page->materials_heading() ?></h2>
     
         <div class="materials">
@@ -126,7 +126,7 @@
 
     <!-- Sources -->
     <?php if($page->sources()->isNotEmpty()): ?>
-    <section class="narrow-section sources-section">
+    <section class="narrow-section sources-section" id="<?= $page->sources_heading()->slug() ?>">
         <h2 class="section-heading"><?= $page->sources_heading() ?></h2>
     
         <ul class="sources">
