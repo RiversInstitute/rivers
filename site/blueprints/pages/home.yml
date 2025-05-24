@@ -3,14 +3,14 @@ title: Home
 fields:
   ticker_content:
     label: Ticker
-    type: textarea
-    size: small
-    width: 3/4
-  ticker_url:
-    label: Ticker URL
     type: text
-    width: 1/4
-    help: Leave empty for no url
+    size: small
+    limit: 220
+  # ticker_url:
+  #   label: Ticker URL
+  #   type: text
+  #   width: 1/4
+  #   help: Leave empty for no url
   takeover:
     label: Takeover
     type: toggle
@@ -22,26 +22,29 @@ fields:
   entries:
     label: Entries
     type: structure
-    max: 18
+    max: 6
     fields:
       title:
         type: textarea
-        size: mini
-        label: Title
-      hero_image:
-        label: Preview Image
-        type: files
-        max: 1
+        size: small
+      blurb:
+        label: Ticker Blurb
+        type: text
+        limit: 220
+      # hero_image:
+      #   label: Preview Image
+      #   type: files
+      #   max: 1
       block_color:
         required: true
         type: color
         label: Block Color
         width: 1/2
-      hover_color:
-        required: true
-        type: color
-        label: Text Hover Color
-        width: 1/2
+      # hover_color:
+      #   required: true
+      #   type: color
+      #   label: Text Hover Color
+      #   width: 1/2
       links_to:
         type: radio
         label: Links to
@@ -50,7 +53,7 @@ fields:
           page: Page
           url: URL
       page_link:
-        type: multiselect
+        type: pages
         options: query
         query: site.index
         label: Page
@@ -63,7 +66,7 @@ fields:
         when:
           links_to: url
   bibliography_item:
-    label: Bibliography Item
+    label: Bibliography (deprecated)
     type: structure
     fields:
       citation:

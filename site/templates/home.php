@@ -1,11 +1,8 @@
 <?php snippet('header', ["headerClass" => "no-pad home__container"]); ?>
 <?php snippet('nav', ['showMarquee' => false]); ?>
 <div class="layout-wrapper--full home">
-  <!-- <div class="home__header">
-    <a href="<?= $site->url(); ?>/about" class="home__site-title">
-      <div class="site-title__text"><?= $site->full_title(); ?></div>
-    </a>
-  </div> -->
+  <div class="home-blurb">
+  </div>
 
   <!-- Ticker path -->
   <div class="home__ticker">
@@ -13,10 +10,10 @@
         <path id="path" d="M0 0.5H1229.5C1237.23 0.5 1243.5 6.76801 1243.5 14.5V143C1243.5 150.732 1237.23 157 1229.5 157H14.5C6.76801 157 0.5 163.268 0.5 171V286C0.5 293.732 6.76801 300 14.5 300H1229.5C1237.23 300 1243.5 306.268 1243.5 314V468C1243.5 475.732 1237.23 482 1229.5 482H14.5C6.76801 482 0.5 475.732 0.5 468V14.5C0.5 6.76801 6.76801 0.5 14.5 0.5H0Z" fill="none" stroke="black"/>
         <text>
             <textPath href="#path" id="marquee1" startOffset="0%" side="right">
-                Rivers Institute for Contemporary Art & Thought (Rivers) is a non-profit institute for research and publishing, exhibitions and convenings on art of the global diaspora.
+                <?= $page->ticker_content(); ?>
             </textPath>
             <textPath href="#path" id="marquee2" startOffset="100%" side="right">
-                Rivers Institute for Contemporary Art & Thought (Rivers) is a non-profit institute for research and publishing, exhibitions and convenings on art of the global diaspora.
+                <?= $page->ticker_content(); ?>
             </textPath>
         </text>
     </svg>
@@ -96,15 +93,18 @@
             "
           >
           <?php if($entry->links_to() == "page"): ?>
-            <a href="<?=$entry->page_link()->toPage()->url(); ?>">
+            <?php if($entry->url_link()->isNotEmpty()): ?>
+              <a href="<?=$entry->url_link()->url(); ?>">
+            <?php else: ?>
+              <a href="">
+            <?php endif; ?>
           <?php else: ?>
             <a href="<?=$entry->url_link(); ?>">
           <?php endif; ?>
             <div
               class="home__block"
-              data-hero-src="<?= $entry->hero_image()->isNotEmpty() ? $entry->hero_image()->toFile()->url() : ''; ?>"
               data-block-title="<?= $entry->title()->kt(); ?>"
-              data-block-title-clean="<?= $entry->title(); ?>"
+              data-block-blurb="<?= $entry->blurb(); ?>"
               >
             </div>
           </a>
@@ -115,14 +115,6 @@
 </div>
 
 <!-- Home overlay -->
-<div class="home__overlay">
-  <div class="overlay__heading text"></div>
-  <div id="home__blocks__overlay__container">
-      <ul class="home__blocks__overlay" style="pointer-events: auto;">
-      </ul>
-  </div>
-  <img src="" class="overlay__image" loading="lazy">
-</div>
 <?php if($page->takeover()->toBool()): ?>
   <div class="home__takeover">
     <iframe 
@@ -145,96 +137,13 @@
 
 <!-- <script src="/assets/js/typed.js"></script> -->
 
-<!-- Home blocks overlay -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const homeBlocks = document.querySelectorAll('.home__block');
-    const homeOverlay = document.querySelector('.home__overlay');
-    const homeContents = document.querySelector('.home__contents');
-    const homeOverlayImage = homeOverlay.querySelector('.overlay__image');
-    const homeOverlayHeading = homeOverlay.querySelector('.overlay__heading');
-    const homeOverlayBlocks = homeOverlay.querySelector('.home__blocks__overlay');
-    const defaultTickerText = document.querySelector('#marquee1').innerHTML;
-    const homeTickerTexts = document.querySelectorAll('#marquee1, #marquee2');
-
-    homeBlocks.forEach((el) => {
-      el.addEventListener('mouseenter', (e) => {
-        // Copy the parent li element to the overlay
-        const liElement = el.closest('.home__block__container');
-        const liClone = liElement.cloneNode(true);
-        liClone.querySelector('.home__block').style.backgroundColor = 'var(--text-color)';
-        homeOverlayBlocks.appendChild(liClone);
-
-        homeContents.classList.add('active');
-
-        const bgColor = getComputedStyle(el).backgroundColor;
-        homeOverlay.style.backgroundColor = bgColor;
-
-        const textColor = getComputedStyle(el).color;
-        homeOverlay.style.color = textColor;
-
-        if (el.dataset.heroSrc.length > 0) {
-          homeOverlayImage.src = el.dataset.heroSrc;
-          homeOverlayImage.classList.add('active');
-        }
-        homeOverlayHeading.innerHTML = el.dataset.blockTitle;
-        homeOverlay.classList.add('active');
-
-        // Set the ticker text to the block title
-        homeTickerTexts.forEach((text) => {
-          text.textContent = el.dataset.blockTitleClean + ' – What I want to do is code-switch. To have there be layers of history and politics, but also this heady, arty stuff—inside jokes...';
-          text.style.fill = 'white';
-        });
-        
-        console.log(el.dataset.blockTitleClean);
-
-        homeBlocks.forEach((block) => {
-          if (block !== el) {
-            block.style.visibility = 'hidden';
-          }
-        });
-      });
-
-      el.addEventListener('mouseleave', (e) => {
-        
-        // Pause on hover for debugging
-        // debugger;
-
-        // Remove all li elements from overlay
-        while (homeOverlayBlocks.firstChild) {
-          homeOverlayBlocks.removeChild(homeOverlayBlocks.firstChild);
-        }
-
-        homeContents.classList.remove('active');
-
-        homeOverlay.style.removeProperty('background-color');
-        homeOverlay.style.removeProperty('color');
-        homeOverlay.classList.remove('active');
-        homeOverlayImage.classList.remove('active');
-
-        homeBlocks.forEach((block) => {
-          if (block !== el) {
-            block.style.removeProperty('visibility');
-          }
-        });
-
-        // Reset the ticker text to the previous text
-        homeTickerTexts.forEach((text) => {
-          text.innerHTML = defaultTickerText;
-          text.style.fill = 'black';
-        });
-
-      });
-    })
-  });
-</script>
-
 <!-- Ticker marquee -->
 <script>
     const marquee1 = document.getElementById("marquee1");
     const marquee2 = document.getElementById("marquee2");
     const speed = 0.01;
     let offset = 0;
+    let currentText = marquee1.textContent.trim();
     
     // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -246,14 +155,12 @@
         const screenWidth = window.innerWidth;
 
         if (screenWidth <= 520) {
-            // Mobile path and viewBox
             svg.setAttribute('viewBox', '0 0 320 371');
             svg.setAttribute('width', '320');
             svg.setAttribute('height', '371');
             path.setAttribute('d', 'M319 106.935V15C319 7.26801 312.732 1 305 1H296.553H15C7.26801 1 1 7.26801 1 15V356C1 363.732 7.26802 370 15 370H305C312.732 370 319 363.732 319 356V244.523C319 236.791 312.732 230.523 305 230.523H91.9981C84.2661 230.523 77.9981 224.255 77.9981 216.523V134.935C77.9981 127.203 84.2661 120.935 91.9981 120.935H305C312.732 120.935 319 114.667 319 106.935Z');
-            text.style.fontSize = '20px'; // Fixed size for mobile
+            text.style.fontSize = '20px';
         } else {
-            // Desktop path and viewBox
             svg.setAttribute('viewBox', '0 0 1244 483');
             svg.setAttribute('width', '1244');
             svg.setAttribute('height', '483');
@@ -263,13 +170,10 @@
     }
 
     window.addEventListener('resize', updateFontSize);
-    updateFontSize(); // Initial call
+    updateFontSize();
 
     function animateMarquee() {
-        // Only stop animation if user has requested reduced motion
-        if (prefersReducedMotion) {
-            return; // Exit early if reduced motion is preferred
-        }
+        if (prefersReducedMotion) return;
         
         offset += speed;
         if (offset > 100) offset -= 100;
@@ -280,7 +184,69 @@
         requestAnimationFrame(animateMarquee);
     }
 
+    // Function to update ticker text
+    function updateTickerText(newText) {
+        currentText = newText;
+        marquee1.textContent = newText;
+        marquee2.textContent = newText;
+    }
+
     animateMarquee();
+</script>
+
+<!-- Home blocks overlay -->
+<script>
+  const blocks = document.querySelectorAll('.home__block');
+  const tickerText = document.querySelector('.home__ticker text');
+  const htmlElement = document.documentElement;
+  const navContainer = document.querySelector('.navigation__container');
+  const homeBlurb = document.querySelector('.home-blurb');
+  const originalText = marquee1.textContent.trim();
+
+  blocks.forEach(block => {
+    block.addEventListener('mouseenter', () => {
+      tickerText.style.fill = '#fff';
+      const blockColor = getComputedStyle(block.parentElement).getPropertyValue('--background-color');
+      htmlElement.style.backgroundColor = blockColor;
+      
+      // Make other blocks transparent
+      blocks.forEach(otherBlock => {
+        if (otherBlock !== block) {
+          otherBlock.style.opacity = '0';
+        }
+      });
+
+      // Hide navigation
+      navContainer.style.visibility = 'hidden';
+
+      // Update ticker text
+      const blockTitle = block.getAttribute('data-block-blurb');
+      updateTickerText(blockTitle);
+
+      // Update home-blurb with title
+      homeBlurb.innerHTML = block.getAttribute('data-block-title');
+    });
+    
+    block.addEventListener('mouseleave', () => {
+      tickerText.style.fill = '#000';
+      htmlElement.style.backgroundColor = '';
+      
+      // Reset opacity of all blocks
+      blocks.forEach(otherBlock => {
+        otherBlock.style.opacity = '';
+      });
+
+      // Show navigation
+      navContainer.style.visibility = '';
+
+      // Reset ticker text
+      updateTickerText(originalText);
+
+      // Clear home-blurb
+      homeBlurb.innerHTML = '';
+
+    });
+  });
 </script>
 
 

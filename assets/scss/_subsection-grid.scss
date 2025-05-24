@@ -47,7 +47,7 @@
     }
 
     .grid-blocks {
-      margin-top: -200px;
+      margin-top: -220px;
       height: 100%;
       display: grid;
       /* Use aspect-ratio to maintain square cells */
@@ -159,14 +159,13 @@
 
 .subsection-blurb {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: var(--margin);
+  left: var(--margin);
   font-size: var(--font-size);
   line-height: var(--line-height);
   width: 100%;
   max-width: 800px;
   width: 100%;
-  padding: 20px;
 }
 
 .back-to-top {

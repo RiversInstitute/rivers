@@ -1,321 +1,197 @@
 .home__container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.home {
-  height: 100%;
-  padding: var(--margin);
-  margin: initial;
-  display: flex;
-  flex-direction: column;
-
-  .home__header {
-    @extend %grid;
-    z-index: 2;
-    grid-template-areas: "logo ticker ticker ticker bibliography";
-    position: relative;
-    pointer-events: none;
-
-    .home__site-title {
-      grid-area: logo;
-      display: flex;
-      flex-direction: column;
-
-      .site-title__text {
-        pointer-events: initial;
-      }
-    }
-
-    .bibliography {
-      grid-area: bibliography;
-      position: absolute;
-      left: 0;
-      right: 0;
-      overflow: hidden;
-      padding-left: 1em;
-      margin-left: -1em;
-      height: calc(100vh - 2 * var(--margin));
-
-      .bibliography__header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        pointer-events: initial;
-
-        .bibliography__header__button {
-          cursor: pointer;
-        }
-      }
-
-      .bibliography__list {
-        visibility: hidden;
-        margin-top: 1em;
-
-        .bibliography__item {
-          margin-left: 1em;
-          text-indent: -1em;
-          margin-bottom: 1em;
-          word-wrap: break-word;
-          font-size: var(--font-size--secondary);
-
-          &:first-of-type {
-            text-indent: initial;
-            margin-left: initial;
-          }
-
-          .bibliography__item__embed {
-            margin-left: 1em;
-
-            iframe, div, img {
-              width: 100%;
-              height: auto;
-            }
-
-            audio {
-              display: block;
-              width: 100%;
-            }
-
-          }
-        }
-      }
-
-      &.expanded {
-        pointer-events: initial;
-        background: #fff;
-        overflow: auto;
-
-        .bibliography__list {
-          visibility: visible;
-        }
-      }
-    }
-
-    @include mobile {
-      grid-template-areas: "ticker ticker bibliography";
-
-      .home__site-title {
-        display: none;
-      }
-    }
-  }
-
-  .home__contents {
     position: fixed;
-    z-index: 1;
-    margin-left: var(--margin);
-    margin-right: var(--margin);
-    margin-top: var(--margin);
-    margin-bottom: calc(4 * var(--margin));
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &.active {
-      z-index: 10;
-      opacity: 0;
-    }
-
-    .home__ticker__url {
-      pointer-events: initial;
-      display: block;
-      grid-area: ticker;
-    }
-
-    .home__blocks {
-      height: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(0, 1fr));
-      max-width: 800px;
-      max-height: 600px;
-      width: 100%;
-
-      @include mobile {
-        max-height: 25vh;
-      }
-
-      .home__block__container {
-        grid-area: var(--grid-area);
-
-        .home__block {
-          position: relative;
-          height: 100%;
-          color: var(--text-color, #FFF);
-          background-color: var(--background-color, #FFF);
-          padding: calc(0.5 * var(--margin));
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-        }
-      }
-    }
-  }
-}
-
-.home__ticker {
-  position: absolute;
-  top: 55%;
-  left: 4px;
-  right: 0;
-  padding: 27px;
-  transform: translateY(-50%);
-  grid-area: ticker;
-  color: black;
-  width: 100%;
-  z-index: 10000;
-  pointer-events: none;
-
-
-  @include mobile {
-    top: 45%;
-  }
-
-  svg {
-    width: 100%;
-    display: block;
-    overflow: visible;
-    padding: 20px;
-    margin-left: -10px;
-  }
-
-  text {
-    font-size: 26px;
-    fill: black;
-  }
-
-  path {
-    stroke: transparent;
-  }
-}
-
-.home__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: var(--margin);
-
-  &.active {
-    display: flex;
-    z-index: 9;
-  }
-
-  #home__blocks__overlay__container {
-    position: fixed;
-    z-index: 1;
-    margin-left: var(--margin);
-    margin-right: var(--margin);
-    margin-top: var(--margin);
-    margin-bottom: calc(4* var(--margin));
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .home__blocks__overlay {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    max-width: 800px;
-    max-height: 600px;
-    width: 100%;
-
-    @include mobile {
-      max-height: 25vh;
-    }
-
-    .home__block__container {
-      grid-area: var(--grid-area);
-
-      .home__block {
-        position: relative;
-        height: 100%;
-        color: var(--text-color, #FFF);
-        background-color: var(--background-color, #FFF);
-        // opacity: 0.2;
-        padding: calc(0.5 * var(--margin));
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        background-size: cover;
-      }
-    }
-  }
-
-  .overlay__heading {
-    position: fixed;
-    pointer-events: none;
-
-    top: var(--margin);
-    left: var(--margin);
-  }
-  .overlay__image {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-}
-
-.home__takeover {
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-
-  opacity: 1;
-  visibility: visible;
-  transition: 1s all;
-
-  &.hidden {
-    opacity: 0;
-    visibility: hidden;
   }
   
-  &__iframe {
-    width: 100%;
+  .home {
     height: 100%;
-    border: 0;
-    pointer-events: none;
-  }
+    padding: var(--margin);
+    margin: initial;
+    display: flex;
+    flex-direction: column;
+  
+    .home-blurb {
+      position: absolute;
+      top: var(--margin);
+      left: var(--margin);
+      font-size: var(--font-size--primary);
+      color: #fff;
+      z-index: 3;
+      max-width: 800px;
+      width: 100%;
+    }
+  
+    .home__header {
+      @extend %grid;
+      z-index: 2;
+      grid-template-areas: "logo ticker ticker ticker bibliography";
+      position: relative;
+      pointer-events: none;
+  
+      .home__site-title {
+        grid-area: logo;
+        display: flex;
+        flex-direction: column;
+  
+        .site-title__text {
+          pointer-events: initial;
+        }
+      }
+  
+      @include mobile {
+        grid-template-areas: "ticker ticker bibliography";
+  
+        .home__site-title {
+          display: none;
+        }
+      }
+    }
+  
+    .home__contents {
+      position: fixed;
+      z-index: 1;
+      margin-left: var(--margin);
+      margin-right: var(--margin);
+      margin-top: var(--margin);
+      margin-bottom: calc(4 * var(--margin));
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &.active {
+        z-index: 10;
+        opacity: 0;
+      }
+  
+      .home__ticker__url {
+        pointer-events: initial;
+        display: block;
+        grid-area: ticker;
+      }
+  
+      .home__blocks {
+        margin-top: -200px;
+        // height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        // grid-auto-rows: 1fr;
+        max-width: 800px;
+        max-height: 45%;
+        width: 100%;
+        aspect-ratio: 3/2; /* Overall grid aspect ratio */
+  
+        @include mobile {
+          max-height: 25vh;
+        }
+  
+        .home__block__container {
+          grid-area: var(--grid-area);
+          aspect-ratio: 1/1;
+  
+          .home__block {
+            position: relative;
+            height: 100%;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            padding: calc(0.5 * var(--margin));
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
-  &__close {
-    position: absolute;
-    top: var(--margin);
-    right: var(--margin);
-    visibility: hidden;
-    opacity: 0;
+            &:hover {
+                background-color: #fff;
 
-    transition: 1s all;
-
-    &.active {
-      visibility: visible;
-      opacity: 1;
+                & ~ .home__ticker text {
+                  fill: #fff !important;
+                }
+            }
+          }
+        }
+      }
     }
   }
-}
+  
+  .home__ticker {
+    position: absolute;
+    top: 55%;
+    left: 4px;
+    right: 0;
+    padding: 27px;
+    transform: translateY(-50%);
+    grid-area: ticker;
+    color: black;
+    width: 100%;
+    z-index: 10000;
+    pointer-events: none;
+  
+  
+    @include mobile {
+      top: 45%;
+    }
+  
+    svg {
+      width: 100%;
+      display: block;
+      overflow: visible;
+      padding: 20px;
+      margin-left: -10px;
+    }
+  
+    text {
+      font-size: 26px;
+      fill: black;
+    }
+  
+    path {
+      stroke: transparent;
+    }
+  }
+  
+  
+  .home__takeover {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+  
+    opacity: 1;
+    visibility: visible;
+    transition: 1s all;
+  
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    &__iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      pointer-events: none;
+    }
+  
+    &__close {
+      position: absolute;
+      top: var(--margin);
+      right: var(--margin);
+      visibility: hidden;
+      opacity: 0;
+  
+      transition: 1s all;
+  
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
