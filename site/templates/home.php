@@ -93,10 +93,8 @@
             "
           >
           <?php if($entry->links_to() == "page"): ?>
-            <?php if($entry->url_link()->isNotEmpty()): ?>
-              <a href="<?=$entry->url_link()->url(); ?>">
-            <?php else: ?>
-              <a href="">
+            <?php if($entry->page_link()->isNotEmpty()): ?>
+            <a href="<?=$entry->page_link()->toPage()->url(); ?>">
             <?php endif; ?>
           <?php else: ?>
             <a href="<?=$entry->url_link(); ?>">
