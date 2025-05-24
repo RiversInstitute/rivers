@@ -1248,18 +1248,26 @@ body.height-limited {
   right: 20px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 4px;
   align-items: flex-end;
 }
 .comings-layout h1#page-title {
   font-weight: normal;
   color: var(--highlight-color);
 }
+@media (max-width: 1000px) {
+  .comings-layout h1#page-title {
+    position: absolute;
+    top: 45px;
+    left: 20px;
+  }
+}
 .comings-layout .subsection-index-container {
   max-width: 1200px;
   margin: auto;
   min-height: initial;
   margin-bottom: 200px;
+  padding: 0;
 }
 .comings-layout .content {
   margin: 200px auto;
@@ -1289,6 +1297,11 @@ body.height-limited {
   margin-top: 10px;
   font-size: var(--font-size--secondary);
   line-height: var(--line-height);
+}
+@media screen and (max-width: 768px) {
+  .comings-layout .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .comings-layout #page-title, .comings-layout .narrow-section {
   max-width: 700px;
@@ -1337,6 +1350,11 @@ body.height-limited {
 }
 .comings-layout .participants .participant .participant-bio {
   margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .comings-layout .participants {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .comings-layout .sources-section ul.sources {
   list-style: none;
