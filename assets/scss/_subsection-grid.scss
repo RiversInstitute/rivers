@@ -159,8 +159,9 @@
 
 .subsection-blurb {
   position: absolute;
-  top: var(--margin);
-  left: var(--margin);
+  top: 0;
+  left: 0;
+  padding: var(--margin);
   font-size: var(--font-size);
   line-height: var(--line-height);
   width: 100%;

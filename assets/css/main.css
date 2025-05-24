@@ -362,8 +362,9 @@ button {
 
 .subsection-blurb {
   position: absolute;
-  top: var(--margin);
-  left: var(--margin);
+  top: 0;
+  left: 0;
+  padding: var(--margin);
   font-size: var(--font-size);
   line-height: var(--line-height);
   width: 100%;
@@ -716,6 +717,8 @@ body.height-limited {
 @media screen and (max-width: 768px) {
   .home .home__contents .home__blocks {
     max-height: 25vh;
+    margin-top: -175px;
+    background-color: gray;
   }
 }
 .home .home__contents .home__blocks .home__block__container {

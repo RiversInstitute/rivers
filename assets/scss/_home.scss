@@ -89,6 +89,8 @@
   
         @include mobile {
           max-height: 25vh;
+          margin-top: -175px;
+          background-color: gray;
         }
   
         .home__block__container {
