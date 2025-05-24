@@ -6,7 +6,7 @@
   <div class="listing__content" style="margin-top: 0;">
     <!-- Title -->
     <div class="listing__title highlight">
-      <?= $page->title(); ?>
+      <a href="<?= $page->parent()->url(); ?>"><?= $page->parent()->title(); ?></a> / <?= $page->title(); ?>
     </div>
 
     <!-- Content -->
