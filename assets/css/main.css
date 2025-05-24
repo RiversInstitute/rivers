@@ -718,7 +718,6 @@ body.height-limited {
   .home .home__contents .home__blocks {
     max-height: 25vh;
     margin-top: -175px;
-    background-color: gray;
   }
 }
 .home .home__contents .home__blocks .home__block__container {
@@ -757,7 +756,7 @@ body.height-limited {
 }
 @media screen and (max-width: 768px) {
   .home__ticker {
-    top: 45%;
+    top: 40%;
   }
 }
 .home__ticker svg {
