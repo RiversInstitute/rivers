@@ -5,7 +5,7 @@ fields:
     label: Ticker
     type: text
     size: small
-    limit: 220
+    maxlength: 220
   # ticker_url:
   #   label: Ticker URL
   #   type: text
@@ -30,7 +30,7 @@ fields:
       blurb:
         label: Ticker Blurb
         type: text
-        limit: 220
+        maxlength: 220
       # hero_image:
       #   label: Preview Image
       #   type: files
