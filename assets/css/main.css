@@ -1043,53 +1043,21 @@ body.height-limited {
   }
 }
 
-.partners {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.subsection-index-container {
+  padding: var(--margin);
+}
+.subsection-index-container .partners .partner-logo-inner {
+  padding: 10px;
+  border: 1px solid var(--partner-color);
+}
+.subsection-index-container .partners figure img {
+  object-fit: contain !important;
   height: 100%;
-  margin-left: calc(-1 * var(--margin));
 }
-@media screen and (max-width: 768px) {
-  .partners {
-    height: initial;
-  }
-}
-.partners .partners__partner {
-  border-top: 1px solid var(--main-color);
-  border-bottom: 1px solid var(--main-color);
-  padding-top: var(--margin);
-  padding-bottom: var(--margin);
-  margin-left: var(--margin);
-  width: calc(100% / var(--partner--count, 5) - var(--margin));
-  height: 100%;
-  overflow: auto;
-  padding-right: var(--scrollbar-width);
-}
-@media screen and (max-width: 768px) {
-  .partners .partners__partner {
-    width: calc(50% - var(--margin));
-    height: initial;
-    overflow: initial;
-  }
-}
-.partners .partners__partner .partner__logo {
-  margin: var(--margin);
-  padding-top: 66.66%;
-  position: relative;
-}
-.partners .partners__partner .partner__logo .partner__logo__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.partners .partners__partner .partner__description {
-  color: var(--partner-color);
+.subsection-index-container .partners .subsection-index-item-preview {
+  color: var(--partner-color) !important;
+  height: 200px;
+  overflow-y: auto;
 }
 
 .publication div, .publication ul {
@@ -1271,6 +1239,10 @@ body.height-limited {
     grid-row-gap: calc(1em * var(--line-height));
     grid-template-columns: 1fr;
   }
+}
+
+.about .navigation__container input[type=email]::placeholder {
+  color: rgba(255, 255, 255, 0.687) !important;
 }
 
 .email-signup {

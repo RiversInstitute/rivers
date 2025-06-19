@@ -1,26 +1,36 @@
 <?php snippet('header', ['headerClass' => 'no-pad']); ?>
-<?php snippet('nav'); ?>
-<div class="height-constrained">
+<?php snippet('nav', ['support' => true]); ?>
+<div>
   <div class="layout-wrapper--full">
     <div class="text col-2">
       <?= $page->main_content()->kt(); ?>
     </div>
   </div>
-  <div class="partners__container">
-    <ul class="partners" style="--partner--count: <?= $page->partners()->toStructure()->count(); ?>;">
-      <?php foreach ($page->partners()->toStructure() as $partner): ?>
-        <li class="partners__partner" style="--partner-color: <?= $partner->color(); ?>;">
-          <a href="<?= $partner->url(); ?>">
-            <div class="partner__logo">
-              <img class="partner__logo__image" loading="lazy" src="<?= $partner->logo()->toFile()->resize(500)->url(); ?>">
-            </div>
-          </a>
-          <div class="partner__description text">
-            <?= $partner->description()->kt(); ?>
-          </div>
-        </li>
-      <?php endforeach; ?>
-    </ul>
+
+  <div class="subsection-index-container">
+        <h2 class="subsection-index-title">Partners</h2>
+        
+        <div class="subsection-index partners">
+            <?php foreach($page->partners()->toStructure() as $item): ?>
+                <div class="subsection-index-item">
+                    <div class="subsection-index-item-content">
+                        <a href="<?= $item->url() ?>">
+                            <figure>
+                                <div class="partner-logo-inner" style="--partner-color: <?= $item->color() ?>;">
+                                    <img src="<?= $item->logo()->toFile()->resize(500)->url(); ?>" alt="<?= $item->title() ?>">
+                                </div>
+                            </figure>
+                            <!-- <?= $item->name() ?> -->
+                        </a>
+                        <div class="subsection-index-item-preview" style="--partner-color: <?= $item->color() ?>;">
+                            <?= $item->description()->kt(); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
   </div>
+
+  <br><br><br>
 </div>
 <?php snippet('footer'); ?>

@@ -19,7 +19,11 @@ if (isset($override)) {
         <li id="nav-<?= $item->title()->slug(); ?>" class="navigation__item <?php e($item->isOpen() && !isset($override), 'highlight') ?>"><a href="<?= $item->url() ?>"><?= $item->title(); ?></a></li>
         <?php endforeach ?>
       </ul>
-      <?php snippet('email-signup'); ?>
+      <?php if (isset($support) && $support): ?>
+        <a href="<?= $site->url(); ?>/support">Support</a>
+      <?php else: ?>
+        <?php snippet('email-signup'); ?>
+      <?php endif; ?>
     </nav>
   </div>
 </div>
