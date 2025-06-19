@@ -274,8 +274,8 @@ button {
   grid-template-columns: repeat(3, 1fr);
   /* Auto-fill rows with the same size as columns */
   grid-auto-rows: 1fr;
-  max-width: 800px;
-  max-height: 45%;
+  max-width: 77dvh;
+  max-height: 35dvh;
   width: 100%;
   aspect-ratio: 3/2; /* Overall grid aspect ratio */
 }
@@ -706,11 +706,11 @@ body.height-limited {
   grid-area: ticker;
 }
 .home .home__contents .home__blocks {
-  margin-top: -200px;
+  margin-top: -130px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 800px;
-  max-height: 45%;
+  max-width: 77dvh;
+  max-height: 35dvh;
   width: 100%;
   aspect-ratio: 3/2; /* Overall grid aspect ratio */
 }
