@@ -1244,6 +1244,42 @@ body.height-limited {
 .about .navigation__container input[type=email]::placeholder {
   color: rgba(255, 255, 255, 0.687) !important;
 }
+.about .about__rail h3 {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: 400;
+  margin-bottom: var(--margin);
+}
+.about .about__rail #intro {
+  margin-bottom: var(--margin);
+}
+.about .about__rail .person {
+  margin-bottom: var(--margin);
+}
+.about .about__rail .person h3.person-name {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-weight: 400;
+  margin: 0;
+}
+.about .about__rail .person h3.person-name:hover {
+  cursor: pointer;
+}
+.about .about__rail .person .person-bio-toggle {
+  font-size: 14px;
+  line-height: var(--line-height--secondary);
+  color: #000;
+}
+.about .about__rail .person p.person-title {
+  margin-top: 0;
+}
+.about .about__rail .person .person-bio {
+  font-size: var(--font-size--secondary);
+  line-height: var(--line-height--secondary);
+  margin-top: 10px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
 
 .email-signup {
   height: calc(1em * var(--line-height));

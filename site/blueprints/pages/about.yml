@@ -9,6 +9,27 @@ fields:
     label: About
     type: textarea
     size: large
+  sidebar_intro:
+    label: Sidebar intro
+    type: textarea
+    size: medium
+  sidebar_people:
+    label: Sidebar people
+    type: structure
+    fields:
+      name:
+        label: Name
+        type: text
+      title:
+        label: Title
+        type: text
+      bio:
+        label: Bio
+        type: textarea
+        size: medium
+  more:
+    label: More
+    type: textarea
   # right_rail_1:
   #   label: Right rail
   #   type: textarea

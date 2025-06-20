@@ -17,4 +17,43 @@
             color: rgba(255, 255, 255, 0.687) !important;
         }
     }
+    .about__rail {
+        h3 {
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            font-weight: 400;
+            margin-bottom: var(--margin);
+        }
+        #intro {
+            margin-bottom: var(--margin);
+        }
+        .person {
+            margin-bottom: var(--margin);
+
+            h3.person-name {
+                font-size: var(--font-size);
+                line-height: var(--line-height);
+                font-weight: 400;
+                margin: 0;
+            }
+            h3.person-name:hover {
+                cursor: pointer;
+            }
+            .person-bio-toggle {
+                font-size: 14px;
+                line-height: var(--line-height--secondary);
+                color: #000;
+            }
+            p.person-title {
+                margin-top: 0;
+            }
+            .person-bio {
+                font-size: var(--font-size--secondary);
+                line-height: var(--line-height--secondary);
+                margin-top: 10px;
+                border-bottom: 1px solid #000;
+                padding-bottom: 10px;
+            }
+        }
+    }
 }
