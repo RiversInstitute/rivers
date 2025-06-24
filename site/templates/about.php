@@ -13,11 +13,18 @@
         <div id="people">
             <?php foreach($page->sidebar_people()->toStructure() as $person): ?>
                 <div class="person">
-                    <h3 class="person-name"><?= $person->name() ?> <button class="person-bio-toggle">+</button></h3>
+                    <h3 class="person-name">
+                        <?= $person->name() ?>
+                        <?php if($person->has_bio()->toBool()): ?>
+                            <button class="person-bio-toggle">+</button>
+                        <?php endif; ?>
+                    </h3>
                     <p class="person-title"><?= $person->title() ?></p>
-                    <div class="person-bio">
-                        <?= $person->bio()->kt(); ?>
-                    </div>
+                    <?php if($person->has_bio()->toBool()): ?>
+                        <div class="person-bio">
+                            <?= $person->bio()->kt(); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         </div>
