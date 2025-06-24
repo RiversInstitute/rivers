@@ -1262,7 +1262,7 @@ body.height-limited {
   font-weight: 400;
   margin: 0;
 }
-.about .about__rail .person h3.person-name:hover {
+.about .about__rail .person h3.person-name:has(.person-bio-toggle):hover {
   cursor: pointer;
 }
 .about .about__rail .person .person-bio-toggle {

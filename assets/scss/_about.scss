@@ -36,7 +36,7 @@
                 font-weight: 400;
                 margin: 0;
             }
-            h3.person-name:hover {
+            h3.person-name:has(.person-bio-toggle):hover {
                 cursor: pointer;
             }
             .person-bio-toggle {
