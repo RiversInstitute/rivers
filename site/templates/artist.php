@@ -26,7 +26,10 @@
       <?php endif; ?>
     </div>
 
-    <br><br>
+    <!-- Mobile // Works -->
+    <div id="works__list__mobile">
+        <!-- Works list gets moved here on mobile -->
+    </div>
 
     <!-- Projects -->
     <?php if ($page->part_of()->toPages()->count() > 0) : ?>
@@ -46,22 +49,27 @@
         </a>
       <?php endforeach ?>
     </div>
-
-    <br><br>
     <?php endif; ?>
 
     <!-- Epherma -->
     <?php if ($page->epherma()->toFiles()->count() > 0) : ?>
-    <h3 class="listing__header">Epherma</h3>
-
-    <div class="listing__blocks epherma">
-      <?php foreach ($page->epherma()->toFiles() as $item) : ?>
-        <a href="<?= $item->url()?>" class="listing__block">
-            <?= $item->name() . '.' . $item->extension(); ?>
-        </a>
-      <?php endforeach ?>
+    <div id="epherma-container">
+        <h3 class="listing__header">Epherma</h3>
+    
+        <div class="listing__blocks epherma">
+          <?php foreach ($page->epherma()->toFiles() as $item) : ?>
+            <a href="<?= $item->url()?>" class="listing__block">
+                <?= $item->name() . '.' . $item->extension(); ?>
+            </a>
+          <?php endforeach ?>
+        </div>
     </div>
     <?php endif; ?>
+
+    <!-- Mobile // Footnotes -->
+    <div id="footnotes__mobile">
+        <!-- Footnotes list gets moved here on mobile -->
+    </div>
   </div>
 
   <!-- Sidebar -->
@@ -69,17 +77,17 @@
 
     <!-- Works -->
     <?php if ($page->works()->toFiles()->count() > 0) : ?>
-    <h3 class="listing__header" style="margin-top: 0;">Works</h3>
-
-    <div class="works__list">
-      <?php foreach ($page->works()->toFiles() as $index => $work) : ?>
-        <figure class="works__list__item" data-index="<?= $index ?>" data-url="<?= $work->url() ?>" data-alt="<?= $work->alt() ?>" data-caption="<?= $work->caption()->kt() ?>">
-          <img src="<?= $work->url(); ?>" alt="<?= $work->alt(); ?>" />
-        </figure>
-      <?php endforeach; ?>
+    <div id="works">
+        <h3 class="listing__header" style="margin-top: 0;">Works</h3>
+    
+        <div class="works__list">
+          <?php foreach ($page->works()->toFiles() as $index => $work) : ?>
+            <figure class="works__list__item" data-index="<?= $index ?>" data-url="<?= $work->url() ?>" data-alt="<?= $work->alt() ?>" data-caption="<?= $work->caption()->kt() ?>">
+              <img src="<?= $work->url(); ?>" alt="<?= $work->alt(); ?>" />
+            </figure>
+          <?php endforeach; ?>
+        </div>
     </div>
-
-    <br><br>
     <?php endif; ?>
 
     <!-- Part of -->
@@ -121,17 +129,19 @@
 
     <!-- Footnotes -->
     <?php if ($page->footnotes()->toStructure()->count() > 0) : ?>
-      <span class="footnotes-symbol"></span>
-      <h3 class="listing__header" style="margin-top: 5px;">Footnotes</h3>
-
-      <div class="footnotes">
-      <?php foreach ($page->footnotes()->toStructure() as $footnote) : ?>
-        <div class="footnote">
-          <?= $footnote->text()->kt(); ?>
-        </div>
-      <?php endforeach; ?>
+      <div id="footnotes">
+          <span class="footnotes-symbol"></span>
+          <h3 class="listing__header" style="margin-top: 5px;">Footnotes</h3>
+    
+          <div class="footnotes">
+          <?php foreach ($page->footnotes()->toStructure() as $footnote) : ?>
+            <div class="footnote">
+              <?= $footnote->text()->kt(); ?>
+            </div>
+          <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
       </div>
-    <?php endif; ?>
   </aside>
 </div>
 
@@ -230,5 +240,41 @@
         });
       });
     });
+
+    // Mobile responsive functionality
+    function handleMobileLayout() {
+      const works = document.getElementById('works');
+      const worksListMobile = document.getElementById('works__list__mobile');
+      const footnotes = document.getElementById('footnotes');
+      const footnotesMobile = document.getElementById('footnotes__mobile');
+      
+      if (window.innerWidth <= 600) {
+        // Move to mobile containers
+        if (works && worksListMobile && !worksListMobile.contains(works)) {
+          worksListMobile.appendChild(works);
+        }
+        if (footnotes && footnotesMobile && !footnotesMobile.contains(footnotes)) {
+          footnotesMobile.appendChild(footnotes);
+        }
+      } else {
+        // Move back to sidebar
+        const sidebar = document.querySelector('.listing__sidebar');
+        if (works && worksListMobile.contains(works) && sidebar) {
+          // Move works back to sidebar
+          sidebar.appendChild(works);
+        }
+        if (footnotes && footnotesMobile.contains(footnotes) && sidebar) {
+          // Move footnotes back to the end of sidebar
+          sidebar.appendChild(footnotes);
+        }
+      }
+    }
+    
+    // Call on page load
+    handleMobileLayout();
+    
+    // Call on window resize
+    window.addEventListener('resize', handleMobileLayout);
   });
+
 </script>
