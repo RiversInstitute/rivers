@@ -27,12 +27,6 @@ fields:
         label: Bio
         type: textarea
         size: medium
-        when:
-          has_bio: true
-      has_bio: 
-        label: Has bio
-        type: toggle
-        default: true
   more:
     label: More
     type: textarea

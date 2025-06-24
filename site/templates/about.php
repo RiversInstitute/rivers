@@ -15,12 +15,12 @@
                 <div class="person">
                     <h3 class="person-name">
                         <?= $person->name() ?>
-                        <?php if($person->has_bio()->toBool()): ?>
+                        <?php if($person->bio()->isNotEmpty()): ?>
                             <button class="person-bio-toggle">+</button>
                         <?php endif; ?>
                     </h3>
                     <p class="person-title"><?= $person->title() ?></p>
-                    <?php if($person->has_bio()->toBool()): ?>
+                    <?php if($person->bio()->isNotEmpty()): ?>
                         <div class="person-bio">
                             <?= $person->bio()->kt(); ?>
                         </div>
