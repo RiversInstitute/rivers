@@ -38,7 +38,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const personNames = document.querySelectorAll('.person-name');
+        const toggleButtons = document.querySelectorAll('.person-bio-toggle');
         const personBios = document.querySelectorAll('.person-bio');
         
         // Initially hide all bios
@@ -46,22 +46,41 @@
             bio.style.display = 'none';
         });
         
-        // Add click event to each person name
-        personNames.forEach((name, index) => {
-            name.style.cursor = 'pointer';
-            name.addEventListener('click', function() {
-                const currentBio = personBios[index];
-                const isCurrentlyVisible = currentBio.style.display === 'block';
+        // Function to toggle bio
+        function toggleBio(personDiv) {
+            const currentBio = personDiv.querySelector('.person-bio');
+            const isCurrentlyVisible = currentBio.style.display === 'block';
+            
+            // Hide all bios first
+            personBios.forEach(bio => {
+                bio.style.display = 'none';
+            });
+            
+            // If the clicked bio wasn't visible, show it
+            if (!isCurrentlyVisible) {
+                currentBio.style.display = 'block';
+            }
+        }
+        
+        // Add click event to each toggle button
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const personDiv = this.closest('.person');
+                toggleBio(personDiv);
+            });
+        });
+        
+        // Add click event to person names that have bio toggles
+        toggleButtons.forEach(button => {
+            const personName = button.closest('.person-name');
+            personName.style.cursor = 'pointer';
+            personName.addEventListener('click', function(e) {
+                // Don't trigger if clicking the button itself
+                if (e.target === button) return;
                 
-                // Hide all bios first
-                personBios.forEach(bio => {
-                    bio.style.display = 'none';
-                });
-                
-                // If the clicked bio wasn't visible, show it
-                if (!isCurrentlyVisible) {
-                    currentBio.style.display = 'block';
-                }
+                const personDiv = this.closest('.person');
+                toggleBio(personDiv);
             });
         });
     });
