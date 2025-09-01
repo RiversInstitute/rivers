@@ -23,15 +23,14 @@
     <div class="subsection" id="<?= $subpage->slug() ?>">
 
         <?php $sub_shelf = $subpage->shelf()->toPages() ?>
-        <?php snippet('subsection-grid-six', ['grid_items' => $sub_shelf, 'nav' => false, 'images' => true, 'color' => $subpage->color()]); ?>
+
 
         <div class="subsection-index-container">
-            <h2 class="subsection-index-title">All <?= $subpage->title() ?></h2>
+            <h2 class="subsection-index-title"><?= $subpage->title() ?></h2>
             
             <div class="subsection-index">
                 <?php foreach($subpage->children()->listed()->sortBy('start_date', 'desc') as $item): ?>
                     <div class="subsection-index-item">
-                        <div class="tiny-square" style="--section-color: <?= $subpage->color() ?>;"></div>
                         <div class="subsection-index-item-content">
                             <a href="<?= $item->url() ?>">
                                 <?php

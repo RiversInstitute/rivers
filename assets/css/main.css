@@ -904,6 +904,18 @@ body.height-limited {
   justify-content: center;
   align-items: center;
 }
+/* When filtering, non-active project blocks get a light gray border */
+.listing .listing__content .projects.filtering .listing__block {
+  border-color: #d0d0d0;
+}
+/* Keep non-active blocks gray on hover while filtering */
+.listing .listing__content .projects.filtering .listing__block:not(.active):hover {
+  border-color: #d0d0d0;
+}
+/* Active (matched) blocks keep their highlight color while filtering */
+.listing .listing__content .projects.filtering .listing__block.active {
+  border-color: var(--hover-color);
+}
 .listing .listing__content #epherma-container {
   margin-top: 50px;
 }

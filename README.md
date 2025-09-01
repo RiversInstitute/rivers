@@ -15,7 +15,13 @@ Pulling content to the staging site can be done on the server using rsync. THIS 
 ```
 ssh ubuntu@137.184.155.65 'rsync -avz --delete /var/www/riversinstitute.org/content/ /var/www/staging.riversinstitute.org/content/ --dry-run'
 ```
-TK a way to pull /content to your local env
+
+## Pull production /content to local
+Pull /content folder from staging.riversinstitute.org to local:
+
+```
+rsync -av ubuntu@137.184.155.65:/var/www/staging.riversinstitute.org/content . --dry-run
+```
 
 ## Deployment workflow
 Automated deployments are done via [GitHub Actions](https://github.com/rivers-institute/rivers/actions).
