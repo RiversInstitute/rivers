@@ -79,7 +79,7 @@
         $showNav = isset($nav) ? $nav : false;
         
         // Default placeholder color
-        $placeholderColor = isset($placeholderColor) ? $placeholderColor : '#f0f0f0';
+        $placeholderColor = isset($placeholderColor) ? $placeholderColor : '#fff';
       ?>
       <?php foreach($positions as $position): ?>
         <li

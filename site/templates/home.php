@@ -4,6 +4,12 @@
   <div class="home-blurb">
   </div>
 
+  <div class="home__header">
+    <a href="<?= $site->url(); ?>/about" class="home__site-title">
+      <div class="site-title__text"><?= $site->full_title(); ?></div>
+    </a>
+  </div>
+
   <!-- Ticker path -->
   <div class="home__ticker">
     <svg width="1244" height="483" viewBox="0 0 1244 483" xmlns="http://www.w3.org/2000/svg">

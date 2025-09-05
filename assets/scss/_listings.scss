@@ -99,6 +99,16 @@
         border: 1px solid var(--main-color);
         margin-left: -1px;
         margin-top: -1px;
+
+        .listing__block__text {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+        }
+
       }
       a.listing__block:hover, .listing__block.active {
         border-color: var(--hover-color);
@@ -111,6 +121,24 @@
       .listing__block {
         justify-content: center;
         align-items: center;
+      }
+    }
+
+    // When filtering projects, gray out non-matching items' borders
+    .projects.filtering {
+      .listing__block {
+        border-color: #e1e1e1;
+      }
+      // Keep non-matching items gray on hover
+      a.listing__block:hover {
+        border-color: #e1e1e1;
+      }
+      // Matching (active) items use their hover color
+      .listing__block.active {
+        border-color: var(--hover-color);
+      }
+      a.listing__block.active:hover {
+        border-color: var(--hover-color);
       }
     }
 
@@ -244,7 +272,7 @@ aside.listing__sidebar {
       width: 50px;
       height: 50px;
       content: '';
-      opacity: 0.4;
+      opacity: 1;
     }
     .part-of-title {
       font-size: var(--font-size--secondary);

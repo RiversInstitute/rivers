@@ -83,13 +83,15 @@
           padding: calc(0.5* var(--margin));
           flex-direction: column;
           justify-content: space-around;
-          border: 1px solid #c1c1c1;
+        //   border: 1px solid #c1c1c1;
+          border: 1px solid var(--section-color);
           background-color: #fff;
           box-sizing: border-box;
           z-index: 2;
 
           &:hover {
             border: 1px solid var(--section-color);
+            background-color: var(--section-color);
             z-index: 10;
           }
         }

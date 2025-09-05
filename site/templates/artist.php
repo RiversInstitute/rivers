@@ -33,6 +33,7 @@
 
     <!-- Projects -->
     <?php if ($page->part_of()->toPages()->count() > 0) : ?>
+    <br>
     <h3 class="listing__header">Exhibitions & Projects</h3>
 
     <div class="listing__blocks projects" id="projects">
@@ -45,7 +46,7 @@
         $parentId = $project->parent() ? $project->parent()->id() : '';
       ?>
         <a href="<?= $project->url() ?>" class="listing__block" data-parent="<?= $parentId ?>" style="--hover-color: <?= $project->parent()->color() ?>">
-          <?= $project->title() ?>
+          <div class="listing__block__text"><?= $project->title() ?></div>
         </a>
       <?php endforeach ?>
     </div>

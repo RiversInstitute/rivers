@@ -301,13 +301,14 @@ button {
   padding: calc(0.5 * var(--margin));
   flex-direction: column;
   justify-content: space-around;
-  border: 1px solid #c1c1c1;
+  border: 1px solid var(--section-color);
   background-color: #fff;
   box-sizing: border-box;
   z-index: 2;
 }
 .grid-six-container .grid-blocks .grid-block-container .grid-block:hover, .grid-ten-container .grid-blocks .grid-block-container .grid-block:hover {
   border: 1px solid var(--section-color);
+  background-color: var(--section-color);
   z-index: 10;
 }
 .grid-six-container .grid-blocks .grid-block-container .grid-block-image, .grid-ten-container .grid-blocks .grid-block-container .grid-block-image {
@@ -896,6 +897,14 @@ body.height-limited {
   margin-left: -1px;
   margin-top: -1px;
 }
+.listing .listing__content .listing__blocks .listing__block .listing__block__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
 .listing .listing__content .listing__blocks a.listing__block:hover, .listing .listing__content .listing__blocks .listing__block.active {
   border-color: var(--hover-color);
   z-index: 1;
@@ -904,16 +913,16 @@ body.height-limited {
   justify-content: center;
   align-items: center;
 }
-/* When filtering, non-active project blocks get a light gray border */
 .listing .listing__content .projects.filtering .listing__block {
-  border-color: #d0d0d0;
+  border-color: #e1e1e1;
 }
-/* Keep non-active blocks gray on hover while filtering */
-.listing .listing__content .projects.filtering .listing__block:not(.active):hover {
-  border-color: #d0d0d0;
+.listing .listing__content .projects.filtering a.listing__block:hover {
+  border-color: #e1e1e1;
 }
-/* Active (matched) blocks keep their highlight color while filtering */
 .listing .listing__content .projects.filtering .listing__block.active {
+  border-color: var(--hover-color);
+}
+.listing .listing__content .projects.filtering a.listing__block.active:hover {
   border-color: var(--hover-color);
 }
 .listing .listing__content #epherma-container {
@@ -1021,7 +1030,7 @@ body.height-limited {
   width: 50px;
   height: 50px;
   content: "";
-  opacity: 0.4;
+  opacity: 1;
 }
 .listing .part-of .part-of-title {
   font-size: var(--font-size--secondary);
