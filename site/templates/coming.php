@@ -58,7 +58,6 @@
         <div class="subsection-index">
             <?php foreach($page->children()->listed()->sortBy() as $item): ?>
                 <div class="subsection-index-item">
-                    <div class="tiny-square" style="--tiny-square-color: <?= $item->color() ?>;"></div>
                     <div class="subsection-index-item-content">
                         <a href="<?= $item->url() ?>">
                             <?php

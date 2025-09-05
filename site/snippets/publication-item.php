@@ -13,7 +13,7 @@
   <?php if ($publication->publication_images()->toFiles()->isNotEmpty()): ?>
     <ul class="publication__images">
       <?php $idx = 0; ?>
-      <?php foreach($publication->publication_images()->toFiles() as $key=>$image): ?>
+      <?php foreach($publication->publication_images()->toFiles()->sortBy('sort') as $key=>$image): ?>
         <img class="publication__images__image <?php e($idx++ == 0, 'active'); ?>" src="<?= $image->resize(500)->url(); ?>" loading="lazy">
       <?php endforeach; ?>
     </ul>

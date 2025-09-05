@@ -38,8 +38,8 @@
 
     <div class="listing__blocks projects" id="projects">
       <?php 
-      // Get all pages from the part_of field
-      $projects = $page->part_of()->toPages();
+      // Get all pages from the part_of field, sorted by panel order
+      $projects = $page->part_of()->toPages()->sortBy('sort', 'asc');
       
       foreach($projects as $project): 
         // Get the parent ID for filtering
@@ -98,7 +98,7 @@
     <div class="part-of">
       <?php 
       // Get all pages from the part_of field
-      $partOfPages = $page->part_of()->toPages();
+      $partOfPages = $page->part_of()->toPages()->sortBy('sort', 'asc');
       
       // Create an array to store unique parent pages
       $parentPages = [];
