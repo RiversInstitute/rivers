@@ -160,16 +160,20 @@
 
         if (screenWidth <= 520) {
             svg.setAttribute('viewBox', '0 0 320 371');
-            svg.setAttribute('width', '320');
+            svg.setAttribute('width', '260');
             svg.setAttribute('height', '371');
             path.setAttribute('d', 'M319 106.935V15C319 7.26801 312.732 1 305 1H296.553H15C7.26801 1 1 7.26801 1 15V356C1 363.732 7.26802 370 15 370H305C312.732 370 319 363.732 319 356V244.523C319 236.791 312.732 230.523 305 230.523H91.9981C84.2661 230.523 77.9981 224.255 77.9981 216.523V134.935C77.9981 127.203 84.2661 120.935 91.9981 120.935H305C312.732 120.935 319 114.667 319 106.935Z');
-            text.style.fontSize = '20px';
+            path.removeAttribute('transform');
+            text.style.fontSize = '18px';
         } else {
             svg.setAttribute('viewBox', '0 0 1244 483');
-            svg.setAttribute('width', '1244');
+            svg.setAttribute('width', '980');
             svg.setAttribute('height', '483');
+            // Use original closed loop path for seamless looping, then scale it horizontally to be less wide
             path.setAttribute('d', 'M0 0.5H1229.5C1237.23 0.5 1243.5 6.76801 1243.5 14.5V143C1243.5 150.732 1237.23 157 1229.5 157H14.5C6.76801 157 0.5 163.268 0.5 171V286C0.5 293.732 6.76801 300 14.5 300H1229.5C1237.23 300 1243.5 306.268 1243.5 314V468C1243.5 475.732 1237.23 482 1229.5 482H14.5C6.76801 482 0.5 475.732 0.5 468V14.5C0.5 6.76801 6.76801 0.5 14.5 0.5H0Z');
-            text.style.fontSize = screenWidth <= 1244 ? `${(1244 / screenWidth) * 26}px` : '26px';
+            // Centered horizontal scale to make the shape less wide while keeping it closed
+            path.setAttribute('transform', 'translate(622, 0) scale(0.85, 1) translate(-622, 0)');
+            text.style.fontSize = screenWidth <= 1244 ? `${(1244 / screenWidth) * 21}px` : '21px';
         }
     }
 
@@ -204,6 +208,7 @@
   const tickerText = document.querySelector('.home__ticker text');
   const htmlElement = document.documentElement;
   const navContainer = document.querySelector('.navigation__container');
+  const homeHeader = document.querySelector('.home__header');
   const homeBlurb = document.querySelector('.home-blurb');
   const originalText = marquee1.textContent.trim();
 
@@ -219,6 +224,9 @@
           otherBlock.style.opacity = '0';
         }
       });
+
+      // Hide home header
+      homeHeader.style.visibility = 'hidden';
 
       // Hide navigation
       navContainer.style.visibility = 'hidden';
@@ -239,6 +247,9 @@
       blocks.forEach(otherBlock => {
         otherBlock.style.opacity = '';
       });
+
+      // Show home header
+      homeHeader.style.visibility = '';
 
       // Show navigation
       navContainer.style.visibility = '';

@@ -110,7 +110,7 @@
         }
 
       }
-      a.listing__block:hover, .listing__block.active {
+      .listing__block.active {
         border-color: var(--hover-color);
         z-index: 1;
       }

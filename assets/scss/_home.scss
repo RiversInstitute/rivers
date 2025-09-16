@@ -121,11 +121,11 @@
   
   .home__ticker {
     position: absolute;
-    top: 55%;
-    left: 4px;
-    right: 0;
+    top: 0;
+    left: 60%;
+    right: auto;
     padding: 27px;
-    transform: translateY(-50%);
+    transform: translate(-50%, 0);
     grid-area: ticker;
     color: black;
     width: 100%;
@@ -134,7 +134,7 @@
   
   
     @include mobile {
-      top: 40%;
+      top: 20%;
     }
   
     svg {
@@ -146,7 +146,7 @@
     }
   
     text {
-      font-size: 26px;
+      // font-size: 18px;
       fill: black;
     }
   

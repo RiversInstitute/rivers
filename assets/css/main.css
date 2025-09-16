@@ -744,11 +744,11 @@ body.height-limited {
 
 .home__ticker {
   position: absolute;
-  top: 55%;
-  left: 4px;
-  right: 0;
+  top: 0;
+  left: 60%;
+  right: auto;
   padding: 27px;
-  transform: translateY(-50%);
+  transform: translate(-50%, 0);
   grid-area: ticker;
   color: black;
   width: 100%;
@@ -757,7 +757,7 @@ body.height-limited {
 }
 @media screen and (max-width: 768px) {
   .home__ticker {
-    top: 40%;
+    top: 20%;
   }
 }
 .home__ticker svg {
@@ -768,7 +768,6 @@ body.height-limited {
   margin-left: -10px;
 }
 .home__ticker text {
-  font-size: 26px;
   fill: black;
 }
 .home__ticker path {
@@ -905,7 +904,7 @@ body.height-limited {
   text-align: center;
   width: 100%;
 }
-.listing .listing__content .listing__blocks a.listing__block:hover, .listing .listing__content .listing__blocks .listing__block.active {
+.listing .listing__content .listing__blocks .listing__block.active {
   border-color: var(--hover-color);
   z-index: 1;
 }
@@ -1097,7 +1096,7 @@ body.height-limited {
   height: 100%;
 }
 .subsection-index-container .partners .subsection-index-item-preview {
-  color: var(--partner-color) !important;
+  color: var(--main-color);
   height: 200px;
   overflow-y: auto;
 }

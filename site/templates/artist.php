@@ -38,8 +38,8 @@
 
     <div class="listing__blocks projects" id="projects">
       <?php 
-      // Get all pages from the part_of field, sorted by panel order
-      $projects = $page->part_of()->toPages()->sortBy('sort', 'asc');
+      // Get all pages from the part_of field
+      $projects = $page->part_of()->toPages();
       
       foreach($projects as $project): 
         // Get the parent ID for filtering
