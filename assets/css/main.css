@@ -307,6 +307,7 @@ button {
   z-index: 2;
 }
 .grid-six-container .grid-blocks .grid-block-container .grid-block:hover, .grid-ten-container .grid-blocks .grid-block-container .grid-block:hover {
+  color: #fff;
   border: 1px solid var(--section-color);
   background-color: var(--section-color);
   z-index: 10;

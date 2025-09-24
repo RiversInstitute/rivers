@@ -90,6 +90,7 @@
           z-index: 2;
 
           &:hover {
+            color: #fff;
             border: 1px solid var(--section-color);
             background-color: var(--section-color);
             z-index: 10;
