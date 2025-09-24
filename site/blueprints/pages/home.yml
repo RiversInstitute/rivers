@@ -65,6 +65,10 @@ fields:
         label: URL
         when:
           links_to: url
+      image_on_hover:
+        label: Image on hover
+        type: toggle
+
   bibliography_item:
     label: Bibliography (deprecated)
     type: structure

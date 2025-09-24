@@ -90,6 +90,28 @@
         srand();
       ?>
       <?php foreach($page->entries()->toStructure() as $idx=>$entry): ?>
+        <?php
+          $hoverImageUrl = null;
+          if ($entry->image_on_hover()->toBool()) {
+            $target = null;
+            // Prefer resolving by URL link if provided (can be internal)
+            if ($entry->url_link()->isNotEmpty()) {
+              $targetUrl = (string) $entry->url_link();
+              $target = site()->index()->filter(function($p) use ($targetUrl) { return $p->url() === $targetUrl; })->first();
+            }
+            // Fallback to explicit page link
+            if (!$target && $entry->links_to() == "page" && $entry->page_link()->isNotEmpty()) {
+              $target = $entry->page_link()->toPage();
+            }
+            if ($target) {
+              if ($cover = $target->cover_image()->toFile()) {
+                $hoverImageUrl = $cover->url();
+              } elseif ($firstImage = $target->images()->first()) {
+                $hoverImageUrl = $firstImage->url();
+              }
+            }
+          }
+        ?>
         <li
           class="home__block__container"
           style="
@@ -109,7 +131,17 @@
               class="home__block"
               data-block-title="<?= $entry->title()->kt(); ?>"
               data-block-blurb="<?= $entry->blurb(); ?>"
+              style="position: relative; overflow: hidden;"
               >
+              <?php if ($hoverImageUrl): ?>
+                <img
+                  class="home__block__hover-img"
+                  src="<?= $hoverImageUrl; ?>"
+                  alt=""
+                  loading="lazy"
+                  style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none;"
+                />
+              <?php endif; ?>
             </div>
           </a>
         </li>
@@ -217,6 +249,8 @@
       tickerText.style.fill = '#fff';
       const blockColor = getComputedStyle(block.parentElement).getPropertyValue('--background-color');
       htmlElement.style.backgroundColor = blockColor;
+      const hoverImg = block.querySelector('.home__block__hover-img');
+      if (hoverImg) hoverImg.style.display = 'block';
       
       // Make other blocks transparent
       blocks.forEach(otherBlock => {
@@ -242,6 +276,8 @@
     block.addEventListener('mouseleave', () => {
       tickerText.style.fill = '#000';
       htmlElement.style.backgroundColor = '';
+      const hoverImg = block.querySelector('.home__block__hover-img');
+      if (hoverImg) hoverImg.style.display = 'none';
       
       // Reset opacity of all blocks
       blocks.forEach(otherBlock => {
