@@ -1,4 +1,4 @@
-<?php snippet('header', ['headerClass' => 'invert']); ?>
+<?php snippet('header'); ?>
 <div class="about">
     <?php snippet('nav'); ?>
     <div class="about__container">
