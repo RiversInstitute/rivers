@@ -418,8 +418,6 @@ button {
   gap: 10px;
 }
 .subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content img {
-  max-width: 300px;
-  max-height: 300px;
   object-fit: cover;
   width: 100%;
 }
