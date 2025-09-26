@@ -193,7 +193,7 @@
 
   .subsection-index {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     align-items: start;
     row-gap: 40px;
     column-gap: 30px;
@@ -216,9 +216,9 @@
       }
 
       .subsection-index-item-content {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 20px;
+        // display: grid;
+        // grid-template-columns: 1fr 1.2fr;
+        // gap: 20px;
 
         a {
           display: flex;
@@ -230,13 +230,20 @@
         img {
           max-width: 300px;
           max-height: 300px;
-          aspect-ratio: 1/1;
+        //   aspect-ratio: 1/1;
           object-fit: cover;
           width: 100%;
+        }
+
+        .subsection-index-item-title {
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            margin-top: 10px;
         }
     
         .subsection-index-item-preview {
           font-size: var(--font-size--secondary);
+          margin-top: 10px;
         }
       }
     }

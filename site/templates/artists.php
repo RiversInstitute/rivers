@@ -30,7 +30,7 @@
                                 </figure>
                             <?php endif; ?>
                         </a>
-                        <?= $item->title() ?>
+                        <p class="subsection-index-item-title"><?= $item->title() ?></p>
                     </div>
                 </div>
             <?php endforeach ?>

@@ -394,7 +394,7 @@ button {
 }
 .subsection-index-container .subsection-index {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   align-items: start;
   row-gap: 40px;
   column-gap: 30px;
@@ -411,11 +411,6 @@ button {
 .subsection-index-container .subsection-index .subsection-index-item:hover .tiny-square {
   border-color: var(--section-color);
 }
-.subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 20px;
-}
 .subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content a {
   display: flex;
   flex-flow: column nowrap;
@@ -425,12 +420,17 @@ button {
 .subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content img {
   max-width: 300px;
   max-height: 300px;
-  aspect-ratio: 1/1;
   object-fit: cover;
   width: 100%;
 }
+.subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content .subsection-index-item-title {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin-top: 10px;
+}
 .subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-content .subsection-index-item-preview {
   font-size: var(--font-size--secondary);
+  margin-top: 10px;
 }
 
 .grid-ten-container .grid-blocks {
