@@ -36,7 +36,8 @@ tabs:
             fields:
               part_of:
                 type: pages
-                label: Part of
+                label: 'Events, exhibitions, residencies...'
+                help: Add events, exhibitions, residencies, etc that the artist is part of.
                 query: site.index
                 text: "{{ page.title }}"
                 empty: No related posts found
@@ -59,10 +60,10 @@ tabs:
                     label: Footnote
                     type: textarea
                     size: medium
-              color:
-                label: Color
-                type: color
-                default: "#ff6253"
+              # color:
+              #   label: Color
+              #   type: color
+              #   default: "#ff6253"
                     
                     
 
