@@ -20,7 +20,7 @@ if (isset($override)) {
         <?php endforeach ?>
       </ul>
       <?php if (isset($support) && $support): ?>
-        <a href="<?= $site->url(); ?>/support">Support</a>
+        <a href="<?= $site->url(); ?>/support" id="support-link">Support</a>
       <?php else: ?>
         <?php snippet('email-signup'); ?>
       <?php endif; ?>

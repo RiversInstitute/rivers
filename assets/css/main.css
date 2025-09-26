@@ -408,13 +408,6 @@ button {
 .subsection-index-container .subsection-index .subsection-index-item .subsection-index-item-title {
   font-size: var(--font-size--secondary);
 }
-.subsection-index-container .subsection-index .subsection-index-item .tiny-square {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--main-color);
-  transition: border-color 0.2s ease;
-}
 .subsection-index-container .subsection-index .subsection-index-item:hover .tiny-square {
   border-color: var(--section-color);
 }
@@ -1100,6 +1093,10 @@ body.height-limited {
   color: var(--main-color);
   height: 200px;
   overflow-y: auto;
+}
+
+#support-link {
+  color: var(--highlight-color);
 }
 
 .publication div, .publication ul {

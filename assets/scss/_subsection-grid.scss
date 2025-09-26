@@ -208,14 +208,6 @@
       .subsection-index-item-title {
         font-size: var(--font-size--secondary);
       }
-
-      .tiny-square {
-        display: block;
-        width: 10px;
-        height: 10px;
-        border: 1px solid var(--main-color);
-        transition: border-color 0.2s ease;
-      }
       
       &:hover {
         .tiny-square {

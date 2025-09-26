@@ -9,7 +9,7 @@
         <!-- <h2 class="subsection-index-title">All artists</h2> -->
         
         <div class="subsection-index">
-            <?php foreach($page->children()->listed()->sortBy() as $item): ?>
+            <?php foreach($page->children()->listed() as $item): ?>
                 <div class="subsection-index-item">
                     <div class="subsection-index-item-content">
                         <a href="<?= $item->url() ?>">
@@ -29,15 +29,8 @@
                                     <img src="<?= $image->url() ?>" alt="<?= $item->title() ?>">
                                 </figure>
                             <?php endif; ?>
-                            <?= $item->title() ?>
                         </a>
-                        <div class="subsection-index-item-preview">
-                            <?php if($item->preview()->isNotEmpty()): ?>
-                                <?= $item->preview()->kt()->excerpt(300) ?>
-                            <?php elseif($item->main_content()->isNotEmpty()): ?>
-                                <?= $item->main_content()->kt()->excerpt(300) ?>
-                            <?php endif; ?>
-                        </div>
+                        <?= $item->title() ?>
                     </div>
                 </div>
             <?php endforeach ?>
