@@ -394,10 +394,10 @@ button {
 }
 .subsection-index-container .subsection-index {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: start;
   row-gap: 40px;
-  column-gap: 30px;
+  column-gap: 50px;
 }
 .subsection-index-container .subsection-index .subsection-index-item {
   display: flex;
