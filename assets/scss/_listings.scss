@@ -114,6 +114,12 @@
         border-color: var(--hover-color);
         z-index: 1;
       }
+
+      // On hover, color project by its parent category color
+      a.listing__block:hover {
+        border-color: var(--hover-color);
+        z-index: 1;
+      }
     }
 
     // Projects
@@ -138,6 +144,17 @@
         border-color: var(--hover-color);
       }
       a.listing__block.active:hover {
+        border-color: var(--hover-color);
+      }
+    }
+
+    // Hovering a Part of category temporarily highlights matching projects
+    .projects.hovering {
+      .listing__block {
+        border-color: #e1e1e1;
+      }
+      a.listing__block.hover-match,
+      .listing__block.hover-match {
         border-color: var(--hover-color);
       }
     }

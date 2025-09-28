@@ -242,6 +242,46 @@
       });
     });
 
+    // Reciprocal hover interactions
+    // 1) Hovering a project highlights its Part of item
+    projectItems.forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        const parentId = this.getAttribute('data-parent');
+        const matchToggle = document.querySelector(`.filter-toggle[data-parent="${parentId}"]`);
+        if (matchToggle) {
+          matchToggle.classList.add('hovered');
+        }
+      });
+      item.addEventListener('mouseleave', function() {
+        const parentId = this.getAttribute('data-parent');
+        const matchToggle = document.querySelector(`.filter-toggle[data-parent="${parentId}"]`);
+        if (matchToggle) {
+          matchToggle.classList.remove('hovered');
+        }
+      });
+    });
+
+    // 2) Hovering a Part of item highlights matching projects in the grid
+    filterToggles.forEach(toggle => {
+      toggle.addEventListener('mouseenter', function() {
+        const parentId = this.getAttribute('data-parent');
+        if (projectsContainer) {
+          projectsContainer.classList.add('hovering');
+        }
+        projectItems.forEach(item => {
+          if (item.getAttribute('data-parent') === parentId) {
+            item.classList.add('hover-match');
+          }
+        });
+      });
+      toggle.addEventListener('mouseleave', function() {
+        if (projectsContainer) {
+          projectsContainer.classList.remove('hovering');
+        }
+        projectItems.forEach(item => item.classList.remove('hover-match'));
+      });
+    });
+
     // Mobile responsive functionality
     function handleMobileLayout() {
       const works = document.getElementById('works');

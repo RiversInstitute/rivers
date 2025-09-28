@@ -900,6 +900,10 @@ body.height-limited {
   border-color: var(--hover-color);
   z-index: 1;
 }
+.listing .listing__content .listing__blocks a.listing__block:hover {
+  border-color: var(--hover-color);
+  z-index: 1;
+}
 .listing .listing__content .projects .listing__block {
   justify-content: center;
   align-items: center;
@@ -914,6 +918,13 @@ body.height-limited {
   border-color: var(--hover-color);
 }
 .listing .listing__content .projects.filtering a.listing__block.active:hover {
+  border-color: var(--hover-color);
+}
+.listing .listing__content .projects.hovering .listing__block {
+  border-color: #e1e1e1;
+}
+.listing .listing__content .projects.hovering a.listing__block.hover-match,
+.listing .listing__content .projects.hovering .listing__block.hover-match {
   border-color: var(--hover-color);
 }
 .listing .listing__content #epherma-container {
