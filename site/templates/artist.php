@@ -261,26 +261,7 @@
       });
     });
 
-    // 2) Hovering a Part of item highlights matching projects in the grid
-    filterToggles.forEach(toggle => {
-      toggle.addEventListener('mouseenter', function() {
-        const parentId = this.getAttribute('data-parent');
-        if (projectsContainer) {
-          projectsContainer.classList.add('hovering');
-        }
-        projectItems.forEach(item => {
-          if (item.getAttribute('data-parent') === parentId) {
-            item.classList.add('hover-match');
-          }
-        });
-      });
-      toggle.addEventListener('mouseleave', function() {
-        if (projectsContainer) {
-          projectsContainer.classList.remove('hovering');
-        }
-        projectItems.forEach(item => item.classList.remove('hover-match'));
-      });
-    });
+    // 2) Removed: hover on Part of should not affect projects
 
     // Mobile responsive functionality
     function handleMobileLayout() {
