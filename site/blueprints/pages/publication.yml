@@ -21,13 +21,29 @@ fields:
     options:
       physical: Physical
       digital: Digital
+  digital_publication_type:
+    label: Digital publication type
+    type: radio
+    default: page
+    options:
+      link: Link
+      page: Page
+    when:
+      publication_type: digital
+  digital_publication_link:
+    label: Digital publication URL
+    type: url
+    when: 
+      publication_type: digital
+      digital_publication_type: link
   digital_publication_page:
-    label: Link to digital publication
+    label: Digital publication page
     type: select
     options: query
     query: site.pages.template('publications').children.notTemplate('publication').notTemplate('publications--additional')
     when:
       publication_type: digital
+      digital_publication_type: page
   price:
     label: Price
     type: text

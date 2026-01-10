@@ -20,11 +20,18 @@
   <?php endif; ?>
   <?php if ($publication->publication_type() == "physical"): ?>
     <div class="publication__price">
-      <?= $publication->price(); ?> <?php if ($publication->purchase_url()->isNotEmpty()): ?><a class="highlight" href="<?= $publication->purchase_url(); ?>">Purchase&nbsp;&#8599;&#xFE0E;</a><?php endif; ?>
+      <?= $publication->price(); ?> <?php if ($publication->purchase_url()->isNotEmpty()): ?><a class="highlight" href="<?= $publication->purchase_url(); ?>">Purchase&nbsp;<span class="publication__arrow">&#8599;&#xFE0E;</span></a><?php endif; ?>
     </div>
   <?php else: ?>
     <div class="publication__link">
-      <a class="highlight" href="/<?= $publication->digital_publication_page()->url(); ?>">Digital publication&nbsp;&#8599;&#xFE0E;</a>
+      <a class="highlight" href="
+        <?php if ($publication->digital_publication_type() == "link"): ?>
+          <?= $publication->digital_publication_link(); ?>
+        <?php else: ?>
+          /<?= $publication->digital_publication_page()->url(); ?>
+        <?php endif; ?>">
+        Digital publication&nbsp;<span class="publication__arrow">&#8599;&#xFE0E;</span>
+      </a>
     </div>
   <?php endif; ?>
   <div class="publication__reviews text">
