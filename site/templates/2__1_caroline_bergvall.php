@@ -3,7 +3,7 @@
 <div class="work">
   <iframe 
     class="work__embed"
-    src="https://ixt.github.io/passengers/"
+    src="https://passengers.programmatology.com/"
   >
   </iframe>
 </div>
